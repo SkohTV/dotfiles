@@ -4,16 +4,15 @@
 ### NixOS
 
 $\sf\color{orange}Core \space Programs$<br>
-DE/WM -> [bspwm]() ([config]()) + [sxhkd]() ([config]())<br>
-Compositor -> [picom]() ([config]())<br>
+Compositor -> [river]() ([config]())<br>
+Bar/widgets -> [eww]() ([config]())<br>
+
+Notifs -> [Dunst]() ([config]())<br>
+Launcher -> [Rofi]() ([config]())<br>
 
 Terminal -> [Alacritty]() ([config]())<br>
 Prompt -> [Starship]() ([config]())<br>
 Shell -> [zsh]() ([config]())<br>
-
-Bar/widgets -> [eww]() ([config]())<br>
-Notifs -> [Dunst]() ([config]())<br>
-Launcher -> [Rofi]() ([config]())<br>
 
 
 
