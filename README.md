@@ -42,7 +42,33 @@ $\sf\color{orange}Graphical \space User \space Interfaces \space (GUI)$<br>
 
 ### TODO
 
+Check doc : https://nixos-and-flakes.thiscute.world/best-practices/intro
+
 To add: <br>
 \- [JetBrains Mono NF NL](https://github.com/ryanoasis/nerd-fonts)<br>
 \- [Vimix Cursors White](https://github.com/vinceliuice/Vimix-cursors)<br>
 \- GTK theme
+
+
+
+
+https://github.com/elkowar/pipr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
