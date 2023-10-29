@@ -1,4 +1,8 @@
 #!/bin/bash
 
+if [[ $(pidof gammastep) ]]; then
+	pkill gammastep
+else
+  gammastep -O 4000
+fi
 
-xrandr --output eDP-1 --brightness 1

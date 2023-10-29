@@ -1,5 +1,5 @@
 #!/bin/bash
 
 
-current=$(bspc query -D -d --names --desktop focused)
+current=$(hyprctl monitors -j | jq '.[] | select(.focused) | .activeWorkspace.id')
 echo "$current"

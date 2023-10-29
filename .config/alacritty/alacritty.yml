@@ -14,16 +14,16 @@ font:
   bold_italic:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
-  size: 8
+  size: 10
 
 import:
-  - ~/.config/alacritty/onedark.yml
+  - ~/.config/alacritty/tokyonight_storm.yml
 
 mouse:
-  hide_when_typing: true
+  hide_when_typing: false
 
 window:
-  opacity: 0.8
+  opacity: 1
   padding:
     x: 4
     y: 4

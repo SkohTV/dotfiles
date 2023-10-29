@@ -5,10 +5,16 @@ data=$(upower -i "$file" | grep -E "state|percentage|time to full|time to empty"
 
 state=$(echo $data | grep -oP 'state: \K\w+')
 percentage=$(echo $data | grep -oP 'percentage: \K\d+')
+charging=""
+time_remain=$(echo $data | awk -F'[: ]+' '/time to (empty|full):/ {print $6, $7}')
 state_return="NA"
 
+if [ "$time_remain" = "" ]; then
+  time_remain="NA"
+fi
 
 if [ "$state" = "discharging" ]; then
+  charging="Fully empty in"
   if [ "$percentage" -lt 10 ]; then
     state_return="󰁺";
   elif [ "$percentage" -lt 20 ]; then
@@ -33,10 +39,12 @@ if [ "$state" = "discharging" ]; then
 else
   if [ "$percentage" -eq 100 ]; then
     state_return="󰂃";
+    charging="You are fully charged !"
   else
+    charging="Fully charged in"
     state_return="󰂄";
   fi
 fi
 
-ret=$(printf "{\"state\":\"%s\",\"value\":%s}" "$state_return" "$percentage")
+ret=$(printf "{\"state\":\"%s\",\"value\":%s,\"charging\":\"%s\",\"time\":\"%s\"}" "$state_return" "$percentage" "$charging" "$time_remain")
 echo "$ret"

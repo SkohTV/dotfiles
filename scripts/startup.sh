@@ -1,44 +1,10 @@
 #!/bin/bash
 
 
-# Wait for bspwm to start
-sleep 2
-
-# Enable custom cursor
-lxappearance &
-sleep 0.5
-bspc node -c
-
-# Eww powermenu
-bspc desktop -f ^1
-alacritty & disown
-sleep 1
-
-
-# Obsidian
-bspc desktop -f ^4
-obsidian & disown
-sleep 1
-
-# VScode
-bspc desktop -f ^5
-code & disown
-sleep 1
-
-# Tmux zsh
-bspc desktop -f ^6
-alacritty & disown
-sleep 0.5
-
-# Web
-brave & disown
-sleep 0.5
-
-
-# Discord / Slack / Discussions
-bspc desktop -f ^10
-discord > /dev/null 2>&1 & disown
-sleep 4
-
-# End on powermenu
-bspc desktop -f ^1
+hyprctl dispatch exec [workspace 1 silent] alacritty
+hyprctl dispatch exec [workspace 4 silent] obsidian
+hyprctl dispatch exec [workspace 5 silent] alacritty
+hyprctl dispatch exec [workspace 6 silent] alacritty
+hyprctl dispatch exec [workspace 6 silent] alacritty
+hyprctl dispatch exec [workspace 7 silent] brave
+hyprctl dispatch exec [workspace 10 silent] discord

@@ -1,0 +1,10 @@
+(defvar date_hover false)
+(defvar wifi_hover false)
+(defvar bright_sound_hover false)
+(defvar battery_hover false)
+(defvar cava_hover false)
+(defvar hardware_hover false)
+(defvar distro_hover false)
+
+(defvar brightsound_click false)
+(defvar temp_screen 7000)
