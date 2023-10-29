@@ -106,7 +106,6 @@
     antigen
     gitui
     zellij
-    nap
     pipr
 ];
 
