@@ -106,6 +106,9 @@
     antigen
     gitui
     zellij
+    nap
+    fzf
+    pipr
 ];
 
   fonts.fonts = with pkgs; [

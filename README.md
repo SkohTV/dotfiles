@@ -4,9 +4,6 @@ $\sf\color{orange}Core \space Programs$<br>
 Compositor -> [Hyprland](https://github.com/hyprwm/Hyprland) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/hypr))<br>
 Bar/widgets -> [eww](https://github.com/elkowar/eww) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/eww))<br>
 
-Notifs -> [Dunst](https://github.com/dunst-project/dunst) ([config]())<br>
-Launcher -> [Wofi](https://hg.sr.ht/~scoopta/wofi) ([config]())<br>
-
 Terminal -> [Alacritty](https://github.com/alacritty/alacritty) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/alacritty))<br>
 Prompt -> [Starship](https://github.com/starship/starship) ([config](https://github.com/SkohTV/dotfiles/blob/main/.config/starship.toml))<br>
 Shell -> [zsh](https://github.com/zsh-users/zsh) ([config](https://github.com/SkohTV/dotfiles/blob/main/home/.zshrc))<br>
