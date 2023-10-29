@@ -8,22 +8,13 @@
 window.bar {
   background: #282424;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .left {
-  .distro_off {
+  .distro {
     border-radius: 0 10px 10px 0;
     background-color: #282424;
-  }
-  .distro_on {
-    border-radius: 0 10px 10px 0;
-    background-color: #444444
-  }
-  .distro_noti {
-    border-radius: 0 10px 10px 0;
-    background-color: #4d249b;
-    label {color: #e5ff00}
   }
   .grp1 {
     font-size: 24px;
@@ -31,7 +22,7 @@ window.bar {
   }
   .grp2 {
     border-radius: 10px;
-    min-width: 270px;
+    min-width: 300px;
     margin: 5px;
     background-color: #333333;
     & > * {padding: 0 10px 0 10px}
@@ -41,11 +32,17 @@ window.bar {
 
 .right {
   .grp1 {min-width: 70px}
-  .grp2 {
+  .brightsound_no_select {
     border-radius: 10px;
     min-width: 110px;
     margin: 5px;
     background-color: #333333;
+  }
+  .brightsound_select {
+    border-radius: 10px;
+    min-width: 110px;
+    margin: 5px;
+    background-color: #444444;
   }
   .grp3 {min-width: 30px}
   .grp4 {min-width: 180px}
@@ -86,20 +83,61 @@ window.bar {
   padding: 0 7px 0 7px;
 }
 
+.ssh_ping {
+  color: #caff68;
+}
+
 .time {color: #a5adcb}
 
 
 
 
 
-window.bar_brightsound {
+
+window.noti_calendar .inside,
+window.noti_wifi .inside,
+window.noti_brightsound .inside,
+window.noti_battery .inside {
+  border: 1px solid #666666;
   background: #333333;
   border-radius: 10px;
   margin: 5px;
-  font-size: 14px;
-  .bright_sound { margin: 0 25px 0 5px }
-  .cal_wifi { margin: 0 7px 0 0 }
-  ._wifi_details { margin: 5px ; color: #c6a0f6 }
+  font-size: 12px;
+  & > * {margin: 5px}
+}
+
+
+
+
+window.noti_calendar {
+  calendar {
+    color: #89a2cf;
+    &:selected {color: #ffc03a}
+    &.button {color: #6ece1a}
+    &:indeterminate {color: #3e71d1}
+    &.header {
+      color: #a1bdce;
+      font-weight: bold;
+    }
+    &.highlight {
+      color: #a5d994;
+      font-weight: bold;
+    }
+  }
+}
+
+window.noti_wifi {
+  margin: 20px;
+  .inside {
+    color: #c6a0f6;
+    label { margin: 0 5px 0 5px }
+    label.first { margin-top: 3px }
+    label.last { margin-bottom: 3px }
+    label.second { margin: 3px 5px 5px 5px  }
+  }
+}
+
+window.noti_brightsound {
   button {
     font-size: 24px;
     border-radius: 24px;
@@ -109,74 +147,20 @@ window.bar_brightsound {
     &.sound_off { background-color: #222222; color: #acacac }
     &.bright { background-color: #444444; color: #eed49f }
   }
+  .inside > * {margin: 0}
 }
+
 
 scale trough {
   background: #22242b;
   border-radius: 16px;
-  min-height: 180px;
+  min-height: 150px;
   min-width: 8px;
   margin: 10px 20px 10px 20px;
 }
 
-
-scale trough highlight {
-  border-radius: 16px;
-}
+scale trough highlight {border-radius: 16px}
 
 ._set_bright scale trough highlight {background-color: #eed49f}
 ._set_sound_active scale trough highlight {background-color: #91d7e3}
 ._set_sound_inactive scale trough highlight {background-color: #acacac}
-
-
-
-
-
-
-calendar {
-  color: #89a2cf;
-  &:selected {color: #ffc03a}
-  &.button {color: #6ece1a}
-  &:indeterminate {color: #3e71d1}
-  &.header {
-    color: #a1bdce;
-    font-weight: bold;
-  }
-  &.highlight {
-    color: #a5d994;
-    font-weight: bold;
-  }
-}
-
-
-
-
-window.bar_left {
-  font-size: 14px;
-}
-
-.notif_box{
-  border-radius: 10px;
-  background-color: #333333;
-  label {
-    margin: 0px 0px 20px 5px;
-  }
-  .reset_notif {
-    margin: 10px;
-    background-color: #444444;
-    border-radius: 10px;
-    label {font-size: 24px ; margin: 5px}
-  }
-}
-
-.toolbox {
-  border-radius: 10px;
-  background-color: #333333;
-  margin: 0 0 10px 0;
-  button {
-    margin: 10px;
-    font-size: 24px;
-    background-color: #6ece1a;
-    border-radius: 24px;
-  }
-}

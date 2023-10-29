@@ -1,15 +1,10 @@
 #!/bin/bash
 
 
-## Files and cmd
+# Restart eww
+pkill eww
+eww daemon
 
-## Run eww daemon if not running already
-if [[ ! $(pidof eww) ]]; then
-	eww daemon
-	sleep 1
-fi
 
-bspc config -m LVDS-1 top_padding 49
-
-eww close-all
+#bspc config -m LVDS-1 top_padding 49
 eww open bar

@@ -1,8 +1,7 @@
 # Not good enough, to redo everything
 
 
-format = '''$username$hostname$directory$git_branch$character '''
-
+format = '''$env_var$git_branch$directory$sudo$character '''
 add_newline = false
 
 
@@ -13,23 +12,17 @@ truncation_length = 0
 
 [git_branch]
 symbol = ''
-format = '[$symbol](green) '
-
-[username]
-show_always = true
-format = '[$user](bold yellow) '
-
-[hostname]
-ssh_only = true
-format = 'on [$hostname](bold blue) '
+format = '[git:\(](red)[$branch](#b4befe)[\)](red) '
 
 [character]
 format = '[\$](cyan)'
 
+[sudo]
+disabled = false
+symbol = '!'
+format = '[$symbol](red)'
 
-
-# Unused
 [env_var]
 variable = 'TMUX_ENV'
-default = ''
-format = '[$env_value](bold red)'
+default = 'qlpth'
+format = '[$env_value](yellow) '
