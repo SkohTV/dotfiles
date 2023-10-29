@@ -1,4 +1,4 @@
-### NixOS
+## NixOS
 
 $\sf\color{orange}Core \space Programs$<br>
 Compositor -> [Hyprland](https://github.com/hyprwm/Hyprland) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/hypr))<br>
@@ -9,16 +9,13 @@ Prompt -> [Starship](https://github.com/starship/starship) ([config](https://git
 Shell -> [zsh](https://github.com/zsh-users/zsh) ([config](https://github.com/SkohTV/dotfiles/blob/main/home/.zshrc))<br>
 
 
-
-
 $\sf\color{orange}Text \space User \space Interfaces \space (TUI)$<br>
--> [btop](https://github.com/aristocratos/btop) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/btop))<br>
--> [GitUI](https://github.com/extrawurst/gitui)<br>
--> [Nap](https://github.com/maaslalani/nap)<br>
--> [fzf](https://github.com/junegunn/fzf)<br>
--> [pipr](https://github.com/elkowar/pipr)<br>
 -> [Neovim](https://github.com/neovim/neovim) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/nvim))<br>
--> [Crepes](https://github.com/SkohTV/Crepes)<br>
+-> [GitUI](https://github.com/extrawurst/gitui) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/gitui))<br>
+-> [btop](https://github.com/aristocratos/btop) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/btop))<br>
+-> [Nap](https://github.com/maaslalani/nap)<br>
+-> [pipr](https://github.com/elkowar/pipr)<br>
+-> [Crepes](https://github.com/SkohTV/crepes)<br>
 
 
 $\sf\color{orange}Graphical \space User \space Interfaces \space (GUI)$<br>
@@ -34,14 +31,14 @@ $\sf\color{orange}Graphical \space User \space Interfaces \space (GUI)$<br>
 <!-- -> [VirtualBox]()<br> -->
 
 
-### TODO
+<!-- ### TODO
 
 Check doc : https://nixos-and-flakes.thiscute.world/best-practices/intro
 
 To add: <br>
 \- [JetBrains Mono NF NL](https://github.com/ryanoasis/nerd-fonts)<br>
 \- [Vimix Cursors White](https://github.com/vinceliuice/Vimix-cursors)<br>
-\- GTK theme
+\- GTK theme -->
 
 
 
