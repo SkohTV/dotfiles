@@ -3,10 +3,6 @@ return {
   lazy = false,
   priority = 1000,
   config = function()
-    require("tokyonight").setup({
-      terminal_colors = true,
-      transparent = true
-    })
     vim.cmd[[colorscheme tokyonight]]
   end
 }
