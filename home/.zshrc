@@ -46,6 +46,7 @@ alias mv="mv -i"
 alias copy=""
 alias lock=""
 alias sus="systemctl suspend"
+alias nixbuild="sudo nixos-rebuild switch -I nixos-config=$HOME/dev/repo/dotfiles/etc/nixos/configuration.nix"
 
 # Load github ssh
 eval "$(ssh-agent -s)" > /dev/null
