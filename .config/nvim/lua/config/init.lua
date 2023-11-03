@@ -16,6 +16,8 @@ require('config.globals')
 require('config.options')
 require('config.keymaps')
 
+vim.cmd[[set mouse=]]
+
 local opts = {
   defaults = { lazy = true },
   install = {
