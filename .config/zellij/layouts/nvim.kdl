@@ -1,0 +1,13 @@
+layout {
+  cwd "/home/qlpth"
+  tab name="nvim" {
+    pane split_direction="horizontal" {
+      pane name="nvim" size="80%" {
+        cwd "dev/repo"
+      }
+      pane name="zsh" size="20%" {
+        cwd "dev/repo"
+      }
+    }
+  }
+}

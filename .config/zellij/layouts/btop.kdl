@@ -1,0 +1,8 @@
+layout {
+  cwd "/home/qlpth"
+  tab name="btop" {
+    pane name="btop" {
+      command "btop"
+    }
+  }
+}

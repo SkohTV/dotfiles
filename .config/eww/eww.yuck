@@ -256,7 +256,7 @@
       :onchange "sh scripts/set_sound.sh {} &"
       :orientation "v"
       :flipped true
-      :min 5
+      :min  00 
       :max 101)
       (button
         :class { volume.state_raw=="no" ? "sound_on" : "sound_off" }
