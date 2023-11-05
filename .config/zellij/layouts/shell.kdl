@@ -1,9 +1,0 @@
-layout {
-  cwd "/home/qlpth"
-  tab name="shell" {
-    pane split_direction="vertical" {
-      pane name="first" size="50%"
-      pane name="second" size="50%"
-    }
-  }
-}

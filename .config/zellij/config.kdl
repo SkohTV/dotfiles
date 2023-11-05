@@ -1,4 +1,5 @@
 theme "default"
+mouse_mode false
 
 themes {
   default {    
