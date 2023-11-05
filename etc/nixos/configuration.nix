@@ -111,7 +111,17 @@
     zellij
     pipr
     bluez
-];
+
+    # Languages
+    efm-langserver # general purpose lsp
+    gnat13 # gcc & g++
+    python312 # python 3.12
+    lua5_4_compat # lua 5.4
+    lua54Packages.luarocks # Luarocks package manager
+    lua-language-server # lua lsp
+    stylua # Lua formatter
+    lua54Packages.luacheck # Lua linter
+  ];
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
