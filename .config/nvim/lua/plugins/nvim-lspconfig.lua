@@ -1,11 +1,14 @@
 local config = function()
-	local spconfig = require("lspconfig")
+	local lspconfig = require("lspconfig")
+  local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 	local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = "" }
 	for type, icon in pairs(signs) do
 		local hl = "DiagnosticSign" .. type
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 	end
+
+  local capabilities = cmp_nvim_lsp.default_capabilities()
 
 	-- Keybinds
 	local on_attach = function(_, bufnr)
@@ -23,7 +26,8 @@ local config = function()
 	end
 
 	-- Lua
-	spconfig.lua_ls.setup({
+	lspconfig.lua_ls.setup({
+    capabilities = capabilities,
 		on_attach = on_attach,
 		settings = {
 			Lua = {
@@ -43,7 +47,28 @@ local config = function()
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 
-	spconfig.efm.setup({
+	-- Python
+	lspconfig.pyright.setup({
+    capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {
+			pyright = {
+				disableOrganizeImports = false,
+				analysis = {
+					useLibraryCodeForTypes = true,
+					autoSearchPaths = true,
+					dignosticMode = "workspace",
+					autoImportCompletions = true,
+				},
+			},
+		},
+	})
+
+	local pylint = require("efmls-configs.linters.pylint")
+	local ruff = require("efmls-configs.formatters.ruff")
+
+	-- EFM
+	lspconfig.efm.setup({
 		filetypes = {
 			"lua",
 		},
@@ -58,10 +83,12 @@ local config = function()
 		settings = {
 			languages = {
 				lua = { luacheck, stylua },
+				python = { pylint, ruff },
 			},
 		},
 	})
 
+	-- Format on save
 	local lsp_fmt_group = vim.api.nvim_create_augroup("LspFormattingGroup", {})
 	vim.api.nvim_create_autocmd("BufWritePre", {
 		group = lsp_fmt_group,
@@ -85,5 +112,8 @@ return {
 		"windwp/nvim-autopairs",
 		"williamboman/mason.nvim",
 		"creativenull/efmls-configs-nvim",
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-nvim-lsp"
 	},
 }

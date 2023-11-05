@@ -112,15 +112,27 @@
     pipr
     bluez
 
+
     # Languages
     efm-langserver # general purpose lsp
-    gnat13 # gcc & g++
-    python312 # python 3.12
-    lua5_4_compat # lua 5.4
+
+    # lua 5.4
+    lua5_4_compat
     lua54Packages.luarocks # Luarocks package manager
     lua-language-server # lua lsp
     stylua # Lua formatter
     lua54Packages.luacheck # Lua linter
+    
+    # python 3.12
+    python312
+    nodePackages.pyright # Python lsp
+    ruff # Python formatter
+    pylint # Python linter
+
+    # C & C++
+    gnat13 # gcc & g++
+    gnumake # make
+    cmake # cmake
   ];
 
   fonts.fonts = with pkgs; [
