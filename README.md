@@ -4,7 +4,9 @@ $\sf\color{orange}Core \space Programs$<br>
 Compositor -> [Hyprland](https://github.com/hyprwm/Hyprland) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/hypr))<br>
 Bar/widgets -> [eww](https://github.com/elkowar/eww) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/eww))<br>
 
-Terminal -> [Alacritty](https://github.com/alacritty/alacritty) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/alacritty))<br>
+Terminal Emulator -> [Alacritty](https://github.com/alacritty/alacritty) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/alacritty))<br>
+Terminal Multiplexer -> [Zellij](https://github.com/zellij-org/zellij) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/zellij))<br>
+
 Prompt -> [Starship](https://github.com/starship/starship) ([config](https://github.com/SkohTV/dotfiles/blob/main/.config/starship.toml))<br>
 Shell -> [zsh](https://github.com/zsh-users/zsh) ([config](https://github.com/SkohTV/dotfiles/blob/main/home/.zshrc))<br>
 
@@ -15,7 +17,6 @@ $\sf\color{orange}Text \space User \space Interfaces \space (TUI)$<br>
 -> [btop](https://github.com/aristocratos/btop) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/btop))<br>
 -> [Nap](https://github.com/maaslalani/nap)<br>
 -> [pipr](https://github.com/elkowar/pipr)<br>
--> [Crepes](https://github.com/SkohTV/crepes)<br>
 
 
 $\sf\color{orange}Graphical \space User \space Interfaces \space (GUI)$<br>
