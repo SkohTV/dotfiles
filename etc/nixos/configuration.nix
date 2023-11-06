@@ -131,8 +131,10 @@
 
     # C & C++
     gnat13 # gcc & g++
-    gnumake # make
-    cmake # cmake
+    # gnumake # make
+    # cmake # cmake
+    clang-tools_16 # clangd (+ clang-tidy & clang-format)
+    
   ];
 
   fonts.fonts = with pkgs; [
