@@ -67,6 +67,28 @@ local config = function()
 	local pylint = require("efmls-configs.linters.pylint")
 	local ruff = require("efmls-configs.formatters.ruff")
 
+  -- Cpp
+  lspconfig.clangd.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = { "h", "c", "cpp", "cc", "objc", "objcpp"},
+    flags = lsp_flags,
+    cmd = {"clangd", "--background-index"},
+    single_file_support = true,
+    root_dir = lspconfig.util.root_pattern(
+      '.clangd',
+      '.clang-tidy',
+      '.clang-format',
+      'compile_commands.json',
+      'compile_flags.txt',
+      'configure.ac',
+      '.git'
+    )
+  })
+
+  local clang_tidy = require('efmls-configs.linters.clang_tidy')
+  local clang_format = require('efmls-configs.formatters.clang_format')
+
 	-- EFM
 	lspconfig.efm.setup({
 		filetypes = {
@@ -84,6 +106,7 @@ local config = function()
 			languages = {
 				lua = { luacheck, stylua },
 				python = { pylint, ruff },
+        cpp = { clang_tidy, clang_format },
 			},
 		},
 	})
