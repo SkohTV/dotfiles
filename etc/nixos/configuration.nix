@@ -75,10 +75,22 @@
     ];
   };
 
+  # Jsp
   programs.hyprland.enable = true; # For hyprland
   programs.zsh.enable = true;
   services.upower.enable = true;
   services.openssh.enable = true;
+
+  # For postgresql
+  services.postgresql = {
+    enable = true;
+    ensureDatabases = [ "mydatabase" ];
+    authentication = pkgs.lib.mkOverride 10 ''
+      #type database  DBuser  auth-method
+      local all       all     trust
+    '';
+  };
+
 
 
   # List packages installed in system profile. To search, run:
@@ -163,6 +175,18 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
+
+  # Setup httpd
+  services.httpd.enable = true;
+  services.httpd.enablePHP = true;
+  services.httpd.virtualHosts."php.localhost" = {
+    documentRoot = "/var/www/phplocalhost";
+    #hostName = "php.chad.fr";
+  };
+  networking.extraHosts =
+  ''
+    127.0.0.1 php.localhost
+  '';
 
   # Copy the NixOS configuration file and link it from the resulting system  # (/run/current-system/configuration.nix). This is useful in case you    # accidentally delete configuration.nix.
   system.copySystemConfiguration = true;
