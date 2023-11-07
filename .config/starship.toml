@@ -1,9 +1,10 @@
-# Not good enough, to redo everything
-
-
-format = '''$env_var$git_branch$directory$sudo$character '''
+format = '''$username$nix_shell $git_branch$directory$sudo$character$env_var '''
 add_newline = false
 
+
+[username]
+show_always = true
+format = '[$user](yellow)'
 
 [directory]
 read_only = ' 󰌾'
@@ -22,7 +23,6 @@ disabled = false
 symbol = '!'
 format = '[$symbol](red)'
 
-[env_var]
-variable = 'TMUX_ENV'
-default = 'qlpth'
-format = '[$env_value](yellow) '
+[nix_shell]
+disabled = false
+format = ':[$name](green)'

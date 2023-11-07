@@ -23,9 +23,9 @@ alias ll="exa -1abghlF --colour=always --group-directories-first --icons"
 alias lt="exa -1abghlF --tree --colour=always --group-directories-first --icons"
 alias cat="bat"
 alias grep="rg --color=always"
-#alias nano="nvim"
-alias vim="nvim"
 alias __cat="bat --plain --color never --paging=never"
+alias nano="nvim"
+alias vim="nvim"
 
 # General QoL
 alias c="clear"
