@@ -9,6 +9,11 @@
     /etc/nixos/hardware-configuration.nix
   ];
 
+  # For github desktop
+  nixpkgs.config.permittedInsecurePackages = [
+    "openssl-1.1.1w"
+  ];
+
   nixpkgs.config.allowUnfree = true;
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -63,15 +68,17 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     useDefaultShell = true;
     packages = with pkgs; [
-        xdg-utils # For embedded file manager
-        brave
-        discord
-        obsidian
-        alacritty
-        wofi
-        eww-wayland
-        cava
-        hyprpaper
+      xdg-utils # For embedded file manager
+      brave
+      discord
+      obsidian
+      alacritty
+      wofi
+      eww-wayland
+      cava
+      hyprpaper
+      github-desktop
+      ytmdesktop
     ];
   };
 
@@ -80,6 +87,7 @@
   programs.zsh.enable = true;
   services.upower.enable = true;
   services.openssh.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   # For postgresql
   services.postgresql = {
@@ -143,8 +151,8 @@
 
     # C & C++
     gnat13 # gcc & g++
-    # gnumake # make
-    # cmake # cmake
+    #gnumake # make
+    #cmake # cmake
     clang-tools_16 # clangd (+ clang-tidy & clang-format)
     
   ];
