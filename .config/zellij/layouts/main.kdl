@@ -1,18 +1,15 @@
 layout cwd="/home/qlpth" {
   tab name="btop" {
     pane size=1 borderless=true {
-      plugin location="zellij:tab-bar"
+      plugin location="zellij:compact-bar"
     }
     pane name="btop" {
       command "btop"
     }
-    pane size=2 borderless=true {
-      plugin location="zellij:status-bar"
-    }
   }
   tab name="zsh" {
     pane size=1 borderless=true {
-      plugin location="zellij:tab-bar"
+      plugin location="zellij:compact-bar"
     }
     pane split_direction="vertical" {
       pane size="50%" name="first" {
@@ -22,19 +19,13 @@ layout cwd="/home/qlpth" {
 
       }
     }
-    pane size=2 borderless=true {
-      plugin location="zellij:status-bar"
-    }
   }
   tab name="lf" {
     pane size=1 borderless=true {
-      plugin location="zellij:tab-bar"
+      plugin location="zellij:compact-bar"
     }
     pane name="lf" {
       command "lf"
-    }
-    pane size=2 borderless=true {
-      plugin location="zellij:status-bar"
     }
   }
 }

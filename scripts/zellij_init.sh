@@ -1,11 +1,9 @@
 fn_main() {
-  zellij kill-session main
-  zellij --layout main --session main 
+  zellij attach main || zellij --layout main --session main 
 }
 
 fn_nvim() {
-  zellij kill-session nvim
-  zellij --layout nvim --session nvim 
+  zellij attach nvim || zellij --layout nvim --session nvim 
 }
 
 case "$1" in
