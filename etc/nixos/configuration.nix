@@ -131,6 +131,7 @@
     zellij
     pipr
     bluez
+    lf
 
 
     # Languages

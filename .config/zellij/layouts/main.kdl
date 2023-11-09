@@ -1,0 +1,40 @@
+layout cwd="/home/qlpth" {
+  tab name="btop" {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    pane name="btop" {
+      command "btop"
+    }
+    pane size=2 borderless=true {
+      plugin location="zellij:status-bar"
+    }
+  }
+  tab name="zsh" {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    pane split_direction="vertical" {
+      pane size="50%" name="first" {
+
+      }
+      pane size="50%" name="second" {
+
+      }
+    }
+    pane size=2 borderless=true {
+      plugin location="zellij:status-bar"
+    }
+  }
+  tab name="lf" {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    pane name="lf" {
+      command "lf"
+    }
+    pane size=2 borderless=true {
+      plugin location="zellij:status-bar"
+    }
+  }
+}
