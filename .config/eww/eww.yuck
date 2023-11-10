@@ -58,10 +58,12 @@
   (label :class "temp" :text "  ${temp}°C"))
 
 (defwidget _cava []
-  (label :class "cava" :text "${cava}"))
+  (label :class "cava" :text "${cava}")
+)
 
 (defwidget _light []
-  (label :class "light" :text "󰖨  ${brightness}"))
+  ;;(label :class "light" :text "󰖨  ${brightness}"))
+  (label :class "light" :text "  ${brightness}"))
 
 (defwidget _sound []
   (label :class "sound" :text "${volume.state}  ${volume.value}"))
@@ -77,6 +79,10 @@
         :text "󱘖 "))
   )
 )
+
+(defwidget _bluetooth []
+  (label :text "󰂯 1"))
+
 
 (defwidget _workspaces []
   (box :class "workspaces"
@@ -133,8 +139,9 @@
     (box :class "right"
       :space-evenly "false"
       :halign "end"
-      (box :class "grp1"
+      (box :class "grp1" :space-evenly false
         (_battery)
+        (_bluetooth)
       )
       (eventbox
         :class "time"

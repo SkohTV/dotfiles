@@ -18,6 +18,12 @@
   :interval "1s"
   `sh scripts/temp.sh &`)
 
+(defpoll music
+  :interval "1s"
+  `sh scripts/get_music.sh &`)
+
+
+
 (defpoll workspace
   :interval "0.1s"
   `sh scripts/workspace.sh &`)

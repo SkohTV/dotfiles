@@ -57,7 +57,8 @@ window.bar {
 
 .cava {
   color: #cad3f5;
-  font-size: 8px;
+  margin: 8px 0 0 0;
+  font-size: 9px;
 }
 
 .workspaces {
@@ -73,7 +74,10 @@ window.bar {
   .w0 {color: #eed49f}
 }
 
-.battery {color: #a6da95}
+.battery {
+  color: #a6da95;
+  margin: 0 7px 0 0;
+}
 
 .light {color: #eed49f}
 .sound {color: #91d7e3}
