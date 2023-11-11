@@ -6,12 +6,18 @@ setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
 # Load plugins
-source /nix/store/$(ls -la /nix/store/ | grep antigen | grep '^d' | awk '{print $9}')/share/antigen/antigen.zsh
-antigen bundle zdharma-continuum/fast-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-history-substring-search
-antigen apply
+source /etc/zsh/zplug.zsh
+zplug "zdharma-continuum/fast-syntax-highlighting"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-history-substring-search"
+
+if ! zplug check --verbose; then
+  zplug install
+fi
+
+zplug load
+
 
 # For zsh-history-substring
 bindkey '^[[A' history-substring-search-up

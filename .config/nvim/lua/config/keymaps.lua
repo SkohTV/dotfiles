@@ -1,6 +1,6 @@
 local keymap = vim.keymap
 local api = vim.api
-local opts =  { noremap = true, silent = true }
+local opts = { noremap = true, silent = true }
 
 -- Directory Navigation
 keymap.set("n", "<leader>m", ":NvimTreeFocus<CR>", opts) -- Focus tree view

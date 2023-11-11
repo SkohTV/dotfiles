@@ -1,6 +1,6 @@
 local config = function()
 	local lspconfig = require("lspconfig")
-  local cmp_nvim_lsp = require("cmp_nvim_lsp")
+	local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 	local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = "" }
 	for type, icon in pairs(signs) do
@@ -8,7 +8,8 @@ local config = function()
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 	end
 
-  local capabilities = cmp_nvim_lsp.default_capabilities()
+	local capabilities = cmp_nvim_lsp.default_capabilities()
+	capabilities.offsetEncoding = "utf-8" -- clangd error message : "multiple different client offset"
 
 	-- Keybinds
 	local on_attach = function(_, bufnr)
@@ -27,7 +28,7 @@ local config = function()
 
 	-- Lua
 	lspconfig.lua_ls.setup({
-    capabilities = capabilities,
+		capabilities = capabilities,
 		on_attach = on_attach,
 		settings = {
 			Lua = {
@@ -49,7 +50,7 @@ local config = function()
 
 	-- Python
 	lspconfig.pyright.setup({
-    capabilities = capabilities,
+		capabilities = capabilities,
 		on_attach = on_attach,
 		settings = {
 			pyright = {
@@ -67,32 +68,35 @@ local config = function()
 	local pylint = require("efmls-configs.linters.pylint")
 	local ruff = require("efmls-configs.formatters.ruff")
 
-  -- Cpp
-  lspconfig.clangd.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    filetypes = { "h", "c", "cpp", "cc", "objc", "objcpp"},
-    flags = lsp_flags,
-    cmd = {"clangd", "--background-index"},
-    single_file_support = true,
-    root_dir = lspconfig.util.root_pattern(
-      '.clangd',
-      '.clang-tidy',
-      '.clang-format',
-      'compile_commands.json',
-      'compile_flags.txt',
-      'configure.ac',
-      '.git'
-    )
-  })
+	-- Cpp
+	lspconfig.clangd.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "c", "cpp", "cx", "cc", "h", "hpp", "hx", "hh" },
+		cmd = { "clangd", "--background-index", "--clang-tidy" },
+	})
 
-  local clang_tidy = require('efmls-configs.linters.clang_tidy')
-  local clang_format = require('efmls-configs.formatters.clang_format')
+	local clang_tidy = require("efmls-configs.linters.clang_tidy")
+	local clang_format = require("efmls-configs.formatters.clang_format")
 
 	-- EFM
 	lspconfig.efm.setup({
 		filetypes = {
+			-- Lua
 			"lua",
+
+			-- C / C++
+			"c",
+			"cpp",
+			"cx",
+			"cc",
+			"h",
+			"hpp",
+			"hx",
+			"hh",
+
+			-- Python
+			"py",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -106,7 +110,7 @@ local config = function()
 			languages = {
 				lua = { luacheck, stylua },
 				python = { pylint, ruff },
-        cpp = { clang_tidy, clang_format },
+				cpp = { clang_tidy, clang_format },
 			},
 		},
 	})
@@ -135,8 +139,8 @@ return {
 		"windwp/nvim-autopairs",
 		"williamboman/mason.nvim",
 		"creativenull/efmls-configs-nvim",
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-nvim-lsp"
+		"hrsh7th/nvim-cmp",
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-nvim-lsp",
 	},
 }
