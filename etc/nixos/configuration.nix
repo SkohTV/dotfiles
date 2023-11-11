@@ -126,13 +126,15 @@
     gammastep
     geoclue2
     btop
-    antigen
+    zplug
     gitui
     zellij
     pipr
     bluez
     lf
-
+    wl-clipboard
+    sway-contrib.grimshot
+    swayimg
 
     # Languages
     efm-langserver # general purpose lsp
@@ -161,6 +163,9 @@
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
+
+  # Because not using homemanagerm so source file lost in nix store
+  environment.etc."zsh/zplug.zsh".source = "${pkgs.zplug}/share/zplug/init.zsh";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
