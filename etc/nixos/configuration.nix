@@ -135,6 +135,7 @@
     wl-clipboard
     sway-contrib.grimshot
     swayimg
+    dunst
 
     # Languages
     efm-langserver # general purpose lsp
