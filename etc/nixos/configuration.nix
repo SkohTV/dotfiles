@@ -136,6 +136,7 @@
     sway-contrib.grimshot
     swayimg
     dunst
+    openssl
 
     # Languages
     efm-langserver # general purpose lsp
@@ -158,7 +159,12 @@
     #gnumake # make
     #cmake # cmake
     clang-tools_16 # clangd (+ clang-tidy & clang-format)
-    
+
+    # Rust
+    rustc # Rust core
+    cargo # Rust core 
+    rust-analyzer # Rust lsp
+    rustfmt # Rust formatter
   ];
 
   fonts.fonts = with pkgs; [
