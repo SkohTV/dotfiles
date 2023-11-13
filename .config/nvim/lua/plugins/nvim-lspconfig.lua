@@ -9,7 +9,7 @@ local config = function()
 	end
 
 	local capabilities = cmp_nvim_lsp.default_capabilities()
-	capabilities.offsetEncoding = "utf-8" -- clangd error message : "multiple different client offset"
+	--capabilities.offsetEncoding = "utf-8" -- clangd error message : "multiple different client offset"
 
 	-- Keybinds
 	local on_attach = function(_, bufnr)
@@ -79,8 +79,22 @@ local config = function()
 	local clang_tidy = require("efmls-configs.linters.clang_tidy")
 	local clang_format = require("efmls-configs.formatters.clang_format")
 
+	-- Rust
+	lspconfig.rust_analyzer.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		settings = {
+			["rust-analyzer"] = {},
+		},
+	})
+
+	local rustfmt = require("efmls-configs.formatters.rustfmt")
+  vim.g.rust_recommended_style = false
+
 	-- EFM
 	lspconfig.efm.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
 		filetypes = {
 			-- Lua
 			"lua",
@@ -97,6 +111,9 @@ local config = function()
 
 			-- Python
 			"py",
+
+			-- Rust
+			"rust",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -111,6 +128,7 @@ local config = function()
 				lua = { luacheck, stylua },
 				python = { pylint, ruff },
 				cpp = { clang_tidy, clang_format },
+				rust = { rustfmt },
 			},
 		},
 	})
