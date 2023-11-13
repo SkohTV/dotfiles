@@ -1,55 +1,25 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running `nixos-help`).
+{ config, pkgs, ... }: {
 
-{ config, pkgs, ... }:
-{
-  imports =
-  [ # Include the results of the hardware scan
-    /etc/nixos/hardware-configuration.nix
+
+  ### DEFINE CORE OF NIXOS
+
+  imports = [
+    /etc/nixos/hardware-configuration.nix # Include the results of the hardware scan
+    (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master") # Vscode server
   ];
 
-  # For github desktop
   nixpkgs.config.permittedInsecurePackages = [
-    "openssl-1.1.1w"
+    "openssl-1.1.1w" # For github desktop
   ];
 
   nixpkgs.config.allowUnfree = true;
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # networking.hostName = "nixos"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true:
-  # Enables wireless support via wpa_supplicant.
-  # networking.networkmanager.enable = true;
-  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-
-  # font = "Lat2-Terminus16";
-  # keyMap = "us";
-  # useXkbConfig = true; # use xkbOptions in tty.
-  # };
-  
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-  # Configure keymap in X11
-  # services.xserver.layout = "us";
-  # services.xserver.xkbOptions = "eurosign:e,caps:escape";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
 
   # Enable sound.
   sound.enable = true;
@@ -57,10 +27,21 @@
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
+  # Enable programms
+  programs.hyprland.enable = true;
+  programs.zsh.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  # Enable services
+  services.upower.enable = true;
+  services.openssh.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  services.vscode-server.enable = true;
+
+
+  ### DEFINE USER ENVIRONNEMENT
+
   users.defaultUserShell = pkgs.zsh;
+  environment.etc."zsh/zplug.zsh".source = "${pkgs.zplug}/share/zplug/init.zsh";
 
   # Define a user account. Don't forget to set a password with ‘passwd’
   users.users.qlpth = {
@@ -68,75 +49,67 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     useDefaultShell = true;
     packages = with pkgs; [
-      xdg-utils # For embedded file manager
+      # DE / WM
+      hyprpaper
+      wl-clipboard
+      sway-contrib.grimshot
+      swayimg
+      dunst
+
+      # GUI
+      wofi
+      alacritty
       brave
       discord
       obsidian
-      alacritty
-      wofi
-      eww-wayland
-      cava
-      hyprpaper
       github-desktop
       ytmdesktop
+      xdg-utils # For embedded file manager
     ];
   };
 
-  # Jsp
-  programs.hyprland.enable = true; # For hyprland
-  programs.zsh.enable = true;
-  services.upower.enable = true;
-  services.openssh.enable = true;
-  services.gnome.gnome-keyring.enable = true;
-
-  # For postgresql
-  services.postgresql = {
-    enable = true;
-    ensureDatabases = [ "mydatabase" ];
-    authentication = pkgs.lib.mkOverride 10 ''
-      #type database  DBuser  auth-method
-      local all       all     trust
-    '';
-  };
-
-
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # List packages installed in system profile
   environment.systemPackages = with pkgs; [
+    # For eww
+    eww-wayland
+    cava # eww
+    upower # eww
+    brightnessctl # eww
+    redshift # eww
+    sysstat # eww
+    lm_sensors # eww
+    gammastep # eww
+    geoclue2 # eww
+    coreutils-prefixed # eww
+
+    # Cli tools
     wget
     networkmanager
     git
-    zsh
     zip
     unzip
-    starship
+    
+    zsh
     exa
     bat
-    upower
+    starship
     ripgrep
-    brightnessctl
-    redshift
-    sysstat # for eww
-    lm_sensors # also
     jq
-    openssh
-    coreutils-prefixed
-    neovim
-    gammastep
-    geoclue2
-    btop
-    zplug
-    gitui
-    zellij
-    pipr
     bluez
+
+    # TUI
+    neovim
+    btop
+    pipr
+    zellij
     lf
-    wl-clipboard
-    sway-contrib.grimshot
-    swayimg
-    dunst
-    openssl
+    gitui
+
+    # Utils
+    #openssl
+    openssh
+    zplug
+
 
     # Languages
     efm-langserver # general purpose lsp
@@ -171,30 +144,25 @@
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
-  # Because not using homemanagerm so source file lost in nix store
-  environment.etc."zsh/zplug.zsh".source = "${pkgs.zplug}/share/zplug/init.zsh";
+  # For postgresql
+  services.postgresql = {
+    enable = true;
+    ensureDatabases = [ "mydatabase" ];
+    authentication = pkgs.lib.mkOverride 10 ''
+      #type database  DBuser  auth-method
+      local all       all     trust
+    '';
+  };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
-  # List services that you want to enable:
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  ### NETWORK
 
   # Enable nmcli
   networking.networkmanager.enable = true;
   networking.useDHCP = false;
   networking.interfaces.wlp0s20f3.useDHCP = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
+  # Firewall setup
   networking.firewall.enable = false;
 
   # Setup httpd
@@ -209,10 +177,9 @@
     127.0.0.1 php.localhost
   '';
 
-  # Copy the NixOS configuration file and link it from the resulting system  # (/run/current-system/configuration.nix). This is useful in case you    # accidentally delete configuration.nix.
+
+  ### END
+
   system.copySystemConfiguration = true;
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions    # on your system were taken. It's perfectly fine and recommended to leave  # this value at the release version of the first install of this system.   # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).         system.stateVersion = "23.05"; # Did you read the comment?
   system.stateVersion = "23.05";  
 }   
