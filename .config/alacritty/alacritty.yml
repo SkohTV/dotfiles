@@ -14,7 +14,7 @@ font:
   bold_italic:
     family: JetBrainsMono Nerd Font
     style: Bold Italic
-  size: 10
+  size: 8
 
 import:
   - ~/.config/alacritty/tokyonight_storm.yml
