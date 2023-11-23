@@ -43,10 +43,10 @@
       xterm.enable = false;
     };
     displayManager = {
-      defaultSession = "none+bspwm";
+      defaultSession = "none+i3";
       startx.enable = true;
     };
-    windowManager.bspwm = {
+    windowManager.i3 = {
       enable = true;
     };
   };
@@ -64,8 +64,9 @@
     useDefaultShell = true;
     packages = with pkgs; [
       # New DE / WM
-      bspwm
-      sxhkd
+      i3
+      picom
+      feh
 
       # DE / WM
       hyprpaper
@@ -96,7 +97,7 @@
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
     # For eww
-    eww-wayland
+    eww
     cava # eww
     upower # eww
     brightnessctl # eww
@@ -204,33 +205,32 @@
 
   ## Nvidia
   # Enable OpenGL
-  #hardware.opengl = {
-  #  enable = true;
-  #  driSupport = true;
-  #  driSupport32Bit = true;
-  #};
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
 
   # Load nvidia driver for Xorg and Wayland
-  #services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = ["nvidia"];
 
-  #hardware.nvidia = {
-  #  modesetting.enable = true;
-  #  powerManagement.enable = false;
-  #  powerManagement.finegrained = false;
-  #  open = false;
-  #  nvidiaSettings = true;
-  #  package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
-  #};
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = false;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+  
+  hardware.nvidia.prime = {
+    sync.enable = true;
+    intelBusId = "PCI:0:2:0";
+    nvidiaBusId = "PCI:1:0:0";
+  };
 
-	#hardware.nvidia.prime = {
-  #  sync.enable = true;
-
-	#	intelBusId = "PCI:1:0:0";
-	#	nvidiaBusId = "PCI:0:2:0";
-	#};
 
 
-  #hardware.nvidia.forceFullCompositionPipeline = true;
 
 
   ### END
