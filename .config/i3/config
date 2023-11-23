@@ -1,10 +1,7 @@
 ### SETTINGS
 
-#default_border pixel 2
 default_border pixel 0
 gaps inner 7
-client.focused #3dd0b7 #3dd0b7 #3dd0b7 #3dd0b7 #3dd0b7 
-client.unfocused #595959 #595959 #595959 #595959 #595959
 
 assign [class="GitHub Desktop"] 3
 assign [class="obsidian"] 4
