@@ -36,12 +36,26 @@
   services.openssh.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.vscode-server.enable = true;
-
+  services.xserver = {
+    enable = true;
+    autorun = false;
+    desktopManager = {
+      xterm.enable = false;
+    };
+    displayManager = {
+      defaultSession = "none+bspwm";
+      startx.enable = true;
+    };
+    windowManager.bspwm = {
+      enable = true;
+    };
+  };
 
   ### DEFINE USER ENVIRONNEMENT
 
   users.defaultUserShell = pkgs.zsh;
   environment.etc."zsh/zplug.zsh".source = "${pkgs.zplug}/share/zplug/init.zsh";
+  environment.pathsToLink = [ "/libexec" ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’
   users.users.qlpth = {
@@ -49,6 +63,10 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     useDefaultShell = true;
     packages = with pkgs; [
+      # New DE / WM
+      bspwm
+      sxhkd
+
       # DE / WM
       hyprpaper
       wl-clipboard
@@ -65,6 +83,13 @@
       github-desktop
       ytmdesktop
       xdg-utils # For embedded file manager
+
+      # Screensharing
+      pipewire
+      wireplumber
+      xdg-desktop-portal-hyprland
+      grim
+      slurp
     ];
   };
 
