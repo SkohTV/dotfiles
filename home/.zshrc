@@ -26,7 +26,8 @@ bindkey '^[[B' history-substring-search-down
 # x -> y
 alias ls="exa -1bghlF --colour=always --group-directories-first --icons"
 alias ll="exa -1abghlF --colour=always --group-directories-first --icons"
-alias lt="exa -1abghlF --tree --colour=always --group-directories-first --icons"
+alias lt="exa -1bghlF --tree --colour=always --group-directories-first --icons"
+alias llt="exa -1bghlF --tree --colour=always --group-directories-first --icons"
 alias cat="bat"
 alias grep="rg --color=always"
 alias __cat="bat --plain --color never --paging=never"
@@ -60,6 +61,7 @@ ssh-add ~/.ssh/id_ed25519 2> /dev/null
 
 # Start terminal emulator
 eval "$(starship init zsh)"
+
 
 # Export env var
 export EDITOR=nvim
