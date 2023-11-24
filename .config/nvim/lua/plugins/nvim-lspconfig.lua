@@ -73,7 +73,7 @@ local config = function()
 		capabilities = capabilities,
 		on_attach = on_attach,
 		filetypes = { "c", "cpp", "cx", "cc", "h", "hpp", "hx", "hh" },
-		cmd = { "clangd", "--background-index", "--clang-tidy" },
+		cmd = { "clangd", "--offset-encoding=utf-16" },
 	})
 
 	local clang_tidy = require("efmls-configs.linters.clang_tidy")
@@ -89,7 +89,7 @@ local config = function()
 	})
 
 	local rustfmt = require("efmls-configs.formatters.rustfmt")
-  vim.g.rust_recommended_style = false
+	vim.g.rust_recommended_style = false
 
 	-- EFM
 	lspconfig.efm.setup({
@@ -127,7 +127,7 @@ local config = function()
 			languages = {
 				lua = { luacheck, stylua },
 				python = { pylint, ruff },
-				cpp = { clang_tidy, clang_format },
+				--cpp = { clang_tidy, clang_format },
 				rust = { rustfmt },
 			},
 		},
