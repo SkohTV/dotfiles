@@ -15,6 +15,7 @@
   :windowtype "dock"
   :anchor "top"
   :geometry (geometry
+    :y "0px"
     :width "100%")
   (bar_layout)
 )
