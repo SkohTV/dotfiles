@@ -128,8 +128,7 @@
     git
     zip
     unzip
-    
-    #zsh
+
     eza
     bat
     starship
