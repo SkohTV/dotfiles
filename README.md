@@ -25,5 +25,5 @@ $\sf\color{orange}Text \space User \space Interfaces \space (TUI)$<br>
 <br>
 
 
-$\sf\color{orange}NixOS \space \& \space Flakes$<br>
+$\sf\color{orange}NixOS \space and \space Flakes$<br>
 -> [configuration.nix](https://github.com/SkohTV/dotfiles/blob/main/etc/nixos/configuration.nix)<br>
