@@ -3,18 +3,18 @@ window:
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font
+    family: Monaspace Krypton
     style: Regular
   bold:
-    family: JetBrainsMono Nerd Font
+    family: Monaspace Krypton
     style: Bold
   italic:
-    family: JetBrainsMono Nerd Font
+    family: Monaspace Krypton
     style: Italic
   bold_italic:
-    family: JetBrainsMono Nerd Font
+    family: Monaspace Krypton
     style: Bold Italic
-  size: 7
+  size: 6.5
 
 import:
   - ~/.config/alacritty/tokyonight_storm.yml
@@ -25,8 +25,8 @@ mouse:
 window:
   opacity: 1
   padding:
-    x: 4
-    y: 4
+    x: 1
+    y: 1
 
 selection:
   save_to_clipboard: true
