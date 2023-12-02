@@ -30,5 +30,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 xrandr --output eDP-1-1 --primary --mode 1920x1080
-picom &
-i3
+dunst &
+sh .config/eww/launch_eww.sh
+spectrwm

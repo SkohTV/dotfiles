@@ -67,6 +67,7 @@ local config = function()
 
 	local pylint = require("efmls-configs.linters.pylint")
 	local ruff = require("efmls-configs.formatters.ruff")
+	vim.g.python_recommended_style = false
 
 	-- Cpp
 	lspconfig.clangd.setup({

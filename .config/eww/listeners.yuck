@@ -1,2 +1,0 @@
-(deflisten cava
-  `sh scripts/cava.sh`)

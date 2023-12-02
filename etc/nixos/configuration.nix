@@ -7,10 +7,10 @@
     /etc/nixos/hardware-configuration.nix # Include the results of the hardware scan
     (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master") # Vscode server
   ];
-
+  
   nixpkgs.config.permittedInsecurePackages = [
-    "openssl-1.1.1w" # For github desktop
-  ];
+    "electron-24.8.6"
+    ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -28,13 +28,12 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   # Enable programms
-  programs.hyprland.enable = true;
   programs.zsh.enable = true;
+  #programs.ssh.startAgent = true;
 
   # Enable services
   services.upower.enable = true;
   services.openssh.enable = true;
-  services.gnome.gnome-keyring.enable = true;
   services.vscode-server.enable = true;
   services.xserver = {
     enable = true;
@@ -43,13 +42,45 @@
       xterm.enable = false;
     };
     displayManager = {
-      defaultSession = "none+i3";
+      defaultSession = "none+spectrwm";
       startx.enable = true;
     };
-    windowManager.i3 = {
+    windowManager.spectrwm = {
       enable = true;
     };
   };
+
+  powerManagement.powertop.enable = true;
+  services.thermald.enable = true;
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 20;
+    };
+  };
+  services.auto-cpufreq = {
+    enable = true;
+    settings = {
+      battery = {
+        governor = "powersave";
+        turbo = "never";
+      };
+      charger = {
+        governor = "performance";
+         turbo = "auto";
+      };
+    };
+  };
+
 
   ### DEFINE USER ENVIRONNEMENT
 
@@ -63,34 +94,23 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     useDefaultShell = true;
     packages = with pkgs; [
-      # New DE / WM
-      i3
-      picom
-      feh
-
       # DE / WM
-      hyprpaper
-      wl-clipboard
-      sway-contrib.grimshot
-      swayimg
+      spectrwm
+      xsecurelock
+      dmenu
+      xclip
+      flameshot
+      feh
       dunst
 
       # GUI
-      wofi
       alacritty
+      qutebrowser
       brave
       discord
       obsidian
-      github-desktop
       ytmdesktop
       xdg-utils # For embedded file manager
-
-      # Screensharing
-      pipewire
-      wireplumber
-      xdg-desktop-portal-hyprland
-      grim
-      slurp
     ];
   };
 
@@ -99,14 +119,8 @@
     # For eww
     eww
     cava # eww
-    upower # eww
-    brightnessctl # eww
-    redshift # eww
-    sysstat # eww
     lm_sensors # eww
-    gammastep # eww
-    geoclue2 # eww
-    coreutils-prefixed # eww
+    brightnessctl # eww
 
     # Cli tools
     wget
@@ -115,8 +129,8 @@
     zip
     unzip
     
-    zsh
-    exa
+    #zsh
+    eza
     bat
     starship
     ripgrep
@@ -166,8 +180,9 @@
     rustfmt # Rust formatter
   ];
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    #(nerdfonts.override { fonts = [ "Monaspace" ]; })
   ];
 
   # For postgresql
@@ -196,7 +211,6 @@
   services.httpd.enablePHP = true;
   services.httpd.virtualHosts."php.localhost" = {
     documentRoot = "/var/www/phplocalhost";
-    #hostName = "php.chad.fr";
   };
   networking.extraHosts =
   ''
@@ -225,6 +239,7 @@
   
   hardware.nvidia.prime = {
     sync.enable = true;
+
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:1:0:0";
   };
@@ -236,5 +251,5 @@
   ### END
 
   system.copySystemConfiguration = true;
-  system.stateVersion = "23.05";  
+  system.stateVersion = "23.11";  
 }   
