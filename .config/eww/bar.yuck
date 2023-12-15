@@ -1,0 +1,166 @@
+;; Define window basis
+
+(defwindow bar
+  :wm-ignore true
+  :anchor "top"
+  :geometry (geometry
+    :height "20px"
+    :width "100%")
+  (bar_layout)
+)
+
+
+
+;; Create widgets
+
+(defwidget _distro []
+  (box
+    :class "distro"
+    :space-evenly false
+    (image :path "./imgs/nixos.png" :image-width 15)
+  )
+)
+
+
+(defwidget _grp_procinfo []
+  (box
+    :class "procinfo"
+    :space-evenly false
+    :spacing 10
+    (label :class "cpu" :text "   ${round(EWW_CPU['avg'],2)}%")
+    (label :class "temp" :text "  ${EWW_TEMPS['CORETEMP_PACKAGE_ID_0']}.0°C")
+    (label :class "ram" :text "   ${round(EWW_RAM['used_mem'] / 1024 / 1024 / 1024, 2)}GiB")
+  )
+)
+
+
+(defwidget _cava []
+  (box
+    :class "cava"
+    :space-evenly false
+    (label :text "${l_cava}")
+  )
+)
+
+
+
+
+(defwidget _workspaces []
+  (box :class "workspaces"
+    (label :class "w1" :text {p_workspace==0 ? " 󰪥 " : "  "})
+    (label :class "w2" :text {p_workspace==1? " 󰪥 " : "  "})
+    (label :class "w3" :text {p_workspace==2 ? " 󰪥 " : "  "})
+    (label :class "w4" :text {p_workspace==3 ? " 󰪥 " : "  "})
+    (label :class "w5" :text {p_workspace==4 ? " 󰪥 " : "  "})
+    (label :class "w6" :text {p_workspace==5 ? " 󰪥 " : "  "})
+    (label :class "w7" :text {p_workspace==6 ? " 󰪥 " : "  "})
+    (label :class "w8" :text {p_workspace==7 ? " 󰪥 " : "  "})
+    (label :class "w9" :text {p_workspace==8 ? " 󰪥 " : "  "})
+    (label :class "w0" :text {p_workspace==9 ? " 󰪥 " : "  "})
+  )
+)
+
+
+
+
+(defwidget _battery []
+  (box
+    :class "battery"
+    :space-evenly false
+    (label :class "battery" :text "${
+      EWW_BATTERY['BAT1'].status == 'Charging' ?
+        EWW_BATTERY['BAT1'].capacity == 100 ? '󰂃' : '󰂄' :
+        EWW_BATTERY['BAT1'].capacity < 10 ? '󰁺' :
+        EWW_BATTERY['BAT1'].capacity < 20 ? '󰁻' :
+        EWW_BATTERY['BAT1'].capacity < 30 ? '󰁼' :
+        EWW_BATTERY['BAT1'].capacity < 40 ? '󰁽' :
+        EWW_BATTERY['BAT1'].capacity < 50 ? '󰁾' :
+        EWW_BATTERY['BAT1'].capacity < 60 ? '󰁿' :
+        EWW_BATTERY['BAT1'].capacity < 70 ? '󰂀' :
+        EWW_BATTERY['BAT1'].capacity < 80 ? '󰂁' :
+        EWW_BATTERY['BAT1'].capacity < 90 ? '󰂂' : '󰁹'
+    }  ${EWW_BATTERY['BAT1'].capacity}%")
+  )
+)
+
+
+(defwidget _grp_brightsound []
+  (box
+    :class "distro"
+    :class "inside"
+    :spacing 5
+    (label :class "light" :text "  ${brightness}")
+    (label :class "sound" :text "${volume.state}  ${volume.value}")
+  )
+)
+
+
+(defwidget _grp_wifi []
+  (box
+    :class "wifi"
+    :space-evenly false
+    :spacing 5
+    (label
+      :class "bars"
+      :text "${wifi.state}  ${wifi.value}"
+    )
+    (label
+      :class "ssh"
+      :visible { _ssh=="" ? false : true }
+      :text "󱘖 "
+    )
+  )
+)
+
+
+(defwidget _time []
+  (box
+    :class "time"
+    :space-evenly false
+    (label :text {time})
+  )
+)
+
+
+
+
+(defwidget _separator []
+  (label :text "I")
+)
+
+
+
+
+;; Glue together
+
+(defwidget bar_layout []
+  (box :class "top_bar"
+    (box :class "left"
+      :space-evenly "false"
+      :halign "start"
+      :spacing 7
+      (_distro)
+      (_separator)
+      (_grp_procinfo)
+      (_separator)
+      (_cava)
+    )
+    (box :class "center"
+      :space-evenly "false"
+      :halign "center"
+      (_workspaces)
+    )
+    (box :class "right"
+      :space-evenly "false"
+      :halign "end"
+      :spacing 7
+      (_battery)
+      (_separator)
+      (_grp_brightsound)
+      (_separator)
+      (_grp_wifi)
+      (_separator)
+      (_time)
+    )
+  )
+)

@@ -1,0 +1,29 @@
+;; Variables
+
+(defpoll time
+  :interval "1s"
+  `date +'%a, %m/%d - %I:%M %p' &`)
+
+(defpoll wifi
+  :interval "1s"
+  `sh scripts/wifi.sh &`)
+
+(defpoll volume
+  :interval "0.2s"
+  `sh scripts/volume.sh &`)
+
+(defpoll brightness
+  :interval "0.2s"
+  `brightnessctl | grep 'backlight' -A1 | tail -1 | awk '{print $4}' | head -c -3 | cut -c 2- &`)
+
+(defpoll _ssh
+  :interval "1s"
+  `netstat -tn | grep ^"tcp " | grep :22 | awk '/ESTABLISHED/{print $1 " - " $5}' &`)
+
+(deflisten l_cava
+  `sh scripts/cava.sh`)
+
+(defpoll p_workspace
+  :interval "0.05s"
+  `xprop -root _NET_CURRENT_DESKTOP | cut -d' ' -f3 &`)
+

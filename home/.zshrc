@@ -24,13 +24,12 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # x -> y
-alias ls="eza -1bghlF --colour=always --group-directories-first --icons"
-alias ll="eza -1abghlF --colour=always --group-directories-first --icons"
-alias lt="eza -1bghlF --tree --colour=always --group-directories-first --icons"
-alias llt="eza -1bghlF --tree --colour=always --group-directories-first --icons"
+alias ll="eza -1abghlF --colour=always --group-directories-first --icons=always"
+alias ls="eza -1bghlF --colour=always --group-directories-first --icons=always"
+alias lt="eza -1bghlF --tree --colour=always --group-directories-first --icons=always"
 alias cat="bat"
 alias grep="rg --color=always"
-alias __cat="bat --plain --color never --paging=never"
+alias __cat="bat --plain --color never --paging never --style plain"
 alias nano="nvim"
 alias vim="nvim"
 
@@ -68,3 +67,11 @@ eval "$(starship init zsh)"
 # Export env var
 export NIXCFG=$HOME/dev/repo/dotfiles/etc/nixos/configuration.nix
 export EDITOR=nvim
+
+
+# Load zellij if specific name window
+#case $(xprop -id $WINDOWID | grep WM_CLASS | awk -F'"' '{print $2}') in 
+#  "alacritty-nvim") sh $HOME/dev/scripts/zellij-init.sh nvim;;
+#  "alacritty-main") sh $HOME/dev/scripts/zellij-init.sh main;;
+#esac
+

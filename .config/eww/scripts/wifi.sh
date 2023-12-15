@@ -1,14 +1,21 @@
 #!/bin/bash
 
 
-network_name=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d: -f2-)
+data=$(nmcli -t -f active,ssid,bars dev wifi | grep '^yes')
+network_name=$(echo "$data" | cut -d: -f2)
+bars=$(echo "$data" | cut -d: -f3)
 
 if [ -z "$network_name" ]; then
   network_name="N/A"
-  state="󰖪"
+  state="󰤭"
 else
-  state="󰖩"
+  case ${#bars} in
+    0) state="󰤯" ;;
+    1) state="󰤟" ;;
+    2) state="󰤢" ;;
+    3) state="󰤥" ;;
+    4) state="󰤨" ;;
+  esac
 fi
 
-ret=$(printf "{\"state\":\"%s\",\"value\":\"%s\"}" "$state" "$network_name")
-echo "$ret"
+echo "{\"state\":\"$state\",\"value\":\"$network_name\"}"

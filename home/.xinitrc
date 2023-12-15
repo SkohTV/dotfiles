@@ -29,7 +29,14 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
   unset f
 fi
 
+
 xrandr --output eDP-1-1 --primary --mode 1920x1080
+
 dunst &
-sh .config/eww/launch_eww.sh
+picom &
+
+sh ~/dev/scripts/startup.sh &
+sh ~/dev/scripts/randomize-desktop.sh &
+sh ~/.config/eww/launch_eww.sh &
+
 spectrwm

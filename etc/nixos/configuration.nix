@@ -102,11 +102,12 @@
       flameshot
       feh
       dunst
+      picom
+      asciiquarium
 
       # GUI
       alacritty
       qutebrowser
-      brave
       discord
       obsidian
       ytmdesktop
@@ -168,8 +169,8 @@
 
     # C & C++
     gnat13 # gcc & g++
-    #gnumake # make
-    #cmake # cmake
+    gnumake # make
+    cmake # cmake
     clang-tools_16 # clangd (+ clang-tidy & clang-format)
 
     # Rust
@@ -229,8 +230,8 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
+    powerManagement.enable = false; 
+    powerManagement.finegrained = false; 
     open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;

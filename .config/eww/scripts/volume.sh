@@ -5,7 +5,6 @@ output=$(pactl list sinks | grep -A 20 'Sink #0' | awk '/Mute:/ {mute=$2} /Volum
 
 mute=$(echo "$output" | awk '{print $1}')
 volume=$(echo "$output" | awk '{print $2}')
-mute_return="NA"
 
 if [ "$mute" = "no" ]; then
   if [ "$volume" -lt 33 ]; then
@@ -19,6 +18,4 @@ else
   mute_return="󰝟";
 fi
 
-ret=$(printf "{\"state_raw\":\"%s\",\"state\":\"%s\",\"value\":%s}" "$mute" "$mute_return" "$volume")
-
-echo "$ret"
+echo "{\"state_raw\":\"$mute\",\"state\":\"$mute_return\",\"value\":$volume}"
