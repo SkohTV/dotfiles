@@ -4,7 +4,7 @@ $\sf\color{orange}Core \space Programs$<br>
 WM / DE -> [SpectrWM](https://github.com/conformal/spectrwm) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/spectrwm))<br>
 Xorg -> [xinit](https://wiki.archlinux.org/title/xinit) ([config](https://github.com/SkohTV/dotfiles/blob/main/home/.xinitrc))<br>
 Bar + widgets -> [eww](https://github.com/elkowar/eww) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/eww))<br>
-Notifications -> [dunst](https://github.com/dunst-project/dunst) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/eww))<br>
+Notifications -> [dunst](https://github.com/dunst-project/dunst) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/dunst))<br>
 
 
 Terminal Emulator -> [Alacritty](https://github.com/alacritty/alacritty) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/alacritty))<br>
@@ -25,5 +25,5 @@ $\sf\color{orange}Text \space User \space Interfaces \space (TUI)$<br>
 <br>
 
 
-$\sf\color{orange}NixOS \space \& \space Flakes$<br>
+$\sf\color{orange}NixOS \space and \space Flakes$<br>
 -> [configuration.nix](https://github.com/SkohTV/dotfiles/blob/main/etc/nixos/configuration.nix)<br>
