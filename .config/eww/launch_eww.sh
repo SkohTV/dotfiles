@@ -7,7 +7,5 @@ if [[ ! $(pidof eww) ]]; then
   sleep 1
 fi
 
-bspc config -m LVDS-1 top_padding 49
-
 eww close bar
 eww open bar

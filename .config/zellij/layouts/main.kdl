@@ -28,4 +28,12 @@ layout cwd="/home/qlpth" {
       command "lf"
     }
   }
+  tab name="screensaver" {
+    pane size=1 borderless=true {
+      plugin location="zellij:compact-bar"
+    }
+    pane name="asciiquarium" {
+      command "asciiquarium"
+    }
+  }
 }
