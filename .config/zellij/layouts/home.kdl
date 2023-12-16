@@ -5,10 +5,9 @@ layout cwd="/home/qlpth" {
     }
     children
   }
-  tab {
-    pane split_direction="vertical" {
-      pane size="50%" name="first" {}
-      pane size="50%" name="second" {}
+  tab name="btop" {
+    pane name="btop" {
+      command "btop"
     }
   }
 }
