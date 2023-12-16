@@ -4,6 +4,7 @@
 <u>**Desktop**</u><br>
 \- `[1..60 and 61..66].jpg` ➜ https://twitter.com/QUASARCAKE<br>
 \- `61.jpg` ➜ https://twitter.com/qleleldhcks/status/1684151873698402304<br>
+\- `67.jpg` ➜ https://wall.alphacoders.com/big.php?i=1253971<br>
 
 
 <u>**Phone**</u><br>
