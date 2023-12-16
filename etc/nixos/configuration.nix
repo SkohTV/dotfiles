@@ -10,7 +10,7 @@
   
   nixpkgs.config.permittedInsecurePackages = [
     "electron-24.8.6"
-    ];
+  ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -103,7 +103,6 @@
       feh
       dunst
       picom
-      asciiquarium
 
       # GUI
       alacritty
@@ -111,6 +110,7 @@
       discord
       obsidian
       ytmdesktop
+      zathura
       xdg-utils # For embedded file manager
     ];
   };
@@ -144,6 +144,7 @@
     zellij
     lf
     gitui
+    asciiquarium
 
     # Utils
     #openssl
@@ -178,6 +179,9 @@
     cargo # Rust core 
     rust-analyzer # Rust lsp
     rustfmt # Rust formatter
+
+    # Php
+    php82Extensions.pgsql
   ];
 
   fonts.packages = with pkgs; [
@@ -191,7 +195,9 @@
     ensureDatabases = [ "mydatabase" ];
     authentication = pkgs.lib.mkOverride 10 ''
       #type database  DBuser  auth-method
-      local all       all     trust
+      local   all             all                                     trust
+      host    all             all             127.0.0.1/32            trust
+      host    all             all             ::1/128                 trust
     '';
   };
 
