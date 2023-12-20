@@ -20,7 +20,7 @@ import:
   - ~/.config/alacritty/tokyonight_storm.yml
 
 mouse:
-  hide_when_typing: false
+  hide_when_typing: true
 
 window:
   opacity: 1
