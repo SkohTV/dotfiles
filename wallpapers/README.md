@@ -10,6 +10,8 @@
 <u>**Phone**</u><br>
 \- `M16A1_low.jpg` ➜ https://www.pinterest.fr/pin/742601426053169083<br>
 \- `Calli.jpg` ➜ https://twitter.com/IKKI___A/status/1648244229523779584<br>
+\- `subnautica.png` ➜ https://wallpapercave.com/w/wp6658481<br>
+\- `rain_world.jpg` ➜ https://twitter.com/fayren/status/1714733517786026371<br>
 
 
 <u>**Windows**</u><br>
