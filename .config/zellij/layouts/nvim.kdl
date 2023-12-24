@@ -3,13 +3,16 @@ layout cwd="/home/qlpth" {
     pane size=1 borderless=true {
       plugin location="zellij:compact-bar"
     }
-    pane split_direction="horizontal" {
-      pane name="nvim" size="80%" borderless=true {
-        cwd "dev/repo"
-      }
-      pane name="zsh" size="20%" borderless=true {
-        cwd "dev/repo"
-      }
+    pane name="nvim" borderless=true {
+      cwd "dev/repo"
     }
+    //pane split_direction="horizontal" {
+    //  pane name="nvim" size="80%" borderless=true {
+    //    cwd "dev/repo"
+    //  }
+    //  pane name="zsh" size="20%" borderless=true {
+    //    cwd "dev/repo"
+    //  }
+    //}
   }
 }

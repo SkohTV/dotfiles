@@ -6,7 +6,7 @@ layout cwd="/home/qlpth" {
     children
   }
   tab name="btop" {
-    pane name="btop" {
+    pane name="Pane #1" {
       command "btop"
     }
   }

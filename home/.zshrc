@@ -5,11 +5,11 @@ SAVEHIST=10000
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
+
 # Load plugins
 source /etc/zsh/zplug.zsh
 zplug "zdharma-continuum/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 
 if ! zplug check --verbose; then
@@ -18,10 +18,9 @@ fi
 
 zplug load
 
+bindkey '^[OA' history-substring-search-up
+bindkey '^[OB' history-substring-search-down
 
-# For zsh-history-substring
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 
 # x -> y
 alias ll="eza -1abghlF --colour=always --group-directories-first --icons=always"
@@ -57,7 +56,6 @@ ssh-add ~/.ssh/github 2> /dev/null
 
 # Start terminal emulator
 eval "$(starship init zsh)"
-
 
 # Export env var
 export NIXCFG=$HOME/dev/repo/dotfiles/etc/nixos/configuration.nix

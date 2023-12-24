@@ -149,7 +149,8 @@
     # Utils
     #openssl
     openssh
-    zplug
+    #zplug
+    blesh
 
 
     # Languages
@@ -181,7 +182,10 @@
     rustfmt # Rust formatter
 
     # Php
-    php82Extensions.pgsql
+    php82 # Php core
+    phpactor # Php Lsp
+    php82Packages.composer # """packages manager""" (fucking usless)
+    php82Extensions.pgsql # Php + Postgres
   ];
 
   fonts.packages = with pkgs; [

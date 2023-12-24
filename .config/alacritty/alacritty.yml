@@ -14,7 +14,8 @@ font:
   bold_italic:
     family: Monaspace Krypton
     style: Bold Italic
-  size: 6.5
+  #size: 13
+  size: 7
 
 import:
   - ~/.config/alacritty/tokyonight_storm.yml
