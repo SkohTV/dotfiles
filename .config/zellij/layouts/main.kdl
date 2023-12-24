@@ -7,8 +7,8 @@ layout cwd="/home/qlpth" {
   }
   tab {
     pane split_direction="vertical" {
-      pane size="50%" name="first" {}
-      pane size="50%" name="second" {}
+      pane size="50%" {}
+      pane size="50%" {}
     }
   }
 }

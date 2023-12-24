@@ -11,7 +11,8 @@ dunst &
 picom &
 
 sh ~/dev/scripts/startup.sh &
-# sh ~/dev/scripts/randomize-desktop.sh &
+#sh ~/dev/scripts/randomize-desktop.sh &
+feh ~/.config/wallpapers/67.jpg --bg-fill
 sh ~/.config/eww/launch_eww.sh &
 
 spectrwm

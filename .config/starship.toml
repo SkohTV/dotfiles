@@ -1,4 +1,5 @@
-format = '''$username$nix_shell $git_branch$directory$sudo$character$env_var '''
+#format = '''$username$nix_shell $git_branch$directory$sudo$character '''
+format = '''$username$nix_shell $git_branch$directory$sudo$character '''
 add_newline = false
 
 
@@ -13,10 +14,12 @@ truncation_length = 0
 
 [git_branch]
 symbol = ''
-format = '[git:\(](red)[$branch](#b4befe)[\)](red) '
+format = '[$symbol:\(](red)[$branch](#b4befe)[\)](red)'
 
 [character]
-format = '[\$](cyan)'
+error_symbol = '[\$](red)'
+success_symbol = '[\$](green)'
+format = '$symbol'
 
 [sudo]
 disabled = false
@@ -25,4 +28,4 @@ format = '[$symbol](red)'
 
 [nix_shell]
 disabled = false
-format = ':[$name](green)'
+format = '\[[$name](green)\]'
