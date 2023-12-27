@@ -12,6 +12,10 @@
     "electron-24.8.6"
   ];
 
+  # Enable experimental features (nix subcommands, flakes...)
+  nix.settings.experimental-features = [ "nix-command" ];
+
+  # Allow unfree packages (for nvidia)
   nixpkgs.config.allowUnfree = true;
 
   # Use the systemd-boot EFI boot loader.
@@ -106,7 +110,7 @@
 
       # GUI
       alacritty
-      qutebrowser
+      brave
       discord
       obsidian
       ytmdesktop
@@ -183,8 +187,6 @@
 
     # Php
     php82 # Php core
-    phpactor # Php Lsp
-    php82Packages.composer # """packages manager""" (fucking usless)
     php82Extensions.pgsql # Php + Postgres
   ];
 
