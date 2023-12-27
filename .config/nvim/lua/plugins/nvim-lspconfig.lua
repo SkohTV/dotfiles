@@ -92,12 +92,6 @@ local config = function()
 	local rustfmt = require("efmls-configs.formatters.rustfmt")
 	vim.g.rust_recommended_style = false
 
-	-- Php
-	lspconfig.phpactor.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-
 	-- EFM
 	lspconfig.efm.setup({
 		capabilities = capabilities,
@@ -121,9 +115,6 @@ local config = function()
 
 			-- Rust
 			"rust",
-
-			-- Php
-			"php",
 		},
 		init_options = {
 			documentFormatting = true,
