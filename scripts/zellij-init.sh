@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+
+
 fn_home() {
   zellij attach home || zellij --layout home --session home 
 }
