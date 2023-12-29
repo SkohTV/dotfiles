@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 a=$(date +"%d")
 b=$(date +"%m")

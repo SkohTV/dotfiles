@@ -5,12 +5,9 @@
 
   imports = [
     /etc/nixos/hardware-configuration.nix # Include the results of the hardware scan
-    (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master") # Vscode server
   ];
   
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-24.8.6"
-  ];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-24.8.6" ];
 
   # Enable experimental features (nix subcommands, flakes...)
   nix.settings.experimental-features = [ "nix-command" ];
@@ -38,7 +35,6 @@
   # Enable services
   services.upower.enable = true;
   services.openssh.enable = true;
-  services.vscode-server.enable = true;
   services.xserver = {
     enable = true;
     autorun = false;
@@ -54,6 +50,7 @@
     };
   };
 
+  # Power saving & management
   powerManagement.powertop.enable = true;
   services.thermald.enable = true;
   services.tlp = {
@@ -114,7 +111,8 @@
       discord
       obsidian
       ytmdesktop
-      zathura
+      libsForQt5.okular
+      qalculate-gtk
       xdg-utils # For embedded file manager
     ];
   };
