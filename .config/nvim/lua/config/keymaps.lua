@@ -24,5 +24,3 @@ keymap.set("v", ">", ">gv") -- Shift Indentation to Right
 -- Comments
 api.nvim_set_keymap("n", "<C-_>", "gcc", { noremap = false })
 api.nvim_set_keymap("v", "<C-_>", "gb", { noremap = false })
-
--- Harpoon
