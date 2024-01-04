@@ -2,21 +2,21 @@ local config = function()
   require("lualine").setup({
     options = {
       theme = "tokyonight",
-      globalstatus = true
+      globalstatus = true,
     },
     sections = {
-      lualine_a = { "mode" },
-      lualine_b = { "branch", "diff", "diagnostics" },
-      lualine_c = { "buffers" },
-      lualine_x = { "fileformat", "encoding" },
-      lualine_y = { "filetype" },
-      lualine_z = { "location" }
-    }
+    lualine_a = { "mode" },
+    lualine_b = { "branch", "diff", "diagnostics" },
+    lualine_c = { "buffers" },
+    lualine_x = { "filetype" },
+    lualine_y = { "progress" },
+    lualine_z = { "location" }
+    },
   })
 end
 
-return {
+return {{
   "nvim-lualine/lualine.nvim",
-  lazy = false,
-  config = config
-}
+  event = "VeryLazy",
+  config = config,
+}}

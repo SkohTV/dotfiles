@@ -1,16 +1,18 @@
-{ config, pkgs, ... }: {
-
-
+{
+  config,
+  pkgs,
+  ...
+}: {
   ### DEFINE CORE OF NIXOS
 
   imports = [
     /etc/nixos/hardware-configuration.nix # Include the results of the hardware scan
   ];
-  
-  nixpkgs.config.permittedInsecurePackages = [ "electron-24.8.6" ];
+
+  nixpkgs.config.permittedInsecurePackages = ["electron-24.8.6"];
 
   # Enable experimental features (nix subcommands, flakes...)
-  nix.settings.experimental-features = [ "nix-command" ];
+  nix.settings.experimental-features = ["nix-command"];
 
   # Allow unfree packages (for nvidia)
   nixpkgs.config.allowUnfree = true;
@@ -77,22 +79,21 @@
       };
       charger = {
         governor = "performance";
-         turbo = "auto";
+        turbo = "auto";
       };
     };
   };
-
 
   ### DEFINE USER ENVIRONNEMENT
 
   users.defaultUserShell = pkgs.zsh;
   environment.etc."zsh/zplug.zsh".source = "${pkgs.zplug}/share/zplug/init.zsh";
-  environment.pathsToLink = [ "/libexec" ];
+  environment.pathsToLink = ["/libexec"];
 
   # Define a user account. Don't forget to set a password with ‘passwd’
   users.users.qlpth = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "docker"]; # Enable ‘sudo’ for the user.
     useDefaultShell = true;
     packages = with pkgs; [
       # DE / WM
@@ -124,6 +125,7 @@
     cava # eww
     lm_sensors # eww
     brightnessctl # eww
+    redshift # eww ( $ redshift -P -O 6000 )
 
     # Cli tools
     wget
@@ -151,9 +153,7 @@
     # Utils
     #openssl
     openssh
-    #zplug
-    blesh
-
+    zplug
 
     # Languages
     efm-langserver # general purpose lsp
@@ -164,7 +164,7 @@
     lua-language-server # lua lsp
     stylua # Lua formatter
     lua54Packages.luacheck # Lua linter
-    
+
     # python 3.12
     python312
     nodePackages.pyright # Python lsp
@@ -179,24 +179,29 @@
 
     # Rust
     rustc # Rust core
-    cargo # Rust core 
+    cargo # Rust core
     rust-analyzer # Rust lsp
     rustfmt # Rust formatter
 
     # Php
     php82 # Php core
     php82Extensions.pgsql # Php + Postgres
+
+    # Nix
+    nixd # Nix lsp
+    statix # Nix linter
+    alejandra # Nix formatter
   ];
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
     #(nerdfonts.override { fonts = [ "Monaspace" ]; })
   ];
 
   # For postgresql
   services.postgresql = {
     enable = true;
-    ensureDatabases = [ "mydatabase" ];
+    ensureDatabases = ["mydatabase"];
     authentication = pkgs.lib.mkOverride 10 ''
       #type database  DBuser  auth-method
       local   all             all                                     trust
@@ -204,7 +209,6 @@
       host    all             all             ::1/128                 trust
     '';
   };
-
 
   ### NETWORK
 
@@ -222,8 +226,7 @@
   services.httpd.virtualHosts."php.localhost" = {
     documentRoot = "/var/www/phplocalhost";
   };
-  networking.extraHosts =
-  ''
+  networking.extraHosts = ''
     127.0.0.1 php.localhost
   '';
 
@@ -240,13 +243,13 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false; 
-    powerManagement.finegrained = false; 
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-  
+
   hardware.nvidia.prime = {
     sync.enable = true;
 
@@ -254,12 +257,9 @@
     nvidiaBusId = "PCI:1:0:0";
   };
 
-
-
-
-
   ### END
 
   system.copySystemConfiguration = true;
-  system.stateVersion = "23.11";  
-}   
+  system.stateVersion = "23.11";
+}
+
