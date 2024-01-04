@@ -1,4 +1,5 @@
-return {
-	"numToStr/Comment.nvim",
-	lazy = false,
-}
+return {{
+  "numToStr/Comment.nvim",
+  event = { "BufEnter" },
+  config = true,
+}}
