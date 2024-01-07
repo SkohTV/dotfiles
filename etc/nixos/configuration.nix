@@ -109,6 +109,7 @@
       # GUI
       alacritty
       brave
+      tor-browser
       discord
       obsidian
       ytmdesktop
