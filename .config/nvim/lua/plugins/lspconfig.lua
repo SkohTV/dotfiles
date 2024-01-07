@@ -22,6 +22,7 @@ local config = function()
 		vim.keymap.set("n", "<leader>pd", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to prev diagnostic in buffer
 		vim.keymap.set("n", "<leader>nd", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
 		vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
+    vim.keymap.set("n", "<leader>so", "<cmd>Lspsaga outline<CR>", opts) -- toggle symbols outline
 	end
 
   lspconfig.lua_ls.setup({
