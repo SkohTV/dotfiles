@@ -50,6 +50,7 @@ local config = function()
   })
 end
 
+
 return {{
   "hrsh7th/nvim-cmp",
   event = { "BufReadPost", "BufNewFile" },
