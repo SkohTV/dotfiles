@@ -150,6 +150,10 @@
     lf
     gitui
     asciiquarium
+    fzf
+    sd
+    fd
+    hyperfine
 
     # Utils
     #openssl
@@ -167,10 +171,9 @@
     lua54Packages.luacheck # Lua linter
 
     # python 3.12
-    python312
-    nodePackages.pyright # Python lsp
+    python312 # Python core
+    nodePackages_latest.pyright # Python lsp
     ruff # Python formatter
-    pylint # Python linter
 
     # C & C++
     gnat13 # gcc & g++
@@ -187,11 +190,12 @@
     # Php
     php82 # Php core
     php82Extensions.pgsql # Php + Postgres
+    php82Packages.composer # Php package manager
+    phpactor # Php lsp
 
     # Nix
     nixd # Nix lsp
     statix # Nix linter
-    alejandra # Nix formatter
   ];
 
   fonts.packages = with pkgs; [
