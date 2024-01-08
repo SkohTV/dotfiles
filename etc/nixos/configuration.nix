@@ -12,7 +12,10 @@
   nixpkgs.config.permittedInsecurePackages = ["electron-24.8.6"];
 
   # Enable experimental features (nix subcommands, flakes...)
-  nix.settings.experimental-features = ["nix-command"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Allow unfree packages (for nvidia)
   nixpkgs.config.allowUnfree = true;
@@ -30,7 +33,7 @@
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
-  # Enable programms
+  # Enable programs
   programs.zsh.enable = true;
   #programs.ssh.startAgent = true;
 
