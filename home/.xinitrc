@@ -7,6 +7,9 @@ xset s off
 
 xrandr --output eDP-1-1 --primary --mode 1920x1080
 
+pkill dunst
+pkill picom
+
 dunst &
 picom &
 
