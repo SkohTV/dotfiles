@@ -39,7 +39,7 @@ vim.opt.cursorline = true -- Highlight line where cursor is
 vim.opt.scrolloff = 8 -- Min number lines below / above cursor
 
 -- Column at X line
-vim.opt.colorcolumn = "80" -- Highlight the X column
+vim.opt.colorcolumn = "88" -- Highlight the X column
 vim.opt.signcolumn = "yes" -- Display the sign column
 
 -- For folding, idk

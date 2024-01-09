@@ -4,9 +4,9 @@ a=$(date +"%d")
 b=$(date +"%m")
 c=$(date +"%y")
 
-RANDOM=$((a + b + c))
+RANDOM=$(($a + $b + $c))
 files=$(ls -l "$HOME/.config/wallpapers/" | grep "^-" | wc -l)
 val=$((RANDOM % (files + 1)))
 
 echo $val
-feh /home/qlpth/.config/wallpapers/$val.jpg --bg-fill
+# feh /home/qlpth/.config/wallpapers/$val.jpg --bg-fill
