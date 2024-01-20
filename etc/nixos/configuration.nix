@@ -87,6 +87,9 @@
     };
   };
 
+  # Man pages
+  documentation.dev.enable = true;
+
   ### DEFINE USER ENVIRONNEMENT
 
   users.defaultUserShell = pkgs.zsh;
@@ -117,6 +120,7 @@
       obsidian
       ytmdesktop
       libsForQt5.okular
+      zathura
       qalculate-gtk
       xdg-utils # For embedded file manager
     ];
@@ -124,6 +128,10 @@
 
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
+    # Man pages
+    man-pages
+    man-pages-posix
+
     # For eww
     eww
     cava # eww
@@ -166,39 +174,35 @@
     # Languages
     efm-langserver # general purpose lsp
 
-    # lua 5.4
-    lua5_4_compat
+    lua5_4_compat # Lua core
     lua54Packages.luarocks # Luarocks package manager
-    lua-language-server # lua lsp
+    lua-language-server # Lua lsp
     stylua # Lua formatter
     lua54Packages.luacheck # Lua linter
 
-    # python 3.12
     python312 # Python core
     nodePackages_latest.pyright # Python lsp
     ruff # Python formatter
 
-    # C & C++
-    gnat13 # gcc & g++
+    gnat13 # C / C++ core (gcc & g++)
     gnumake # make
     cmake # cmake
     clang-tools_16 # clangd (+ clang-tidy & clang-format)
 
-    # Rust
     rustc # Rust core
     cargo # Rust core
     rust-analyzer # Rust lsp
     rustfmt # Rust formatter
 
-    # Php
     php82 # Php core
     php82Extensions.pgsql # Php + Postgres
     php82Packages.composer # Php package manager
     phpactor # Php lsp
 
-    # Nix
     nixd # Nix lsp
     statix # Nix linter
+
+    nodejs_21 # JS core
   ];
 
   fonts.packages = with pkgs; [
