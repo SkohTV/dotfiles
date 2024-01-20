@@ -1,5 +1,5 @@
 #format = '''$username$nix_shell $git_branch$directory$sudo$character '''
-format = '''$username$nix_shell $git_branch$directory$sudo$character '''
+format = '''$username${custom.nix} $git_branch$directory$sudo$character '''
 add_newline = false
 
 
@@ -26,6 +26,8 @@ disabled = false
 symbol = '!'
 format = '[$symbol](red)'
 
-[nix_shell]
-disabled = false
-format = '\[[$name](green)\]'
+
+[custom.nix]
+command = 'echo $NIX_SHELL_NAME'
+when = 'test ! -z $NIX_SHELL_NAME'
+format = '\[[$output](green)\]'

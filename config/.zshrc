@@ -49,6 +49,7 @@ alias lock="xsecurelock"
 alias sus="systemctl suspend"
 alias hib="systemctl hibernate"
 alias nixbuild="sudo nixos-rebuild switch -I nixos-config=$HOME/dev/repo/dotfiles/etc/nixos/configuration.nix"
+function nix(){ NIX_SHELL_NAME="$1" command nix "$@" }
 
 
 # Load github ssh
