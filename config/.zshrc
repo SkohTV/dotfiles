@@ -40,6 +40,7 @@ alias c="clear"
 alias s="sudo"
 alias z="sh $HOME/dev/scripts/zellij-init.sh"
 alias py="python3"
+alias ssh='TERM=xterm-256color ssh'
 
 # Generalization
 alias fetch="sh $HOME/dev/scripts/fetch.sh"
