@@ -1,4 +1,5 @@
 local config = function()
+    require("neodev").setup({}) -- Disable vim global not found
 	local lspconfig = require("lspconfig")
 	local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
@@ -44,13 +45,7 @@ local config = function()
   -- Lua
   lspconfig.lua_ls.setup({
     capabilities = capabilities, on_attach = on_attach,
-    Lua = {
-      diagnostics = { globals = { "vim" } },
-      workspace = { library = {
-        [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-        [vim.fn.stdpath("config") .. "/lua"] = true,
-      }},
-    },
+    Lua = { diagnostics = { globals = { "vim" } } },
   })
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")

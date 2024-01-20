@@ -16,8 +16,7 @@ vim.opt.mouse = "" -- Disable the mouse
 vim.opt.clipboard = "unnamed,unnamedplus" -- Enable system clipboard
 
 -- Neovim files behavior
-vim.opt.swapfile = true -- Use a swap file not a buffer
-vim.opt.updatetime = 50 -- Flush swap file delay
+vim.opt.swapfile = false -- Use a swap file not a buffer
 vim.opt.undofile = true --  Save undo in a file
 vim.opt.hidden = true -- Don't unload buffer when abandoned
 vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
