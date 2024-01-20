@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# NEED TO HANDLE MULTI SINKS
+# Values for sinks as globals ?
+# Update pb ?
+
 
 output=$(pactl list sinks | grep -A 20 'Sink #0' | awk '/Mute:/ {mute=$2} /Volume: front/ {gsub("%", "", $5); volume=$5} END {print mute, volume}')
 
