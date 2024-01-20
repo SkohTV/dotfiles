@@ -2,7 +2,6 @@
 
 $\sf\color{orange}Core \space Programs$<br>
 WM / DE -> [SpectrWM](https://github.com/conformal/spectrwm) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/spectrwm))<br>
-Xorg -> [xinit](https://wiki.archlinux.org/title/xinit) ([config](https://github.com/SkohTV/dotfiles/blob/main/home/.xinitrc))<br>
 Bar + widgets -> [eww](https://github.com/elkowar/eww) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/eww))<br>
 Notifications -> [dunst](https://github.com/dunst-project/dunst) ([config](https://github.com/SkohTV/dotfiles/tree/main/.config/dunst))<br>
 
