@@ -11,15 +11,19 @@
 
 <script>
 function realtimeClock() {
-  var clock = new Date();
-  var hrs = clock.getHours();
-  var mins = clock.getMinutes();
-  var amPm = ( hrs < 12) ? "AM" : "PM";
+  let clock = new Date();
+
+	let day = clock.toLocaleString("en", { weekday: "short" });
+  let hrs = clock.getHours();
+  let mins = clock.getMinutes();
+  let amPm = ( hrs < 12) ? "AM" : "PM";
+
   hrs = (hrs > 12) ? hrs - 12 : hrs;
   hrs = ("0" + hrs).slice(-2);
   mins = ("0" + mins).slice(-2);
-  document.getElementById("clock").innerHTML = hrs + ":" + mins + " " + amPm;
-  var t = setTimeout(realtimeClock, 500);
+
+  document.getElementById("clock").innerHTML = day + ", " + hrs + ":" + mins + " " + amPm;
+  let t = setTimeout(realtimeClock, 500);
 }
 </script>
 
@@ -158,7 +162,7 @@ label {
 
 <body>
   <div id="top">
-    <h1>Hello</h1>
+    <h1>Welcome back</h1>
     <div class="time">
       <h3 id="clock"></h3>
     </div>
