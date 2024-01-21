@@ -17,6 +17,7 @@
   (box
     :class "distro"
     :space-evenly false
+    :tooltip "${fetch}"
     (image :path "./imgs/nixos.png" :image-width 15)
   )
 )
@@ -86,11 +87,57 @@
 
 (defwidget _grp_brightsound []
   (box
-    :class "distro"
     :class "inside"
     :spacing 5
-    (label :class "light" :text "  ${brightness}")
-    (label :class "sound" :text "${volume.state}  ${volume.value}")
+    :space-evenly false
+    (eventbox
+      :onhover "eww update bright=true"   
+      :onhoverlost "eww update bright=false"
+      (box
+        :class "light" 
+        :space-evenly false
+        (revealer
+          :transition "slideright" 
+          :reveal bright   
+          :duration "550ms"
+          (scale 
+            :value brightness
+            :onchange "brightnessctl set {}%" 
+            :orientation "h" 
+            :flipped true 
+            :max 100 
+            :min 10))
+        (button
+          :onclick "${night ?
+            'redshift -P -O 6500 && eww update night=false' :
+            'redshift -P -O 3000 && eww update night=true'}"
+          (label :text "${night?'':''}  ${brightness}")
+        )
+    ))
+    (eventbox
+      :onhover "eww update sound=true"   
+      :onhoverlost "eww update sound=false"
+      (box
+        :class "${mute ? 'mute_sound' : 'sound'}"
+        :space-evenly false
+        (revealer
+          :transition "slideright" 
+          :reveal sound   
+          :duration "550ms"
+          (scale 
+            :value "${volume.value}"
+            :onchange "for sink in $(pactl list sinks short | cut -f1); do pactl set-sink-volume $sink {}%; done" 
+            :orientation "h" 
+            :flipped true 
+            :max 100 
+            :min 10))
+        (button
+          :onclick "${mute ?
+            'for sink in $(pactl list sinks short | cut -f1); do pactl set-sink-mute $sink 0; done && eww update mute=false' :
+            'for sink in $(pactl list sinks short | cut -f1); do pactl set-sink-mute $sink 1; done && eww update mute=true'}"
+          (label :text "${volume.state}  ${volume.value}")
+        )
+    ))
   )
 )
 

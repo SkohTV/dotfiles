@@ -27,3 +27,12 @@
   :interval "0.05s"
   `xprop -root _NET_CURRENT_DESKTOP | cut -d' ' -f3 &`)
 
+(defpoll fetch
+  :interval "1s"
+  `sh ~/dev/scripts/fetch.sh`)
+
+(defvar bright false)
+(defvar night false)
+
+(defvar sound false)
+(defvar mute false)

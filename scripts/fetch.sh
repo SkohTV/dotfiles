@@ -20,4 +20,5 @@ echo "- $(alacritty --version)"
 echo "PC"
 echo "- $(cat /proc/cpuinfo | rg 'model name' | head -n 1 | awk -F': ' '{print $2}')"
 echo "- $(cat /proc/driver/nvidia/gpus/0000:01:00.0/information | rg 'Model:' | awk -F: '{print $2}' | awk '{$1=$1};1')"
-echo "- $(free -m | awk '/^Mem:/ {printf "%sMiB / %sMiB\n", $3, $2}')"
+echo "- $(free -m | awk '/^Mem:/ {printf "%.2fGi / %.2fGi\n", $3/1024, $2/1024}')"
+
