@@ -27,7 +27,7 @@ alias ll="eza -1abghlF --colour=always --group-directories-first --icons=always"
 alias ls="eza -1bghlF --colour=always --group-directories-first --icons=always"
 alias lt="eza -1bghlF --tree --colour=always --group-directories-first --icons=always"
 alias cat="bat"
-alias __cat="bat --plain --color never --paging never --style plain"
+alias __cat="bat --plain --color=never --paging=never --style=plain"
 alias grep="rg --color=always"
 alias __grep="rg --color=never"
 alias nano="nvim"
@@ -62,3 +62,5 @@ eval "$(starship init zsh)"
 # Export env var
 export NIXCFG=$HOME/dev/repo/dotfiles/etc/nixos/configuration.nix
 export EDITOR=nvim
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
