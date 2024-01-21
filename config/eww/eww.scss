@@ -8,7 +8,9 @@ window.bar {
   font-size: 12px;
 
   .left {
-    .distro {}
+    .distro {
+      padding-left: 4px
+    }
 
     .cpu {color: #ccad73}
     .ram {color: #a5d994}
@@ -39,9 +41,40 @@ window.bar {
   .right {
     .battery {color: #a6da95}
     .light {color: #eed49f}
-    .sound {color: #91d7e3}
+    .sound {color: #91d7e3}; .mute_sound {color: #91d7e3}
     .bars {color: #c6a0f6}
     .ssh {color: #caff68}
-    .time {color: #a5adcb}
+    .time { color: #a5adcb ; padding-right: 4px }
   }
+
+
+  scale {padding: 0 4px 0 0}
+  scale trough highlight {border-radius: 16px}
+  scale trough {
+    background: #404040;
+    border: 0.5px solid #ffffff;
+    border-radius: 16px;
+    min-height: 5px;
+    min-width: 80px;
+  }
+
+  .light {
+    scale trough {border-color: #eed49f}
+    scale trough highlight {background-color: #eed49f}
+  }
+
+  .sound scale trough {border-color: #91d7e3}
+  .sound scale trough highlight {background-color: #91d7e3}
+
+  .mute_sound scale trough {border-color: #acacac}
+  .mute_sound scale trough highlight {background-color: #acacac}
 }
+
+tooltip {
+  border-radius: 4px;
+  background-color: #888888;
+  font-size: 10px;
+  margin: 4px;
+}
+
+
