@@ -2,9 +2,12 @@
 *Credits to creators*
 
 <u>**Desktop**</u><br>
-\- `[1..60 and 61..66].jpg` ➜ https://twitter.com/QUASARCAKE<br>
+\- `[1..60 && 61..66].jpg` ➜ https://twitter.com/QUASARCAKE<br>
 \- `61.jpg` ➜ https://twitter.com/qleleldhcks/status/1684151873698402304<br>
 \- `67.jpg` ➜ https://wall.alphacoders.com/big.php?i=1253971<br>
+\- `68.jpg` ➜ https://www.zerochan.net/2451702<br>
+\- `69.jpg` ➜ https://www.4kwallpapers8k.com/w/10252-glacier-mountains-wallpaper.html<br>
+\- `70.png` ➜ https://mattandersondesign.com/discord-office-murals<br>
 
 
 <u>**Phone**</u><br>
