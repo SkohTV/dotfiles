@@ -126,7 +126,7 @@
           :duration "550ms"
           (scale 
             :value "${volume.value}"
-            :onchange "for sink in $(pactl list sinks short | cut -f1); do pactl set-sink-volume $sink {}%; done" 
+            :onchange "for sink in $(pactl list sinks short | cut -f1); do pactl set-sink-volume $sink '{}%'; done" 
             :orientation "h" 
             :flipped true 
             :max 100 
