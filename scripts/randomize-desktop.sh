@@ -8,5 +8,5 @@ RANDOM=$(($a + $b + $c))
 files=$(ls -l "$HOME/.config/wallpapers/" | grep "^-" | wc -l)
 val=$((RANDOM % (files + 1)))
 
-echo $val
-# feh /home/qlpth/.config/wallpapers/$val.jpg --bg-fill
+# echo $val
+feh /home/qlpth/.config/wallpapers/$val.jpg --bg-fill
