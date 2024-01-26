@@ -32,8 +32,7 @@ local config = function()
     capabilities = capabilities, on_attach = on_attach,
     init_options = { settings = { args = { "" } } }
   })
-  local ruff_l = require('efmls-configs.linters.ruff')
-  local ruff_f = require('efmls-configs.formatters.ruff')
+  local ruff = require('efmls-configs.linters.ruff')
 
   -- Rust
   lspconfig.rust_analyzer.setup({
@@ -74,7 +73,7 @@ local config = function()
 		on_attach = on_attach,
 		settings = {
 			languages = {
-        python = { ruff_l, ruff_f },
+        python = { ruff },
         rust = { rustfmt },
 				lua = { luacheck, stylua },
         c = { clang_tidy, clang_format }, cpp = { clang_tidy, clang_format },

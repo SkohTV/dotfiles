@@ -18,7 +18,7 @@ local config = function()
   })
 end
 
-return {{
+return {
   "nvim-telescope/telescope.nvim",
   dependencies = { "nvim-lua/plenary.nvim", },
   config = config,
@@ -30,4 +30,4 @@ return {{
 		vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>"),
 		vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>"),
 	},
-}}
+}
