@@ -123,6 +123,8 @@
       zathura
       qalculate-gtk
       xdg-utils # For embedded file manager
+      ciscoPacketTracer8
+      wireshark
     ];
   };
 
@@ -165,6 +167,7 @@
     sd
     fd
     hyperfine
+    procs
 
     # Utils
     #openssl
