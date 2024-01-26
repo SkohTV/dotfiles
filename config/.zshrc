@@ -64,3 +64,4 @@ export NIXCFG=$HOME/dev/repo/dotfiles/etc/nixos/configuration.nix
 export EDITOR=nvim
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
+export RUFF_EXPERIMENTAL_FORMATTER=1
