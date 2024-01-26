@@ -31,6 +31,10 @@
   :interval "1s"
   `sh ~/dev/scripts/fetch.sh`)
 
+(defpoll procs
+  :interval "5s"
+  `echo " PID     │ CPU:▼ MEM │ Command" ; procs --load-config ~/.config/eww/scripts/procs.toml | head -n20`)
+
 (defvar bright false)
 (defvar night false)
 

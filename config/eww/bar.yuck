@@ -28,6 +28,7 @@
     :class "procinfo"
     :space-evenly false
     :spacing 10
+    :tooltip "${procs}"
     (label :class "cpu" :text "   ${round(EWW_CPU['avg'],2)}%")
     (label :class "temp" :text "  ${EWW_TEMPS['CORETEMP_PACKAGE_ID_0']}.0°C")
     (label :class "ram" :text "   ${round(EWW_RAM['used_mem'] / 1024 / 1024 / 1024, 2)}GiB")
@@ -94,7 +95,7 @@
       :onhover "eww update bright=true"   
       :onhoverlost "eww update bright=false"
       (box
-        :class "light" 
+        :class "${night ? 'night' : 'light'}" 
         :space-evenly false
         (revealer
           :transition "slideright" 
@@ -105,8 +106,8 @@
             :onchange "brightnessctl set {}%" 
             :orientation "h" 
             :flipped true 
-            :max 100 
-            :min 10))
+            :max 100
+            :min 1))
         (button
           :onclick "${night ?
             'redshift -P -O 6500 && eww update night=false' :
@@ -130,7 +131,7 @@
             :orientation "h" 
             :flipped true 
             :max 100 
-            :min 10))
+            :min 0))
         (button
           :onclick "${mute ?
             'for sink in $(pactl list sinks short | cut -f1); do pactl set-sink-mute $sink 0; done && eww update mute=false' :

@@ -40,8 +40,8 @@ window.bar {
 
   .right {
     .battery {color: #a6da95}
-    .light {color: #eed49f}
-    .sound {color: #91d7e3}; .mute_sound {color: #91d7e3}
+    .light {color: #eed49f}; .night {color:#fc6b03}
+    .sound {color: #91d7e3}; .mute_sound {color: #acacac}
     .bars {color: #c6a0f6}
     .ssh {color: #caff68}
     .time { color: #a5adcb ; padding-right: 4px }
@@ -59,22 +59,36 @@ window.bar {
   }
 
   .light {
+    label {min-width: 32px}
     scale trough {border-color: #eed49f}
     scale trough highlight {background-color: #eed49f}
   }
 
-  .sound scale trough {border-color: #91d7e3}
-  .sound scale trough highlight {background-color: #91d7e3}
+  .night {
+    label {min-width: 32px}
+    scale trough {border-color: #fc6b03}
+    scale trough highlight {background-color: #fc6b03}
+  }
 
-  .mute_sound scale trough {border-color: #acacac}
-  .mute_sound scale trough highlight {background-color: #acacac}
+  .sound {
+    label {min-width: 32px}
+    scale trough {border-color: #91d7e3} 
+    scale trough highlight {background-color: #91d7e3}
+  }
+
+  .mute_sound {
+    label {min-width: 32px}
+    scale trough {border-color: #acacac} 
+    scale trough highlight {background-color: #acacac}
+  }
 }
 
+
 tooltip {
-  border-radius: 4px;
-  background-color: #888888;
+  // border-radius: 20px; // Not working with GTK, sadness upon thee
+  font-family: "Monaspace Krypton";
+  border: 0.5 solid #b89bf8;
+  background-color: #323232;
   font-size: 10px;
   margin: 4px;
 }
-
-
