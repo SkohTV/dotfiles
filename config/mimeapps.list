@@ -1,0 +1,4 @@
+
+[Default Applications]
+x-scheme-handler/ytmd=youtube-music-desktop-app.desktop
+application/pdf=okularApplication_pdf.desktop
