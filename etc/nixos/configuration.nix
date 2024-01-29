@@ -125,6 +125,7 @@
       xdg-utils # For embedded file manager
       ciscoPacketTracer8
       wireshark
+      vlc
     ];
   };
 
@@ -161,7 +162,7 @@
     pipr
     zellij
     lf
-    gitui
+    lazygit
     asciiquarium
     fzf
     sd
