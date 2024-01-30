@@ -1,5 +1,5 @@
 #format = '''$username$nix_shell $git_branch$directory$sudo$character '''
-format = '''$username${custom.nix} $git_branch$directory$sudo$character '''
+format = '''$username${custom.nix} $git_branch$git_status$directory$sudo$character '''
 add_newline = false
 
 

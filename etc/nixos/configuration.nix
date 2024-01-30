@@ -37,6 +37,9 @@
   programs.zsh.enable = true;
   #programs.ssh.startAgent = true;
 
+  # Docker
+  virtualisation.docker.enable = true;
+
   # Enable services
   services.upower.enable = true;
   services.openssh.enable = true;
