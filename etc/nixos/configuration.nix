@@ -169,6 +169,7 @@
     fd
     hyperfine
     procs
+    mprocs
 
     # Utils
     #openssl

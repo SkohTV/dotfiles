@@ -10,4 +10,10 @@ layout cwd="/home/qlpth" {
       command "btop"
     }
   }
+  tab name="mprocs" {
+    pane name="Pane #1" {
+      command "mprocs"
+      args "--config=/home/qlpth/dev/scripts/mprocs.yaml"
+    }
+  }
 }
