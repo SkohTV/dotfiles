@@ -1,0 +1,5 @@
+procs:
+  battery:
+    cmd: ["/home/qlpth/dev/scripts/battery_warning.sh"]
+  dunst:
+    cmd: ["dunst"]
