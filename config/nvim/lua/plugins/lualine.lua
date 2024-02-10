@@ -1,23 +1,40 @@
+local function arrow()
+  local statusline = require("arrow.statusline")
+  return statusline.text_for_statusline_with_icons()
+end
+
 local config = function()
+  local diff_color = {
+    added = {fg="#40ff33"},
+    modified = {fg="#ffed33"},
+    removed = {fg="#ff5733"},
+  }
+
   require("lualine").setup({
     options = {
       theme = "tokyonight",
       globalstatus = true,
     },
     sections = {
-    lualine_a = { "mode" },
-    lualine_b = { "branch", "diff", "diagnostics" },
-    lualine_c = { "buffers" },
-    lualine_x = { { "copilot", show_colors = true }, "filetype" },
-    lualine_y = { "progress" },
-    lualine_z = { "location" }
+      lualine_a = { "mode" },
+      lualine_b = {
+        { "branch", separator='', padding={left=1, right=1} },
+        { "diff", padding={left=0,right=1}, diff_color=diff_color },
+      },
+      lualine_c = {
+        { "diagnostics", padding={left=1, right=1} },
+        { "buffers" },
+        { arrow, color={fg='#88da85'} },
+      },
+      lualine_x = { { "copilot", show_colors = true }, "filetype" },
+      lualine_y = { "progress" },
+      lualine_z = { "location" }
     },
   })
 end
 
 return {{
   "nvim-lualine/lualine.nvim",
-  event = "VeryLazy",
   dependencies = { "AndreM222/copilot-lualine" },
   config = config,
 }}

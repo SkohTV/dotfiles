@@ -68,6 +68,14 @@ local config = function()
   })
   local statix = require('efmls-configs.linters.statix')
 
+  -- Javscript / Typescript
+  lspconfig.tsserver.setup({
+    capabilities = capabilities, on_attach = on_attach,
+  })
+  local eslint_d = require('efmls-configs.linters.eslint_d')
+  local prettier_d = require('efmls-configs.formatters.prettier_d')
+
+
 	lspconfig.efm.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
@@ -79,6 +87,7 @@ local config = function()
         c = { clang_tidy, clang_format }, cpp = { clang_tidy, clang_format },
         php = { },
         nix = { statix },
+        javascript = { eslint_d, prettier_d },
       },
     },
   })
