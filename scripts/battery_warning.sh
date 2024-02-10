@@ -11,7 +11,7 @@ while true; do
     dunstify --urgency=critical "Battery" "Only $capacity% remaining";
   fi
 
-  if [[ $capacity -eq 100 && $status == '"Charging"' ]]; then
+  if [[ $capacity -eq 100 ]]; then
     dunstify --urgency=low "Battery" "Charged at 100%"
   fi
 
