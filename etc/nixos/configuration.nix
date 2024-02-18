@@ -9,7 +9,7 @@
     /etc/nixos/hardware-configuration.nix # Include the results of the hardware scan
   ];
 
-  nixpkgs.config.permittedInsecurePackages = ["electron-24.8.6"];
+  nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];
 
   # Enable experimental features (nix subcommands, flakes...)
   nix.settings.experimental-features = [
@@ -144,6 +144,7 @@
     ripgrep
     jq
     bluez
+    zoxide
 
     # TUI
     neovim

@@ -40,6 +40,7 @@ local config = function()
     settings = { ['rust-analyzer'] = {} }
   })
   local rustfmt = require('efmls-configs.formatters.rustfmt')
+  vim.g.rust_recommended_style = false
 
   -- Lua
   lspconfig.lua_ls.setup({
