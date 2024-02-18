@@ -39,6 +39,7 @@ local config = function()
     }),
 
     -- Enable pictogram icons for lsp/autocompletion
+    ---@diagnostic disable-next-line: missing-fields
     formatting = {
       expandable_indicator = true,
       format = lspkind.cmp_format({

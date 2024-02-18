@@ -29,9 +29,8 @@ alias lt="eza -1bghlF --tree --colour=always --group-directories-first --icons=a
 alias cat="bat"
 alias __cat="bat --plain --color=never --paging=never --style=plain"
 alias grep="rg --color=always"
-alias __grep="rg --color=never"
-alias nano="nvim"
 alias vim="nvim"
+eval "$(zoxide init --cmd cd zsh)"
 
 # Shortening
 alias rm="rm -i"
