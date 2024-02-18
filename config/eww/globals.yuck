@@ -1,4 +1,4 @@
-;; Variables
+;; Polls
 
 (defpoll time
   :interval "1s"
@@ -20,20 +20,22 @@
   :interval "1s"
   `netstat -tn | grep ^"tcp " | grep :22 | awk '/ESTABLISHED/{print $1 " - " $5}' &`)
 
-(deflisten l_cava
-  `sh scripts/cava.sh`)
-
 (defpoll p_workspace
   :interval "0.05s"
   `xprop -root _NET_CURRENT_DESKTOP | cut -d' ' -f3 &`)
 
-(defpoll fetch
-  :interval "1s"
-  `sh ~/dev/scripts/fetch.sh`)
-
-(defpoll procs
+(defpoll battery_remain
   :interval "5s"
-  `echo " PID     │ CPU:▼ MEM │ Command" ; procs --load-config ~/.config/eww/scripts/procs.toml | head -n20`)
+  `acpi | sd '^([^,]+, [^,]+, )' '' &`)
+
+
+;; Listen
+
+(deflisten l_cava
+  `sh scripts/cava.sh`)
+
+
+;; Variables
 
 (defvar bright false)
 (defvar night false)
