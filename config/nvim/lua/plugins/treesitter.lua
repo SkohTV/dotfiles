@@ -1,5 +1,5 @@
 local config = function()
-  require("nvim-treesitter.configs").setup({
+  require("nvim-treesitter.configs").setup({ ---@diagnostic disable-line
     ensure_installed = {
       "python",
       "rust",
