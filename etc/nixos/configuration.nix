@@ -130,6 +130,7 @@
     lm_sensors # eww
     brightnessctl # eww
     redshift # eww ( $ redshift -P -O 6000 )
+    acpi # eww
 
     # Cli tools
     wget
