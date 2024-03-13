@@ -9,7 +9,7 @@
     /etc/nixos/hardware-configuration.nix # Include the results of the hardware scan
   ];
 
-  nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0"];
+  nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0" "nix-2.16.2"];
 
   # Enable experimental features (nix subcommands, flakes...)
   nix.settings.experimental-features = [
@@ -36,6 +36,10 @@
   # Enable programs
   programs.zsh.enable = true;
   #programs.ssh.startAgent = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   # Docker
   virtualisation.docker.enable = true;
@@ -43,20 +47,20 @@
   # Enable services
   services.upower.enable = true;
   services.openssh.enable = true;
-  services.xserver = {
-    enable = true;
-    autorun = false;
-    desktopManager = {
-      xterm.enable = false;
-    };
-    displayManager = {
-      defaultSession = "none+spectrwm";
-      startx.enable = true;
-    };
-    windowManager.spectrwm = {
-      enable = true;
-    };
-  };
+  # services.xserver = {
+  #   enable = true;
+  #   autorun = false;
+  #   desktopManager = {
+  #     xterm.enable = false;
+  #   };
+  #   displayManager = {
+  #     defaultSession = "none+spectrwm";
+  #     startx.enable = true;
+  #   };
+  #   windowManager.spectrwm = {
+  #     enable = true;
+  #   };
+  # };
 
   # Power saving & management
   powerManagement.enable = true;
@@ -92,7 +96,9 @@
     useDefaultShell = true;
     packages = with pkgs; [
       # DE / WM
-      spectrwm
+      hyprpaper
+
+      # spectrwm
       xsecurelock
       dmenu
       xclip
@@ -112,7 +118,7 @@
       zathura
       qalculate-gtk
       xdg-utils # For embedded file manager
-      ciscoPacketTracer8
+      # ciscoPacketTracer8
       wireshark
       vlc
     ];
@@ -125,7 +131,7 @@
     man-pages-posix
 
     # For eww
-    eww
+    eww-wayland
     cava # eww
     lm_sensors # eww
     brightnessctl # eww
@@ -220,6 +226,10 @@
       host    all             all             127.0.0.1/32            trust
       host    all             all             ::1/128                 trust
     '';
+  };
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
   };
 
   ### NETWORK

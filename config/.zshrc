@@ -29,6 +29,7 @@ alias lt="eza -1bghlF --tree --colour=always --group-directories-first --icons=a
 alias cat="bat"
 alias __cat="bat --plain --color=never --paging=never --style=plain"
 alias grep="rg --color=always"
+alias __grep="rg"
 alias vim="nvim"
 eval "$(zoxide init --cmd cd zsh)"
 
@@ -39,7 +40,7 @@ alias c="clear"
 alias s="sudo"
 alias z="sh $HOME/dev/scripts/zellij-init.sh"
 alias py="python3"
-alias ssh='TERM=xterm-256color ssh'
+alias ssh="TERM=xterm-256color ssh"
 
 # Generalization
 alias fetch="sh $HOME/dev/scripts/fetch.sh"
@@ -64,3 +65,4 @@ export EDITOR=nvim
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 export RUFF_EXPERIMENTAL_FORMATTER=1
+export OBSIDIAN_USE_WAYLAND=1

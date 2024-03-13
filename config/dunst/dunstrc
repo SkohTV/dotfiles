@@ -1,7 +1,7 @@
 [global]
 
 # Format
-font = Monaspace Krypton
+font = Monaspace Krypton 10
 markup = yes
 format = "[%a]\n<b>%s</b>\n<i>%b</i>"
 

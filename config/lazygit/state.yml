@@ -2,10 +2,10 @@ lastupdatecheck: 0
 recentrepos:
 - /home/qlpth/dev/repo/dotfiles
 - /home/qlpth/dev/repo/vault
+- /home/qlpth/dev/repo/php-project-S4
 - /home/qlpth/dev/repo/skoh-dev
 - /home/qlpth/dev/repo/sandbox
 - /home/qlpth/dev/repo/skoh.dev
-- /home/qlpth/dev/repo/php-project-S4
 - /home/qlpth/dev/repo/riptide
 - /home/qlpth/dev/repo/quantum
 - /home/qlpth/dev/repo/ocl-rs
@@ -13,5 +13,6 @@ startuppopupversion: 5
 customcommandshistory:
 - git stash apply
 - git config pull.rebase false
+- qa
 hidecommandlog: false
 ignorewhitespaceindiffview: false

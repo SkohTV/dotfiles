@@ -1,7 +1,8 @@
 ;; Define window basis
 
 (defwindow bar
-  :wm-ignore true
+  :monitor 0
+  :stacking "fg"
   :anchor "top"
   :geometry (geometry
     :height "20px"
@@ -47,16 +48,16 @@
 
 (defwidget _workspaces []
   (box :class "workspaces"
-    (label :class "w1" :text {p_workspace==0 ? " 󰪥 " : "  "})
-    (label :class "w2" :text {p_workspace==1? " 󰪥 " : "  "})
-    (label :class "w3" :text {p_workspace==2 ? " 󰪥 " : "  "})
-    (label :class "w4" :text {p_workspace==3 ? " 󰪥 " : "  "})
-    (label :class "w5" :text {p_workspace==4 ? " 󰪥 " : "  "})
-    (label :class "w6" :text {p_workspace==5 ? " 󰪥 " : "  "})
-    (label :class "w7" :text {p_workspace==6 ? " 󰪥 " : "  "})
-    (label :class "w8" :text {p_workspace==7 ? " 󰪥 " : "  "})
-    (label :class "w9" :text {p_workspace==8 ? " 󰪥 " : "  "})
-    (label :class "w0" :text {p_workspace==9 ? " 󰪥 " : "  "})
+    (button :onclick 'hyprctl dispatch workspace 1'  (label :class "w1" :text {p_workspace.id==1  ? " 󰪥 " : "  "}))
+    (button :onclick 'hyprctl dispatch workspace 2'  (label :class "w2" :text {p_workspace.id==2  ? " 󰪥 " : "  "}))
+    (button :onclick 'hyprctl dispatch workspace 3'  (label :class "w3" :text {p_workspace.id==3  ? " 󰪥 " : "  "}))
+    (button :onclick 'hyprctl dispatch workspace 4'  (label :class "w4" :text {p_workspace.id==4  ? " 󰪥 " : "  "}))
+    (button :onclick 'hyprctl dispatch workspace 5'  (label :class "w5" :text {p_workspace.id==5  ? " 󰪥 " : "  "}))
+    (button :onclick 'hyprctl dispatch workspace 6'  (label :class "w6" :text {p_workspace.id==6  ? " 󰪥 " : "  "}))
+    (button :onclick 'hyprctl dispatch workspace 7'  (label :class "w7" :text {p_workspace.id==7  ? " 󰪥 " : "  "}))
+    (button :onclick 'hyprctl dispatch workspace 8'  (label :class "w8" :text {p_workspace.id==8  ? " 󰪥 " : "  "}))
+    (button :onclick 'hyprctl dispatch workspace 9'  (label :class "w9" :text {p_workspace.id==9  ? " 󰪥 " : "  "}))
+    (button :onclick 'hyprctl dispatch workspace 10' (label :class "w0" :text {p_workspace.id==10 ? " 󰪥 " : "  "}))
   )
 )
 

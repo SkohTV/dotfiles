@@ -5,15 +5,15 @@ layout cwd="/home/qlpth" {
     }
     children
   }
-  tab name="btop" {
-    pane name="Pane #1" {
-      command "btop"
-    }
-  }
   tab name="mprocs" {
     pane name="Pane #1" {
       command "mprocs"
       args "--config=/home/qlpth/dev/scripts/mprocs.yaml"
+    }
+  }
+  tab name="btop" {
+    pane name="Pane #1" {
+      command "btop"
     }
   }
 }
