@@ -97,15 +97,13 @@
     packages = with pkgs; [
       # DE / WM
       hyprpaper
+      tofi
+      dunst
 
       # spectrwm
       xsecurelock
-      dmenu
       xclip
       flameshot
-      feh
-      dunst
-      picom
 
       # GUI
       alacritty
