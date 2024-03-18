@@ -127,15 +127,15 @@
           :duration "550ms"
           (scale 
             :value "${volume.value}"
-            :onchange "for sink in $(pactl list sinks short | cut -f1); do pactl set-sink-volume $sink '{}%'; done" 
+            :onchange "pamixer --set-volume {}" 
             :orientation "h" 
             :flipped true 
             :max 100 
             :min 0))
         (button
           :onclick "${mute ?
-            'for sink in $(pactl list sinks short | cut -f1); do pactl set-sink-mute $sink 0; done && eww update mute=false' :
-            'for sink in $(pactl list sinks short | cut -f1); do pactl set-sink-mute $sink 1; done && eww update mute=true'}"
+            'pamixer --unmute && eww update mute=false' :
+            'pamixer --mute && eww update mute=true'}"
           (label :text "${volume.state}  ${volume.value}")
         )
     ))
