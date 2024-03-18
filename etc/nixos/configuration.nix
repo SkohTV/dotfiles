@@ -9,6 +9,7 @@
     /etc/nixos/hardware-configuration.nix # Include the results of the hardware scan
   ];
 
+  # Otherwise the following packages don't compile
   nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0" "nix-2.16.2"];
 
   # Enable experimental features (nix subcommands, flakes...)
@@ -27,9 +28,17 @@
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  # Enable sound. (& screensharing)
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # jack.enable = true;
+  };
+
+  # Enable bluetooth
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
@@ -74,6 +83,9 @@
 
   # Man pages
   documentation.dev.enable = true;
+
+  # Enable polkit
+  security.polkit.enable = true;
 
 
   ### DEFINE USER ENVIRONNEMENT
@@ -123,11 +135,12 @@
 
     # For eww
     eww-wayland
+    pamixer # eww
     cava # eww
     lm_sensors # eww
-    brightnessctl # eww
-    redshift # eww ( $ redshift -P -O 6000 )
     acpi # eww
+    brightnessctl # eww # TO REPLACE
+    redshift # eww ( $ redshift -P -O 6000 ) # TO REPLACE
 
     # Cli tools
     wget

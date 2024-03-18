@@ -1,16 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # NEED TO HANDLE MULTI SINKS
 # Values for sinks as globals ?
 # Update pb ?
 
 
-output=$(pactl list sinks | grep -A 20 'Sink #0' | awk '/Mute:/ {mute=$2} /Volume: front/ {gsub("%", "", $5); volume=$5} END {print mute, volume}')
+mute=$(pamixer --get-volume-human)
+volume=$(pamixer --get-volume)
 
-mute=$(echo "$output" | awk '{print $1}')
-volume=$(echo "$output" | awk '{print $2}')
-
-if [ "$mute" = "no" ]; then
+if [ ! "$mute" = "muted" ]; then
   if [ "$volume" -lt 33 ]; then
     mute_return="󰕿";
   elif [ "$volume" -lt 66 ]; then

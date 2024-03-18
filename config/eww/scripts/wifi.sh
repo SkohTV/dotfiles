@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 
 data=$(nmcli -t -f active,ssid,bars dev wifi | grep '^yes')
