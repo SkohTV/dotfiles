@@ -35,7 +35,7 @@
 
   # Enable programs
   programs.zsh.enable = true;
-  #programs.ssh.startAgent = true;
+  programs.ssh.startAgent = true;
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -47,41 +47,34 @@
   # Enable services
   services.upower.enable = true;
   services.openssh.enable = true;
-  # services.xserver = {
-  #   enable = true;
-  #   autorun = false;
-  #   desktopManager = {
-  #     xterm.enable = false;
-  #   };
-  #   displayManager = {
-  #     defaultSession = "none+spectrwm";
-  #     startx.enable = true;
-  #   };
-  #   windowManager.spectrwm = {
-  #     enable = true;
-  #   };
-  # };
 
   # Power saving & management
   powerManagement.enable = true;
   powerManagement.powertop.enable = true;
   services.thermald.enable = true;
-  services.auto-cpufreq = {
+  services.tlp = {
     enable = true;
     settings = {
-      battery = {
-        governor = "powersave";
-        turbo = "never";
-      };
-      charger = {
-        governor = "performance";
-        turbo = "auto";
-      };
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 20;
+
+      #Optional helps save long term battery health
+      START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
+      STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
     };
   };
 
   # Man pages
   documentation.dev.enable = true;
+
 
   ### DEFINE USER ENVIRONNEMENT
 
@@ -116,7 +109,7 @@
       zathura
       qalculate-gtk
       xdg-utils # For embedded file manager
-      # ciscoPacketTracer8
+      ciscoPacketTracer8
       wireshark
       vlc
     ];
@@ -210,8 +203,8 @@
   ];
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
-    #(nerdfonts.override { fonts = [ "Monaspace" ]; })
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    # (nerdfonts.override { fonts = [ "Monaspace" ];     })
   ];
 
   # For postgresql
