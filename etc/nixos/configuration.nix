@@ -104,11 +104,12 @@
       hyprpaper
       tofi
       dunst
+      grim
+      slurp
 
       # spectrwm
       xsecurelock
       xclip
-      flameshot
 
       # GUI
       alacritty
