@@ -125,6 +125,7 @@
       ciscoPacketTracer8
       wireshark
       vlc
+      qflipper
     ];
   };
 
