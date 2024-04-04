@@ -3,14 +3,24 @@ local config = function()
     ensure_installed = {
       "python",
       "rust",
-
       "c",
-      "html",
-      "javascript",
+      "cpp",
       "lua",
 
+      "html",
+      "css",
+      "scss",
+      "javascript",
+      "typescript",
+      "php",
+
       "bash",
+      "yuck",
+
+      "yaml",
+      "toml",
       "json",
+      "kdl",
       "markdown",
       "markdown_inline",
     },
