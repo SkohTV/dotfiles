@@ -3,3 +3,5 @@ procs:
     cmd: ["/home/qlpth/dev/scripts/battery_warning.sh"]
   dunst:
     cmd: ["/home/qlpth/dev/scripts/launch_dunst.sh"]
+  hyprpaper:
+    cmd: ["hyprpaper"]
