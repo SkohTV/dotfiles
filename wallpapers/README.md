@@ -8,6 +8,12 @@
 \- `68.jpg` ➜ https://www.zerochan.net/2451702<br>
 \- `69.jpg` ➜ https://www.4kwallpapers8k.com/w/10252-glacier-mountains-wallpaper.html<br>
 \- `70.png` ➜ https://mattandersondesign.com/discord-office-murals<br>
+\- `71.jpg` ➜ https://wallhere.com/fr/wallpaper/82428<br>
+\- `72.jpg` ➜ https://store.steampowered.com/app/512540/ARK_Scorched_Earth__Expansion_Pack/<br>
+\- `73.png` ➜ https://discord.com/invite/unixporn<br>
+\- `74.jpg` ➜ https://twitter.com/QUASARCAKE/status/1767027186291339562<br>
+\- `75.jpg` ➜ https://www.uhdpaper.com/2024/04/frieren-beyond-journeys-end-4k-1763a.html<br>
+\- `76.jpg` ➜ https://twitter.com/diyokama/status/1776758050743075096<br>
 
 
 <u>**Phone**</u><br>
