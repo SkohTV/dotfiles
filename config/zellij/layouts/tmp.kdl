@@ -3,8 +3,6 @@ layout cwd="/home/qlpth" {
     pane size=1 borderless=true {
       plugin location="zellij:compact-bar"
     }
-    pane name="nvim" borderless=true {
-      cwd "dev/repo"
-    }
+    pane {}
   }
 }

@@ -13,8 +13,13 @@ fn_main() {
   zellij attach main || zellij --layout main --session main 
 }
 
+fn_tmp() {
+  zellij attach tmp || zellij --layout tmp --session tmp 
+}
+
 case "$1" in
   "home") fn_home ;;
   "nvim") fn_nvim ;;
   "main") fn_main ;;
+  "tmp") fn_tmp ;;
 esac
