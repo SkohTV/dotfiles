@@ -1,5 +1,15 @@
 ;; Define window basis
 
+(defwindow bar2
+  :monitor 1
+  :stacking "fg"
+  :anchor "top"
+  :geometry (geometry
+    :height "20px"
+    :width "100%")
+  (bar_layout)
+)
+
 (defwindow bar
   :monitor 0
   :stacking "fg"

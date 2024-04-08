@@ -4,4 +4,4 @@ procs:
   dunst:
     cmd: ["/home/qlpth/dev/scripts/launch_dunst.sh"]
   hyprpaper:
-    cmd: ["hyprpaper"]
+    cmd: ["/home/qlpth/dev/scripts/launch_hyprpaper.sh"]
