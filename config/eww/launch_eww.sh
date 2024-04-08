@@ -6,3 +6,4 @@ if [[ ! $(pidof eww) ]]; then
 fi
 
 eww open bar
+eww open bar2
