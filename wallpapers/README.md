@@ -14,6 +14,7 @@
 \- `74.jpg` ➜ https://twitter.com/QUASARCAKE/status/1767027186291339562<br>
 \- `75.jpg` ➜ https://www.uhdpaper.com/2024/04/frieren-beyond-journeys-end-4k-1763a.html<br>
 \- `76.jpg` ➜ https://twitter.com/diyokama/status/1776758050743075096<br>
+\- `77.jpg` ➜ https://github.com/cult-of-crabs<br>
 
 
 <u>**Phone**</u><br>
