@@ -76,6 +76,11 @@ local config = function()
   local eslint_d = require('efmls-configs.linters.eslint_d')
   local prettier_d = require('efmls-configs.formatters.prettier_d')
 
+  -- Zig
+  lspconfig.zls.setup({
+    capabilities = capabilities, on_attach = on_attach,
+  })
+
 
 	lspconfig.efm.setup({
 		capabilities = capabilities,
@@ -89,6 +94,7 @@ local config = function()
         php = { },
         nix = { statix },
         javascript = { eslint_d, prettier_d },
+        zig = { },
       },
     },
   })

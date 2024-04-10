@@ -202,6 +202,9 @@
     rust-analyzer # Rust lsp
     rustfmt # Rust formatter
 
+    zig # Zig core
+    zls # Zig lsp
+
     php82 # Php core
     php82Extensions.pgsql # Php + Postgres
     php82Packages.composer # Php package manager
