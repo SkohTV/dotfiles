@@ -3,19 +3,9 @@ window:
 
 font:
   normal:
-    family: Monaspace Krypton
+    family: MonaspiceKr NF 
     style: Regular
-  bold:
-    family: Monaspace Krypton
-    style: Bold
-  italic:
-    family: Monaspace Krypton
-    style: Italic
-  bold_italic:
-    family: Monaspace Krypton
-    style: Bold Italic
   size: 10
-  # size: 7
 
 import:
   - ~/.config/alacritty/tokyonight_storm.yml
