@@ -122,7 +122,7 @@
       zathura
       qalculate-gtk
       xdg-utils # For embedded file manager
-      ciscoPacketTracer8
+      # ciscoPacketTracer8
       wireshark
       vlc
       qflipper
@@ -142,7 +142,8 @@
     lm_sensors # eww
     acpi # eww
     brightnessctl # eww # TO REPLACE
-    redshift # eww ( $ redshift -P -O 6000 ) # TO REPLACE
+    # redshift # eww ( $ redshift -P -O 6000 ) # TO REPLACE
+    gammastep
 
     # Cli tools
     wget
