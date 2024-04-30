@@ -26,7 +26,7 @@ local config = function()
         { "buffers" },
         { arrow, color={fg='#88da85'} },
       },
-      lualine_x = { { "copilot", show_colors = true }, "filetype" },
+      lualine_x = { "filetype" },
       lualine_y = { "progress" },
       lualine_z = { "location" }
     },
@@ -35,6 +35,5 @@ end
 
 return {{
   "nvim-lualine/lualine.nvim",
-  dependencies = { "AndreM222/copilot-lualine" },
   config = config,
 }}
