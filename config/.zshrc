@@ -52,6 +52,18 @@ alias nixbuild="sudo nixos-rebuild switch -I nixos-config=$HOME/dev/repo/dotfile
 function nix(){ NIX_SHELL_NAME="$1" command nix "$@" }
 
 
+chpwd() {
+  if [[ "$ZELLIJ_SESSION_NAME" == "nvim" ]]; then
+    if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+      tab_name=$(basename "$(git rev-parse --show-toplevel)")
+      command nohup zellij action rename-tab $tab_name >/dev/null 2>&1
+    else
+      command nohup zellij action rename-tab "Pane #?" >/dev/null 2>&1
+    fi
+  fi
+}
+
+
 # Load github ssh
 eval "$(ssh-agent -s)" > /dev/null
 ssh-add ~/.ssh/github 2> /dev/null
