@@ -176,7 +176,8 @@
     mprocs
 
     # Utils
-    #openssl
+    pkg-config
+    openssl
     openssh
     zplug
 
