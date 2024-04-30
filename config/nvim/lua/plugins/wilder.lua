@@ -8,13 +8,13 @@ local config = function()
   wilder.set_option("pipeline", {
     wilder.branch(
       wilder.cmdline_pipeline({
-        language = "python",
+        language = "vim",
         fuzzy = 1,
         file_command = {'rg', '--files'},
         dir_command = {'find', '.', '-type', 'd', '-printf', '%P\n'},
       }),
       wilder.vim_search_pipeline({
-        language = "python",
+        language = "vim",
         fuzzy = 1,
         file_command = {'rg', '--files'},
         dir_command = {'find', '.', '-type', 'd', '-printf', '%P\n'},
