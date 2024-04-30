@@ -1,12 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/qlpth/dev/repo/dotfiles
-- /home/qlpth/dev/repo/vault
-- /home/qlpth/dev/repo/sandbox
 startuppopupversion: 5
-customcommandshistory:
-- git stash apply
-- git config pull.rebase false
-- qa
+customcommandshistory: []
 hidecommandlog: false
 ignorewhitespaceindiffview: false
