@@ -6,4 +6,16 @@ if [[ ! $(pidof eww) ]]; then
 fi
 
 eww open bar
-eww open bar2
+
+
+if [[ $(pidof gammastep) ]]; then
+  eww update night=true
+else
+  eww update night=false
+fi
+
+if [ $(pamixer --get-volume-human) = "muted" ]; then
+  eww update mute=true
+else
+  eww update mute=false
+fi
