@@ -43,6 +43,7 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   # Enable programs
+  programs.wireshark.enable = true;
   programs.zsh.enable = true;
   programs.ssh.startAgent = true;
   programs.hyprland = {
@@ -97,7 +98,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’
   users.users.qlpth = {
     isNormalUser = true;
-    extraGroups = ["wheel" "docker"]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "docker" "wireshark"]; # Enable ‘sudo’ for the user.
     useDefaultShell = true;
     packages = with pkgs; [
       # DE / WM
@@ -151,6 +152,7 @@
     git
     zip
     unzip
+    putty
 
     eza
     bat
@@ -214,6 +216,9 @@
 
     nixd # Nix lsp
     statix # Nix linter
+
+    go # go core
+    gopls # go lsp
 
     nodejs_21 # JS core
     typescript # TS core (for tsserver)
