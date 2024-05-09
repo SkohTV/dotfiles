@@ -120,8 +120,8 @@
             :min 1))
         (button
           :onclick "${night ?
-            'redshift -P -O 6500 && eww update night=false' :
-            'redshift -P -O 3000 && eww update night=true'}"
+            'pkill gammastep && eww update night=false' :
+            '(gammastep -O 3500 &) && eww update night=true'}"
           (label :text "${night?'':''}  ${brightness}")
         )
     ))
