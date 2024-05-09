@@ -1,18 +1,17 @@
 local config = function()
   require("nvim-treesitter.configs").setup({ ---@diagnostic disable-line
     ensure_installed = {
+      "lua",
+      "c",
       "python",
       "rust",
-      "c",
-      "cpp",
-      "lua",
+      "zig",
 
       "html",
       "css",
       "scss",
       "javascript",
-      "typescript",
-      "php",
+      "jsdoc",
 
       "bash",
       "yuck",
