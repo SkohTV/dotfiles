@@ -81,6 +81,10 @@ local config = function()
     capabilities = capabilities, on_attach = on_attach,
   })
 
+  lspconfig.gopls.setup({
+    capabilities = capabilities, on_attach = on_attach,
+  })
+
 
 	lspconfig.efm.setup({
 		capabilities = capabilities,
@@ -95,6 +99,7 @@ local config = function()
         nix = { statix },
         javascript = { eslint_d, prettier_d },
         zig = { },
+        go = { },
       },
     },
   })
