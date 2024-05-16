@@ -123,7 +123,7 @@
       zathura
       qalculate-gtk
       xdg-utils # For embedded file manager
-      # ciscoPacketTracer8
+      ciscoPacketTracer8
       wireshark
       vlc
       qflipper
