@@ -127,6 +127,7 @@
       wireshark
       vlc
       qflipper
+      onlyoffice-bin
     ];
   };
 
