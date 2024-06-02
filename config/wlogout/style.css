@@ -1,0 +1,54 @@
+* {
+  background-image: none;
+  box-shadow: none;
+}
+
+window {
+  background-color: rgba(12, 12, 12, 0.9);
+  font-family: 'MonaspiceKr NF';
+  font-size: 24px;
+}
+
+button {
+  color: #cdd6f4;
+}
+
+button {
+  border-radius: 0;
+  border-color: black;
+  background-color: #1e1e1e;
+  border-style: solid;
+  border-width: 1px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+button:hover {
+  background-color: #333333;
+  outline-style: none;
+}
+
+#lock {
+  background-image: url("/home/qlpth/.config/wlogout/icons/lock.png")
+}
+
+#close {
+  background-image: url("/home/qlpth/.config/wlogout/icons/exit.png")
+}
+
+#suspend {
+  background-image: url("/home/qlpth/.config/wlogout/icons/pause.png")
+}
+
+#hibernate {
+  background-image: url("/home/qlpth/.config/wlogout/icons/moon.png")
+}
+
+#shutdown {
+  background-image: url("/home/qlpth/.config/wlogout/icons/power.png")
+}
+
+#reboot {
+  background-image: url("/home/qlpth/.config/wlogout/icons/reload.png")
+}
