@@ -20,7 +20,7 @@ function realtimeClock() {
   hrs = ("0" + hrs).slice(-2);
   mins = ("0" + mins).slice(-2);
 
-  document.getElementById("clock").innerHTML = `${day}, ${mins}:${hrs}`;
+  document.getElementById("clock").innerHTML = `${day}, ${hrs}:${mins}`;
 }
 
 setTimeout(realtimeClock, 500);
