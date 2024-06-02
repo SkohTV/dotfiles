@@ -2,6 +2,10 @@ procs:
   battery:
     cmd: ["/home/qlpth/dev/scripts/battery_warning.sh"]
   dunst:
-    cmd: ["/home/qlpth/dev/scripts/launch_dunst.sh"]
+    shell: "pkill dunst || dunst"
   hyprpaper:
-    cmd: ["/home/qlpth/dev/scripts/launch_hyprpaper.sh"]
+    cmd: ["hyprpaper"]
+  hypridle:
+    cmd: ["hypridle"]
+  _eww:
+    cmd: ["/home/qlpth/dev/scripts/launch_eww.sh"]

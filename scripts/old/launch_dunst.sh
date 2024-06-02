@@ -2,4 +2,7 @@
 
 
 pkill dunst
-dunst
+
+while [ 1 ]; do
+  dunst
+done
