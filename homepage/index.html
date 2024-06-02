@@ -9,29 +9,28 @@
 </head>
 
 
-<script>
+<script defer>
 function realtimeClock() {
   let clock = new Date();
 
   let day = clock.toLocaleString("en", { weekday: "short" });
   let hrs = clock.getHours();
   let mins = clock.getMinutes();
-  let amPm = ( hrs < 12) ? "AM" : "PM";
 
-  hrs = (hrs > 12) ? hrs - 12 : hrs;
   hrs = ("0" + hrs).slice(-2);
   mins = ("0" + mins).slice(-2);
 
-  document.getElementById("clock").innerHTML = day + ", " + hrs + ":" + mins + " " + amPm;
-  let t = setTimeout(realtimeClock, 500);
+  document.getElementById("clock").innerHTML = `${day}, ${mins}:${hrs}`;
 }
+
+setTimeout(realtimeClock, 500);
 </script>
 
 
 <style>
 @font-face { 
-font-family: "Krypton";
-src: url(./src/font.woff);
+  font-family: "Krypton";
+  src: url(./src/font.woff);
 }
 :root {
   font-family: Krypton;
@@ -177,15 +176,12 @@ label {
   <div id="links">
     <div>
       <h2>/usr/</h2>
-      <p><a href="https://mail.proton.me/u/0/inbox">proton</a></p>
-      <p><a href="https://youtube.com">youtube</a></p>
-      <p><a href="https://calendar.google.com/calendar/u/1/r">calendar</a></p>
-      <p><a href="https://app.todoist.com/app/project/2299108853">todoist</a></p>
+      <p><a href="https://mail.proton.me/u/3/inbox">proton</a></p>
+      <p><a href="https://calendar.proton.me/u/3/">youtube</a></p>
+      <p><a href="https://calendar.proton.me/u/3/">calendar</a></p>
     </div>
     <div>
       <h2>/self/</h2>
-      <p><a href="https://www.polyphasic.net/">polyphasic</a></p>
-      <p><a href="https://jimmyjoy.com/">jimmyjoy</a></p>
       <p><a href="https://gamersupps.gg/">gamersupps</a></p>
     </div>
     <div>
@@ -204,11 +200,5 @@ label {
     </div>
   </div>
 </body>
-
-
-<script>
-  realtimeClock();
-</script>
-
 
 </html>
