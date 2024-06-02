@@ -2,9 +2,14 @@
   config,
   pkgs,
   ...
-}: {
-  ### DEFINE CORE OF NIXOS
+}:
 
+let
+  unstable = import <nixos-unstable> {};
+
+in {
+
+  # Imports
   imports = [
     /etc/nixos/hardware-configuration.nix # Include the results of the hardware scan
   ];
@@ -118,12 +123,12 @@
       tor-browser
       discord
       obsidian
-      ytmdesktop
+      #ytmdesktop
       libsForQt5.okular
       zathura
       qalculate-gtk
       xdg-utils # For embedded file manager
-      ciscoPacketTracer8
+      # ciscoPacketTracer8
       wireshark
       vlc
       qflipper
@@ -132,100 +137,106 @@
   };
 
   # List packages installed in system profile
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
+    # Unstable
+    pkgs.hypridle
+    pkgs.hyprlock
+    pkgs.hyprcursor
+    pkgs.wlogout
+
     # Man pages
-    man-pages
-    man-pages-posix
+    pkgs.man-pages
+    pkgs.man-pages-posix
 
     # For eww
-    eww-wayland
-    pamixer # eww
-    cava # eww
-    lm_sensors # eww
-    acpi # eww
-    brightnessctl # eww # TO REPLACE
+    pkgs.eww
+    pkgs.pamixer # eww
+    pkgs.cava # eww
+    pkgs.lm_sensors # eww
+    pkgs.acpi # eww
+    pkgs.brightnessctl # eww # TO REPLACE
     # redshift # eww ( $ redshift -P -O 6000 ) # TO REPLACE
-    gammastep
+    pkgs.gammastep
 
     # Cli tools
-    wget
-    networkmanager
-    git
-    zip
-    unzip
-    putty
+    pkgs.wget
+    pkgs.networkmanager
+    pkgs.git
+    pkgs.zip
+    pkgs.unzip
+    pkgs.putty
 
-    eza
-    bat
-    starship
-    ripgrep
-    jq
-    bluez
-    zoxide
+    pkgs.eza
+    pkgs.bat
+    pkgs.starship
+    pkgs.ripgrep
+    pkgs.jq
+    pkgs.bluez
+    pkgs.zoxide
 
     # TUI
-    neovim
-    btop
-    pipr
-    zellij
-    lf
-    lazygit
-    asciiquarium
-    fzf
-    sd
-    fd
-    hyperfine
-    procs
-    mprocs
+    pkgs.neovim
+    pkgs.btop
+    pkgs.pipr
+    pkgs.zellij
+    pkgs.lf
+    pkgs.lazygit
+    pkgs.asciiquarium
+    pkgs.fzf
+    pkgs.sd
+    pkgs.fd
+    pkgs.hyperfine
+    pkgs.procs
+    pkgs.mprocs
 
     # Utils
-    pkg-config
-    openssl
-    openssh
-    zplug
+    pkgs.pkg-config
+    pkgs.openssl
+    pkgs.openssh
+    pkgs.zplug
 
     # Languages
-    efm-langserver # general purpose lsp
+    pkgs.efm-langserver # general purpose lsp
 
-    lua5_4_compat # Lua core
-    lua54Packages.luarocks # Luarocks package manager
-    lua-language-server # Lua lsp
-    stylua # Lua formatter
-    lua54Packages.luacheck # Lua linter
+    pkgs.lua5_4_compat # Lua core
+    pkgs.lua54Packages.luarocks # Luarocks package manager
+    pkgs.lua-language-server # Lua lsp
+    pkgs.stylua # Lua formatter
+    pkgs.lua54Packages.luacheck # Lua linter
 
-    python312 # Python core
-    nodePackages_latest.pyright # Python lsp
-    ruff # Python formatter
+    pkgs.python312 # Python core
+    pkgs.nodePackages_latest.pyright # Python lsp
+    pkgs.ruff # Python formatter
 
-    gnat13 # C / C++ core (gcc & g++)
-    gnumake # make
-    cmake # cmake
-    clang-tools_16 # clangd (+ clang-tidy & clang-format)
+    pkgs.gnat13 # C / C++ core (gcc & g++)
+    pkgs.gnumake # make
+    pkgs.cmake # cmake
+    pkgs.clang-tools_16 # clangd (+ clang-tidy & clang-format)
 
-    rustc # Rust core
-    cargo # Rust core
-    rust-analyzer # Rust lsp
-    rustfmt # Rust formatter
+    pkgs.rustc # Rust core
+    pkgs.cargo # Rust core
+    pkgs.rust-analyzer # Rust lsp
+    pkgs.rustfmt # Rust formatter
 
-    zig # Zig core
-    zls # Zig lsp
+    pkgs.zig # Zig core
+    pkgs.zls # Zig lsp
 
-    php82 # Php core
-    php82Extensions.pgsql # Php + Postgres
-    php82Packages.composer # Php package manager
-    phpactor # Php lsp
+    pkgs.php82 # Php core
+    pkgs.php82Extensions.pgsql # Php + Postgres
+    pkgs.php82Packages.composer # Php package manager
+    pkgs.phpactor # Php lsp
 
-    nixd # Nix lsp
-    statix # Nix linter
+    pkgs.nixd # Nix lsp
+    pkgs.statix # Nix linter
 
-    go # go core
-    gopls # go lsp
+    pkgs.go # go core
+    pkgs.gopls # go lsp
 
-    nodejs_21 # JS core
-    typescript # TS core (for tsserver)
-    nodePackages_latest.typescript-language-server # TS / JS lsp
-    eslint_d # JS linter
-    prettierd # JS formatter
+    pkgs.nodejs # JS core
+    pkgs.typescript # TS core (for tsserver)
+    pkgs.nodePackages_latest.typescript-language-server # TS / JS lsp
+    pkgs.eslint_d # JS linter
+    pkgs.prettierd # JS formatter
   ];
 
   fonts.packages = with pkgs; [
@@ -300,5 +311,6 @@
 
   system.copySystemConfiguration = true;
   system.stateVersion = "23.11";
+
 }
 
