@@ -23,7 +23,7 @@ function realtimeClock() {
   document.getElementById("clock").innerHTML = `${day}, ${hrs}:${mins}`;
 }
 
-setTimeout(realtimeClock, 500);
+setInterval(realtimeClock, 500);
 </script>
 
 
