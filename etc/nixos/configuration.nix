@@ -143,6 +143,7 @@ in {
     pkgs.hyprlock
     pkgs.hyprcursor
     pkgs.wlogout
+    pkgs.imv
 
     # Man pages
     pkgs.man-pages
