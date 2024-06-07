@@ -7,7 +7,7 @@ while true; do
   capacity=$(echo "$val" | jq '.["BAT1"]["capacity"]');
   status=$(echo "$val" | jq '.["BAT1"]["status"]');
 
-  if [[ $capacity < 16 && $status == '"Discharging"' ]]; then
+  if [[ $capacity -lt 16 && $status == '"Discharging"' ]]; then
     dunstify --urgency=critical "Battery" "Only $capacity% remaining";
   fi
 
