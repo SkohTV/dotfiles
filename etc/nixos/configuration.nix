@@ -133,6 +133,7 @@ in {
       vlc
       qflipper
       onlyoffice-bin
+      spacedrive
     ];
   };
 
