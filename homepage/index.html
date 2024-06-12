@@ -1,173 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
   <meta charset="UTF-8">
   <title>Homepage</title>
-  <link rel="icon" href="./src/icon.svg">
+  <link rel="icon" href="./img/icon.svg">
+  <link rel="stylesheet" href="./src/style.css">
+  <script src="src/script.js" defer></script>
 </head>
 
 
-<script defer>
-function realtimeClock() {
-  let clock = new Date();
-
-  let day = clock.toLocaleString("en", { weekday: "short" });
-  let hrs = clock.getHours();
-  let mins = clock.getMinutes();
-
-  hrs = ("0" + hrs).slice(-2);
-  mins = ("0" + mins).slice(-2);
-
-  document.getElementById("clock").innerHTML = `${day}, ${hrs}:${mins}`;
-}
-
-setInterval(realtimeClock, 500);
-</script>
-
-
-<style>
-@font-face { 
-  font-family: "Krypton";
-  src: url(./src/font.woff);
-}
-:root {
-  font-family: Krypton;
-  height: 100%;
-  --h1-color: #7086ff;
-  --h2-color: #d74f6d;
-  --h3-color: #90cd82;
-  --a-color: #bcc0cc;
-  --a-hover: #d8a244;
-  --a-hover-color: #4c4f69;
-}
-body {
-  display: flex;
-  justify-content: space-around;
-  height: 100%;
-  margin: 0;
-  align-items: center;
-  flex-flow: column;
-  background-color: #151515;
-  background-image: url(./src/wallpaper_small.png);
-  background-size:cover;
-}
-h1 {
-  color: var(--h1-color);
-  font-size: 64px;
-  margin-bottom: 0;
-}
-h2 {
-  color: var(--h2-color);
-  font-size: 48px;
-}
-h3 {
-  margin-top: 10px;
-  color: var(--h3-color);
-  font-size: 32px;
-}
-p {
-  margin: 4px
-}
-a {
-  color: var(--a-color);
-  text-decoration: none;
-  font-size: 24px;
-  padding: 2px}
-a:hover, a:focus {
-  background-color: var(--a-hover);
-  color: var(--a-hover-color)
-}
-#links {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-}
-#top {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-}
-</style>
-
-
-<!-- https://codepen.io/liamj/pen/vYYLGZj -->
-<style>
-:root {
-  --rad: .7rem;
-  --dur: .3s;
-  --color-dark: #2f2f2f;
-  --color-light: #fff;
-  --color-brand: #57bd84;
-  --font-fam: 'Lato', sans-serif;
-  --height: 4rem;
-  --btn-width: 6rem;
-  --bez: cubic-bezier(0, 0, 0.43, 1.49);
-}
-form {
-  position: relative;
-  width: 50rem;
-  background: var(--color-brand);
-  border-radius: var(--rad);
-}
-input, button {
-  height: var(--height);
-  font-family: var(--font-fam);
-  border: 0;
-  color: var(--color-dark);
-  font-size: 1.8rem;
-}
-input[type="search"] {
-  outline: 0;
-  width: 100%;
-  background: var(--color-light);
-  padding: 0 1.6rem;
-  border-radius: var(--rad);
-  appearance: none;
-  transition: all var(--dur) var(--bez);
-  transition-property: width, border-radius;
-  z-index: 1;
-  position: relative;
-}
-button {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: var(--btn-width);
-  font-weight: bold;
-  background: var(--color-brand);
-  border-radius: 0 var(--rad) var(--rad) 0;
-}
-input:not(:placeholder-shown) {
-  border-radius: var(--rad) 0 0 var(--rad);
-  width: calc(100% - var(--btn-width));
-  + button {
-    display: block;
-  }
-}
-label {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-}
-</style>
 
 
 <body>
   <div id="top">
-    <h1>Zilliax</h1>
-    <div class="time">
-      <h3 id="clock"></h3>
-    </div>
+    <img src="./img/logo.png">
+    <h1 id="clock-large">‎</h1>
+    <h3 id="clock-small">‎</h3>
   </div>
 
-  <!-- https://codepen.io/liamj/pen/vYYLGZj -->
+  
   <form action="https://search.brave.com/search" method="GET" role="search">
     <input name="q" id="search" type="search" placeholder="Search..." autocomplete="off" required />
     <button type="submit">Go</button>
@@ -176,27 +28,26 @@ label {
   <div id="links">
     <div>
       <h2>/usr/</h2>
-      <p><a href="https://mail.proton.me/u/3/inbox">proton</a></p>
-      <p><a href="https://calendar.proton.me/u/3/">youtube</a></p>
-      <p><a href="https://calendar.proton.me/u/3/">calendar</a></p>
+      <p><a href="https://mail.proton.me/u/3/inbox"><img src="./img/icons/proton-mail.png">proton</a></p>
+      <p><a href="https://calendar.proton.me/u/3/"><img src="./img/icons/proton-calendar.png">calendar</a></p>
+      <p><a href="https://www.youtube.com/"><img src="./img/icons/youtube.png">youtube</a></p>
     </div>
     <div>
       <h2>/self/</h2>
-      <p><a href="https://gamersupps.gg/">gamersupps</a></p>
+      <p><a href="https://gamersupps.gg/"><img src="./img/icons/gamersupps.png">gamersupps</a></p>
     </div>
     <div>
       <h2>/dev/</h2>
-      <p><a href="https://search.nixos.org/packages">nixpkg</a></p>
-      <p><a href="https://github.com">github</a></p>
-      <p><a href="https://www.digitalocean.com">digitalocean</a></p>
-      <p><a href="https://leetcode.com">leetcode</a></p>
+      <p><a href="https://search.nixos.org/packages"><img src="./img/icons/nix.png">nixpkg</a></p>
+      <p><a href="https://github.com"><img src="./img/icons/github.png">github</a></p>
+      <p><a href="https://leetcode.com"><img src="./img/icons/leetcode.png">leetcode</a></p>
     </div>
     <div>
       <h2>/work/</h2>
-      <p><a href="https://outlook.office365.com/mail/">outlook</a></p>
-      <p><a href="https://www.linkedin.com/feed/">linkedin</a></p>
-      <p><a href="https://lazy.isenlabs.fr">lazy</a></p>
-      <p><a href="https://web.isen-ouest.fr/moodle4/my/courses.php">moodle</a></p>
+      <p><a href="https://outlook.office365.com/mail/"><img src="./img/icons/outlook.png">outlook</a></p>
+      <p><a href="https://www.linkedin.com/feed/"><img src="./img/icons/linkedin.png">linkedin</a></p>
+      <p><a href="https://lazy.isenlabs.fr"><img src="./img/icons/lazy.png">lazy</a></p>
+      <p><a href="https://web.isen-ouest.fr/moodle4/my/courses.php"><img src="./img/icons/moodle.png">moodle</a></p>
     </div>
   </div>
 </body>
