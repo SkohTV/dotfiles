@@ -1,11 +1,16 @@
 /* Globals */
 @font-face { 
   font-family: "Krypton";
-  src: url(./font.woff);
+  src: url(./MonaspaceKrypton.woff);
+}
+
+@font-face { 
+  font-family: "Jetbrains";
+  src: url(./JetBrainsMono.woff);
 }
 
 :root {
-  font-family: Krypton;
+  font-family: 'Krypton';
   height: 100%;
   --h1-color: #7086ff;
   --h2-color: #d74f6d;
@@ -109,9 +114,9 @@ a {
   --color-dark: #2f2f2f;
   --color-light: #fff;
   --color-brand: #57bd84;
-  --font-fam: 'Lato', sans-serif;
+  --font-fam: 'Jetbrains';
   --height: 4rem;
-  --btn-width: 6rem;
+  --btn-width: 8rem;
   --bez: cubic-bezier(0, 0, 0.43, 1.49);
 }
 
@@ -130,18 +135,6 @@ input, button {
   font-size: 1.8rem;
 }
 
-input[type="search"] {
-  outline: 0;
-  width: 100%;
-  background: var(--color-light);
-  padding: 0 1.6rem;
-  border-radius: var(--rad);
-  appearance: none;
-  transition: all var(--dur) var(--bez);
-  transition-property: width, border-radius;
-  z-index: 1;
-  position: relative;
-}
 
 button {
   display: none;
@@ -152,14 +145,7 @@ button {
   font-weight: bold;
   background: var(--color-brand);
   border-radius: 0 var(--rad) var(--rad) 0;
-}
-
-input:not(:placeholder-shown) {
-  border-radius: var(--rad) 0 0 var(--rad);
-  width: calc(100% - var(--btn-width));
-  + button {
-    display: block;
-  }
+  cursor: pointer;
 }
 
 label {
@@ -170,4 +156,33 @@ label {
   height: 1px;
   width: 1px;
   overflow: hidden;
+}
+
+
+input {
+
+  &[type="search"] {
+    outline: 0;
+    width: 100%;
+    background: var(--color-light);
+    padding: 0 1.6rem;
+    border-radius: var(--rad);
+    appearance: none;
+    transition: all var(--dur) var(--bez);
+    transition-property: width, border-radius;
+    z-index: 1;
+    position: relative;
+  }
+
+  &:not(:placeholder-shown) {
+    border-radius: var(--rad) 0 0 var(--rad);
+    width: calc(100% - var(--btn-width));
+    + button {
+      display: block;
+    }
+  }
+
+  &::-webkit-search-cancel-button {
+    cursor: pointer;
+  }
 }
