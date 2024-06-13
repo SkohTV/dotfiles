@@ -161,7 +161,6 @@ a {
   }
 
   img {
-    border: 0 5% 0 5%;
     width: 90%;
   }
   a:hover {
@@ -170,8 +169,10 @@ a {
 }
 
 #money { left: 0; }
+#money img { margin: 0 0 0 10%; }
 
 #source { right: 0; }
+#source img { margin: 0 10% 0 0; }
 
 
 
