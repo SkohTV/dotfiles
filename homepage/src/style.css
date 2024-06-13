@@ -151,32 +151,6 @@ a {
 }
 
 
-#money, #source {
-  width: 40px;
-  position: absolute;
-  bottom: 0;
-
-  &:hover {
-    width: 48px;
-  }
-
-  img {
-    width: 90%;
-  }
-  a:hover {
-    background-color: #00000000;
-  }
-}
-
-#money { left: 0; }
-#money img { margin: 0 0 0 10%; }
-
-#source { right: 0; }
-#source img { margin: 0 10% 0 0; }
-
-
-
-
 
 /* Search bar */
 /* https://codepen.io/liamj/pen/vYYLGZj */
