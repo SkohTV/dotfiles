@@ -199,7 +199,7 @@ shadeSortColumn=true
 contrast=4
 
 [MainWindow]
-1920x1080 screen: Height=1060
+1920x1080 screen: Height=530
 1920x1080 screen: Width=960
 1920x1080 screen: Window-Maximized=true
 958x528 screen: Window-Maximized=true
