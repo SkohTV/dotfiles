@@ -81,7 +81,13 @@ local config = function()
     capabilities = capabilities, on_attach = on_attach,
   })
 
+  -- Go
   lspconfig.gopls.setup({
+    capabilities = capabilities, on_attach = on_attach,
+  })
+
+  -- Mojo
+  lspconfig.mojo.setup({
     capabilities = capabilities, on_attach = on_attach,
   })
 
@@ -100,6 +106,7 @@ local config = function()
         javascript = { eslint_d, prettier_d },
         zig = { },
         go = { },
+        mojo = { },
       },
     },
   })
