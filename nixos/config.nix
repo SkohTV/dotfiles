@@ -4,18 +4,15 @@
   ...
 }:
 
-let
-  unstable = import <nixos-unstable> {};
-
-in {
+{
 
   # Imports
   imports = [
-    /etc/nixos/hardware-configuration.nix # Include the results of the hardware scan
+    ./modules/machines/laptop-acer.nix # Include the results of the hardware scan
+    ./modules/pkgs.nix # All packages enabled
+
   ];
 
-  # Otherwise the following packages don't compile
-  nixpkgs.config.permittedInsecurePackages = ["electron-25.9.0" "nix-2.16.2"];
 
   # Enable experimental features (nix subcommands, flakes...)
   nix.settings.experimental-features = [
@@ -105,140 +102,10 @@ in {
     isNormalUser = true;
     extraGroups = ["wheel" "docker" "wireshark"]; # Enable ‘sudo’ for the user.
     useDefaultShell = true;
-    packages = with pkgs; [
-      # DE / WM
-      hyprpaper
-      tofi
-      dunst
-      grim
-      slurp
-
-      # spectrwm
-      xsecurelock
-      xclip
-
-      # GUI
-      alacritty
-      brave
-      tor-browser
-      discord
-      obsidian
-      #ytmdesktop
-      libsForQt5.okular
-      zathura
-      qalculate-gtk
-      xdg-utils # For embedded file manager
-      # ciscoPacketTracer8
-      wireshark
-      vlc
-      qflipper
-      onlyoffice-bin
-      spacedrive
-    ];
   };
 
   # List packages installed in system profile
   environment.systemPackages = [
-    # Unstable
-    pkgs.hypridle
-    pkgs.hyprlock
-    pkgs.hyprcursor
-    pkgs.wlogout
-    pkgs.imv
-
-    # Man pages
-    pkgs.man-pages
-    pkgs.man-pages-posix
-
-    # For eww
-    pkgs.eww
-    pkgs.pamixer # eww
-    pkgs.cava # eww
-    pkgs.lm_sensors # eww
-    pkgs.acpi # eww
-    pkgs.brightnessctl # eww # TO REPLACE
-    # redshift # eww ( $ redshift -P -O 6000 ) # TO REPLACE
-    pkgs.gammastep
-
-    # Cli tools
-    pkgs.wget
-    pkgs.networkmanager
-    pkgs.git
-    pkgs.zip
-    pkgs.unzip
-    pkgs.putty
-
-    pkgs.eza
-    pkgs.bat
-    pkgs.starship
-    pkgs.ripgrep
-    pkgs.jq
-    pkgs.bluez
-    pkgs.zoxide
-
-    # TUI
-    pkgs.neovim
-    pkgs.btop
-    pkgs.pipr
-    pkgs.zellij
-    pkgs.lf
-    pkgs.lazygit
-    pkgs.asciiquarium
-    pkgs.fzf
-    pkgs.sd
-    pkgs.fd
-    pkgs.hyperfine
-    pkgs.procs
-    pkgs.mprocs
-
-    # Utils
-    pkgs.pkg-config
-    pkgs.openssl
-    pkgs.openssh
-    pkgs.zplug
-
-    # Languages
-    pkgs.efm-langserver # general purpose lsp
-
-    pkgs.lua5_4_compat # Lua core
-    pkgs.lua54Packages.luarocks # Luarocks package manager
-    pkgs.lua-language-server # Lua lsp
-    pkgs.stylua # Lua formatter
-    pkgs.lua54Packages.luacheck # Lua linter
-
-    pkgs.python312 # Python core
-    pkgs.nodePackages_latest.pyright # Python lsp
-    pkgs.ruff # Python formatter
-
-    pkgs.gnat13 # C / C++ core (gcc & g++)
-    pkgs.gnumake # make
-    pkgs.cmake # cmake
-    pkgs.clang-tools_16 # clangd (+ clang-tidy & clang-format)
-
-    pkgs.rustc # Rust core
-    pkgs.cargo # Rust core
-    pkgs.rust-analyzer # Rust lsp
-    pkgs.rustfmt # Rust formatter
-
-    pkgs.zig # Zig core
-    pkgs.zls # Zig lsp
-
-    pkgs.php82 # Php core
-    pkgs.php82Extensions.pgsql # Php + Postgres
-    pkgs.php82Packages.composer # Php package manager
-    pkgs.phpactor # Php lsp
-
-    pkgs.nixd # Nix lsp
-    pkgs.statix # Nix linter
-
-    pkgs.go # go core
-    pkgs.gopls # go lsp
-
-    pkgs.nodejs # JS core
-    pkgs.typescript # TS core (for tsserver)
-    pkgs.nodePackages_latest.typescript-language-server # TS / JS lsp
-    pkgs.eslint_d # JS linter
-    pkgs.prettierd # JS formatter
   ];
 
   fonts.packages = with pkgs; [
