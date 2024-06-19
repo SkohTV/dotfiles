@@ -22,6 +22,16 @@ bindkey '^[OA' history-substring-search-up
 bindkey '^[OB' history-substring-search-down
 
 
+# Export env var
+export NIXCFG=$HOME/dev/repo/dotfiles/nixos/config.nix
+export EDITOR=nvim
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
+export RUFF_EXPERIMENTAL_FORMATTER=1
+export OBSIDIAN_USE_WAYLAND=1
+export XDG_CURRENT_DESKTOP='sway'
+
+
 # x -> y
 alias ll="eza -1abghlF --colour=always --group-directories-first --icons=always"
 alias ls="eza -1bghlF --colour=always --group-directories-first --icons=always"
@@ -45,7 +55,8 @@ alias ssh="TERM=xterm-256color ssh"
 # Generalization
 alias fetch="sh $HOME/dev/scripts/fetch.sh"
 alias copy="xclip -selection copy"
-alias nixbuild="sudo nixos-rebuild switch -I nixos-config=$HOME/dev/repo/dotfiles/etc/nixos/configuration.nix"
+alias nixbuild="sudo nixos-rebuild switch -I nixos-config=$NIXCFG"
+alias nixdev="nix develop --command zsh"
 function nix(){ NIX_SHELL_NAME="$1" command nix "$@" }
 
 
@@ -67,11 +78,3 @@ ssh-add ~/.ssh/github 2> /dev/null
 
 # Start terminal emulator
 eval "$(starship init zsh)"
-
-# Export env var
-export NIXCFG=$HOME/dev/repo/dotfiles/etc/nixos/configuration.nix
-export EDITOR=nvim
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export MANROFFOPT="-c"
-export RUFF_EXPERIMENTAL_FORMATTER=1
-export OBSIDIAN_USE_WAYLAND=1
