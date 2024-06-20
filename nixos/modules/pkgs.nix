@@ -7,5 +7,7 @@
   imports = [
     ./pkgsets/desktop.nix # Desktop environement
     ./pkgsets/apps.nix # Graphical apps
-  ];
+    ./pkgsets/cli.nix
+    ./pkgsets/langs.nix
+ ];
 }
