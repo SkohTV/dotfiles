@@ -1,2 +1,6 @@
+# Auto generated files
 config/lazygit/state.yml
 config/btop/btop.log*
+
+# Never again
+.env
