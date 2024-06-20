@@ -1,4 +1,10 @@
-;; Modules
-
+;; Variables
 (include "./globals.yuck")
+
+
+;; Main bar
 (include "./bar.yuck")
+
+
+;; Popups
+(include "./time.yuck")

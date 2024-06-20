@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-# NEED TO HANDLE MULTI SINKS
-# Values for sinks as globals ?
-# Update pb ?
-
 
 mute=$(pamixer --get-volume-human)
 volume=$(pamixer --get-volume)

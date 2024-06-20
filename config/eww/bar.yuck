@@ -1,19 +1,4 @@
-;; Define window basis
-
-(defwindow bar
-  :monitor 0
-  :stacking "bg"
-  :anchor "top"
-  :geometry (geometry
-    :height "20px"
-    :width "100%")
-  (bar_layout)
-)
-
-
-
-;; Create widgets
-
+;; Distro logo
 (defwidget _distro []
   (box
     :class "distro"
@@ -23,6 +8,7 @@
 )
 
 
+;; CPU, temperature, ram
 (defwidget _grp_procinfo []
   (box
     :class "procinfo"
@@ -35,6 +21,7 @@
 )
 
 
+;; Cava bars
 (defwidget _cava []
   (box
     :class "cava"
@@ -46,6 +33,7 @@
 
 
 
+;; Workspaces
 (defwidget _workspaces []
   (box :class "workspaces"
     (button :onclick 'hyprctl dispatch workspace 1'  (label :class "w1" :text {p_workspace.id==1  ? " 󰪥 " : "  "}))
@@ -64,6 +52,7 @@
 
 
 
+;; Battery
 (defwidget _battery []
   (box
     :class "battery"
@@ -86,6 +75,9 @@
 )
 
 
+
+
+;; Brightness and sound
 (defwidget _grp_brightsound []
   (box
     :class "inside"
@@ -106,13 +98,13 @@
             :onchange "brightnessctl set {}%" 
             :orientation "h" 
             :flipped true 
-            :max 100
+            :max 101
             :min 1))
         (button
           :onclick "${night ?
             'pkill gammastep && eww update night=false' :
             '(gammastep -O 3500 &) && eww update night=true'}"
-          (label :text "${night?'':''}  ${brightness}")
+          (label :text "${night?'':''}  ${brightness - 1}")
         )
     ))
     (eventbox
@@ -130,7 +122,7 @@
             :onchange "pamixer --set-volume {}" 
             :orientation "h" 
             :flipped true 
-            :max 100 
+            :max 100
             :min 0))
         (button
           :onclick "${mute ?
@@ -143,6 +135,8 @@
 )
 
 
+
+;; Wifi
 (defwidget _grp_wifi []
   (box
     :class "wifi"
@@ -161,15 +155,19 @@
 )
 
 
+;; Date and time
 (defwidget _time []
-  (box
-    :class "time"
+  (eventbox
     :space-evenly false
-    (label :text {time})
+    :onhover 'eww open popup_time'
+    :onhoverlost 'eww close popup_time'
+    (label :class "time" :text {time})
   )
 )
 
 
+
+;; Small separator
 (defwidget _separator []
   (label :text "I")
 )
@@ -177,8 +175,19 @@
 
 
 
-;; Glue together
+;; Window
+(defwindow bar
+  :monitor 0
+  :stacking "bg"
+  :anchor "top"
+  :geometry (geometry
+    :height "20px"
+    :width "100%")
+  (bar_layout)
+)
 
+
+;; Layout
 (defwidget bar_layout []
   (box :class "top_bar"
     (box :class "left"
