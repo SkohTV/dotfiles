@@ -1,6 +1,8 @@
 procs:
   battery:
     cmd: ["/home/qlpth/dev/scripts/battery_warning.sh"]
+  weather:
+    cmd: ["/home/qlpth/.config/eww/scripts/weather.sh"]
   dunst:
     shell: "pkill dunst || dunst"
   hyprpaper:
