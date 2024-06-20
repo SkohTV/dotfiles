@@ -29,7 +29,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 export RUFF_EXPERIMENTAL_FORMATTER=1
 export OBSIDIAN_USE_WAYLAND=1
-export XDG_CURRENT_DESKTOP='sway'
 
 
 # x -> y
@@ -54,7 +53,7 @@ alias ssh="TERM=xterm-256color ssh"
 
 # Generalization
 alias fetch="sh $HOME/dev/scripts/fetch.sh"
-alias copy="xclip -selection copy"
+alias copy="wl-copy"
 alias nixbuild="sudo nixos-rebuild switch -I nixos-config=$NIXCFG"
 alias nixdev="nix develop --command zsh"
 function nix(){ NIX_SHELL_NAME="$1" command nix "$@" }
