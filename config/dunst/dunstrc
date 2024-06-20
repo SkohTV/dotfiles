@@ -2,20 +2,19 @@
 
 # Format
 font = Monaspace Krypton 10
-markup = yes
-format = "[%a]\n<b>%s</b>\n<i>%b</i>"
+markup = full
+format = "<b>%s</b>\n<i>%b</i>"
 
 # Text
 word_wrap = yes
 ignore_newline = no
-alignment = center
+alignment = left
 
 # Stacking
 sort = yes
 indicate_hidden = yes
 show_age_threshold = -1 
-stack_duplicates = yes
-hide_duplicate_count = yes
+stack_duplicates = no
 
 # Size
 offset = 10x30
