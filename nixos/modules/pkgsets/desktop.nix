@@ -11,13 +11,15 @@
     ### Tools
     wlogout # gui logout menu
     tofi # program launcher
-    dunst # notification daemon # TO CHANGE
+    dunst # notification daemon
+    imv # image viewer
+
     grim # screenshot tool
     slurp # screenshot tool
-    #clipboard ? 
-    imv # image viewer
-    waybar # status bar
-    flameshot # screenshot tool
+
+    wl-clipboard # clipboard
+    wl-clip-persist # clipboard
+
 
     ### Utils
     xdg-desktop-portal

@@ -10,7 +10,6 @@
   imports = [
     ./modules/machines/laptop-acer.nix # Include the results of the hardware scan
     ./modules/pkgs.nix # All packages enabled
-
   ];
 
 
