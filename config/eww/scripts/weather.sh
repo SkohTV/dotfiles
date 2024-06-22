@@ -104,7 +104,7 @@ while true; do
         
         desc=$(cat /tmp/weather/weather-stat)
         desc_count=$(cat /tmp/weather/weather-stat | wc -c)
-        if [ "$desc_count" -lt 15 ]; then
+        if [ "$desc_count" -lt 20 ]; then
           echo "$weather_description" > $tmp_weather_stat      
         else 
           echo "$(cat /tmp/weather/weather-stat | cut -c1-12)""..." > $tmp_weather_stat
