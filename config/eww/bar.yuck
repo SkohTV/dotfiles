@@ -178,7 +178,7 @@
 ;; Window
 (defwindow bar
   :monitor 0
-  :stacking "bg"
+  :stacking "fg"
   :anchor "top"
   :geometry (geometry
     :height "20px"
