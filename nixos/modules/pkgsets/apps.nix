@@ -12,7 +12,6 @@
     tor-browser # safe browser
 
     ### Chill
-    #ytmdesktop # youtube music player
     discord # communication
     vlc # video display
     
