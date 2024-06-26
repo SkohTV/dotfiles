@@ -1,0 +1,13 @@
+(defwidget _popup_shortcuts []
+  (box
+    (label :text "helllo\n")
+  )
+)
+
+
+(defwindow popup_shortcuts
+  :monitor 0
+  :wm-ignore true
+  :geometry (geometry :x "10px" :y "30px" :anchor "top left")
+  (_popup_shortcuts)
+)

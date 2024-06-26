@@ -8,23 +8,18 @@ window.bar {
   font-size: 12px;
 
   .left {
-    .distro {
-      padding-left: 4px;
-    }
-
+    .distro {padding-left: 4px}
     .cpu {color: #ccad73}
     .ram {color: #a5d994}
     .temp {color: #80a0e2}
-
-    .cava {
-      font-size: 8px;
-      color: #ed6f6f;
-    }
-
+    .cava { color: #ed6f6f ; font-size: 8px }
+    .cava:hover {color: #ff0000}
   }
 
   .center {
     .workspaces {
+      font-size: 13px;
+
       .w1 {color: #eed49f}
       .w2 {color: #ffffff}
       .w3 {color: #ffffff}
@@ -35,6 +30,14 @@ window.bar {
       .w8 {color: #ffffff}
       .w9 {color: #ffffff}
       .w0 {color: #eed49f}
+      
+      // & > * {
+      //   background-color: #333333;
+      //   margin: 0 2px 0 2px;
+      //   border-radius: 100%;
+      //   min-width: 20px;
+      //
+      // }
     }
   }
 
@@ -44,10 +47,7 @@ window.bar {
     .sound {color: #91d7e3}; .mute_sound {color: #acacac}
     .bars {color: #c6a0f6}
     .ssh {color: #caff68}
-    .time {
-      color: #a5adcb;
-      padding-right: 4px;
-    }
+    .time {color: #a5adcb}
   }
 
 
@@ -99,11 +99,20 @@ tooltip {
 
 
 
-window.popup_time {
+// All popups
+window.popup_time, window.popup_shortcuts, window.popup_music {
   background-color: #282424;
   border-radius: 10px; 
   border: 1.5px solid #a5adcb;
 }
+
+
+// Shortcuts popup
+
+
+
+
+// Weather & time popup
 
 .weather_box { 
   background-color: #363232;
@@ -149,3 +158,4 @@ window.popup_time {
     &:indeterminate {color: #6e738d}
   }
 }
+

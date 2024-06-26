@@ -1,9 +1,10 @@
 ;; Distro logo
 (defwidget _distro []
-  (box
-    :class "distro"
+  (eventbox
     :space-evenly false
-    (image :path "./imgs/nixos.png" :image-width 15)
+    :onhover 'eww open popup_shortcuts'
+    :onhoverlost 'eww close popup_shortcuts'
+    (image :class "distro" :path "./imgs/nixos.png" :image-width 15)
   )
 )
 
@@ -23,29 +24,28 @@
 
 ;; Cava bars
 (defwidget _cava []
-  (box
+  (button
     :class "cava"
     :space-evenly false
-    (label :text "${l_cava}")
+    :onclick 'eww open --toggle popup_music'
+    (label :text "${listen_cava}")
   )
 )
-
-
 
 
 ;; Workspaces
 (defwidget _workspaces []
   (box :class "workspaces"
-    (button :onclick 'hyprctl dispatch workspace 1'  (label :class "w1" :text {p_workspace.id==1  ? " 󰪥 " : "  "}))
-    (button :onclick 'hyprctl dispatch workspace 2'  (label :class "w2" :text {p_workspace.id==2  ? " 󰪥 " : "  "}))
-    (button :onclick 'hyprctl dispatch workspace 3'  (label :class "w3" :text {p_workspace.id==3  ? " 󰪥 " : "  "}))
-    (button :onclick 'hyprctl dispatch workspace 4'  (label :class "w4" :text {p_workspace.id==4  ? " 󰪥 " : "  "}))
-    (button :onclick 'hyprctl dispatch workspace 5'  (label :class "w5" :text {p_workspace.id==5  ? " 󰪥 " : "  "}))
-    (button :onclick 'hyprctl dispatch workspace 6'  (label :class "w6" :text {p_workspace.id==6  ? " 󰪥 " : "  "}))
-    (button :onclick 'hyprctl dispatch workspace 7'  (label :class "w7" :text {p_workspace.id==7  ? " 󰪥 " : "  "}))
-    (button :onclick 'hyprctl dispatch workspace 8'  (label :class "w8" :text {p_workspace.id==8  ? " 󰪥 " : "  "}))
-    (button :onclick 'hyprctl dispatch workspace 9'  (label :class "w9" :text {p_workspace.id==9  ? " 󰪥 " : "  "}))
-    (button :onclick 'hyprctl dispatch workspace 10' (label :class "w0" :text {p_workspace.id==10 ? " 󰪥 " : "  "}))
+    (button :onclick 'hyprctl dispatch workspace 1'  :class "w1" (label :text {listen_workspace.all[0] ? listen_workspace.active == 1 ?  " 󰪥 " : "  " : "⚬ "}))
+    (button :onclick 'hyprctl dispatch workspace 2'  :class "w2" (label :text {listen_workspace.all[1] ? listen_workspace.active == 2 ?  " 󰪥 " : "  " : "⚬ "}))
+    (button :onclick 'hyprctl dispatch workspace 3'  :class "w3" (label :text {listen_workspace.all[2] ? listen_workspace.active == 3 ?  " 󰪥 " : "  " : "⚬ "}))
+    (button :onclick 'hyprctl dispatch workspace 4'  :class "w4" (label :text {listen_workspace.all[3] ? listen_workspace.active == 4 ?  " 󰪥 " : "  " : "⚬ "}))
+    (button :onclick 'hyprctl dispatch workspace 5'  :class "w5" (label :text {listen_workspace.all[4] ? listen_workspace.active == 5 ?  " 󰪥 " : "  " : "⚬ "}))
+    (button :onclick 'hyprctl dispatch workspace 6'  :class "w6" (label :text {listen_workspace.all[5] ? listen_workspace.active == 6 ?  " 󰪥 " : "  " : "⚬ "}))
+    (button :onclick 'hyprctl dispatch workspace 7'  :class "w7" (label :text {listen_workspace.all[6] ? listen_workspace.active == 7 ?  " 󰪥 " : "  " : "⚬ "}))
+    (button :onclick 'hyprctl dispatch workspace 8'  :class "w8" (label :text {listen_workspace.all[7] ? listen_workspace.active == 8 ?  " 󰪥 " : "  " : "⚬ "}))
+    (button :onclick 'hyprctl dispatch workspace 9'  :class "w9" (label :text {listen_workspace.all[8] ? listen_workspace.active == 9 ?  " 󰪥 " : "  " : "⚬ "}))
+    (button :onclick 'hyprctl dispatch workspace 10' :class "w0" (label :text {listen_workspace.all[9] ? listen_workspace.active == 10 ? " 󰪥 " : "  " : "⚬ "}))
   )
 )
 
@@ -57,7 +57,7 @@
   (box
     :class "battery"
     :space-evenly false
-    :tooltip "${battery_remain}"
+    :tooltip "${var_battery_remain}"
     (label :class "battery" :text "${
       EWW_BATTERY['BAT1'].status == 'Charging' ?
         EWW_BATTERY['BAT1'].capacity == 100 ? '󰂃' : '󰂄' :
@@ -84,51 +84,51 @@
     :spacing 5
     :space-evenly false
     (eventbox
-      :onhover "eww update bright=true"   
-      :onhoverlost "eww update bright=false"
+      :onhover "eww update bool_bright=true"   
+      :onhoverlost "eww update bool_bright=false"
       (box
-        :class "${night ? 'night' : 'light'}" 
+        :class "${bool_night ? 'night' : 'light'}" 
         :space-evenly false
         (revealer
           :transition "slideright" 
-          :reveal bright   
+          :reveal bool_bright
           :duration "550ms"
           (scale 
-            :value brightness
-            :onchange "brightnessctl set {}%" 
+            :value var_brightness
+            :onchange "brightnessctl set {}% && scripts/up_bright.sh" 
             :orientation "h" 
             :flipped true 
             :max 101
             :min 1))
         (button
-          :onclick "${night ?
-            'pkill gammastep && eww update night=false' :
-            '(gammastep -O 3500 &) && eww update night=true'}"
-          (label :text "${night?'':''}  ${brightness - 1}")
+          :onclick "${bool_night ?
+            'pkill gammastep && eww update bool_night=false' :
+            '(gammastep -O 3500 &) && eww update bool_night=true'}"
+          (label :text "${bool_night ? '' : ''}  ${var_brightness - 1}")
         )
     ))
     (eventbox
-      :onhover "eww update sound=true"   
-      :onhoverlost "eww update sound=false"
+      :onhover "eww update bool_sound=true"   
+      :onhoverlost "eww update bool_sound=false"
       (box
-        :class "${mute ? 'mute_sound' : 'sound'}"
+        :class "${bool_mute ? 'mute_sound' : 'sound'}"
         :space-evenly false
         (revealer
           :transition "slideright" 
-          :reveal sound   
+          :reveal bool_sound   
           :duration "550ms"
           (scale 
-            :value "${volume.value}"
-            :onchange "pamixer --set-volume {}" 
+            :value "${var_volume.value}"
+            :onchange "pamixer --set-volume {} && scripts/up_volume.sh" 
             :orientation "h" 
             :flipped true 
             :max 100
             :min 0))
         (button
-          :onclick "${mute ?
-            'pamixer --unmute && eww update mute=false' :
-            'pamixer --mute && eww update mute=true'}"
-          (label :text "${volume.state}  ${volume.value}")
+          :onclick "${bool_mute ?
+            'pamixer --unmute && eww update bool_mute=false' :
+            'pamixer --mute && eww update bool_mute=true'}"
+          (label :text "${bool_mute ? '󰝟' : var_volume.state}  ${var_volume.value}")
         )
     ))
   )
@@ -144,11 +144,11 @@
     :spacing 5
     (label
       :class "bars"
-      :text "${wifi.state}  ${wifi.value}"
+      :text "${var_wifi.state}  ${var_wifi.value}"
     )
     (label
       :class "ssh"
-      :visible { _ssh=="" ? false : true }
+      :visible { var_ssh=="" ? false : true }
       :text "󱘖 "
     )
   )
@@ -161,10 +161,9 @@
     :space-evenly false
     :onhover 'eww open popup_time'
     :onhoverlost 'eww close popup_time'
-    (label :class "time" :text {time})
+    (label :class "time" :text {var_time})
   )
 )
-
 
 
 ;; Small separator
