@@ -33,7 +33,6 @@
     acpi # get battery remaining
     brightnessctl # change brightness
     gammastep # change screen temperature
-    #lm_sensors # show temperature
 
   ];
 }
