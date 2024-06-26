@@ -4,3 +4,6 @@ config/btop/btop.log*
 
 # Never again
 .env
+
+# Ignore main wallpaper change
+wallpapers/desktop/main
