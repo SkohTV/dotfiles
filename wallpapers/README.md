@@ -16,7 +16,6 @@
 \- `76.jpg` ➜ https://twitter.com/diyokama/status/1776758050743075096<br>
 \- `77.jpg` ➜ https://github.com/cult-of-crabs<br>
 \- `78.png` ➜ https://hololive.hololivepro.com/en/special/12260<br>
-<!-- \- `AE.jpg` ➜ /<br> -->
 
 
 <u>**Phone**</u><br>
