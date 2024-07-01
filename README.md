@@ -1,6 +1,6 @@
-## NixOS
+# Dotfiles
 
-$\sf\color{orange}Core \space Programs$<br>
+<!-- $\sf\color{orange}Core \space Programs$<br>
 WM / DE -> [Hyprland](https://github.com/hyprwm/Hyprland) ([config](https://github.com/SkohTV/dotfiles/tree/main/config/hypr))<br>
 Bar + widgets -> [eww](https://github.com/elkowar/eww) ([config](https://github.com/SkohTV/dotfiles/tree/main/config/eww))<br>
 Notifications -> [dunst](https://github.com/dunst-project/dunst) ([config](https://github.com/SkohTV/dotfiles/tree/main/config/dunst))<br>
@@ -36,4 +36,4 @@ $\sf\color{orange}CLI \space Utilities \space Replacements$<br>
 <br>
 
 $\sf\color{orange}NixOS \space and \space Flakes$<br>
-[configuration.nix](https://github.com/SkohTV/dotfiles/blob/main/etc/nixos/configuration.nix)<br>
+[configuration.nix](https://github.com/SkohTV/dotfiles/blob/main/etc/nixos/configuration.nix)<br> -->
