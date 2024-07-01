@@ -2,7 +2,7 @@
 *Credits to creators*
 
 <u>**Desktop**</u><br>
-\- `[1..60 && 61..66].jpg` ➜ https://twitter.com/QUASARCAKE<br>
+\- `[1..60 && 62..66].jpg` ➜ https://twitter.com/QUASARCAKE<br>
 \- `61.jpg` ➜ https://twitter.com/qleleldhcks/status/1684151873698402304<br>
 \- `67.jpg` ➜ https://wall.alphacoders.com/big.php?i=1253971<br>
 \- `68.jpg` ➜ https://www.zerochan.net/2451702<br>
@@ -15,13 +15,17 @@
 \- `75.jpg` ➜ https://www.uhdpaper.com/2024/04/frieren-beyond-journeys-end-4k-1763a.html<br>
 \- `76.jpg` ➜ https://twitter.com/diyokama/status/1776758050743075096<br>
 \- `77.jpg` ➜ https://github.com/cult-of-crabs<br>
+\- `78.png` ➜ https://hololive.hololivepro.com/en/special/12260<br>
+<!-- \- `AE.jpg` ➜ /<br> -->
 
 
 <u>**Phone**</u><br>
+\- `calliope.jpg` ➜ https://twitter.com/IKKI___A/status/1648244229523779584<br>
+\- `kurumi.png` ➜ https://mobile.alphacoders.com/wallpapers/view/963732<br>
 \- `M16A1_low.jpg` ➜ https://www.pinterest.fr/pin/742601426053169083<br>
-\- `Calli.jpg` ➜ https://twitter.com/IKKI___A/status/1648244229523779584<br>
-\- `subnautica.png` ➜ https://wallpapercave.com/w/wp6658481<br>
+\- `pandora.jpg` ➜ https://www.zerochan.net/3262748<br>
 \- `rain_world.jpg` ➜ https://twitter.com/fayren/status/1714733517786026371<br>
+\- `subnautica.png` ➜ https://wallpapercave.com/w/wp6658481<br>
 
 
 <u>**Windows**</u><br>
