@@ -1,4 +1,4 @@
 # Cursor
 
-[Hyprcursor](https://github.com/hyprwm/hyprcursor)<br>
+Cursor set using [Hyprcursor](https://github.com/hyprwm/hyprcursor)<br>
 Default cursor : [Catppuccin](https://github.com/catppuccin/cursors)
