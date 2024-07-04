@@ -1,3 +1,3 @@
 # Homepage
 
-Small homepage, auto build by github
+Small homepage, auto rebuilt by github actions
