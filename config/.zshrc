@@ -57,8 +57,10 @@ alias copy="wl-copy"
 alias nixbuild="sudo nixos-rebuild switch -I nixos-config=$NIXCFG"
 alias nixdev="nix develop --command zsh"
 function nix(){ NIX_SHELL_NAME="$1" command nix "$@" }
+function rr(){ $@ > /dev/null 2>&1 & disown }
 
 
+# Rename zellij tab to git repo name
 chpwd() {
   if [[ "$ZELLIJ_SESSION_NAME" == "nvim" ]]; then
     if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
