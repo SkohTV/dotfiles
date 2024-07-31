@@ -26,5 +26,11 @@ else
   eww update bool_mute=false
 fi
 
+if [ $(dunstctl is-paused) = "true" ]; then
+  eww update bool_notif=false
+else
+  eww update bool_notif=true
+fi
+
 ~/.config/eww/scripts/up_bright.sh
 ~/.config/eww/scripts/up_volume.sh
