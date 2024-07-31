@@ -24,10 +24,9 @@
 
 ;; Cava bars
 (defwidget _cava []
-  (button
+  (box
     :class "cava"
     :space-evenly false
-    :onclick 'eww open --toggle popup_music'
     (label :text "${listen_cava}")
   )
 )

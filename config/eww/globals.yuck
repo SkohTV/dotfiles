@@ -26,8 +26,8 @@
 
 
 ;; Brightness sound
-(defvar var_volume '')
-(defvar var_brightness '')
+(defvar var_volume '??')
+(defvar var_brightness '??')
 
 
 ;; Listen
@@ -43,4 +43,5 @@
 (defvar bool_sound false)
 (defvar bool_mute false)
 
-
+(defvar super_logo '')
+(defvar shift_logo '󰘶')
