@@ -42,7 +42,6 @@
     lazygit # git interface
     asciiquarium # screensaver
     mprocs # long running process manager
-    fastfetch # fetch script
 
 
     ### Utils
