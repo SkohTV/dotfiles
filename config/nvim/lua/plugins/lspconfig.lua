@@ -27,68 +27,45 @@ local config = function()
     vim.keymap.set("n", "<leader>fmt", "<cmd>lua vim.lsp.buf.format()<CR>", opts) -- force formatting of file
 	end
 
-  -- Python
+  local add_ls = function(names)
+    for _, item in ipairs(names) do
+      lspconfig[item].setup({
+        capabilities = capabilities, on_attach = on_attach,
+      })
+    end
+  end
+
+  add_ls({
+    'mojo', -- Mojo
+    'pyright', -- Python
+    'rust_analyzer', -- Rust
+    'zls', -- Zig
+
+    'clangd', -- C / C++
+    'tsserver', -- JS / TS
+
+    'nixd', -- Nix
+    'lua_ls', -- Lua
+    'phpactor', -- Php
+    'gopls', -- Go
+    'r_language_server' -- R
+  })
+
+
   lspconfig.pyright.setup({
-    capabilities = capabilities, on_attach = on_attach,
     init_options = { settings = { args = { "" } } }
   })
-  local ruff = require('efmls-configs.linters.ruff')
 
-  -- Rust
   lspconfig.rust_analyzer.setup({
-    capabilities = capabilities, on_attach = on_attach,
     settings = { ['rust-analyzer'] = {} }
   })
-  local rustfmt = require('efmls-configs.formatters.rustfmt')
-  vim.g.rust_recommended_style = false
 
-  -- Lua
   lspconfig.lua_ls.setup({
-    capabilities = capabilities, on_attach = on_attach,
     Lua = { diagnostics = { globals = { "vim" } } },
   })
-	local luacheck = require("efmls-configs.linters.luacheck")
-	local stylua = require("efmls-configs.formatters.stylua")
 
-  -- C / C++
   lspconfig.clangd.setup({
-    capabilities = capabilities, on_attach = on_attach,
     cmd = { "clangd", "--offset-encoding=utf-16" },
-  })
-  local clang_tidy = require('efmls-configs.linters.clang_tidy')
-  local clang_format = require('efmls-configs.formatters.clang_format')
-
-  -- Php
-  lspconfig.phpactor.setup({
-    capabilities = capabilities, on_attach = on_attach,
-  })
-
-  -- Nix
-  lspconfig.nixd.setup({
-    capabilities = capabilities, on_attach = on_attach,
-  })
-  local statix = require('efmls-configs.linters.statix')
-
-  -- Javscript / Typescript
-  lspconfig.tsserver.setup({
-    capabilities = capabilities, on_attach = on_attach,
-  })
-  local eslint_d = require('efmls-configs.linters.eslint_d')
-  local prettier_d = require('efmls-configs.formatters.prettier_d')
-
-  -- Zig
-  lspconfig.zls.setup({
-    capabilities = capabilities, on_attach = on_attach,
-  })
-
-  -- Go
-  lspconfig.gopls.setup({
-    capabilities = capabilities, on_attach = on_attach,
-  })
-
-  -- Mojo
-  lspconfig.mojo.setup({
-    capabilities = capabilities, on_attach = on_attach,
   })
 
 
@@ -96,18 +73,7 @@ local config = function()
 		capabilities = capabilities,
 		on_attach = on_attach,
 		settings = {
-			languages = {
-        python = { ruff },
-        rust = { rustfmt },
-				lua = { luacheck, stylua },
-        c = { clang_tidy, clang_format }, cpp = { clang_tidy, clang_format },
-        php = { },
-        nix = { statix },
-        javascript = { eslint_d, prettier_d },
-        zig = { },
-        go = { },
-        mojo = { },
-      },
+			languages = { },
     },
   })
 end
