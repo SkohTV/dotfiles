@@ -42,6 +42,7 @@
 
 (defvar bool_sound false)
 (defvar bool_mute false)
+(defvar bool_notif false)
 
 (defvar super_logo '')
 (defvar shift_logo '󰘶')
