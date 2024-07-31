@@ -8,5 +8,4 @@
 
 ;; Popups
 (include "./popup/time.yuck")
-(include "./popup/music.yuck")
 (include "./popup/shortcuts.yuck")

@@ -1,6 +1,51 @@
 (defwidget _popup_shortcuts []
-  (box
-    (label :text "helllo\n")
+  (box :class "shortcuts_box" :orientation "v" :space-evenly "false"
+    (box :orientation "h"
+      (label :class "bold logo" :text "")
+      (label :class "bold" :text "Hyprland")
+      (label :class "bold logo" :text "")
+    )
+    (box :orientation "h" :space-evenly "false"
+      (box :class "keybinds" :orientation "v" :space-evenly "false"
+        (label :halign "start" :text "${super_logo} + L")
+        (label :halign "start" :text "${super_logo} + S")
+        (label :halign "start" :text "${super_logo} + R" :class "spacing")
+        (label :halign "start" :text "${super_logo} + C")
+        (label :halign "start" :text "${super_logo} + F" :class "spacing")
+        (label :halign "start" :text "${super_logo} + V")
+        (label :halign "start" :text "${super_logo} + P")
+        (label :halign "start" :text "${super_logo} + J" :class "spacing")
+        (label :halign "start" :text "${super_logo} + ")
+        (label :halign "start" :text "${super_logo} + ")
+        (label :halign "start" :text "${super_logo} + ${shift_logo} + ")
+      )
+      (box :class "arrows" :orientation "v" :space-evenly "false"
+        (label :halign "start" :text "󰔰")
+        (label :halign "start" :text "󰔰")
+        (label :halign "start" :text "󰔰" :class "spacing")
+        (label :halign "start" :text "󰔰")
+        (label :halign "start" :text "󰔰" :class "spacing")
+        (label :halign "start" :text "󰔰")
+        (label :halign "start" :text "󰔰")
+        (label :halign "start" :text "󰔰" :class "spacing")
+        (label :halign "start" :text "󰔰")
+        (label :halign "start" :text "󰔰")
+        (label :halign "start" :text "󰔰")
+      )
+      (box :class "desc" :orientation "v" :space-evenly "false"
+        (label :halign "start" :text "Open the exit menu")
+        (label :halign "start" :text "Take a screenshot")
+        (label :halign "start" :text "Open the app start menu" :class "spacing")
+        (label :halign "start" :text "Close the focused window")
+        (label :halign "start" :text "Fullscreen the focused window" :class "spacing")
+        (label :halign "start" :text "Toggle float on the focused window")
+        (label :halign "start" :text "Pseudo-float the focused window")
+        (label :halign "start" :text "Change the split flow" :class "spacing")
+        (label :halign "start" :text "Change the focused window")
+        (label :halign "start" :text "Switch to another workspace")
+        (label :halign "start" :text "Move the window to another workspace")
+      )
+    )
   )
 )
 
