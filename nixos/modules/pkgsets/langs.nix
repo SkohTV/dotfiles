@@ -54,6 +54,7 @@
     nodePackages_latest.typescript-language-server # lsp
     eslint_d # linter
     prettierd # formatter
+    bun # package manager
 
   ];
 }
