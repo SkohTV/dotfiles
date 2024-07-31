@@ -11,6 +11,7 @@
 
     # Conf
     ./modules/conf/battery.nix # Battery 
+    ./modules/conf/greet.nix # Greeter 
     ./modules/conf/multimedia.nix # Multimedia 
     ./modules/conf/network.nix # Network
     ./modules/conf/services.nix # Services
