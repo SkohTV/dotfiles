@@ -22,6 +22,21 @@
 )
 
 
+;; Notif
+(defwidget _notif []
+  (box
+    :class "notif"
+    :halign "start"
+    (button
+      :onclick "${bool_notif ?
+        'dunstctl set-paused true && eww update bool_notif=false' :
+        'dunstctl set-paused false && eww update bool_notif=true'}"
+      (label :text "${bool_notif ? '' : ''}")
+    )
+  )
+)
+
+
 ;; Cava bars
 (defwidget _cava []
   (box
@@ -196,6 +211,7 @@
       (_separator)
       (_grp_procinfo)
       (_separator)
+      (_notif)
       (_cava)
     )
     (box :class "center"
