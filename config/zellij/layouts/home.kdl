@@ -8,6 +8,7 @@ layout cwd="/home/qlpth" {
   tab name="mprocs" {
     pane name="Pane #1" {
       command "mprocs"
+      args "--config" "/home/qlpth/dev/scripts/mprocs.yaml"
     }
   }
   tab name="btop" {
