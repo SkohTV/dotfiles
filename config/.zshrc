@@ -52,7 +52,7 @@ alias py="python3"
 alias ssh="TERM=xterm-256color ssh"
 
 # Generalization
-alias fetch="sh $HOME/dev/scripts/fetch.sh"
+alias fetch="fastfetch"
 alias copy="wl-copy"
 alias nixbuild="sudo nixos-rebuild switch -I nixos-config=$NIXCFG"
 alias nixdev="nix develop --command zsh"
