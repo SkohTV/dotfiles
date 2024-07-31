@@ -56,5 +56,9 @@
     prettierd # formatter
     bun # package manager
 
+    ### R lang
+    R # Core
+    rPackages.languageserver # Lsp
+
   ];
 }
