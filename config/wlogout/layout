@@ -5,10 +5,10 @@
     "keybind" : "l"
 }
 {
-    "label" : "close",
+    "label" : "exit",
     "action" : "hyprctl dispatch exit",
-    "text" : "[C]lose",
-    "keybind" : "c"
+    "text" : "[E]xit",
+    "keybind" : "e"
 }
 {
     "label" : "suspend",
