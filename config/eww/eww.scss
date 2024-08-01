@@ -12,7 +12,7 @@ window.bar {
     .cpu {color: #ccad73}
     .ram {color: #a5d994}
     .temp {color: #80a0e2}
-    .notif{color: #fffe68; font-size: 13px }
+    .notif{ color: #fffe68 ; font-size: 13px }
     .cava { color: #ed6f6f ; font-size: 8px }
   }
 
@@ -54,14 +54,16 @@ window.bar {
   }
 
   .light, .night, .sound, .mute_sound { label {min-width: 32px} }
-  .light { scale trough, scale trough highlight {border-color: #eed49f} }
-  .night { scale trough, scale trough highlight {border-color: #fc6b03} }
-  .sound { scale trough, scale trough highlight {border-color: #91d7e3} }
-  .mute_sound { scale trough, scale trough highlight {border-color: #acacac} }
+  .light scale trough {border-color: #eed49f}
+  .light scale trough highlight {background-color: #eed49f}
+  .night scale trough {border-color: #fc6b03}
+  .night scale trough highlight {background-color: #fc6b03}
+  .sound scale trough {border-color: #91d7e3} 
+  .sound scale trough highlight {background-color: #91d7e3}
+  .mute_sound scale trough {border-color: #acacac} 
+  .mute_sound scale trough highlight {background-color: #acacac}
 
-  .notif {
-    margin-right: 8px;
-  }
+  .notif {margin-right: 8px}
 }
 
 
@@ -97,10 +99,10 @@ window.popup_time, window.popup_shortcuts, window.popup_music {
     padding: 0 0 8px 0;
   }
 
-  .arrows { padding: 0 10px 0 15px; }
-  .spacing { padding-bottom: 8px; }
-  .desc label { margin: 1px; }
-  .logo { color: #00cbdf; }
+  .arrows {padding: 0 10px 0 15px}
+  .spacing {padding-bottom: 8px}
+  .desc label {margin: 1px}
+  .logo {color: #00cbdf}
 }
 
 
@@ -114,9 +116,7 @@ window.popup_time, window.popup_shortcuts, window.popup_music {
   margin: 10px 10px 5px 10px;
   padding-right: 10px;
 
-  .weather_icon {
-    font-size: 72px;
-  }
+  .weather_icon {font-size: 72px}
 
   .weather_temp {
     margin-top: 18px;
