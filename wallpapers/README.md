@@ -16,6 +16,8 @@
 \- `76.jpg` ➜ https://twitter.com/diyokama/status/1776758050743075096<br>
 \- `77.jpg` ➜ https://github.com/cult-of-crabs<br>
 \- `78.png` ➜ https://hololive.hololivepro.com/en/special/12260<br>
+\- `79.jpg` ➜ https://www.pixiv.net/en/artworks/97889109<br>
+\- `80.jpg` ➜ https://www.amodraws.com/maomao-1?lightbox=dataItem-k3tt4fg84<br>
 
 
 <u>**Phone**</u><br>
@@ -25,8 +27,3 @@
 \- `pandora.jpg` ➜ https://www.zerochan.net/3262748<br>
 \- `rain_world.jpg` ➜ https://twitter.com/fayren/status/1714733517786026371<br>
 \- `subnautica.png` ➜ https://wallpapercave.com/w/wp6658481<br>
-
-
-<u>**Windows**</u><br>
-\- `fires.jpg` ➜ https://www.amodraws.com/maomao-1?lightbox=dataItem-k3tt4fg84<br>
-
