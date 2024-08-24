@@ -5,7 +5,7 @@
 
     defaultUserShell = pkgs.zsh;
 
-    users.qlpth = {
+    users.skoh = {
       isNormalUser = true;
       extraGroups = ["wheel" "docker" "wireshark"]; # Enable ‘sudo’ for the user.
       useDefaultShell = true;
