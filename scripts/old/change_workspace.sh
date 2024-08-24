@@ -14,7 +14,7 @@ case "$1" in
     if [ ! "$workspace" = "9" ]; then
       hyprctl keyword monitor ',highres,1920x1080,1,mirror,eDP-1'
       pkill hyprpaper
-      /home/qlpth/.config/eww/launch_eww.sh
+      /home/skoh/.config/eww/launch_eww.sh
     fi
     hyprctl dispatch workspace "$1"
   ;;
@@ -24,7 +24,7 @@ case "$1" in
       sleep 0.1
       hyprctl dispatch moveworkspacetomonitor 9 'HDMI-A-1'
       pkill hyprpaper
-      /home/qlpth/.config/eww/launch_eww.sh
+      /home/skoh/.config/eww/launch_eww.sh
     fi
     hyprctl dispatch workspace 9
     hyprctl dispatch workspace "$1"
