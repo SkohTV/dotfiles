@@ -1,8 +1,8 @@
 procs:
   battery:
-    cmd: ["/home/qlpth/dev/scripts/battery_warning.sh"]
+    cmd: ["/home/skoh/dev/scripts/battery_warning.sh"]
   weather:
-    cmd: ["/home/qlpth/.config/eww/scripts/weather.sh"]
+    cmd: ["/home/skoh/.config/eww/scripts/weather.sh"]
   dunst:
     shell: "pkill dunst || dunst"
   hyprpaper:
@@ -10,4 +10,4 @@ procs:
   hypridle:
     cmd: ["hypridle"]
   _eww:
-    cmd: ["/home/qlpth/dev/scripts/launch_eww.sh"]
+    cmd: ["/home/skoh/dev/scripts/launch_eww.sh"]
