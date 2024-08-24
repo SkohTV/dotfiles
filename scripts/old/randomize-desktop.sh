@@ -9,4 +9,4 @@ files=$(ls -l "$HOME/.config/wallpapers/" | grep "^-" | wc -l)
 val=$((RANDOM % (files + 1)))
 
 echo $val
-# feh /home/qlpth/.config/wallpapers/$val.jpg --bg-fill
+# feh /home/skoh/.config/wallpapers/$val.jpg --bg-fill
