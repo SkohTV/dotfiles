@@ -30,25 +30,25 @@ button:hover {
 }
 
 #lock {
-  background-image: url("/home/qlpth/.config/wlogout/icons/lock.png")
+  background-image: url("/home/skoh/.config/wlogout/icons/lock.png")
 }
 
 #exit {
-  background-image: url("/home/qlpth/.config/wlogout/icons/exit.png")
+  background-image: url("/home/skoh/.config/wlogout/icons/exit.png")
 }
 
 #suspend {
-  background-image: url("/home/qlpth/.config/wlogout/icons/pause.png")
+  background-image: url("/home/skoh/.config/wlogout/icons/pause.png")
 }
 
 #hibernate {
-  background-image: url("/home/qlpth/.config/wlogout/icons/moon.png")
+  background-image: url("/home/skoh/.config/wlogout/icons/moon.png")
 }
 
 #shutdown {
-  background-image: url("/home/qlpth/.config/wlogout/icons/power.png")
+  background-image: url("/home/skoh/.config/wlogout/icons/power.png")
 }
 
 #reboot {
-  background-image: url("/home/qlpth/.config/wlogout/icons/reload.png")
+  background-image: url("/home/skoh/.config/wlogout/icons/reload.png")
 }
