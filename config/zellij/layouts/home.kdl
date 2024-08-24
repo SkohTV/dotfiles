@@ -1,4 +1,4 @@
-layout cwd="/home/qlpth" {
+layout cwd="/home/skoh" {
   default_tab_template {
     pane size=1 borderless=true {
       plugin location="zellij:compact-bar"
@@ -8,7 +8,7 @@ layout cwd="/home/qlpth" {
   tab name="mprocs" {
     pane name="Pane #1" {
       command "mprocs"
-      args "--config" "/home/qlpth/dev/scripts/mprocs.yaml"
+      args "--config" "/home/skoh/dev/scripts/mprocs.yaml"
     }
   }
   tab name="btop" {
