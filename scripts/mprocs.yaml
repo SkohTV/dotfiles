@@ -9,5 +9,5 @@ procs:
     cmd: ["hyprpaper"]
   hypridle:
     cmd: ["hypridle"]
-  _eww:
-    cmd: ["/home/skoh/dev/scripts/launch_eww.sh"]
+  ags:
+    cmd: ["ags"]

@@ -1,6 +1,7 @@
 # Auto generated files
 config/lazygit/state.yml
 config/btop/btop.log*
+config/ags/types
 
 # Never again
 .env
