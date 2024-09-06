@@ -194,7 +194,7 @@
   :stacking "fg"
   :anchor "top"
   :geometry (geometry
-    :height "20px"
+    :height "18px"
     :width "100%")
   (bar_layout)
 )
