@@ -20,6 +20,11 @@
     wl-clipboard # clipboard
     wl-clip-persist # clipboard
 
+    ### Theme
+    juno-theme
+    sweet-folders
+    candy-icons
+
 
     ### Utils
     xdg-desktop-portal
@@ -33,6 +38,9 @@
     acpi # get battery remaining
     brightnessctl # change brightness
     gammastep # change screen temperature
+
+    ### Ags
+    ags
 
   ];
 }

@@ -18,4 +18,7 @@
 
   # Enable polkit
   security.polkit.enable = true;
+
+  # Hyprland fix zoom
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }

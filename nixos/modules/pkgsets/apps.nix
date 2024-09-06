@@ -20,6 +20,7 @@
     zathura # pdf viewer (minimal)
     qalculate-gtk # insane calculatrice
     onlyoffice-bin # office suite
+    fm # file manager
 
     ### Dev
     wireshark # network tracking
@@ -28,6 +29,7 @@
 
     ### Dependancies
     xdg-utils # For embedded file manager
+    glib # To customize theme with gsettings
 
   ];
 }
