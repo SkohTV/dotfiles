@@ -6,8 +6,8 @@
   imports = [
 
     # Hardware
-    ./modules/hardware/laptop-acer.nix # Include the results of the hardware scan
-    ./modules/hardware/nvidia.nix # For the graphic card
+    ./modules/hardware/laptop-framework.nix
+    ./modules/hardware/swap.nix
 
     # Conf
     ./modules/conf/battery.nix # Battery 
@@ -23,6 +23,7 @@
     ./modules/user.nix # User config 
     ./modules/pkgs.nix # All packages
     ./modules/etc.nix # All config stuff remaining
+    ./modules/theme.nix # Theme for desktop
   ];
 
 
