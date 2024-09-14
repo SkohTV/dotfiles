@@ -1,8 +1,6 @@
 procs:
-  battery:
-    cmd: ["/home/skoh/dev/scripts/battery_warning.sh"]
   weather:
-    cmd: ["/home/skoh/.config/eww/scripts/weather.sh"]
+    cmd: ["/home/skoh/dev/scripts/weather.sh"]
   dunst:
     shell: "pkill dunst || dunst"
   hyprpaper:
