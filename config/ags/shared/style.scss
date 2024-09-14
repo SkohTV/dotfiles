@@ -1,0 +1,18 @@
+* {
+  all: unset;
+}
+
+window {
+  background: #282424;
+  color: #ffffff;
+  font-size: 13px;
+
+  .cpu_label {color: #ccad73}
+  .temp_label {color: #80a0e2}
+  .ram_label {color: #a5d994}
+  
+  .cava_label { color: #ed6f6f ; font-size: 8px }
+
+  .battery_label {color: #a6da95}
+}
+
