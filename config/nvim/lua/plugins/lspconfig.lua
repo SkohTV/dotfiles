@@ -48,7 +48,9 @@ local config = function()
     'lua_ls', -- Lua
     'phpactor', -- Php
     'gopls', -- Go
-    'r_language_server' -- R
+    'r_language_server', -- R
+
+    'cmake', -- CMake
   })
 
 
