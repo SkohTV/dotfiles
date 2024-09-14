@@ -1,8 +1,6 @@
-
-
-BATTERY=$(eww get EWW_BATTERY)
-STATUS=$(echo "$BATTERY" | jq -r '.BAT1.status')
-CAPACITY=$(echo "$BATTERY" | jq -r '.BAT1.capacity')
+BATTERY=$(acpi -b | sd 'Battery 0: (.*), (.*)%,.*' '{"state": "$1", "value":$2}')
+STATUS=$(echo "$BATTERY" | jq -r '.state')
+CAPACITY=$(echo "$BATTERY" | jq -r '.value')
 
 
 if [ "$STATUS" == "Charging" ]; then
@@ -12,7 +10,9 @@ if [ "$STATUS" == "Charging" ]; then
     ICON='󰂄'
   fi
 else
-  if [ "$CAPACITY" -lt 10 ]; then
+  if [ "$CAPACITY" -lt 5 ]; then
+    ICON='󰂎'
+  elif [ "$CAPACITY" -lt 10 ]; then
     ICON='󰁺'
   elif [ "$CAPACITY" -lt 20 ]; then
     ICON='󰁻'
