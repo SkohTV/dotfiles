@@ -22,6 +22,7 @@
     gnat13 # core (gcc & g++)
     gnumake # make
     cmake # cmake
+    cmake-language-server # cmake lsp
     clang-tools_16 # lsp (clangd / clang-tidy / clang-format)
 
     ### Rust
@@ -55,6 +56,7 @@
     eslint_d # linter
     prettierd # formatter
     bun # package manager
+    sassc # scss compiler
 
     ### R lang
     R # Core

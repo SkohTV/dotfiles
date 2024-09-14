@@ -7,7 +7,6 @@
 
     # Hardware
     ./modules/hardware/laptop-framework.nix
-    ./modules/hardware/swap.nix
 
     # Conf
     ./modules/conf/battery.nix # Battery 

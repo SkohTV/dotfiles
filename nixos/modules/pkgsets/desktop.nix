@@ -41,6 +41,9 @@
 
     ### Ags
     ags
+    sysstat # show cpu %
+    lm_sensors # show temp 
+
 
   ];
 }
