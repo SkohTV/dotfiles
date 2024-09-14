@@ -19,6 +19,7 @@
 \- `79.jpg` ➜ https://www.pixiv.net/en/artworks/97889109<br>
 \- `80.jpg` ➜ https://www.amodraws.com/maomao-1?lightbox=dataItem-k3tt4fg84<br>
 \- `81.jpg` ➜ https://wall.alphacoders.com/big.php?i=1114913<br>
+\- `82.png` ➜ https://x.com/QUASARCAKE/status/1807479974833864802/<br>
 
 
 <u>**Phone**</u><br>
