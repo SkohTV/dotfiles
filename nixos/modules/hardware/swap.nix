@@ -1,10 +1,9 @@
 { ... }:
 {
 
-  # DISABLED NOT WORKING WITH FRAMEWORK
-  # swapDevices = [{
-  #   device = "/swapfile";
-  #   size = 16 * 1024; # 16GB
-  # }];
+  swapDevices = [{
+    device = "/swapfile";
+    size = 32 * 1024; # 32GB
+  }];
 
 }

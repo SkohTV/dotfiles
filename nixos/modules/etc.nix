@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 {
 
   # Set your time zone.
@@ -9,6 +9,11 @@
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
+
+  # Shorten timeout of services
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
 
   # Docker
   virtualisation.docker.enable = true;
