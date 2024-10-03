@@ -17,6 +17,7 @@ const myBar = Widget.Window({
   name: 'bar',
   anchor: ['top', 'left', 'right'],
   child: box,
+  class_name: 'bar',
 });
 
 App.config({

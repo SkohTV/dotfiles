@@ -3,48 +3,50 @@
 }
 
 window {
-  background: #282424;
-  color: #ffffff;
+  background: hsl(0, 5%, 15%);
+  color: hsl(0, 0%, 100%);
   font-size: 13px;
   
-  .cpu_label {color: #ccad73}
-  .temp_label {color: #80a0e2}
-  .ram_label {color: #a5d994}
-  .notif_label {color: #fffe68}
-  .cava_label { color: #ed6f6f ; font-size: 8px }
+  .cpu_label {color: hsl(39, 47%, 63%)}
+  .temp_label {color: hsl(220, 63%, 69%)}
+  .ram_label {color: hsl(105, 48%, 72%)}
+  .notif_label {color: hsl(60, 100%, 70%)}
+  .cava_label { color: hsl(0, 78%, 68%) ; font-size: 8px }
 
   
   .workspaces {font-size: 12px}
-  .w1  {color: #eed49f}
-  .w2  {color: #ffffff}
-  .w3  {color: #ffffff}
-  .w4  {color: #c6a0f6}
-  .w5  {color: #a6da95}
-  .w6  {color: #7dc4e4}
-  .w7  {color: #f5a97f}
-  .w8  {color: #ffffff}
-  .w9  {color: #ffffff}
-  .w10 {color: #eed49f}
+  .w1  {color: hsl(40, 70%, 78%)}
+  .w2  {color: hsl(0, 0%, 100%)}
+  .w3  {color: hsl(0, 0%, 100%)}
+  .w4  {color: hsl(267, 83%, 80%)}
+  .w5  {color: hsl(105, 48%, 72%)}
+  .w6  {color: hsl(199, 66%, 69%)}
+  .w7  {color: hsl(21, 86%, 73%)}
+  .w8  {color: hsl(0, 0%, 100%)}
+  .w9  {color: hsl(0, 0%, 100%)}
+  .w10 {color: hsl(40, 70%, 78%)}
 
-  .battery_label {color: #a6da95}
-  .light {color: #eed49f}; .night {color:#fc6b03}
-  .sound {color: #91d7e3}; .mute {color: #acacac}
-  .network_label{color: #c6a0f6}
-  .date_label {color: #a5adcb}
+  .battery_label {color: hsl(105, 48%, 72%)}
+  .light {color: hsl(40, 70%, 78%)}; .night {color: hsl(25, 98%, 50%)}
+  .sound {color: hsl(189, 59%, 73%)}; .mute {color: hsl(0, 0%, 67%)}
+  .network_label{color: hsl(267, 83%, 80%)}
+  .network_label:hover{color: hsl(267, 83%, 80%)}
+  .date_label {color: hsl(227, 27%, 72%)}
 
   .distro_label {padding-right: 4px}
   .cpu_label, .temp_label, .ram_label {padding: 0 4px 0 4px}
   .distro_label {padding-right: 4px}
   .notif_label {padding: 0 10px 0 4px}
   .battery_label {padding-right: 4px}
-  // .network_label {padding-left: 40px}
+  .mute, .sound {padding-right: 4px}
+  .network_label {padding-left: 0px}
 }
 
 
 tooltip {
   font-family: "Monaspace Krypton";
-  border: 0.5px solid #b89bf8;
-  background-color: #323232;
+  border: 0.5px solid hsl(259, 87%, 79%);
+  background-color: hsl(0, 0%, 20%);
   font-size: 11px;
   margin: 0px;
 }
@@ -52,8 +54,8 @@ tooltip {
 scale {padding: 0 4px 0 0}
 scale trough highlight {border-radius: 16px}
 scale trough {
-  background: #404040;
-  border: 0.5px solid #ffffff;
+  background: hsl(0, 0%, 25%);
+  border: 0.5px solid hsl(0, 0%, 100%);
   border-radius: 16px;
   min-height: 5px;
   min-width: 80px;
@@ -64,11 +66,11 @@ scale trough {
 .light, .night {label {min-width: 20px}}
 .sound, .mute {label {min-width: 18px}}
 
-.light scale trough {border-color: #eed49f}
-.light scale trough highlight {background-color: #eed49f}
-.night scale trough {border-color: #fc6b03}
-.night scale trough highlight {background-color: #fc6b03}
-.sound scale trough {border-color: #91d7e3} 
-.sound scale trough highlight {background-color: #91d7e3}
-.mute scale trough {border-color: #acacac} 
-.mute scale trough highlight {background-color: #acacac}
+.light scale trough {border-color: hsl(40, 70%, 78%)}
+.light scale trough highlight {background-color: hsl(40, 70%, 78%)}
+.night scale trough {border-color: hsl(25, 98%, 50%)}
+.night scale trough highlight {background-color: hsl(25, 98%, 50%)}
+.sound scale trough {border-color: hsl(189, 59%, 73%)} 
+.sound scale trough highlight {background-color: hsl(189, 59%, 73%)}
+.mute scale trough {border-color: hsl(0, 0%, 67%)} 
+.mute scale trough highlight {background-color: hsl(0, 0%, 67%)}

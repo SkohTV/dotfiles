@@ -28,28 +28,45 @@ const swap = () => {
     Utils.exec(`pamixer --unmute`)
 
   icon.value = pick_icon()
-  Volume.class_name = is_mute.value ? 'mute' : 'sound'
+  Volume.child.class_name = is_mute.value ? 'mute' : 'sound'
 }
 
 
-export const Volume = Widget.Box({
-  class_name: 'mute',
-  children: [
-    Widget.EventBox({
-      child: Widget.Label({
-        label: icon.bind()
+const Reveal = Widget.Revealer({
+  revealChild: false,
+  transitionDuration: 700,
+  transition: 'slide_right',
+  child: Widget.Slider({
+    min: 0,
+    max: 99,
+    value: label.bind(),
+    draw_value: false,
+    on_change: change,
+  })
+});
+
+
+export const Volume = Widget.EventBox({
+  on_hover: () => Reveal.reveal_child = true,
+  on_hover_lost: () => Reveal.reveal_child = false,
+
+  child: Widget.Box({
+    class_name: 'mute',
+    children: [
+
+      Widget.EventBox({
+
+        child: Widget.Box({
+          children: [
+            Widget.Label({ label: icon.bind()}),
+            Widget.Label({label: label.bind().transform(x => x.toString().padStart(2, '0'))}),
+          ]
+        }),
+
+        on_primary_click: swap,
       }),
-      on_primary_click: swap
-    }),
-    Widget.Label({
-      label: label.bind().transform(x => x.toString().padStart(2, '0'))
-    }),
-    Widget.Slider({
-      min: 0,
-      max: 99,
-      value: label.bind(),
-      draw_value: false,
-      on_change: change,
-    })
-  ]
+
+      Reveal
+    ]
+  })
 });

@@ -17,7 +17,7 @@ const swap = () => {
     Utils.exec(`pkill gammastep`)
 
   icon.value = is_night.value ? '' : ''
-  Bright.class_name = is_night.value ? 'night' : 'light'
+  Bright.child.class_name = is_night.value ? 'night' : 'light'
 }
 
 
@@ -43,14 +43,15 @@ export const Bright = Widget.EventBox({
     children: [
 
       Widget.EventBox({
-        child: Widget.Label({
-          label: icon.bind(),
-        }),
-        on_primary_click: swap,
-      }),
 
-      Widget.Label({
-        label: label.bind().transform(x => x.toString().padStart(2, '0'))
+        child: Widget.Box({
+          children: [
+            Widget.Label({label: icon.bind()}),
+            Widget.Label({label: label.bind().transform(x => x.toString().padStart(2, '0'))})
+          ]
+        }),
+
+        on_primary_click: swap,
       }),
 
       Reveal
