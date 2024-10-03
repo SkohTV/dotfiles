@@ -6,7 +6,8 @@
   imports = [
 
     # Hardware
-    ./modules/hardware/laptop-framework.nix
+    ./modules/hardware/laptop-framework.nix # hardware config
+    ./modules/hardware/swap.nix # swap
 
     # Conf
     ./modules/conf/battery.nix # Battery 
