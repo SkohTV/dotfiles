@@ -4,5 +4,6 @@ const date = Variable('', {
 
 
 export const Date = Widget.Label({
-  label: date.bind()
+  label: date.bind(),
+  class_name: 'date_label',
 })

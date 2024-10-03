@@ -1,6 +1,51 @@
+// @ts-nocheck
+
+/**
+ * @param {any} self
+ * @param {any[]} _
+ */
+function init(self, ..._) {
+
+  const workspaces = hyprland.workspaces;
+  const focus = hyprland.active;
+
+  const alive = workspaces.map(x => x.id);
+  const shorthand = (x) => [x, alive.includes(x), x === focus.workspace.id]
+
+  self.children = [
+    build_button(...shorthand(1)),
+    build_button(...shorthand(2)),
+    build_button(...shorthand(3)),
+    build_button(...shorthand(4)),
+    build_button(...shorthand(5)),
+    build_button(...shorthand(6)),
+    build_button(...shorthand(7)),
+    build_button(...shorthand(8)),
+    build_button(...shorthand(9)),
+    build_button(...shorthand(10)),
+  ];
+}
+
+
+/**
+ * @param {any} id
+ * @param {any} alive
+ * @param {any} focus
+ */
+function build_button(id, alive, focus){
+  const icon = focus ? '󰪥 ' : alive ? ' ' : '⚬ ';
+
+  return Widget.EventBox({
+    on_primary_click: () => hyprland.messageAsync(`dispatch workspace ${id}`),
+    child: Widget.Label({ label: icon }),
+    class_name: `w${id}`,
+  })
+}
+
+
 const hyprland = await Service.import('hyprland')
 
 
-export const Workspaces = Widget.Label({
-  label: 'hu'
-})
+export const Workspaces = Widget.Box({
+  setup: self => self.hook(hyprland, init, 'changed'),
+});

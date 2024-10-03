@@ -7,9 +7,15 @@ function init(self, ..._) {
   const percent = battery.percent;
   const charging = battery.charging;
   const charged = battery.charged;
-  // const remain = battery.time_remaining;
+  const remain = battery.time_remaining;
 
-  let icon = '';
+  const date = new Date(0, 0, 0, 0, 0, remain);
+  const hour = date.getHours().toString();
+  const min = date.getMinutes().toString().padStart(2, '0');
+  const date_str = (hour === '0' ? `${min}min` : `${hour}h${min}`);
+
+  let icon;
+  let text;
 
   if (charged) icon = '󰂃';
   else if (charging) icon = '󰂄';
@@ -24,13 +30,17 @@ function init(self, ..._) {
   else if (percent > 10) icon = '󰁻';
   else if (percent > 5) icon = '󰁺';
   else icon = '󰂎';
+
+  if (charged) text = 'Fully charged !';
+  else if (charging) text = `${date_str} until full`;
+  else text = `${date_str} remaining`;
   
-  self.label = `${icon} ${percent}%`
+  self.label = `${icon} ${percent}%`;
+  self.tooltip_text = text;
 }
 
 
 const battery = await Service.import('battery')
-
 
 export const Battery = Widget.Label({
   setup: self => self.hook(battery, init, 'changed'),

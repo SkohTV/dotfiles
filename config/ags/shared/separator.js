@@ -1,5 +1,6 @@
 export function Split_generator() {
   return Widget.Label({
-    label: "|"
+    label: "|",
+    class_name: 'split'
   });
 }
