@@ -45,7 +45,7 @@ const network = await Service.import('network')
 export const Network = Widget.EventBox({
   child: Widget.Label({
     setup: self => self.hook(network, init, 'changed'),
-    class_name: 'network_label'
   }),
-  on_primary_click: network.toggleWifi
+  on_primary_click: network.toggleWifi,
+  class_name: 'network_label'
 });

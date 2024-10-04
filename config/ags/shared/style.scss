@@ -29,17 +29,17 @@ window {
   .battery_label {color: hsl(105, 48%, 72%)}
   .light {color: hsl(40, 70%, 78%)}; .night {color: hsl(25, 98%, 50%)}
   .sound {color: hsl(189, 59%, 73%)}; .mute {color: hsl(0, 0%, 67%)}
-  .network_label{color: hsl(267, 83%, 80%)}
-  .network_label:hover{color: hsl(267, 83%, 80%)}
+  .network_label {color: hsl(267, 83%, 80%)}
   .date_label {color: hsl(227, 27%, 72%)}
 
-  .distro_label {padding-right: 4px}
-  .cpu_label, .temp_label, .ram_label {padding: 0 4px 0 4px}
+  .distro_label {padding: 0 4px}
+  .cpu_label, .temp_label, .ram_label {padding: 0 4px}
   .distro_label {padding-right: 4px}
   .notif_label {padding: 0 10px 0 4px}
   .battery_label {padding-right: 4px}
   .mute, .sound {padding-right: 4px}
-  .network_label {padding-left: 0px}
+  .network_label>label {padding-left: 4px}
+  .date_label {padding: 0 4px}
 }
 
 

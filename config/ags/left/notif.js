@@ -1,6 +1,6 @@
 let mute = false;
 const label = Variable('')
-Utils.exec('dunstctl set-paused true')
+Utils.exec('dunstctl set-paused false')
 
 const swap = () => {
   mute = !mute
