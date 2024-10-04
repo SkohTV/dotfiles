@@ -1,0 +1,6 @@
+
+
+# /nix/store
+# /home
+# /
+# /boot
