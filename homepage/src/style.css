@@ -128,7 +128,7 @@ a {
       &:nth-child(1) { background-color: #ff000052; }
       &:nth-child(2) { background-color: #00000070; }
       &:nth-child(3) { background-color: #0d3e7552; }
-      &:nth-child(4) { background-color: #00000000; }
+      &:nth-child(4) { background-color: #13c4ff3d; }
 
       &:hover { opacity: 100%; }
 
@@ -169,7 +169,7 @@ a {
 
 form {
   position: relative;
-  width: 50rem;
+  width: 50vw;
   background: var(--color-brand);
   border-radius: var(--rad);
 }
