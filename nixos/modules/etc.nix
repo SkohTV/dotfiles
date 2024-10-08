@@ -1,8 +1,11 @@
 { ... }:
 {
 
-  # Set your time zone.
-  time.timeZone = "Europe/Paris";
+  time.timeZone = "Europe/Paris"; # Set your time zone.
+  virtualisation.docker.enable = true; # Docker
+  documentation.dev.enable = true; # Man pages
+  security.polkit.enable = true; # Enable polkit
+  environment.sessionVariables.NIXOS_OZONE_WL = "1"; # Hyprland fix zoom
 
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
@@ -10,20 +13,13 @@
     efi.canTouchEfiVariables = true;
   };
 
-  # Shorten timeout of services
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-  '';
+  # Add custom keyboard
+  services.xserver.xkb.extraLayouts = {
+    custom-qwerty = {
+      description = "English (intl., with AltGr dead keys)";
+      languages = [ "eng" ];
+      symbolsFile = ../../xkb/custom-qwerty.xkb;
+    };
+  };
 
-  # Docker
-  virtualisation.docker.enable = true;
-
-  # Man pages
-  documentation.dev.enable = true;
-
-  # Enable polkit
-  security.polkit.enable = true;
-
-  # Hyprland fix zoom
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }
