@@ -4,6 +4,7 @@
  */
 function init(self, ..._) {
 
+  const MAX_CHARGE = 80;
   const percent = battery.percent;
   const charging = battery.charging;
   const charged = battery.charged;
@@ -31,7 +32,8 @@ function init(self, ..._) {
   else if (percent > 5) icon = '󰁺';
   else icon = '󰂎';
 
-  if (charged) text = 'Fully charged !';
+  if (percent === MAX_CHARGE && charging) text = 'Fully charged !';
+  else if (hour === '0' && min === '00') text = 'Loading...'
   else if (charging) text = `${date_str} until full`;
   else text = `${date_str} remaining`;
   
