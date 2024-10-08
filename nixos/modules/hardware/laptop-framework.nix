@@ -11,6 +11,13 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  # swapDevices = [{
+  #   device = "/swapfile";
+  #   size = 16*1024; # 16G
+  # }];
+  # boot.resumeDevice = "/dev/nvme0n1p2";
+  # boot.kernelParams = [ "resume_offset="];
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/93aae3a2-2e24-4918-b07a-7dd7286f97da";
     fsType = "ext4";
