@@ -1,0 +1,51 @@
+partial alphanumeric_keys
+xkb_symbols "custom-qwerty" {
+
+   include "us(altgr-intl)"
+   name[Group1]= "English (intl., with AltGr dead keys)";
+
+// five dead keys moved into level3:
+
+   key <TLDE> { [    grave, asciitilde,  dead_grave,   dead_tilde      ] };
+   key <AC11> { [apostrophe,quotedbl,    dead_acute,   dead_diaeresis  ] };
+
+// diversions from the MS Intl keyboard:
+
+   key <AE01> { [        1, exclam,      onesuperior,  exclamdown      ] };
+//   key <AD04> { [        r, R,           ediaeresis,   Ediaeresis      ] };
+   key <AC07> { [        j, J,           idiaeresis,   Idiaeresis      ] };
+   key <AB02> { [        x, X,           oe,           OE              ] };
+   key <AB04> { [        v, V,           registered,   registered      ] };
+
+// onequarter etc (not in iso8859-15) moved to get three unshifted deadkeys:
+
+//   key <AE06> { [        6, asciicircum, dead_circumflex, onequarter    ] };
+//   key <AE07> { [        7, ampersand,   dead_horn,       onehalf       ] };
+//   key <AE08> { [        8, asterisk,    dead_ogonek,     threequarters ] };
+
+// klemek edit
+
+// switch level3 shift with non shift
+
+    key <AE06> { [        6, asciicircum, onequarter,    dead_circumflex] };
+    key <AE07> { [        7, ampersand,   onehalf,       dead_horn      ] };
+    key <AE08> { [        8, asterisk,    threequarters, dead_ogonek    ] };
+
+// preference for this key
+
+    key <LSGT> { [ less,   greater, less, greater ] };
+
+// french shortcuts
+
+    key <AC01> { [         a,          A,        agrave,           Agrave ] };
+    key <AC04> { [         f,          F,        egrave,           Egrave ] };
+    key <AD07> { [         u,          U,        ugrave,           Ugrave ] };
+   key <AD01> { [        q, Q,           acircumflex,   Acircumflex      ] };
+   key <AD04> { [        r, R,           ecircumflex,   Ecircumflex      ] };
+   key <AD06> { [        y, Y,           ucircumflex,   Ucircumflex      ] };
+   key <AD08> { [        i, I,           icircumflex,   Icircumflex      ] };
+   key <AD10> { [        p, P,           ocircumflex,   Ocircumflex      ] };
+
+
+   include "level3(ralt_switch)"
+};
