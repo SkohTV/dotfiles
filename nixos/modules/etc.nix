@@ -8,9 +8,19 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1"; # Hyprland fix zoom
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  #boot.loader = {
+  #  systemd-boot.enable = true;
+  #  efi.canTouchEfiVariables = true;
+  ##};
+
+  boot.loader.grub = {
+    enable = true;
+    zfsSupport = true;
+    efiSupport = true;
+    efiInstallAsRemovable = true;
+    mirroredBoots = [
+      { devices = [ "nodev"]; path = "/boot"; }
+    ];
   };
 
   # Add custom keyboard
@@ -18,8 +28,9 @@
     custom-qwerty = {
       description = "English (intl., with AltGr dead keys)";
       languages = [ "eng" ];
-      symbolsFile = ../../xkb/custom-qwerty.xkb;
+      symbolsFile = ../../xkb/symbols/custom-qwerty.xkb;
     };
   };
 
+  networking.hostId = "e040d3e9";
 }
