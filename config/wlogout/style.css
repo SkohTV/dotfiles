@@ -41,6 +41,10 @@ button:hover {
   background-image: url("/home/skoh/.config/wlogout/icons/pause.png")
 }
 
+#hibernate {
+  background-image: url("/home/skoh/.config/wlogout/icons/moon.png")
+}
+
 #shutdown {
   background-image: url("/home/skoh/.config/wlogout/icons/power.png")
 }

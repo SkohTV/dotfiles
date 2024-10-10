@@ -17,6 +17,12 @@
     "keybind" : "u"
 }
 {
+    "label" : "hibernate",
+    "action" : "systemctl hibernate",
+    "text" : "[H]ibernate",
+    "keybind" : "h"
+}
+{
     "label" : "shutdown",
     "action" : "systemctl poweroff",
     "text" : "[S]hutdown",
