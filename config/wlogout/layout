@@ -11,14 +11,8 @@
     "keybind" : "e"
 }
 {
-    "label" : "suspend",
-    "action" : "systemctl suspend",
-    "text" : "S[u]spend",
-    "keybind" : "u"
-}
-{
     "label" : "hibernate",
-    "action" : "systemctl hibernate",
+    "action" : "systemctl suspend-then-hibernate",
     "text" : "[H]ibernate",
     "keybind" : "h"
 }
