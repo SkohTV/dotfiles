@@ -7,20 +7,13 @@
   security.polkit.enable = true; # Enable polkit
   environment.sessionVariables.NIXOS_OZONE_WL = "1"; # Hyprland fix zoom
 
-  # Use the systemd-boot EFI boot loader.
-  #boot.loader = {
-  #  systemd-boot.enable = true;
-  #  efi.canTouchEfiVariables = true;
-  ##};
+  # Optimize store at each build
+  nix.settings.auto-optimise-store = true;
 
-  boot.loader.grub = {
-    enable = true;
-    zfsSupport = true;
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-    mirroredBoots = [
-      { devices = [ "nodev"]; path = "/boot"; }
-    ];
+  # Use the systemd-boot EFI boot loader.
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
   };
 
   # Add custom keyboard
@@ -32,5 +25,8 @@
     };
   };
 
-  networking.hostId = "e040d3e9";
+  # Customize sleep
+  systemd.sleep.extraConfig = ''
+    HibernateDelaySec=2700s
+  '';
 }

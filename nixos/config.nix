@@ -6,7 +6,7 @@
   imports = [
 
     # Hardware
-    ./modules/hardware/laptop-framework.nix # hardware config
+    ./modules/hardware/laptop.nix # hardware config
 
     # Conf
     ./modules/conf/battery.nix # Battery 
@@ -16,7 +16,7 @@
     ./modules/conf/services.nix # Services
 
     # Specific
-    ./modules/specific/tmp-web.nix # For web lessons
+    # ./modules/specific/tmp-web.nix # For web lessons
 
     # Other
     ./modules/user.nix # User config 
