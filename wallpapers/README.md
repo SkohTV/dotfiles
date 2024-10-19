@@ -20,6 +20,8 @@
 \- `80.jpg` ➜ https://www.amodraws.com/maomao-1?lightbox=dataItem-k3tt4fg84<br>
 \- `81.jpg` ➜ https://wall.alphacoders.com/big.php?i=1114913<br>
 \- `82.png` ➜ https://x.com/QUASARCAKE/status/1807479974833864802/<br>
+\- `83.jpg` ➜ https://x.com/elyzerda/status/1833474305729921168<br>
+\- `84.jpg` ➜ https://wallhere.com/fr/wallpaper/1161984<br>
 
 
 <u>**Phone**</u><br>
