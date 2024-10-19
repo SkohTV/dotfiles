@@ -32,6 +32,7 @@ export OBSIDIAN_USE_WAYLAND=1
 
 
 # x -> y
+alias l="ll"
 alias ll="eza -1abghlF --colour=always --group-directories-first --icons=always"
 alias ls="eza -1bghlF --colour=always --group-directories-first --icons=always"
 alias lt="eza -1bghlF --tree --colour=always --group-directories-first --icons=always"
@@ -56,6 +57,7 @@ alias fetch="sh ~/dev/scripts/fetch.sh"
 alias copy="wl-copy"
 alias nixbuild="sudo nixos-rebuild switch -I nixos-config=$NIXCFG"
 alias nixdev="nix develop --command zsh"
+alias nixgc="sudo nix-store --gc"
 function nix(){ NIX_SHELL_NAME="$1" command nix "$@" }
 function rr(){ $@ > /dev/null 2>&1 & disown }
 
