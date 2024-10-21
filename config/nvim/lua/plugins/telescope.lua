@@ -23,7 +23,7 @@ return {
   dependencies = { "nvim-lua/plenary.nvim", },
   config = config,
 	keys = {
-		vim.keymap.set("n", "<leader>fk", ":Telescope keymaps<CR>"),
+		vim.keymap.set("n", "<leader>fk", ":telescope keymaps<cr>"),
 		vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>"),
 		vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>"),
 		vim.keymap.set("n", "<leader>fa", ":Telescope <CR>"),
