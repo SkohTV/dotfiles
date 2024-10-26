@@ -3,7 +3,7 @@ const cava = Variable('', {
 });
 
 
-export const Cava = Widget.Label({
+export const Cava = () => Widget.Label({
   label: cava.bind(),
   class_name: 'cava_label',
 });

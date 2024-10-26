@@ -28,45 +28,51 @@ const swap = () => {
     Utils.exec(`pamixer --unmute`)
 
   icon.value = pick_icon()
-  Volume.child.class_name = is_mute.value ? 'mute' : 'sound'
 }
 
 
-const Reveal = Widget.Revealer({
-  revealChild: false,
-  transitionDuration: 700,
-  transition: 'slide_right',
-  child: Widget.Slider({
-    min: 0,
-    max: 99,
-    value: label.bind(),
-    draw_value: false,
-    on_change: change,
-  })
-});
 
+export const Volume = () => {
 
-export const Volume = Widget.EventBox({
-  on_hover: () => Reveal.reveal_child = true,
-  on_hover_lost: () => Reveal.reveal_child = false,
+  // Revealer
+  const Reveal = Widget.Revealer({
+    revealChild: false,
+    transitionDuration: 700,
+    transition: 'slide_right',
+    child: Widget.Slider({
+      min: 0,
+      max: 99,
+      value: label.bind(),
+      draw_value: false,
+      on_change: change,
+    })
+  });
 
-  child: Widget.Box({
-    class_name: 'mute',
-    children: [
+  // Widget to return
+  const Volume_widget = Widget.EventBox({
+    on_hover: () => Reveal.reveal_child = true,
+    on_hover_lost: () => Reveal.reveal_child = false,
 
-      Widget.EventBox({
+    child: Widget.Box({
+      class_name: is_mute.bind().transform(x => x ? 'mute' : 'sound'),
+      children: [
 
-        child: Widget.Box({
-          children: [
-            Widget.Label({ label: icon.bind()}),
-            Widget.Label({label: label.bind().transform(x => x.toString().padStart(2, '0'))}),
-          ]
+        Widget.EventBox({
+
+          child: Widget.Box({
+            children: [
+              Widget.Label({ label: icon.bind()}),
+              Widget.Label({label: label.bind().transform(x => x.toString().padStart(2, '0'))}),
+            ]
+          }),
+
+          on_primary_click: swap,
         }),
 
-        on_primary_click: swap,
-      }),
+        Reveal
+      ]
+    })
+  });
 
-      Reveal
-    ]
-  })
-});
+  return Volume_widget
+}

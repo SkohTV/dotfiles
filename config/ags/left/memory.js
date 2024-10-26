@@ -15,7 +15,7 @@ const memory = Variable('', {
 });
 
 
-export const Memory = Widget.Label({
+export const Memory = () => Widget.Label({
   label: memory.bind().as(transform),
   class_name: 'ram_label',
 });

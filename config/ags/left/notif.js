@@ -8,7 +8,7 @@ const swap = () => {
   label.value = mute ? '' : '' 
 }
 
-export const Notif = Widget.EventBox({
+export const Notif = () => Widget.EventBox({
   on_primary_click: swap,
   child: Widget.Label({
     label: label.bind(),

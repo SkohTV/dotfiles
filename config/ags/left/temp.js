@@ -23,7 +23,7 @@ const temp = Variable('', {
 });
 
 
-export const Temp = Widget.Label({
+export const Temp = () => Widget.Label({
   label: temp.bind().as(transform),
   class_name: 'temp_label',
 });

@@ -25,7 +25,7 @@ const cpu = Variable('', {
 });
 
 
-export const Cpu = Widget.Label({
+export const Cpu = () => Widget.Label({
   label: cpu.bind().as(transform),
   class_name: 'cpu_label',
 });

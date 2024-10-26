@@ -6,16 +6,16 @@ import { Bright } from "./brightness.js";
 import { Volume } from "./volume.js";
 
 
-export const Right = Widget.Box({
+export const Right = () => Widget.Box({
   hpack: 'end',
   children: [
-    Battery,
+    Battery(),
     Split_generator(),
-    Bright,
-    Volume,
+    Bright(),
+    Volume(),
     Split_generator(),
-    Network,
+    Network(),
     Split_generator(),
-    Date
+    Date()
   ],
 });

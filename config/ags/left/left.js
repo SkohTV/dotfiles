@@ -7,15 +7,15 @@ import { Notif } from "./notif.js";
 import { Split_generator } from "../shared/separator.js";
 
 
-export const Left = Widget.Box({
+export const Left = () => Widget.Box({
   children: [
-    Distro,
+    Distro(),
     Split_generator(),
-    Cpu,
-    Temp,
-    Memory,
+    Cpu(),
+    Temp(),
+    Memory(),
     Split_generator(),
-    Notif,
-    Cava
+    Notif(),
+    Cava()
   ]
 });
