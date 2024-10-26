@@ -21,7 +21,7 @@ offset = 10x30
 shrink = no
 
 # DE / WM
-monitor = 0
+monitor = 1
 follow = none
 
 # History
