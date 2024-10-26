@@ -3,7 +3,7 @@ const date = Variable('', {
 })
 
 
-export const Date = Widget.Label({
+export const Date = () => Widget.Label({
   label: date.bind(),
   class_name: 'date_label',
 })

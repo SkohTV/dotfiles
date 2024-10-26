@@ -44,7 +44,7 @@ function init(self, ..._) {
 
 const battery = await Service.import('battery')
 
-export const Battery = Widget.Label({
+export const Battery = () => Widget.Label({
   setup: self => self.hook(battery, init, 'changed'),
   class_name: 'battery_label'
 });

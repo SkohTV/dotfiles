@@ -7,10 +7,13 @@
 function init(self, ..._) {
 
   const workspaces = hyprland.workspaces;
-  const focus = hyprland.active;
+  const monitors = hyprland.monitors;
 
   const alive = workspaces.map(x => x.id);
-  const shorthand = (x) => [x, alive.includes(x), x === focus.workspace.id]
+  const displayed = monitors.map(e => e.activeWorkspace.id);
+  const focused = hyprland.active;
+
+  const shorthand = (x) => [x, alive.includes(x), displayed.includes(x), x === focused.workspace.id]
 
   self.children = [
     build_button(...shorthand(1)),
@@ -30,10 +33,10 @@ function init(self, ..._) {
 /**
  * @param {any} id
  * @param {any} alive
- * @param {any} focus
+ * @param {any} focused
  */
-function build_button(id, alive, focus){
-  const icon = focus ? '󰪥 ' : alive ? ' ' : '⚬ ';
+function build_button(id, alive, displayed, focused){
+  const icon = focused ? '󰪥 ' : displayed ? '󰺕 ' : alive ? ' ' : '⚬ ';
 
   return Widget.EventBox({
     on_primary_click: () => hyprland.messageAsync(`dispatch workspace ${id}`),
@@ -46,6 +49,6 @@ function build_button(id, alive, focus){
 const hyprland = await Service.import('hyprland')
 
 
-export const Workspaces = Widget.Box({
+export const Workspaces = () => Widget.Box({
   setup: self => self.hook(hyprland, init, 'changed'),
 });
