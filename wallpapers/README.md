@@ -32,3 +32,4 @@
 \- `pandora.jpg` ➜ https://www.zerochan.net/3262748<br>
 \- `rain_world.jpg` ➜ https://twitter.com/fayren/status/1714733517786026371<br>
 \- `subnautica.png` ➜ https://wallpapercave.com/w/wp6658481<br>
+\- `tessa_cyn.png` ➜ https://x.com/skylarxzq49780/status/1781883343304614138<br>
