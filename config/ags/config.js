@@ -22,10 +22,33 @@ const myBar = (m) => Widget.Window({
   class_name: 'bar',
 });
 
+
+const hyprland = await Service.import('hyprland')
+const bar_secondary = Variable(null)
+
+
+App.connect('config-parsed', (..._) => {
+  if (hyprland.monitors.length > 1) {
+    bar_secondary.value = myBar(1)
+    App.addWindow(bar_secondary.value)
+  }
+})
+
+
+hyprland.connect('monitor-added', (..._) => {
+  bar_secondary.value = myBar(1)
+  App.addWindow(bar_secondary.value)
+})
+
+hyprland.connect('monitor-removed', (..._) => {
+  App.removeWindow(bar_secondary.value)
+  bar_secondary.value = null
+})
+
+
 App.config({
   style: css,
   windows: [
-    myBar(0),
-    myBar(1)
+    myBar(0)
   ],
 });
