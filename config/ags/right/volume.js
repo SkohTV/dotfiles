@@ -74,5 +74,7 @@ export const Volume = () => {
     })
   });
 
+  // Temporary hover fix
+  Volume_widget.connect('leave-notify-event', _ => Reveal.reveal_child = false);
   return Volume_widget
 }

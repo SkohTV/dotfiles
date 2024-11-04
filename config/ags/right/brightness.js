@@ -63,5 +63,7 @@ export const Bright = () => {
     })
   });
 
+  // Temporary hover fix
+  Bright_widget.connect('leave-notify-event', _ => Reveal.reveal_child = false);
   return Bright_widget
 }
