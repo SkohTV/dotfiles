@@ -45,5 +45,7 @@
     lm_sensors # show temp 
 
 
+    stm32cubemx
+
   ];
 }
