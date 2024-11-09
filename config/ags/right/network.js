@@ -1,3 +1,5 @@
+export const network_string = Variable('')
+
 /**
  * @param {any} self
  * @param {any[]} _
@@ -25,6 +27,7 @@ function init(self, ..._) {
   }
 
   self.label = `${name} ${icon} `
+  network_string.value = self.label;
 }
 
 /**
