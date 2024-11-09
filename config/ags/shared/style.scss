@@ -2,7 +2,7 @@
   all: unset;
 }
 
-window {
+window.bar {
   background: hsl(0, 5%, 15%);
   color: hsl(0, 0%, 100%);
   font-size: 13px;
@@ -13,7 +13,6 @@ window {
   .notif_label {color: hsl(60, 100%, 70%)}
   .cava_label { color: hsl(0, 78%, 68%) ; font-size: 8px }
 
-  
   .workspaces {font-size: 12px}
   .w1  {color: hsl(40, 70%, 78%)}
   .w2  {color: hsl(0, 0%, 100%)}
@@ -43,9 +42,71 @@ window {
 }
 
 
+window.date_popup > box {
+  background-color: #282424;
+  border-radius: 10px; 
+  border: 1px solid hsl(259, 87%, 79%);
+  font-size: 11px;
+
+  & > box {
+    background-color: #363232;
+    border-radius: 10px; 
+    margin: 6px;
+  }
+
+  .weather_box { 
+    margin-bottom: 3px;
+    padding-right: 10px;
+
+    .icon {
+      font-size: 72px;
+      padding-left: 12px;
+      padding-right: 4px;
+    }
+
+    .temp {
+      margin-top: 18px;
+      font-size: 30px;
+      font-weight: 700;
+      color: #f38ba8;
+    }
+
+    .txt {
+      font-size: 11px;
+      font-weight: bold;
+      color: hsl(234, 82%, 85%);
+    }
+  }
+
+
+  .cal_box {
+    margin-top: 3px;
+    
+    .days {
+      margin: 7px 6px 0 3px;
+      font-weight: 600;
+      color: hsl(234, 82%, 85%);
+    }
+
+    calendar {
+      color: hsl(234, 82%, 85%);
+      &.header {color: hsl(96, 44%, 80%)}
+      &:indeterminate {color: hsl(230, 12%, 49%)}
+
+      &:selected {
+        color: hsl(96, 44%, 68%);
+        background-color: hsla(234, 82%, 85%, 0.3);
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+
+
 tooltip {
   font-family: "Monaspace Krypton";
-  border: 0.5px solid hsl(259, 87%, 79%);
+  border: 1px solid hsl(259, 87%, 79%);
   background-color: hsl(0, 0%, 20%);
   font-size: 11px;
   margin: 0px;
