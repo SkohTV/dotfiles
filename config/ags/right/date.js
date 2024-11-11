@@ -46,7 +46,6 @@ const p_weather = () => Widget.Box({
 
     Widget.Box({
       vertical: true,
-      homogeneous: false,
       children: [
 
         Widget.Label({
