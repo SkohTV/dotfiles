@@ -46,6 +46,7 @@
 
 
     stm32cubemx
+    zotero
 
   ];
 }
