@@ -1,4 +1,4 @@
-import { Date } from "./date.js";
+import { CurrentTime } from "./date.js";
 import { Network } from "./network.js";
 import { Battery } from "./battery.js";
 import { Split_generator } from "../shared/separator.js";
@@ -17,6 +17,6 @@ export const Right = (m) => Widget.Box({
     Split_generator(),
     Network(),
     Split_generator(),
-    Date(m)
+    CurrentTime(m)
   ],
 });
