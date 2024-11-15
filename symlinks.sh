@@ -41,6 +41,7 @@ fn_unlink_link '.config' 'tofi'
 fn_unlink_link '.config' 'wlogout'
 fn_unlink_link '.config' 'zellij'
 fn_unlink_link '' '.zshrc'
+fn_unlink_link '' '.gitconfig'
 fn_unlink_link '.config' 'okularrc'
 fn_unlink_link '.config' 'starship.toml'
 

@@ -31,6 +31,7 @@
     sd # sed
     fd # find
     procs # top
+    delta # diff preview
 
 
     ### Terminal User Interface
