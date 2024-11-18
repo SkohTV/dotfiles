@@ -7,7 +7,7 @@
 
     users.skoh = {
       isNormalUser = true;
-      extraGroups = ["wheel" "docker" "wireshark"]; # Enable ‘sudo’ for the user.
+      extraGroups = ["wheel" "docker"]; # "wireshark"
       useDefaultShell = true;
     };
 

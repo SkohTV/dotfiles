@@ -23,7 +23,7 @@
     fm # file manager
 
     ### Dev
-    wireshark # network tracking
+    # wireshark # network tracking
     # ciscoPacketTracer8 # need to download iso on website 
     qflipper # gui for flipper zero
 
