@@ -97,10 +97,10 @@ Utils.monitorFile('/tmp/weather/weather-hex', (f, _) => color.value = Utils.read
 
 /** @param {Number} m */
 function up_date(m){
-  const tmp = App.getWindow(`date_popup${m}`).child.children[1].children[1].date
-  const cal_date = [tmp[0], tmp[1]+1, tmp[2]].join('-')
-  const true_date = Utils.exec("date +'%Y-%m-%d'")
-  console.log(cal_date === true_date)
+  // const tmp = App.getWindow(`date_popup${m}`).child.children[1].children[1].date
+  // const cal_date = [tmp[0], tmp[1]+1, tmp[2]].join('-')
+  // const true_date = Utils.exec("date +'%Y-%m-%d'")
+  // console.log(cal_date === true_date)
 }
 
 

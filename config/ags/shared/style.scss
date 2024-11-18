@@ -11,6 +11,7 @@ window.bar {
   .temp_label {color: hsl(220, 63%, 69%)}
   .ram_label {color: hsl(105, 48%, 72%)}
   .notif_label {color: hsl(60, 100%, 70%)}
+  .screen_label {color: hsl(60, 100%, 70%)}
   .cava_label { color: hsl(0, 78%, 68%) ; font-size: 8px }
 
   .workspaces {font-size: 12px}
@@ -34,7 +35,8 @@ window.bar {
   .distro_label {padding: 0 4px}
   .cpu_label, .temp_label, .ram_label {padding: 0 4px}
   .distro_label {padding-right: 4px}
-  .notif_label {padding: 0 10px 0 4px}
+  .notif_label {padding: 0 8px 0 4px}
+  .screen_label {padding: 0 12px 0 4px}
   .battery_label {padding-right: 4px}
   .mute, .sound {padding-right: 4px}
   .network_label>label {padding-left: 4px}
