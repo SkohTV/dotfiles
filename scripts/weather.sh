@@ -74,16 +74,16 @@ while true; do
         weather_icon=" "
         weather_hex="${blue}"
       elif [ "$weather_icon_code" == "09d"  ]; then
-        weather_icon=" "
+        weather_icon=" "
         weather_hex="${mauve}"
       elif [ "$weather_icon_code" == "09n"  ]; then
-        weather_icon=" "
+        weather_icon=" "
         weather_hex="${mauve}"
       elif [ "$weather_icon_code" == "10d"  ]; then
-        weather_icon=" "
+        weather_icon=" "
         weather_hex="${mauve}"
       elif [ "$weather_icon_code" == "10n"  ]; then
-        weather_icon=" "
+        weather_icon=" "
         weather_hex="${mauve}"
       elif [ "$weather_icon_code" == "11d"  ]; then
         weather_icon=""
