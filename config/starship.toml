@@ -1,5 +1,4 @@
-#format = '''$username$nix_shell $git_branch$directory$sudo$character '''
-format = '''$username${custom.nix} $git_branch$directory$sudo$character '''
+format = '''${username}${custom.nix} ${git_branch}${directory}${sudo}${character} '''
 add_newline = false
 
 
@@ -25,7 +24,6 @@ format = '$symbol'
 disabled = false
 symbol = '!'
 format = '[$symbol](red)'
-
 
 [custom.nix]
 command = 'echo $NIX_SHELL_NAME'
