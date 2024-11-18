@@ -18,11 +18,13 @@
   ];
 
 
-  # Programs, not in pkgs
+  # Programs, not pkgs
   programs = {
-    wireshark.enable = true;
+
+    # wireshark.enable = true;
     zsh.enable = true;
     ssh.startAgent = true;
+
     hyprland = {
       enable = true;
       xwayland.enable = true;
