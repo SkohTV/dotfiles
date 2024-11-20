@@ -17,8 +17,9 @@ show_age_threshold = -1
 stack_duplicates = no
 
 # Size
-offset = 10x30
+offset = 20x20
 shrink = no
+origin = bottom-right
 
 # DE / WM
 monitor = 1
