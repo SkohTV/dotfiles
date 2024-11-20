@@ -16,6 +16,7 @@
     wget # download file
     bluez # bluetooth
     networkmanager # wifi connection
+    steam-run # for fhs required apps
 
     ### Advanced
     hyperfine
