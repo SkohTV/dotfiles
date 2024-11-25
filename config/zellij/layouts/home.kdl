@@ -1,10 +1,12 @@
 layout cwd="/home/skoh" {
+
   default_tab_template {
     pane size=1 borderless=true {
       plugin location="zellij:compact-bar"
     }
     children
   }
+
   tab name="mprocs" {
     pane name="Pane #1" {
       command "mprocs"
@@ -16,4 +18,10 @@ layout cwd="/home/skoh" {
       command "btop"
     }
   }
+  tab name="nchat" {
+    pane name="Pane #1" {
+      command "nchat"
+    }
+  }
+
 }
