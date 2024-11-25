@@ -1,4 +1,6 @@
 local config = function()
+  vim.filetype.add({ pattern = { [".*/hypr/.*%.conf"] = "hyprlang" } }) -- For hyprlang
+
   require("nvim-treesitter.configs").setup({ ---@diagnostic disable-line
     ensure_installed = {
       "lua",
