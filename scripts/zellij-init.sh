@@ -2,19 +2,19 @@
 
 
 fn_home() {
-  zellij attach home || zellij --layout home --session home 
+  zellij attach home || zellij --session home --new-session-with-layout home 
 }
 
 fn_nvim() {
-  zellij attach nvim || zellij --layout nvim --session nvim 
+  zellij attach nvim || zellij --session nvim --new-session-with-layout nvim 
 }
 
 fn_main() {
-  zellij attach main || zellij --layout main --session main 
+  zellij attach main || zellij --session main --new-session-with-layout main 
 }
 
 fn_tmp() {
-  zellij attach tmp || zellij --layout tmp --session tmp 
+  zellij attach tmp || zellij --session tmp --new-session-with-layout tmp 
 }
 
 case "$1" in
