@@ -7,6 +7,9 @@
   security.polkit.enable = true; # Enable polkit
   environment.sessionVariables.NIXOS_OZONE_WL = "1"; # Hyprland fix zoom
 
+  nix.settings.trusted-users = [ "root" "skoh" ];
+
+
   # Optimize store at each build
   nix.settings.auto-optimise-store = true;
 

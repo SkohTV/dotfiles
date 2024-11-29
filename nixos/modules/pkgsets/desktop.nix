@@ -34,7 +34,8 @@
     ### Eww
     eww
     pamixer # change sound status
-    cava # small bars for sound
+    # cava # small bars for sound
+    # cavalier # big bars for background
     acpi # get battery remaining
     brightnessctl # change brightness
     gammastep # change screen temperature

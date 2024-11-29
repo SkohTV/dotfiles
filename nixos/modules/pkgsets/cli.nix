@@ -44,6 +44,7 @@
     lazygit # git interface
     asciiquarium # screensaver
     mprocs # long running process manager
+    nchat # whatsapp cli
 
 
     ### Utils

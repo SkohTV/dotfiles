@@ -15,7 +15,7 @@
 
     ### Python
     python313 # core
-    nodePackages_latest.pyright # lsp
+    pyright # lsp
     ruff # formatter
 
     ### C / C++
