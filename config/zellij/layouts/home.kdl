@@ -18,10 +18,4 @@ layout cwd="/home/skoh" {
       command "btop"
     }
   }
-  tab name="nchat" {
-    pane name="Pane #1" {
-      command "nchat"
-    }
-  }
-
 }
