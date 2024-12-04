@@ -7,6 +7,8 @@
 , lib
 , makeDesktopItem
 , stdenvNoCC
+, requireFile
+, unzip
 }:
 
 
@@ -15,24 +17,42 @@ let
     pname = "stm32cubeide";
     version = "1.16.1";
 
-    src = fetchzip {
-      url = "https://www.st.com/content/ccc/resource/technical/software/sw_development_suite/group1/16/f0/7b/d1/a5/6d/42/66/stm32cubeide-lnx/files/st-stm32cubeide_1.16.1_22882_20240916_0822_amd64.sh.zip/jcr:content/translations/en.st-stm32cubeide_1.16.1_22882_20240916_0822_amd64.sh.zip";
-      hash = "sha256-sVIpuD+B8qB4dM062bY3GVGpzS/njBD9f08A//qm6CE=";
-      stripRoot = false;
+    # src = fetchzip {
+    #   url = "https://drive.usercontent.google.com/download?id=1Dbfw08AS_HCyWFCtShgujQ8ynXaLwrSA&export=download&confirm=t&uuid=5eb93a89-8564-4af5-8423-f9cd4caad7f6";
+    #   hash = "";
+    #   stripRoot = false;
+    # };
+
+    # Require user to `nix store add-file packed.sh.zip`
+    src = requireFile {
+      name = "packed.sh.zip";
+      message = "WIP: Implement download, in the mean time, download it by your self";
+      hash = "sha256-eDxCZpXe8YSlApQUn6kpsZqcqpea6l4jRh2N9VKDxzI=";
     };
 
-    # nativeBuildInputs = [ fdupes icoutils imagemagick ];
+    nativeBuildInputs = [ unzip ];
 
     buildCommand = ''
-      mkdir -p $out/bin
-      cp jsp $out/bin
+      mkdir -p $out/{bin,opt,tmp}
+      unzip $src -d $out/tmp
+      cd $out/tmp
+      sh *.sh --quiet --noexec --nox11
+
+      cd $out/tmp/makeself_dir_*
+      find . -type f ! -name '*.tar.gz' -delete
+      tar zxf *.tar.gz
+      rm *.tar.gz
+
+      mv * $out/opt
+      echo "(cd $out/opt && ./stm32cubeide_wayland)" > $out/bin/stm32cubeide
+      chmod +x $out/bin/stm32cubeide
     '';
   };
 
 
 in 
   buildFHSEnv {
-    inherit (package) pname version meta;
+    inherit (package) pname version;
     runScript = "${package.outPath}/bin/stm32cubeide";
     targetPkgs = pkgs:
       with pkgs; [
@@ -59,5 +79,6 @@ in
         xorg.libXext
         xorg.libXfixes
         xorg.libXrandr
+        jdk17
       ];
 }

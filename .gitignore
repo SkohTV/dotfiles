@@ -8,3 +8,6 @@ config/ags/types
 
 # Ignore main wallpaper change
 wallpapers/desktop/main
+
+# F*** this big file
+nixos/flakes/packed.sh.zip
