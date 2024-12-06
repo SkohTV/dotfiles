@@ -12,7 +12,6 @@
 
 
     ### Core
-    git
     wget # download file
     bluez # bluetooth
     networkmanager # wifi connection
