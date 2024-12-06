@@ -5,6 +5,9 @@
   # Imports
   imports = [
 
+    # Home Manager
+    <home-manager/nixos>
+
     # Hardware
     ./modules/hardware/laptop.nix # hardware config
 
@@ -26,6 +29,11 @@
   ];
 
 
+  # Home Manager setup
+  home-manager.users.skoh = import ./modules/home.nix;
+  home-manager.backupFileExtension = "backup";
+
+
   # Enable experimental features (nix subcommands, flakes...)
   nix.settings.experimental-features = [
     "nix-command"
@@ -33,7 +41,7 @@
   ];
 
 
-
+  # System conf
   system.copySystemConfiguration = true;
   system.stateVersion = "24.11";
 
