@@ -1,9 +1,9 @@
-{ fdupes
-, buildFHSEnv
+{ buildFHSEnv
 , lib
 , stdenvNoCC
 , requireFile
 , unzip
+, makeDesktopItem
 }:
 
 
@@ -12,20 +12,30 @@ let
     pname = "stm32cubeide";
     version = "1.17.0";
 
-    # src = fetchzip {
-    #   url = "https://drive.usercontent.google.com/download?id=1Dbfw08AS_HCyWFCtShgujQ8ynXaLwrSA&export=download&confirm=t&uuid=5eb93a89-8564-4af5-8423-f9cd4caad7f6";
-    #   hash = "";
-    #   stripRoot = false;
-    # };
-
-    # Require user to `nix store add-file packed.sh.zip`
     src = requireFile {
       name = "packed.sh.zip";
-      message = "WIP: Implement download, in the mean time, download it by your self";
       hash = "sha256-eDxCZpXe8YSlApQUn6kpsZqcqpea6l4jRh2N9VKDxzI=";
+      message = ''
+Unfortunately we cannot auto-download this file, so you have to get it yourself
+
+-> https://www.st.com/en/development-tools/stm32cubeide.html
+Please download the 1.17.0 release of the Generic Linux Installer
+Then run `mv en.st-stm32cubeide_1.17.0_* packed.sh.zip && nix store add-file packed.sh.zip`
+'';
     };
 
     nativeBuildInputs = [ unzip ];
+
+    desktopItem = makeDesktopItem {
+      name = "STM32CubeIde";
+      exec = "stm32cubeide";
+      desktopName = "STM32CubeIDE";
+      categories = [ "Development" ];
+      icon = "stm32cubeide";
+      comment = meta.description;
+      terminal = false;
+      startupNotify = false;
+    };
 
     buildCommand = ''
       mkdir -p $out/{bin,opt,tmp,share/applications}
@@ -34,7 +44,6 @@ let
       sh *.sh --quiet --noexec --nox11
 
       cd $out/tmp/makeself_dir_*
-      sh ./desktop_shortcut.sh "${version}" "$out/opt" "$out/share/applications/stm32cubeide.desktop"
       find . -type f ! -name '*.tar.gz' -delete
       tar zxf *.tar.gz
       rm *.tar.gz
@@ -45,6 +54,7 @@ let
       echo "(cd $out/opt && ./stm32cubeide_wayland)" > $out/bin/stm32cubeide # for wayland
 
       chmod +x $out/bin/stm32cubeide
+      cp "${desktopItem}/share/applications/*.desktop" "$out/share/applications"
     '';
 
     meta = with lib; {
@@ -67,7 +77,7 @@ let
   };
 
 
-in 
+in
   buildFHSEnv {
     inherit (package) pname version meta;
 
@@ -82,8 +92,7 @@ in
 
     extraInstallCommands = ''
       mkdir -p $out/share
-      ln -s ${package}/share/icons $out/share
+      # ln -s ${package}/share/icons $out/share
       cp -r ${package}/share/applications $out/share
     '';
-    
 }
