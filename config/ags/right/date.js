@@ -2,6 +2,20 @@ const date = Variable('', {
   poll: [1000, `date +'%a, %m/%d - %I:%M %p'`],
 })
 
+const flex_cal = Variable(gen_cal())
+
+function gen_cal() {
+  return Widget.Calendar({
+    showDayNames: false,
+    showDetails: true,
+    showHeading: true,
+
+    expand: true,
+    hpack: 'fill',
+    vpack: 'fill',
+  })
+}
+
 
 const p_calendar = () => Widget.Box({
   vertical: true,
@@ -22,16 +36,7 @@ const p_calendar = () => Widget.Box({
       ]
     }),
 
-    Widget.Calendar({
-      showDayNames: false,
-      showDetails: true,
-      showHeading: true,
-
-      expand: true,
-      hpack: 'fill',
-      vpack: 'fill',
-    })
-
+    flex_cal.value
   ]
 })
 
@@ -97,10 +102,16 @@ Utils.monitorFile('/tmp/weather/weather-hex', (f, _) => color.value = Utils.read
 
 /** @param {Number} m */
 function up_date(m){
-  // const tmp = App.getWindow(`date_popup${m}`).child.children[1].children[1].date
-  // const cal_date = [tmp[0], tmp[1]+1, tmp[2]].join('-')
-  // const true_date = Utils.exec("date +'%Y-%m-%d'")
-  // console.log(cal_date === true_date)
+  const cal_item = App.getWindow(`date_popup${m}`).child.children[1].children[1]
+  const cal_date_raw = cal_item.date
+  const cal_date = [cal_date_raw[0], cal_date_raw[1]+1, cal_date_raw[2]].join('-')
+  const true_date = Utils.exec("date +'%Y-%m-%d'")
+
+  if (cal_date !== true_date){
+    console.log('re-generating calendar item')
+    flex_cal.value = gen_cal();
+  }
+
 }
 
 
