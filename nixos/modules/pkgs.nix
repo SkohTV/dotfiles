@@ -1,5 +1,10 @@
 { pkgs, ... }:
-{
+
+let 
+  stm32cubeide = pkgs.callPackage ../flakes/stm32cubeide/package.nix {};
+
+
+in {
 
   # Packages config
   nixpkgs.config = {
@@ -30,6 +35,10 @@
       xwayland.enable = true;
     };
   };
+
+  environment.systemPackages = [
+    stm32cubeide
+  ];
 
 
   # Import pkgs sets

@@ -9,6 +9,8 @@
 
   nix.settings.trusted-users = [ "root" "skoh" ];
 
+  # Better
+  nix.settings.sandbox = true;
 
   # Optimize store at each build
   nix.settings.auto-optimise-store = true;
