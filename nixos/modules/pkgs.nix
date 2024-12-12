@@ -37,7 +37,7 @@ in {
   };
 
   environment.systemPackages = [
-    stm32cubeide
+    # stm32cubeide
   ];
 
 
