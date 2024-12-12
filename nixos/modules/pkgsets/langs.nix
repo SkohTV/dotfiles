@@ -17,6 +17,7 @@
     python313 # core
     pyright # lsp
     ruff # formatter
+    poetry # pkg manager
 
     ### C / C++
     gnat13 # core (gcc & g++)

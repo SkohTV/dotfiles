@@ -106,6 +106,7 @@ function up_date(m){
   const cal_date = [cal_item[0], cal_item[1]+1, cal_item[2]].join('-')
   const true_date = Utils.exec("date +'%Y-%m-%d'")
 
+  print(cal_date, true_date)
   if (cal_date !== true_date){
     console.log('re-generating calendar item')
     flex_cal.value = gen_cal();
