@@ -20,7 +20,7 @@
     zathura # pdf viewer (minimal)
     qalculate-gtk # insane calculatrice
     onlyoffice-bin # office suite
-    fm # file manager
+    pantheon.elementary-files # file manager
 
     ### Dev
     # wireshark # network tracking
