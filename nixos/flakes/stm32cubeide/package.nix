@@ -54,7 +54,7 @@ Then run `mv en.st-stm32cubeide_1.17.0_* packed.sh.zip && nix store add-file pac
       echo "(cd $out/opt && ./stm32cubeide_wayland)" > $out/bin/stm32cubeide # for wayland
 
       chmod +x $out/bin/stm32cubeide
-      cp "${desktopItem}/share/applications/*.desktop" "$out/share/applications"
+      # cp "${desktopItem}/share/applications/*.desktop" "$out/share/applications"
     '';
 
     meta = with lib; {
@@ -93,6 +93,6 @@ in
     extraInstallCommands = ''
       mkdir -p $out/share
       # ln -s ${package}/share/icons $out/share
-      cp -r ${package}/share/applications $out/share
+      # cp -r ${package}/share/applications $out/share
     '';
 }
