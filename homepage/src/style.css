@@ -169,7 +169,7 @@ a {
 
 form {
   position: relative;
-  width: 50vw;
+  width: 60vw;
   background: var(--color-brand);
   border-radius: var(--rad);
 }
