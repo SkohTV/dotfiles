@@ -58,8 +58,11 @@ alias copy="wl-copy"
 alias nixbuild="sudo nixos-rebuild switch -I nixos-config=$NIXCFG"
 alias nixdev="nix develop --command zsh"
 alias nixgc="sudo nix-store --gc"
+
 function nix(){ NIX_SHELL_NAME="$1" command nix "$@" }
-function rr(){ $@ > /dev/null 2>&1 & disown }
+function rr(){ "$@" > /dev/null 2>&1 & disown }
+function xr(){ GDK_BACKEND=x11 "$@" }
+function xrr(){ xr rr "$@" }
 
 
 # Rename zellij tab to git repo name
