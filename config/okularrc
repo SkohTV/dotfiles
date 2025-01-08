@@ -209,23 +209,30 @@ contrast=4
 2256x1504 screen: Width=2256
 2256x1504 screen: Window-Maximized=true
 958x528 screen: Window-Maximized=true
-RestorePositionForNextInstance=false
-State=AAAA/wAAAAD9AAAAAQAAAAAAAAFHAAAEG/wCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgAAAAA5AAAEGwAAAOkA///+AAAGmgAAA/YAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAFHAAAEG/wCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgEAAAA5AAAEGwAAAOkA///+AAAFTQAABBsAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 
 [Recent Files]
-File1[$e]=$HOME/ISEN-A2/Maths/maths-ch11-cours.pdf
-File2[$e]=$HOME/ISEN-A2/Maths/maths-ch12-cours.pdf
-File3[$e]=$HOME/ISEN-A2/Maths/maths-ch9-exos.pdf
-File4[$e]=$HOME/ISEN-A2/Maths/maths-ch10-exos.pdf
-File5[$e]=$HOME/ISEN-A2/Maths/maths-ch11-exos.pdf
-File6[$e]=$HOME/Downloads/Les Graphes et lAlgorithme de Dijkstra.pdf
-Name1[$e]=maths-ch11-cours.pdf
-Name2[$e]=maths-ch12-cours.pdf
-Name3[$e]=maths-ch9-exos.pdf
-Name4[$e]=maths-ch10-exos.pdf
-Name5[$e]=maths-ch11-exos.pdf
-Name6[$e]=Les Graphes et lAlgorithme de Dijkstra.pdf
+File1[$e]=$HOME/Downloads/td6-stm32.pdf
+File10[$e]=$HOME/ISEN/Proba/ds-1/ds_proba_a3.pdf
+File2[$e]=$HOME/ISEN/Proba/Chapitre_0.pdf
+File3[$e]=$HOME/ISEN/Proba/Chapitre_1.pdf
+File4[$e]=$HOME/ISEN/Proba/chapitre_2.pdf
+File5[$e]=$HOME/ISEN/Proba/Chapitre_3.pdf
+File6[$e]=$HOME/ISEN/Proba/Chapitre_4.pdf
+File7[$e]=$HOME/ISEN/Proba/TD_TP proba.pdf
+File8[$e]=$HOME/ISEN/Proba/Solution_TP_Partie 1.pdf
+File9[$e]=$HOME/ISEN/Proba/Solution_TP_Partie 3.pdf
+Name1[$e]=td6-stm32.pdf
+Name10[$e]=ds_proba_a3.pdf
+Name2[$e]=Chapitre_0.pdf
+Name3[$e]=Chapitre_1.pdf
+Name4[$e]=chapitre_2.pdf
+Name5[$e]=Chapitre_3.pdf
+Name6[$e]=Chapitre_4.pdf
+Name7[$e]=TD_TP proba.pdf
+Name8[$e]=Solution_TP_Partie 1.pdf
+Name9[$e]=Solution_TP_Partie 3.pdf
 
 [WM]
 activeBackground=49,54,59
