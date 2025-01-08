@@ -7,7 +7,8 @@ Utils.exec(cmd_extend);
 
 const swap = () => {
   mirror = !mirror
-  Utils.exec(mirror ? cmd_mirror : cmd_extend);
+  // Utils.exec(mirror ? cmd_mirror : cmd_extend);
+  print(mirror ? cmd_mirror : cmd_extend)
   label.value = mirror ? '󱞟' : '󰹑' 
 }
 
