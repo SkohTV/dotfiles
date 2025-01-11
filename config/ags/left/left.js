@@ -5,7 +5,6 @@ import { Memory } from "./memory.js";
 import { Cava } from "./cava.js";
 import { Notif } from "./notif.js";
 import { Split_generator } from "../shared/separator.js";
-import { Screen } from "./screen.js";
 
 
 export const Left = () => Widget.Box({
@@ -17,7 +16,6 @@ export const Left = () => Widget.Box({
     Memory(),
     Split_generator(),
     Notif(),
-    Screen(),
     Cava()
   ]
 });
