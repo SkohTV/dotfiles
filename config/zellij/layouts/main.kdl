@@ -9,8 +9,7 @@ layout cwd="/home/skoh" {
 
   tab {
     pane split_direction="vertical" {
-      pane size="50%" {}
-      pane size="50%" {}
+      pane {}
     }
   }
 
