@@ -7,6 +7,11 @@
     obsidian # knowledge database
     spacedrive # file manager from futur
 
+    ### Content
+    obs-studio
+    parsec-bin
+    # steamlink
+
     ### Web
     brave # browser
     tor-browser # safe browser

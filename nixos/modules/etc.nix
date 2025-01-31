@@ -34,4 +34,11 @@
   systemd.sleep.extraConfig = ''
     HibernateDelaySec=2700s
   '';
+
+  xdg = {
+    mime.enable = true;
+    mime.defaultApplications = {
+      "application/pdf" = [ "org.pwmt.zathura.desktop" ];
+    };
+  };
 }
