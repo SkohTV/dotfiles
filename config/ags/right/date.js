@@ -1,5 +1,5 @@
 const date = Variable('', {
-  poll: [1000, `date +'%a, %m/%d - %I:%M %p'`],
+  poll: [1000, `date +'%a, %d %b - %H:%M'`],
 })
 
 const flex_cal = Variable(gen_cal())

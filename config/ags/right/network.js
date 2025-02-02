@@ -49,6 +49,5 @@ export const Network = () => Widget.EventBox({
   child: Widget.Label({
     setup: self => self.hook(network, init, 'changed'),
   }),
-  on_primary_click: network.toggleWifi,
   class_name: 'network_label'
 });
