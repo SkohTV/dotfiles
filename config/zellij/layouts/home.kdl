@@ -8,14 +8,19 @@ layout cwd="/home/skoh" {
   }
 
   tab name="mprocs" {
-    pane name="Pane #1" {
+    pane name="Pane" {
       command "mprocs"
       args "--config" "/home/skoh/dev/scripts/mprocs.yaml"
     }
   }
   tab name="btop" {
-    pane name="Pane #1" {
+    pane name="Pane" {
       command "btop"
+    }
+  }
+  tab name="bluetuith" {
+    pane name="Pane" {
+      command "bluetuith"
     }
   }
 }
