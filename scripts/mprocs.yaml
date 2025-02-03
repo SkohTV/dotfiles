@@ -4,7 +4,7 @@ procs:
   dunst:
     shell: "pkill dunst || dunst"
   hyprpaper:
-    cmd: ["hyprpaper"]
+    cmd: ["/home/skoh/dev/scripts/randomize_wallpaper.sh"]
   hypridle:
     cmd: ["hypridle"]
   ags:
