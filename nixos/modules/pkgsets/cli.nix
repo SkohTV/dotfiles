@@ -13,7 +13,8 @@
 
     ### Core
     wget # download file
-    bluez # bluetooth
+    bluez # bluetooth daemo
+    bluetuith # bluetooth tui
     networkmanager # wifi connection
     steam-run # for fhs required apps
 
