@@ -3,11 +3,11 @@ vim.opt.number = true -- Print the line number in front of each line
 vim.opt.relativenumber = true -- Show relative line number in front of each line
 
 -- Tab / indent behavior
-vim.opt.tabstop = 2 -- Number of spaces for <Tab> in file
-vim.opt.softtabstop = 2 -- Number of spaces for <Tab> editing
+vim.opt.tabstop = 4 -- Number of spaces for <Tab> in file
+vim.opt.softtabstop = 4 -- Number of spaces for <Tab> editing
 vim.opt.expandtab = true -- Use space when pressed <Tab>
 vim.opt.smartindent = true -- Smart autoindenting
-vim.opt.shiftwidth = 2 -- Number of spaces to use for indent
+vim.opt.shiftwidth = 4 -- Number of spaces to use for indent
 vim.opt.breakindent = true -- Wrapped line repeats indent
 vim.opt.wrap = false -- Long lines don't wrap
 
