@@ -17,3 +17,6 @@ vim.keymap.set({ "n", "v", "i" }, "<Up>", "<Nop>")
 vim.keymap.set({ "n", "v", "i" }, "<Down>", "<Nop>")
 vim.keymap.set({ "n", "v", "i" }, "<Left>", "<Nop>")
 vim.keymap.set({ "n", "v", "i" }, "<Right>", "<Nop>")
+
+vim.keymap.set({ "n", "v", "i" }, ",p", "\"0p")
+vim.keymap.set({ "n", "v", "i" }, ",P", "\"0P")
