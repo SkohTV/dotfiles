@@ -3,6 +3,9 @@
  */
 function transform(val) {
 
+    if (val.length == 0)
+        return ''
+
     val = val.split('\n')
         .find(l => l.includes('Cpu(s)')) ?? ''
 
