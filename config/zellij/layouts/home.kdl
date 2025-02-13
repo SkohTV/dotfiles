@@ -18,9 +18,4 @@ layout cwd="/home/skoh" {
       command "btop"
     }
   }
-  tab name="bluetuith" {
-    pane name="Pane" {
-      command "bluetuith"
-    }
-  }
 }
