@@ -1,10 +1,7 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-
     ### Language server
-    efm-langserver 
-
+    efm-langserver
 
     ### Lua
     lua5_4_compat # core
@@ -44,7 +41,7 @@
 
     ### Nix
     nixd # lsp
-    statix # linter
+    alejandra # formatter
 
     ### Go
     go # core
@@ -62,6 +59,5 @@
     ### R lang
     R # Core
     rPackages.languageserver # Lsp
-
   ];
 }

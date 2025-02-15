@@ -28,6 +28,7 @@
     pantheon.elementary-files # file manager
 
     ### Dev
+    zed-editor # IDE
     # wireshark # network tracking
     # ciscoPacketTracer8 # need to download iso on website 
     qflipper # gui for flipper zero

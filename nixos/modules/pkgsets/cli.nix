@@ -36,7 +36,6 @@
 
 
     ### Terminal User Interface
-    neovim # editor
     btop # ressource monitor
     pipr # preview commands
     zellij # terminal multiplexer
