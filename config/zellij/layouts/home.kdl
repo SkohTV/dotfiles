@@ -1,21 +1,32 @@
 layout cwd="/home/skoh" {
 
-  default_tab_template {
+  tab name="mprocs" {
     pane size=1 borderless=true {
       plugin location="zellij:compact-bar"
     }
-    children
-  }
-
-  tab name="mprocs" {
-    pane name="Pane" {
+    pane borderless=true {
       command "mprocs"
       args "--config" "/home/skoh/dev/scripts/mprocs.yaml"
     }
   }
+
   tab name="btop" {
-    pane name="Pane" {
+    pane size=1 borderless=true {
+      plugin location="zellij:compact-bar"
+    }
+    pane borderless=true {
       command "btop"
     }
   }
+
+  tab name="vault" {
+    pane size=1 borderless=true {
+      plugin location="zellij:compact-bar"
+    }
+    pane borderless=true {
+      cwd "~/dev/repo/vault"
+      command "lazygit"
+    }
+  }
+
 }
