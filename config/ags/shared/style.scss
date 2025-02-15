@@ -26,7 +26,6 @@ window.bar {
   .w9  {color: hsl(0, 0%, 100%)}
   .w10 {color: hsl(40, 70%, 78%)}
 
-  .battery_label {color: hsl(105, 48%, 72%)}
   .light {color: hsl(40, 70%, 78%)}; .night {color: hsl(25, 98%, 50%)}
   .sound {color: hsl(189, 59%, 73%)}; .mute {color: hsl(0, 0%, 67%)}
   .network_label {color: hsl(267, 83%, 80%)}
@@ -137,3 +136,14 @@ scale trough {
 .sound scale trough highlight {background-color: hsl(189, 59%, 73%)}
 .mute scale trough {border-color: hsl(0, 0%, 67%)} 
 .mute scale trough highlight {background-color: hsl(0, 0%, 67%)}
+
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.bat {color: hsl(105, 48%, 72%)}
+.bat_low { animation: blink 1s infinite }
+.bat_crit{ animation: blink 0.3s infinite }
