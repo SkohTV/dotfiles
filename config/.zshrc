@@ -24,7 +24,7 @@ bindkey '^[OB' history-substring-search-down
 
 # Export env var
 export NIXCFG=$HOME/dev/repo/dotfiles/nixos/config.nix
-export EDITOR=nvim
+export EDITOR="zed"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 export RUFF_EXPERIMENTAL_FORMATTER=1
@@ -40,7 +40,7 @@ alias cat="bat"
 alias __cat="bat --plain --color=never --paging=never --style=plain"
 alias grep="rg --color=always"
 alias __grep="command grep"
-alias vim="nvim"
+alias zed="zeditor --add"
 eval "$(zoxide init --cmd cd zsh)"
 
 # Shortening
@@ -68,12 +68,10 @@ function xrr(){ xr rr "$@" }
 
 # Rename zellij tab to git repo name
 chpwd() {
-  if [[ "$ZELLIJ_SESSION_NAME" == "nvim" ]]; then
+  if [[ "$ZELLIJ_SESSION_NAME" == "main" ]]; then
     if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
       tab_name=$(basename "$(git rev-parse --show-toplevel)")
       command nohup zellij action rename-tab $tab_name >/dev/null 2>&1
-    else
-      command nohup zellij action rename-tab "Pane #?" >/dev/null 2>&1
     fi
   fi
 }
