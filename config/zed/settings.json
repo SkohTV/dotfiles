@@ -1,0 +1,39 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  // "icon_theme": "Material Icon Theme",
+  "vim_mode": true,
+
+  "languages": {
+    "Nix": {
+      "language_servers": ["nixd"],
+      "formatter": {
+        "external": {
+          "command": "alejandra",
+          "arguments": ["--quiet", "--"]
+        }
+      }
+    }
+  },
+
+  "show_wrap_guides": true,
+  "preferred_line_length": 88,
+  // "wrap_guides": [88],
+
+  "theme": {
+    "mode": "dark",
+    "dark": "Tokyo Night Storm",
+    "light": "Tokyo Night Storm"
+  },
+
+  "ui_font_family": "MonaspiceKr Nerd Font",
+  "buffer_font_family": "MonaspiceKr Nerd Font",
+  "ui_font_size": 16,
+  "buffer_font_size": 14
+}
