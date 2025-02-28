@@ -6,7 +6,7 @@ window.bar {
   background: hsl(0, 5%, 15%);
   color: hsl(0, 0%, 100%);
   font-size: 13px;
-  
+
   .cpu_label {color: hsl(39, 47%, 63%)}
   .temp_label {color: hsl(220, 63%, 69%)}
   .ram_label {color: hsl(105, 48%, 72%)}
@@ -19,8 +19,8 @@ window.bar {
   .w2  {color: hsl(0, 0%, 100%)}
   .w3  {color: hsl(0, 0%, 100%)}
   .w4  {color: hsl(267, 83%, 80%)}
-  .w5  {color: hsl(105, 48%, 72%)}
-  .w6  {color: hsl(199, 66%, 69%)}
+  .w5  {color: hsl(199, 66%, 69%)}
+  .w6  {color: hsl(105, 48%, 72%)}
   .w7  {color: hsl(21, 86%, 73%)}
   .w8  {color: hsl(0, 0%, 100%)}
   .w9  {color: hsl(0, 0%, 100%)}
@@ -45,17 +45,17 @@ window.bar {
 
 window.date_popup > box {
   background-color: #282424;
-  border-radius: 10px; 
+  border-radius: 10px;
   border: 1px solid hsl(259, 87%, 79%);
   font-size: 11px;
 
   & > box {
     background-color: #363232;
-    border-radius: 10px; 
+    border-radius: 10px;
     margin: 6px;
   }
 
-  .weather_box { 
+  .weather_box {
     margin-bottom: 3px;
     padding-right: 10px;
 
@@ -82,7 +82,7 @@ window.date_popup > box {
 
   .cal_box {
     margin-top: 3px;
-    
+
     .days {
       margin: 7px 6px 0 3px;
       font-weight: 600;
@@ -132,9 +132,9 @@ scale trough {
 .light scale trough highlight {background-color: hsl(40, 70%, 78%)}
 .night scale trough {border-color: hsl(25, 98%, 50%)}
 .night scale trough highlight {background-color: hsl(25, 98%, 50%)}
-.sound scale trough {border-color: hsl(189, 59%, 73%)} 
+.sound scale trough {border-color: hsl(189, 59%, 73%)}
 .sound scale trough highlight {background-color: hsl(189, 59%, 73%)}
-.mute scale trough {border-color: hsl(0, 0%, 67%)} 
+.mute scale trough {border-color: hsl(0, 0%, 67%)}
 .mute scale trough highlight {background-color: hsl(0, 0%, 67%)}
 
 
@@ -145,5 +145,4 @@ scale trough {
 }
 
 .bat {color: hsl(105, 48%, 72%)}
-.bat_low { animation: blink 1s infinite }
-.bat_crit{ animation: blink 0.3s infinite }
+.bat_low { animation: blink 0.3s infinite }
