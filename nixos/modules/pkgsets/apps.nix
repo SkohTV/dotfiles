@@ -1,7 +1,5 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-
     ### Tryhard
     alacritty # terminal
     obsidian # knowledge database
@@ -19,7 +17,7 @@
     ### Chill
     discord # communication
     vlc # video display
-    
+
     ### Work
     libsForQt5.okular # pdf viewer (advanced)
     zathura # pdf viewer (minimal)
@@ -28,14 +26,12 @@
     pantheon.elementary-files # file manager
 
     ### Dev
-    zed-editor # IDE
     # wireshark # network tracking
-    # ciscoPacketTracer8 # need to download iso on website 
+    # ciscoPacketTracer8 # need to download iso on website
     qflipper # gui for flipper zero
 
     ### Dependancies
     xdg-utils # For embedded file manager
     glib # To customize theme with gsettings
-
   ];
 }

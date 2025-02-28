@@ -42,6 +42,7 @@
 
     ### Ags
     ags
+    sassc # compile css 
     sysstat # show cpu %
     lm_sensors # show temp 
 
