@@ -1,7 +1,5 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-
     ### Man pages
     man-pages
     man-pages-posix
@@ -9,7 +7,6 @@
     ### Files
     zip
     unzip
-
 
     ### Core
     wget # download file
@@ -20,8 +17,8 @@
 
     ### Advanced
     hyperfine
-    fzf 
-    jq 
+    fzf
+    jq
     starship # prompt
 
     ### Improved
@@ -34,7 +31,6 @@
     procs # top
     delta # diff preview
 
-
     ### Terminal User Interface
     btop # ressource monitor
     pipr # preview commands
@@ -45,12 +41,10 @@
     mprocs # long running process manager
     nchat # whatsapp cli
 
-
     ### Utils
     pkg-config # for cmake
     openssl # ssl
     openssh # ssh
     zplug # zsh plugin manager
-
   ];
 }

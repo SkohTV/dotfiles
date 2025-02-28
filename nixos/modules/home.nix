@@ -21,7 +21,7 @@ in {
     ".config/dunst".source = fullPath "${dotfiles}/config/dunst";
     ".config/hypr".source = fullPath "${dotfiles}/config/hypr";
     ".config/lazygit".source = fullPath "${dotfiles}/config/lazygit";
-    ".config/zed".source = fullPath "${dotfiles}/config/zed";
+    ".config/nvim".source = fullPath "${dotfiles}/config/nvim";
     ".config/tofi".source = fullPath "${dotfiles}/config/tofi";
     ".config/wlogout".source = fullPath "${dotfiles}/config/wlogout";
     ".config/zellij".source = fullPath "${dotfiles}/config/zellij";

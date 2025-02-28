@@ -47,6 +47,7 @@ in {
     ./pkgsets/apps.nix # Graphical apps
     ./pkgsets/cli.nix # Command line tools / TUI
     ./pkgsets/langs.nix # For programming languages
+    ./pkgsets/nvim.nix # For nvim config
     ./pkgsets/unstable.nix # Packages not on stable branch
  ];
 }
