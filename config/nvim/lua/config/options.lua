@@ -1,6 +1,4 @@
 -- Leaders
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 
 -- Line number
 vim.opt.number = true -- Print the line number in front of each line
@@ -25,3 +23,9 @@ vim.opt.guicursor = {
 	"sm:block-blinkwait175-blinkoff150-blinkon175",
 }
 
+vim.opt.signcolumn = 'yes'
+
+
+-- Columns
+vim.opt.colorcolumn = "88" -- Highlight the X column
+vim.opt.signcolumn = "yes" -- Display the sign column
