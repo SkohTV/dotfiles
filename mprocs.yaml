@@ -1,6 +1,6 @@
 procs:
   khoj:
-    cmd: ["docker", "compose", "--file", "/home/skoh/dev/repo/dotfiles/khoj/docker-compose.yml", "up"]
+    cmd: ["/home/skoh/dev/repo/dotfiles/khoj/start.sh", "up"]
   weather:
     cmd: ["/home/skoh/dev/scripts/weather.sh"]
   dunst:
