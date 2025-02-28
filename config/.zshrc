@@ -37,10 +37,10 @@ alias ll="eza -1abghlF --colour=always --group-directories-first --icons=always"
 alias ls="eza -1bghlF --colour=always --group-directories-first --icons=always"
 alias lt="eza -1bghlF --tree --colour=always --group-directories-first --icons=always"
 alias cat="bat"
-alias __cat="bat --plain --color=never --paging=never --style=plain"
+alias __cat="command cat"
 alias grep="rg --color=always"
 alias __grep="command grep"
-alias zed="zeditor --add"
+alias vim="nvim"
 eval "$(zoxide init --cmd cd zsh)"
 
 # Shortening
@@ -68,7 +68,7 @@ function xrr(){ xr rr "$@" }
 
 # Rename zellij tab to git repo name
 chpwd() {
-  if [[ "$ZELLIJ_SESSION_NAME" == "main" ]]; then
+  if [[ "$ZELLIJ_SESSION_NAME" == "nvim" ]]; then
     if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
       tab_name=$(basename "$(git rev-parse --show-toplevel)")
       command nohup zellij action rename-tab $tab_name >/dev/null 2>&1
