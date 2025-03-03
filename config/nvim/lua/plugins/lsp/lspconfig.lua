@@ -48,6 +48,7 @@ local config = function()
         'r_language_server', -- R
 
         'cmake',             -- CMake
+        'cssls',             -- css / scss
     })
 
 end

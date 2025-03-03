@@ -1,5 +1,12 @@
 local config = function()
   vim.filetype.add({ pattern = { [".*/hypr/.*%.conf"] = "hyprlang" } }) -- For hyprlang
+
+  require("nvim-treesitter.configs").setup({
+    auto_install = true,
+    highlight = {
+        enable = true
+    }
+  })
 end
 
 
