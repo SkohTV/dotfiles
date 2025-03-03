@@ -9,5 +9,6 @@ procs:
     cmd: ["/home/skoh/dev/scripts/randomize_wallpaper.sh"]
   hypridle:
     cmd: ["hypridle"]
-  ags:
+  astal:
     cmd: ["ags"]
+    # cmd: ["nix", "develop", "/home/skoh/dev/repo/dotfiles/config/ags#", "--command", "gjs", "-m", "/home/skoh/.config/ags/result/bin/my-shell"]
