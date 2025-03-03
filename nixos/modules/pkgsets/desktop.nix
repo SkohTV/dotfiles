@@ -20,6 +20,9 @@
     wl-clipboard # clipboard
     wl-clip-persist # clipboard
 
+    acpi # get battery remaining
+
+
     ### Theme
     juno-theme
     sweet-folders
@@ -32,19 +35,17 @@
     xdg-desktop-portal-gtk
 
     ### Eww
-    eww
-    pamixer # change sound status
-    cava # small bars for sound
-    cavalier # big bars for background
-    acpi # get battery remaining
-    brightnessctl # change brightness
-    gammastep # change screen temperature
+    # pamixer # change sound status
+    # cavalier # big bars for background
 
     ### Ags
     ags
     sassc # compile css 
+    brightnessctl # change brightness
+    cava # small bars for sound
     sysstat # show cpu %
     lm_sensors # show temp 
+    gammastep # change screen temperature
 
 
     stm32cubemx

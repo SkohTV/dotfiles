@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let 
-  stm32cubeide = pkgs.callPackage ../flakes/stm32cubeide/package.nix {};
+  # astal = pkgs.callPackage ../flakes/astal/package.nix {};
 
 
 in {
@@ -37,7 +37,7 @@ in {
   };
 
   environment.systemPackages = [
-    # stm32cubeide
+    # astal
   ];
 
 

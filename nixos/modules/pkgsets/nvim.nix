@@ -20,5 +20,6 @@
     rPackages.languageserver
 
     cmake-language-server
+    vscode-langservers-extracted
   ];
 }
