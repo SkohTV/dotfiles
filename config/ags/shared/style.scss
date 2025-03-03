@@ -1,15 +1,148 @@
-// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
-$bg: #282424;
-$fg: #fff;
-
 * {
   all: unset;
 }
 
-
 window.bar {
-  background: $bg;
-  color: $fg;
+  background: hsl(0, 5%, 15%);
+  color: hsl(0, 0%, 100%);
   font-size: 13px;
 
+  .cpu_label {color: hsl(39, 47%, 63%)}
+  .temp_label {color: hsl(220, 63%, 69%)}
+  .ram_label {color: hsl(105, 48%, 72%)}
+  .notif_label {color: hsl(60, 100%, 70%)}
+  .screen_label {color: hsl(60, 100%, 70%)}
+  .cava_label { color: hsl(0, 78%, 68%) ; font-size: 8px }
+
+  .workspaces {font-size: 12px}
+  .w1  {color: hsl(40, 70%, 78%)}
+  .w2  {color: hsl(0, 0%, 100%)}
+  .w3  {color: hsl(0, 0%, 100%)}
+  .w4  {color: hsl(267, 83%, 80%)}
+  .w5  {color: hsl(199, 66%, 69%)}
+  .w6  {color: hsl(105, 48%, 72%)}
+  .w7  {color: hsl(21, 86%, 73%)}
+  .w8  {color: hsl(0, 0%, 100%)}
+  .w9  {color: hsl(0, 0%, 100%)}
+  .w10 {color: hsl(40, 70%, 78%)}
+
+  .light {color: hsl(40, 70%, 78%)}; .night {color: hsl(25, 98%, 50%)}
+  .sound {color: hsl(189, 59%, 73%)}; .mute {color: hsl(0, 0%, 67%)}
+  .network_label {color: hsl(267, 83%, 80%)}
+  .date_label {color: hsl(227, 27%, 72%)}
+
+  .distro_label {padding: 0 4px}
+  .cpu_label, .temp_label, .ram_label {padding: 0 4px}
+  .distro_label {padding-right: 4px}
+  .notif_label {padding: 0 8px 0 4px}
+  .screen_label {padding: 0 12px 0 4px}
+  .battery_label {padding-right: 4px}
+  .mute, .sound {padding-right: 4px}
+  .network_label>label {padding-left: 4px}
+  .date_label {padding: 0 4px}
 }
+
+
+window.date_popup > box {
+  background-color: #282424;
+  border-radius: 10px;
+  border: 1px solid hsl(259, 87%, 79%);
+  font-size: 11px;
+
+  & > box {
+    background-color: #363232;
+    border-radius: 10px;
+    margin: 6px;
+  }
+
+  .weather_box {
+    margin-bottom: 3px;
+    padding-right: 10px;
+
+    .icon {
+      font-size: 72px;
+      margin-left: 4px;
+      margin-right: 8px;
+    }
+
+    .temp {
+      margin-top: 18px;
+      font-size: 30px;
+      font-weight: 700;
+      color: #f38ba8;
+    }
+
+    .txt {
+      font-size: 11px;
+      font-weight: bold;
+      color: hsl(234, 82%, 85%);
+    }
+  }
+
+
+  .cal_box {
+    margin-top: 3px;
+
+    .days {
+      margin: 7px 6px 0 3px;
+      font-weight: 600;
+      color: hsl(234, 82%, 85%);
+    }
+
+    calendar {
+      color: hsl(234, 82%, 85%);
+      &.header {color: hsl(96, 44%, 80%)}
+      &:indeterminate {color: hsl(230, 12%, 49%)}
+
+      &:selected {
+        color: hsl(96, 44%, 68%);
+        background-color: hsla(234, 82%, 85%, 0.3);
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+
+
+tooltip {
+  font-family: "Monaspace Krypton";
+  border: 1px solid hsl(259, 87%, 79%);
+  background-color: hsl(0, 0%, 20%);
+  font-size: 11px;
+  margin: 0px;
+}
+
+scale {padding: 0 4px 0 0}
+scale trough highlight {border-radius: 16px}
+scale trough {
+  background: hsl(0, 0%, 25%);
+  border: 0.5px solid hsl(0, 0%, 100%);
+  border-radius: 16px;
+  min-height: 5px;
+  min-width: 80px;
+}
+
+
+.light, .night, .sound, .mute {&>label {min-width: 24px}}
+.light, .night {label {min-width: 20px}}
+.sound, .mute {label {min-width: 18px}}
+
+.light scale trough {border-color: hsl(40, 70%, 78%)}
+.light scale trough highlight {background-color: hsl(40, 70%, 78%)}
+.night scale trough {border-color: hsl(25, 98%, 50%)}
+.night scale trough highlight {background-color: hsl(25, 98%, 50%)}
+.sound scale trough {border-color: hsl(189, 59%, 73%)}
+.sound scale trough highlight {background-color: hsl(189, 59%, 73%)}
+.mute scale trough {border-color: hsl(0, 0%, 67%)}
+.mute scale trough highlight {background-color: hsl(0, 0%, 67%)}
+
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.bat {color: hsl(105, 48%, 72%)}
+.bat_low { animation: blink 0.3s infinite }
