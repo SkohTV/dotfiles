@@ -7,8 +7,12 @@ procs:
     shell: "pkill dunst || dunst"
   hyprpaper:
     cmd: ["/home/skoh/dev/scripts/randomize_wallpaper.sh"]
+    autorestart: true
   hypridle:
     cmd: ["hypridle"]
   astal:
     cmd: ["ags"]
+    autorestart: true
+  daily_restart:
+    cmd: ["/home/skoh/dev/scripts/daily_restart.sh"]
     # cmd: ["nix", "develop", "/home/skoh/dev/repo/dotfiles/config/ags#", "--command", "gjs", "-m", "/home/skoh/.config/ags/result/bin/my-shell"]
