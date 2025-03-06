@@ -18,7 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup({
-  checker = { enabled = true },
   install = { colorscheme = { "habamax" } },
   spec = {
       { import = "plugins" },

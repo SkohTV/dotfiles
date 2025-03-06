@@ -19,3 +19,14 @@ vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<leader>fa", ":Telescope <CR>")
 vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>")
+
+vim.keymap.set("n", "<leader>x", ":Explore<CR>")
+
+vim.keymap.set({ "n", "v", "i" }, "<Up>", "<Nop>")
+vim.keymap.set({ "n", "v", "i" }, "<Down>", "<Nop>")
+vim.keymap.set({ "n", "v", "i" }, "<Left>", "<Nop>")
+vim.keymap.set({ "n", "v", "i" }, "<Right>", "<Nop>")
+
+
+-- Check keymaps in harpoon plugin
+-- Check keymaps in lspconfig
