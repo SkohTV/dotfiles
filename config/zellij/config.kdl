@@ -23,6 +23,8 @@ keybinds {
     unbind "Alt j"
     unbind "Alt k"
     unbind "Alt l"
+    unbind "Ctrl h"
+      bind "Ctrl m" { SwitchToMode "move"; }
   }
 }
 
