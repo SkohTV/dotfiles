@@ -29,3 +29,6 @@ vim.opt.signcolumn = 'yes'
 -- Columns
 vim.opt.colorcolumn = "88" -- Highlight the X column
 vim.opt.signcolumn = "yes" -- Display the sign column
+
+-- Netrw line numbers
+vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
