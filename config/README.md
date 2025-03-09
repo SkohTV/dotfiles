@@ -11,7 +11,7 @@ Logout widget -> [wlogout](https://github.com/ArtsyMacaw/wlogout) ([config](./wl
 
 <br>
 
-$\sf\color{orange}Terminal \space \& \space Shell$<br>
+$\sf\color{orange}Terminal \space and \space Shell$<br>
 
 Terminal -> [Alacritty](https://github.com/alacritty/alacritty) ([config](./alacritty/))<br>
 Multiplexer -> [Zellij](https://github.com/zellij-org/zellij) ([config](./zellij/))<br>
