@@ -13,7 +13,7 @@ in {
   };
 
   home.file = {
-    ".zshrc".source = fullPath "${dotfiles}/config/.zshrc";
+    ".bashrc".source = fullPath "${dotfiles}/config/.bashrc";
 
     ".config/ags".source = fullPath "${dotfiles}/config/ags";
     ".config/alacritty".source = fullPath "${dotfiles}/config/alacritty";

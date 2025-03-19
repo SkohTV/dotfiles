@@ -27,7 +27,6 @@ in {
   programs = {
 
     # wireshark.enable = true;
-    zsh.enable = true;
     ssh.startAgent = true;
 
     hyprland = {

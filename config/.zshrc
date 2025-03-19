@@ -1,3 +1,5 @@
+# date +"%T.%6N"
+
 # History of commands
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -23,8 +25,7 @@ bindkey '^[OB' history-substring-search-down
 
 
 # Export env var
-export NIXCFG=$HOME/dev/repo/dotfiles/nixos/config.nix
-export EDITOR="zed"
+export NIXCFG="$HOME/dev/repo/dotfiles/nixos/config.nix"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 export RUFF_EXPERIMENTAL_FORMATTER=1
@@ -32,14 +33,10 @@ export OBSIDIAN_USE_WAYLAND=1
 
 
 # x -> y
-alias l="ll"
 alias ll="eza -1abghlF --colour=always --group-directories-first --icons=always"
 alias ls="eza -1bghlF --colour=always --group-directories-first --icons=always"
 alias lt="eza -1bghlF --tree --colour=always --group-directories-first --icons=always"
 alias cat="bat"
-alias __cat="command cat"
-alias grep="rg --color=always"
-alias __grep="command grep"
 alias vim="nvim"
 eval "$(zoxide init --cmd cd zsh)"
 
@@ -56,7 +53,7 @@ alias ssh="TERM=xterm-256color ssh"
 alias fetch="sh ~/dev/scripts/fetch.sh"
 alias copy="wl-copy"
 alias nixbuild="sudo nixos-rebuild switch -I nixos-config=$NIXCFG"
-alias nixgc="sudo nix-store --gc"
+alias nixgc="sudo nix-collect-garbage --delete-older-than 14d"
 
 function nix(){ NIX_SHELL_NAME="$1" command nix "$@" }
 function nixdev(){ nix develop "$@" --command zsh}
@@ -83,3 +80,5 @@ ssh-add ~/.ssh/github 2> /dev/null
 
 # Start terminal emulator
 eval "$(starship init zsh)"
+
+# date +"%T.%6N"
