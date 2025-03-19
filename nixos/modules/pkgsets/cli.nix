@@ -10,7 +10,7 @@
 
     ### Core
     wget # download file
-    bluez # bluetooth daemo
+    bluez # bluetooth daemon
     bluetuith # bluetooth tui
     networkmanager # wifi connection
     steam-run # for fhs required apps
@@ -26,25 +26,16 @@
     bat # cat
     ripgrep # grep
     zoxide # cd
-    sd # sed
-    fd # find
-    procs # top
-    delta # diff preview
 
     ### Terminal User Interface
     btop # ressource monitor
-    pipr # preview commands
     zellij # terminal multiplexer
-    lf # terminal file manager
     lazygit # git interface
-    asciiquarium # screensaver
     mprocs # long running process manager
-    nchat # whatsapp cli
 
     ### Utils
     pkg-config # for cmake
     openssl # ssl
     openssh # ssh
-    zplug # zsh plugin manager
   ];
 }

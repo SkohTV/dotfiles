@@ -8,7 +8,6 @@
     ### Content
     obs-studio
     parsec-bin
-    # steamlink
 
     ### Web
     brave # browser
