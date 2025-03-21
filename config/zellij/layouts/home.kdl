@@ -2,7 +2,7 @@ layout cwd="/home/skoh" {
 
   tab name="mprocs" {
     pane size=1 borderless=true {
-      plugin location="zellij:compact-bar"
+      plugin location="mainbar"
     }
     pane borderless=true {
       command "mprocs"
@@ -12,7 +12,7 @@ layout cwd="/home/skoh" {
 
   tab name="btop" {
     pane size=1 borderless=true {
-      plugin location="zellij:compact-bar"
+      plugin location="mainbar"
     }
     pane borderless=true {
       command "btop"
