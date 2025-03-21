@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ~/dev/scripts/.env
+source ~/dev/scripts/.weather.env
 
 sky='91d7e3'
 yellow='eed49f'
