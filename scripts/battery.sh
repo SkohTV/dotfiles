@@ -1,4 +1,4 @@
-BATTERY=$(acpi -b | sd 'Battery 0: (.*), (.*)%,.*' '{"state": "$1", "value":$2}')
+BATTERY=$(acpi -b | sed -r 's/Battery 0: (.*), (.*)%,.*/{"state": "\1", "value":\2}/g')
 STATUS=$(echo "$BATTERY" | jq -r '.state')
 CAPACITY=$(echo "$BATTERY" | jq -r '.value')
 
