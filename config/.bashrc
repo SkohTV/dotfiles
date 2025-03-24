@@ -1,8 +1,18 @@
 # History of commands
-HISTSIZE=50000
-HISTFILE="~/.bash_history"
+export HISTCONTROL="ignoredups:erasedups"
+export HISTSIZE=50000
+export HISTFILESIZE=50000
+shopt -s histappend
 
+bind '"\e[A": history-substring-search-backward'
+bind '"\e[B": history-substring-search-forward'
+
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+
+export EDITOR=nvim
 export NIXCFG="$HOME/dev/repo/dotfiles/nixos/config.nix"
+
 
 
 # Aliases: simple
@@ -30,19 +40,16 @@ alias nixgc="sudo nix-collect-garbage --delete-older-than 14d"
 function nix() {
   NIX_SHELL_NAME="$1" command nix "$@"
 }
-function nixdev() {
-  nix develop "$@" --command zsh
-}
 
-function rr() {
-  "$@" > /dev/null 2>&1 & disown
-}
-function xr() {
-  GDK_BACKEND=x11 "$@"
-}
-function xrr() {
-  xr rr "$@"
-}
+# function rr() {
+#   "$@" > /dev/null 2>&1 & disown
+# }
+# function xr() {
+#   GDK_BACKEND=x11 "$@"
+# }
+# function xrr() {
+#   xr rr "$@"
+# }
 
 
 # Load github ssh
