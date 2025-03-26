@@ -10,6 +10,11 @@ in {
     enable = true;
     userName = "SkohTV";
     userEmail = "qlpth+github@proton.me";
+
+    extraConfig = {
+        init.defaultBranch = "main";
+        # pull.rebase = true; # thinking about it
+    };
   };
 
   home.file = {
@@ -37,5 +42,6 @@ in {
 
   # Let home manager manage itself
   programs.home-manager.enable = true;
+  home.enableNixpkgsReleaseCheck = false;
   home.stateVersion = "25.05";
 }
