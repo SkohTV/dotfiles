@@ -18,6 +18,8 @@
     nodejs
     bun
 
+    bash-language-server
+    shellcheck
     R
   ];
 }
