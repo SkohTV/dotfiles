@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-source ~/dev/scripts/.weather.env
+# shellcheck disable=SC1091
+source "$HOME"/dev/scripts/.weather.env
 
 sky='91d7e3'
 yellow='eed49f'
@@ -28,16 +29,16 @@ fi
 KEY="$WEATHER_API"
 ID="3029241"
 UNIT="metric"
-LANG="en"
+LNG="en"
 
 
 while true; do
 
   # Fetch api
-  weather=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID="$KEY"&id="$ID"&units="$UNIT"&lang="$LANG"")
-  echo $weather
+  weather=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID=${KEY}&id=${ID}&units=${UNIT}&lang=${LNG}")
+  echo "$weather"
 
-  if [ ! -z "$weather" ]; then
+  if [ -n "$weather" ]; then
     weather_temp=$(echo "$weather" | jq ".main.temp" | cut -d "." -f 1)
     weather_icon_code=$(echo "$weather" | jq -r ".weather[].icon" | head -1)
     weather_description=$(echo "$weather" | jq -r ".weather[].description" | head -1 | sed -e "s/\b\(.\)/\u\1/g")
@@ -110,12 +111,11 @@ while true; do
         echo "$weather_icon" >  $tmp_weather_icon
         echo "$weather_description" > $tmp_weather_stat
         
-        desc=$(cat /tmp/weather/weather-stat)
-        desc_count=$(cat /tmp/weather/weather-stat | wc -c)
+        desc_count=$(wc -c /tmp/weather/weather-stat)
         if [ "$desc_count" -lt 20 ]; then
           echo "$weather_description" > $tmp_weather_stat      
         else 
-          echo "$(cat /tmp/weather/weather-stat | cut -c1-12)""..." > $tmp_weather_stat
+          echo "$(cut -c1-12 /tmp/weather/weather-stat)""..." > $tmp_weather_stat
         fi
         echo "$weather_temp""°C" > $tmp_weather_degree
         echo "$weather_hex" > $tmp_weather_hex

@@ -6,12 +6,12 @@ while true; do
     sleep 5
     new_date=$(date +'%d')
 
-    if [[ $date != $new_date ]]; then
+    if [[ $date != "$new_date" ]]; then
         pkill ags
         pkill hyprpaper
         echo "- changed wp"
     fi
 
-    echo $new_date
+    echo "$new_date"
 done
 
