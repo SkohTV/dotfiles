@@ -7,6 +7,8 @@ shopt -s histappend
 bind '"\e[A": history-substring-search-backward'
 bind '"\e[B": history-substring-search-forward'
 
+bind 'set show-all-if-ambiguous on'
+
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 
