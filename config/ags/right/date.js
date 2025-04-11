@@ -46,6 +46,7 @@ const p_weather = () => Widget.Box({
 
     Widget.Label({
       class_name: 'icon',
+      css: color.bind().as(x => `color: #${x}`),
       label: icon.bind()
     }),
 
