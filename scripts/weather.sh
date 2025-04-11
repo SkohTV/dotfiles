@@ -111,8 +111,8 @@ while true; do
         echo "$weather_icon" >  $tmp_weather_icon
         echo "$weather_description" > $tmp_weather_stat
         
-        desc_count=$(wc -c /tmp/weather/weather-stat)
-        if [ "$desc_count" -lt 20 ]; then
+        desc_count=$(wc -c < /tmp/weather/weather-stat)
+        if [[ "$desc_count" -lt 20 ]]; then
           echo "$weather_description" > $tmp_weather_stat      
         else 
           echo "$(cut -c1-12 /tmp/weather/weather-stat)""..." > $tmp_weather_stat
