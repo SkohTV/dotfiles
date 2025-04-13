@@ -1,12 +1,16 @@
 procs:
-  khoj:
-    cmd: ["/home/skoh/dev/repo/dotfiles/khoj/start.sh", "up"]
+  lobechat:
+    cwd: "/home/skoh/dev/repo/dotfiles/lobechat/"
+    shell: "docker compose down && docker compose up"
+    stop: {send-keys: [<C-c>]}
   weather:
-    cmd: ["/home/skoh/dev/scripts/weather.sh"]
+    cwd: "/home/skoh/dev/scripts/"
+    cmd: ["./weather.sh"]
   dunst:
     shell: "pkill dunst || dunst"
   hyprpaper:
-    cmd: ["/home/skoh/dev/scripts/randomize_wallpaper.sh"]
+    cwd: "/home/skoh/dev/scripts/"
+    cmd: ["./randomize_wallpaper.sh"]
     autorestart: true
   hypridle:
     cmd: ["hypridle"]
@@ -14,5 +18,5 @@ procs:
     cmd: ["ags"]
     autorestart: true
   daily_restart:
-    cmd: ["/home/skoh/dev/scripts/daily_restart.sh"]
-    # cmd: ["nix", "develop", "/home/skoh/dev/repo/dotfiles/config/ags#", "--command", "gjs", "-m", "/home/skoh/.config/ags/result/bin/my-shell"]
+    cwd: "/home/skoh/dev/scripts/"
+    cmd: ["./daily_restart.sh"]
