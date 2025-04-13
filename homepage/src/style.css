@@ -103,11 +103,17 @@ a {
   align-items: center;
   border-radius: 10px;
   
+  font-size: 2.5em;
+  text-decoration: none;
+
   background-color: var(--button-color);
-  &:hover { background-color: var(--button-hover-color); }
+  color: var(--button-hover-color);
+
+  p { padding-top: 6px; }
   
-  img {
-    width: 70px;
+  &:hover {
+    background-color: var(--button-hover-color);
+    color: var(--a-hover-color);
   }
 }
 
