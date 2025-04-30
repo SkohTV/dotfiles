@@ -20,6 +20,8 @@
 
     bash-language-server
     shellcheck
+    shfmt
+
     R
   ];
 }

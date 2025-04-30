@@ -43,5 +43,5 @@ in {
   # Let home manager manage itself
   programs.home-manager.enable = true;
   home.enableNixpkgsReleaseCheck = false;
-  home.stateVersion = "25.05";
+  home.stateVersion = "24.11";
 }
