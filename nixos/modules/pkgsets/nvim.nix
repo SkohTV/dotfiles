@@ -13,7 +13,7 @@
     rust-analyzer
     zls
 
-    clang-tools_16
+    clang-tools
     nodePackages_latest.typescript-language-server
 
     nixd
