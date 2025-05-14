@@ -37,5 +37,7 @@
     pkg-config # for cmake
     openssl # ssl
     openssh # ssh
+
+    linuxPackages_latest.perf # kernel module
   ];
 }
