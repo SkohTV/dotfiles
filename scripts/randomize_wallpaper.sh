@@ -18,5 +18,3 @@ unlink /home/skoh/.config/wallpapers/main
 ln -s "$new_wp" /home/skoh/.config/wallpapers/main 
 
 echo "Refreshed wallpaper"
-
-hyprpaper
