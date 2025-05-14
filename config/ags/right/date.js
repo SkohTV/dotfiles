@@ -2,18 +2,19 @@ const date = Variable('', {
   poll: [1000, `date +'%a, %d %b - %H:%M'`],
 })
 
+
 const flex_cal = Variable(gen_cal())
 
 function gen_cal() {
-  return Widget.Calendar({
-    showDayNames: false,
-    showDetails: true,
-    showHeading: true,
+    return Widget.Calendar({
+        showDayNames: false,
+        showDetails: true,
+        showHeading: true,
 
-    expand: true,
-    hpack: 'fill',
-    vpack: 'fill',
-  })
+        expand: true,
+        hpack: 'fill',
+        vpack: 'fill',
+    })
 }
 
 
@@ -37,6 +38,7 @@ const p_calendar = () => Widget.Box({
     }),
 
     flex_cal.value
+    
   ]
 })
 
@@ -101,25 +103,20 @@ Utils.monitorFile('/tmp/weather/weather-stat', (f, _) => txt.value = Utils.readF
 Utils.monitorFile('/tmp/weather/weather-hex', (f, _) => color.value = Utils.readFile(f).replace('\n', ''))
 
 
-/** @param {Number} m */
-function up_date(m){
-  // const cal_item = flex_cal.value.date
-  // const cal_date = [cal_item[0], cal_item[1]+1, cal_item[2]].join('-')
-  // const true_date = Utils.exec("date +'%Y-%m-%d'")
-  //
-  // print(cal_date, true_date)
-  // if (cal_date !== true_date){
-  //   console.log('re-generating calendar item')
-  //   flex_cal.value = gen_cal();
-  // }
+function date_update() {
+    const d = new Date();
+    flex_cal.value.select_day(d.getDate())
+    flex_cal.value.select_month(d.getMonth(), d.getFullYear())
+    return true;
 }
+
 
 
 /** @param {Number} m */
 export const CurrentTime = (m) => {
 
   const ret = Widget.EventBox({
-    on_hover: () => { up_date(m) ; App.openWindow(`date_popup${m}`) },
+    on_hover: () => date_update() && App.openWindow(`date_popup${m}`),
     on_hover_lost: () => { },
 
     child: Widget.Label({
