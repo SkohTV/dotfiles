@@ -1,8 +1,14 @@
 procs:
-  lobechat:
+
+  $lobechat:
     cwd: "/home/skoh/dev/repo/dotfiles/lobechat/"
     shell: "docker compose down && docker compose up"
     stop: {send-keys: [<C-c>]}
+  $homepage:
+    cwd: "/home/skoh/dev/repo/dotfiles/homepage/"
+    shell: "docker compose down && docker compose up"
+    stop: {send-keys: [<C-c>]}
+
   weather:
     cwd: "/home/skoh/dev/scripts/"
     cmd: ["./weather.sh"]
@@ -17,6 +23,7 @@ procs:
   astal:
     cmd: ["ags"]
     autorestart: true
+
   daily_restart:
     cwd: "/home/skoh/dev/scripts/"
     cmd: ["./daily_restart.sh"]
