@@ -41,6 +41,4 @@ stdenv.mkDerivation {
     gbenchmark
     libgit2
   ];
-
-  cmakeFlags = [ (lib.cmakeBool "DCMAKE_EXPORT_COMPILE_COMMANDS" 1) ];
 }
