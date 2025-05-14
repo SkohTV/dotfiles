@@ -6,7 +6,6 @@
 
 ## Shell
 [`battery.sh`](./battery.sh) -> Show the current battery level (for locked screen)<br>
-[`daily_restart.sh`](./daily_restart.sh) -> Kill hyprpaper and ags to refresh them (they auto restart)<br>
 [`randomize_wallpaper.sh`](./randomize_wallpaper.sh) -> Symlink a random wallpaper then start hyprpaper<br>
 [`screenshot.sh`](./screenshot.sh) -> Takes a screenshot<br>
 [`weather.sh`](./weather.sh) -> Fetch the weather from [openweathermap](https://openweathermap.org/) and store it in /tmp<br>
@@ -14,6 +13,7 @@
 [`zellij-init.sh`](./zellij-init.sh) -> Connect to / launch a custom layout zellij session<br>
 
 
+<!-- [`daily_restart.sh`](./daily_restart.sh) -> Kill hyprpaper and ags to refresh them (they auto restart)<br> -->
 <!-- [`launch_hyprpaper.sh`](./launch_hyprpaper.sh) -> Hyprpaper launcher wrapper script (for mprocs)<br>  -->
 <!-- [`launch_eww.sh`](./launch_eww.sh) -> Eww launcher wrapper scripts (for mprocs)<br> -->
 <!-- [`battery_warning.sh`](./battery_warning.sh) -> Send dunstify notifs when low / high battery<br> -->

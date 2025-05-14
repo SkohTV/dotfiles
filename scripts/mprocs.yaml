@@ -4,6 +4,7 @@ procs:
     cwd: "/home/skoh/dev/repo/dotfiles/lobechat/"
     shell: "docker compose down && docker compose up"
     stop: {send-keys: [<C-c>]}
+
   $homepage:
     cwd: "/home/skoh/dev/repo/dotfiles/homepage/"
     shell: "docker compose down && docker compose up"
@@ -12,18 +13,15 @@ procs:
   weather:
     cwd: "/home/skoh/dev/scripts/"
     cmd: ["./weather.sh"]
+
   dunst:
     shell: "pkill dunst || dunst"
+
   hyprpaper:
-    cwd: "/home/skoh/dev/scripts/"
-    cmd: ["./randomize_wallpaper.sh"]
-    autorestart: true
+    cmd: ["hyprpaper"]
+
   hypridle:
     cmd: ["hypridle"]
+
   astal:
     cmd: ["ags"]
-    autorestart: true
-
-  daily_restart:
-    cwd: "/home/skoh/dev/scripts/"
-    cmd: ["./daily_restart.sh"]
