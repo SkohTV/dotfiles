@@ -40,6 +40,7 @@ local config = function()
 
         'clangd',            -- C / C++
         'ts_ls',             -- JS / TS
+        'mojo',              -- Mojo
 
         'nixd',              -- Nix
         'lua_ls',            -- Lua
