@@ -47,7 +47,12 @@
 
 
         # Wait for network connection before vault push
-        sleep 60
+        while [ "$(ip add sh wlp1s0 | grep inet)" = "" ]; do
+          echo "Waiting for network..."
+          sleep 3
+        done
+
+        # Push vault
         ${pkgs.git}/bin/git -C /home/skoh/dev/repo/vault/ push origin
 
       '';
