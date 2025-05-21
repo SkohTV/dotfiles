@@ -2,6 +2,7 @@
 
 let 
   # astal = pkgs.callPackage ../flakes/astal/package.nix {};
+  mojo = pkgs.callPackage ../flakes/mojo/package.nix {};
 
 
 in {
@@ -37,6 +38,7 @@ in {
 
   environment.systemPackages = [
     # astal
+    mojo
   ];
 
 
