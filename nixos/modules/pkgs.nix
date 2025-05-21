@@ -20,7 +20,8 @@ in {
 
   # Fonts, not in pkgs
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "Monaspace" ]; })
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.monaspace
   ];
 
 
