@@ -13,7 +13,8 @@ in {
 
     extraConfig = {
         init.defaultBranch = "main";
-        # pull.rebase = true; # thinking about it
+        pull.rebase = true; # thinking about it
+        rerere.enabled = true;
     };
   };
 
@@ -39,6 +40,9 @@ in {
     ".local/share/icons".source = fullPath "${dotfiles}/icons";
 
   };
+
+  home.username = "skoh";
+  home.homeDirectory = "/home/skoh/";
 
   # Let home manager manage itself
   programs.home-manager.enable = true;

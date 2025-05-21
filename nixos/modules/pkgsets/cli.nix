@@ -38,6 +38,7 @@
     openssl # ssl
     openssh # ssh
 
+    home-manager
     linuxPackages_latest.perf # kernel module
   ];
 }

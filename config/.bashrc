@@ -33,7 +33,7 @@ alias zr='zellij action rename-tab $(basename "$(git rev-parse --show-toplevel 2
 # Aliases: long
 alias copy='wl-copy'
 alias nixbuild='sudo nixos-rebuild switch --flake $HOME/dev/repo/dotfiles/nixos/'
-alias nixbuild='home-manager switch --flake $HOME/dev/repo/dotfiles/nixos/'
+alias homebuild='home-manager switch --flake $HOME/dev/repo/dotfiles/nixos/'
 alias nixgc='sudo nix-collect-garbage --delete-older-than 14d'
 
 
