@@ -39,7 +39,7 @@
     # cavalier # big bars for background
 
     ### Ags
-    ags
+    ags_1
     sassc # compile css 
     brightnessctl # change brightness
     cava # small bars for sound
