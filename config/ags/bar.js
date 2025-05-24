@@ -18,4 +18,5 @@ export const Bar = (m) => Widget.Window({
   anchor: ['top', 'left', 'right'],
   child: Box(m),
   class_name: 'bar',
+  layer: 'background',
 });
