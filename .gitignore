@@ -7,9 +7,9 @@ config/ags/types
 *.env
 
 # Ignore wallpaper change
-wallpapers/desktop/main
-wallpapers/desktop/secondary
-wallpapers/desktop/lock
+wallpapers/main
+wallpapers/secondary
+wallpapers/lock
 
 # F*** this big file
 nixos/flakes/packed.sh.zip
