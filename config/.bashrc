@@ -1,5 +1,5 @@
 # History of commands
-# export HISTCONTROL="ignoredups:erasedups"
+export HISTCONTROL="ignoredups:erasedups"
 export HISTSIZE=50000
 export HISTFILESIZE=50000
 shopt -s histappend
