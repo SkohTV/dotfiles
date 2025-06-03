@@ -36,7 +36,7 @@ in {
     ".config/starship.toml".source = fullPath "${dotfiles}/config/starship.toml";
 
     "dev/scripts".source = fullPath "${dotfiles}/scripts";
-    ".config/wallpapers".source = fullPath "${dotfiles}/wallpapers/desktop";
+    ".config/wallpapers".source = fullPath "${dotfiles}/wallpapers";
     ".local/share/icons".source = fullPath "${dotfiles}/icons";
 
   };
