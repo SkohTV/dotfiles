@@ -4,14 +4,13 @@ a=$(date +"%d")
 b=$(date +"%m")
 c=$(date +"%y")
 
-get_seeded_random()
-{
+val=$(("$a" + "$b"*10 + "$c"*100))
+
+function get_seeded_random() {
   seed="$1"
   openssl enc -aes-256-ctr -pass pass:"$seed" -nosalt \
     </dev/zero 2>/dev/null
 }
-
-val=$(("$a" + "$b"*10 + "$c"*100))
 
 new_wp=$(\
     find "$HOME"/.config/wallpapers/* -maxdepth 1 -regex '.*\.\(png\|jpg\)' | \
