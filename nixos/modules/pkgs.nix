@@ -3,6 +3,7 @@
 let 
   # astal = pkgs.callPackage ../flakes/astal/package.nix {};
   mojo = pkgs.callPackage ../flakes/mojo/package.nix {};
+  minizinc = pkgs.libsForQt5.callPackage ../flakes/minizinc/ide.nix {};
 
 
 in {
@@ -40,6 +41,7 @@ in {
   environment.systemPackages = [
     # astal
     mojo
+    minizinc
   ];
 
 

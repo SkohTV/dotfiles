@@ -39,13 +39,6 @@
         ${pkgs.git}/bin/git -C /home/skoh/dev/repo/vault/ diff-index --quiet HEAD ||\
             ${pkgs.git}/bin/git -C /home/skoh/dev/repo/vault/ commit -m "Auto commit: $(date +'%a, %d %b %Y')"
 
-
-        # Change wp
-        export HYPRLAND_INSTANCE_SIGNATURE=$(hyprctl instances -j | jq -r '.[0].instance')
-        /home/skoh/dev/scripts/randomize_wallpaper.sh
-        hyprctl hyprpaper reload eDP-1,/home/skoh/.config/wallpapers/main 
-
-
         # Wait for network connection before vault push
         while [ "$(ip add sh wlp1s0 | grep inet)" = "" ]; do
           echo "Waiting for network..."
