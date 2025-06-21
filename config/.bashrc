@@ -9,7 +9,7 @@ bind '"\e[B": history-substring-search-forward'
 
 bind 'set show-all-if-ambiguous on'
 
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 export EDITOR=nvim
 
@@ -20,7 +20,6 @@ alias ls='eza -1bghlF --colour=always --group-directories-first --icons=always'
 alias lt='eza -1bghlF --tree --colour=always --group-directories-first --icons=always'
 alias cat='bat'
 alias vim='nvim'
-eval "$(zoxide init --cmd cd bash)"
 
 # Aliases: short
 alias c='clear'
@@ -47,5 +46,6 @@ function nix() {
 eval "$(ssh-agent -s)" > /dev/null
 ssh-add ~/.ssh/github 2> /dev/null
 
-# Start terminal emulator
+# Promt & cd
 eval "$(starship init bash)"
+eval "$(zoxide init --cmd cd bash)"
