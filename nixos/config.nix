@@ -2,6 +2,8 @@
 
 {
 
+  nixpkgs.config.allowBroken = true;
+
   # Imports
   imports = [
 
