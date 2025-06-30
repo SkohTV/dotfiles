@@ -44,19 +44,19 @@ body {
 
   h1 {
     color: var(--h1-color);
-    font-size: 64px;
+    font-size: 6em;
     margin-bottom: 0;
   }
   
   h2 {
     color: var(--h2-color);
-    font-size: 48px;
+    font-size: 3.5em;
   }
   
   h3 {
     margin-top: 10px;
     color: var(--h3-color);
-    font-size: 32px;
+    font-size: 3em;
   }
 }
 
@@ -68,7 +68,7 @@ p {
   a {
     color: var(--a-color);
     text-decoration: none;
-    font-size: 24px;
+    font-size: 1.6em;
     padding: 2px;
     display: flex;
     align-items:center;
@@ -91,29 +91,49 @@ a {
 }
 
 
-#ia > a {
+#ia {
   display: flex;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 90px;
-  height: 90px;
-
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  
-  font-size: 2.5em;
-  text-decoration: none;
+  padding: 5px;
 
-  background-color: var(--button-color);
-  color: var(--button-hover-color);
+  position: absolute;
+  flex-flow: column;
+  right: 20px;
+  top: 20px;
 
-  p { padding-top: 6px; }
+  a {
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--button-color);
+    color: var(--button-hover-color);
+
+    &:hover {
+      background-color: var(--button-hover-color);
+      color: var(--a-hover-color);
+    }
+  }
   
-  &:hover {
-    background-color: var(--button-hover-color);
-    color: var(--a-hover-color);
+
+  a:nth-child(1) {
+    font-size: 4em;
+
+    width: 130px;
+    height: 100px;
+    border-radius: 20px;
+    p { padding-top: 6px; }
+
+    margin-bottom: 6px;
+  }
+
+  a:nth-child(2) {
+    border-radius: 10px;
+    font-size: 1em;
+    margin-top: 6px;
   }
 }
 
@@ -125,6 +145,7 @@ a {
 }
 
 #top {
+  padding-top: 70px;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -135,88 +156,5 @@ a {
     height: 25vh;
     border-radius: 100%;
     border: #4400ff 5px solid;
-  }
-}
-
-
-
-/* Search bar */
-/* https://codepen.io/liamj/pen/vYYLGZj */
-:root {
-  --rad: .7rem;
-  --dur: .3s;
-  --color-dark: #2f2f2f;
-  --color-light: #fff;
-  --color-brand: #57bd84;
-  --font-fam: 'Jetbrains';
-  --height: 4rem;
-  --btn-width: 8rem;
-  --bez: cubic-bezier(0, 0, 0.43, 1.49);
-}
-
-form {
-  position: relative;
-  width: 60vw;
-  background: var(--color-brand);
-  border-radius: var(--rad);
-}
-
-input, button {
-  height: var(--height);
-  font-family: var(--font-fam);
-  border: 0;
-  color: var(--color-dark);
-  font-size: 1.8rem;
-}
-
-
-button {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: var(--btn-width);
-  font-weight: bold;
-  background: var(--color-brand);
-  border-radius: 0 var(--rad) var(--rad) 0;
-  cursor: pointer;
-}
-
-label {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-}
-
-
-input {
-
-  &[type="search"] {
-    outline: 0;
-    width: 100%;
-    background: var(--color-light);
-    padding: 0 1.6rem;
-    border-radius: var(--rad);
-    appearance: none;
-    transition: all var(--dur) var(--bez);
-    transition-property: width, border-radius;
-    z-index: 1;
-    position: relative;
-  }
-
-  &:not(:placeholder-shown) {
-    border-radius: var(--rad) 0 0 var(--rad);
-    width: calc(100% - var(--btn-width));
-    + button {
-      display: block;
-    }
-  }
-
-  &::-webkit-search-cancel-button {
-    cursor: pointer;
   }
 }
