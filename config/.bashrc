@@ -9,7 +9,7 @@ bind '"\e[B": history-substring-search-forward'
 
 bind 'set show-all-if-ambiguous on'
 
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 
 export EDITOR=nvim
 
