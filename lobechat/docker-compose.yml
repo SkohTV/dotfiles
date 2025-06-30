@@ -41,7 +41,7 @@ services:
     environment:
       - 'MINIO_API_CORS_ALLOW_ORIGIN=*'
     env_file:
-      - .env
+      - /tmp/lobechat/.env
     restart: always
     entrypoint: >
       /bin/sh -c "
