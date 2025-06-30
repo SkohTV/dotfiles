@@ -13,6 +13,7 @@
     tofi # program launcher
     dunst # notification daemon
     imv # image viewer
+    libnotify # send notifs
 
     grim # screenshot tool
     slurp # screenshot tool

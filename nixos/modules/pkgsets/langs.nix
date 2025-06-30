@@ -23,5 +23,6 @@
     shfmt
 
     R
+    intelephense
   ];
 }
