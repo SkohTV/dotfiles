@@ -6,6 +6,7 @@
     flatpak.enable = true; # Flatpaks
     upower.enable = true; # Power stuff
     openssh.enable = true; # ssh
+    fwupd.enable = true; # framework update firmware
   };
 
 
