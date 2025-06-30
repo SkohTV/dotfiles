@@ -49,6 +49,8 @@ local config = function()
 
         'cmake',             -- CMake
         'cssls',             -- css / scss
+
+        'intelephense',
     })
 
 end
