@@ -28,7 +28,10 @@ function init(self) {
   else icon = "󰂎";
 
   let low = "";
-  if (!charging && percent <= 15) low = "bat_low";
+  if (!charging && percent <= 15){
+    low = "bat_low";
+    Utils.execAsync(`notify-send --urgency=critical "Low battery" "Battery is ${percent}%"`)
+  } 
 
   if (percent === MAX_CHARGE && charging) text = "Fully charged !";
   else if (hour === "0" && min === "00") text = "Loading...";
