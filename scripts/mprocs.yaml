@@ -1,7 +1,7 @@
 procs:
 
   $lobechat:
-    cwd: "/home/skoh/dev/repo/dotfiles/lobechat/"
+    cwd: "/tmp/lobechat/"
     shell: "docker compose down && docker compose up"
     stop: {send-keys: [<C-c>]}
 
