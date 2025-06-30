@@ -145,7 +145,7 @@ a {
 }
 
 #top {
-  padding-top: 70px;
+  padding-top: 20px;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -153,7 +153,7 @@ a {
 
 #menu {
   & > img {
-    height: 25vh;
+    height: 30vh;
     border-radius: 100%;
     border: #4400ff 5px solid;
   }
