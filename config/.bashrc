@@ -22,13 +22,9 @@ alias cat='bat'
 alias vim='nvim'
 
 # Aliases: short
-alias c='clear'
-alias s='sudo'
-alias py='python3'
 alias ssh='TERM=xterm-256color ssh'
 alias z='sh $HOME/dev/scripts/zellij-init.sh'
 alias zr='zellij action rename-tab $(basename "$(git rev-parse --show-toplevel 2>/dev/null || echo -)")'
-alias rr='sh $HOME/dev/scripts/reroll_wp.sh'
 
 # Aliases: long
 alias copy='wl-copy'
