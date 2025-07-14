@@ -6,6 +6,7 @@ import { Cava } from "./cava.js";
 import { Notif } from "./notif.js";
 import { Split_generator } from "../shared/separator.js";
 import { Reroll } from "./reroll.js";
+import { Screenshare } from "./screenshare.js";
 
 
 export const Left = () => Widget.Box({
@@ -18,6 +19,7 @@ export const Left = () => Widget.Box({
     Split_generator(),
     Notif(),
     Reroll(),
+    Screenshare(),
     Cava()
   ]
 });
