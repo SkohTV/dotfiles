@@ -1,0 +1,96 @@
+(
+  max_notifications: 0,
+  timeout: 30000,
+  zero_timeout_behavior: NeverExpire,
+  poll_interval: 16,
+
+
+  debug: false,
+  debug_color: Color(r: 0.0, g: 1.0, b: 0.0, a: 1.0),
+  debug_color_alt: Color(r: 1.0, g: 0.0, b: 0.0, a: 1.0),
+
+  layout_blocks: [
+
+    (
+      name: "root",
+      parent: "",
+      hook: Hook(parent_anchor: BR, self_anchor: BR),
+      offset: Vec2(x: -7.0, y: -7.0),
+
+
+      params: NotificationBlock((
+        monitor: 0,
+        border_width: 3.0,
+        border_rounding: 3.0,
+
+        background_color: Color(hex: "#282828"),
+        border_color: Color(hex: "#ebdbb2"),
+        border_color_low: Color(hex: "#282828"),
+        border_color_critical: Color(hex: "#b7472a"),
+
+        gap: Vec2(x: 0.0, y: -55.0),
+        notification_hook: Hook(parent_anchor: TL, self_anchor: TL),
+      )),
+    ),
+
+    (
+      name: "image",
+      parent: "root",
+      hook: Hook(parent_anchor: TL, self_anchor: TL),
+      offset: Vec2(x: 0.0, y: 0.0),
+
+      params: ImageBlock((
+        image_type: Hint,
+
+        padding: Padding(left: 7.0, right: 0.0, top: 7.0, bottom: 7.0),
+        rounding: 3.0,
+        scale_width: 48,
+        scale_height: 48,
+        filter_mode: Lanczos3,
+      )),
+    ),
+
+    (
+      name: "summary",
+      parent: "image",
+      hook: Hook(parent_anchor: MR, self_anchor: BL),
+      offset: Vec2(x: 0.0, y: 0.0),
+
+      params: TextBlock((
+        text: "%s",
+        font: "Arial Bold 11",
+        ellipsize: Middle,
+        color: Color(hex: "#ebdbb2"),
+        color_hovered: Color(hex: "#fbf1c7"),
+        padding: Padding(left: 7.0, right: 7.0, top: 7.0, bottom: 0.0),
+        dimensions: (width: (min: 50, max: 150), height: (min: 0, max: 0)),
+      )),
+    ),
+
+    (
+      name: "body",
+      parent: "summary",
+      hook: Hook(parent_anchor: BL, self_anchor: TL),
+      offset: Vec2(x: 0.0, y: -3.0),
+
+      params: ScrollingTextBlock((
+        text: "%b",
+        font: "Arial 11",
+        color: Color(hex: "#ebdbb2"),
+        color_hovered: Color(hex: "#fbf1c7"),
+        padding: Padding(left: 7.0, right: 7.0, top: 3.0, bottom: 7.0),
+        width: (min: 150, max: 250),
+        scroll_speed: 0.1,
+        lhs_dist: 35.0,
+        rhs_dist: 35.0,
+        scroll_t: 1.0,
+      )),
+    ),
+  ],
+
+  shortcuts: ShortcutsConfig (
+    notification_interact: 1,
+    notification_close: 2,
+    notification_action1: 3,
+  ),
+)

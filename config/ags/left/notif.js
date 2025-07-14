@@ -1,10 +1,10 @@
 let mute = false;
 const label = Variable('')
-Utils.exec('dunstctl set-paused false')
+Utils.exec('wired --dnd off')
 
 const swap = () => {
   mute = !mute
-  Utils.exec(`dunstctl set-paused ${mute}`)
+  Utils.exec(`wired --dnd ${mute ? 'on' : 'off'}`)
   label.value = mute ? '' : '' 
 }
 
