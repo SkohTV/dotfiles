@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "$HOME/dev/scripts/lock.sh",
+    "action" : "$HOME/dev/scripts/screenlock.sh && loginctl lock-session",
     "text" : "[L]ock",
     "keybind" : "l"
 }
@@ -12,7 +12,7 @@
 }
 {
     "label" : "hibernate",
-    "action" : "systemctl suspend-then-hibernate",
+    "action" : "$HOME/dev/scripts/screenlock.sh && systemctl suspend-then-hibernate",
     "text" : "[H]ibernate",
     "keybind" : "h"
 }
