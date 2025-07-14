@@ -1,6 +1,9 @@
-let mirror = false;
-const label = Variable('')
-// Utils.exec('wired --dnd off')
+const hyprland = await Service.import('hyprland')
+const monitors = hyprland.monitors;
+const displayed = monitors.map(e => e.activeWorkspace.id);
+
+let mirror = !(displayed.length > 1)
+const label = Variable(mirror ? '󱞠' : '')
 
 const swap = () => {
   mirror = !mirror
@@ -12,6 +15,7 @@ const swap = () => {
     Utils.exec(`hyprctl reload`)
   }
 
+  Utils.exec(`pkill ags`)
   label.value = mirror ? '󱞠' : '' 
 }
 

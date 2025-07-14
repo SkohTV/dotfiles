@@ -15,7 +15,7 @@ procs:
     cmd: ["./weather.sh"]
 
   wired:
-    shell: "wired"
+    cmd: ["wired"]
 
   hyprpaper:
     cmd: ["hyprpaper"]
@@ -25,3 +25,4 @@ procs:
 
   astal:
     cmd: ["ags"]
+    autorestart: true
