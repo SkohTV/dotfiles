@@ -24,7 +24,7 @@ in {
     ".config/ags".source = fullPath "${dotfiles}/config/ags";
     ".config/alacritty".source = fullPath "${dotfiles}/config/alacritty";
     ".config/btop".source = fullPath "${dotfiles}/config/btop";
-    ".config/dunst".source = fullPath "${dotfiles}/config/dunst";
+    ".config/wired".source = fullPath "${dotfiles}/config/wired";
     ".config/hypr".source = fullPath "${dotfiles}/config/hypr";
     ".config/lazygit".source = fullPath "${dotfiles}/config/lazygit";
     ".config/nvim".source = fullPath "${dotfiles}/config/nvim";

@@ -3,7 +3,6 @@
     ### Tryhard
     alacritty # terminal
     obsidian # knowledge database
-    spacedrive # file manager from futur
 
     ### Content
     obs-studio
@@ -11,7 +10,6 @@
 
     ### Web
     brave # browser
-    tor-browser # safe browser
 
     ### Chill
     discord # communication
@@ -19,18 +17,10 @@
 
     ### Work
     libsForQt5.okular # pdf viewer (advanced)
-    zathura # pdf viewer (minimal)
     qalculate-gtk # insane calculatrice
     onlyoffice-bin # office suite
-    pantheon.elementary-files # file manager
-
-    ### Dev
-    # wireshark # network tracking
-    # ciscoPacketTracer8 # need to download iso on website
-    qflipper # gui for flipper zero
 
     ### Dependancies
     xdg-utils # For embedded file manager
-    glib # To customize theme with gsettings
   ];
 }

@@ -14,12 +14,14 @@
     bluetuith # bluetooth tui
     networkmanager # wifi connection
     steam-run # for fhs required apps
+    imagemagick # for image manipulation
 
     ### Advanced
+    linuxPackages_latest.perf # for BPF
+    starship # prompt
     hyperfine
     fzf
     jq
-    starship # prompt
 
     ### Improved
     eza # ls
@@ -39,6 +41,5 @@
     openssh # ssh
 
     home-manager
-    linuxPackages_latest.perf # kernel module
   ];
 }

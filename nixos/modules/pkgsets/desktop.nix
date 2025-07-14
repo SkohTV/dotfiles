@@ -11,7 +11,8 @@
     ### Tools
     wlogout # gui logout menu
     tofi # program launcher
-    dunst # notification daemon
+    # dunst # notification daemon
+    wired
     imv # image viewer
     libnotify # send notifs
 
@@ -24,20 +25,10 @@
     acpi # get battery remaining
 
 
-    ### Theme
-    juno-theme
-    sweet-folders
-    candy-icons
-
-
     ### Utils
     xdg-desktop-portal
     xdg-desktop-portal-wlr
     xdg-desktop-portal-gtk
-
-    ### Eww
-    # pamixer # change sound status
-    # cavalier # big bars for background
 
     ### Ags
     ags_1
@@ -47,10 +38,5 @@
     sysstat # show cpu %
     lm_sensors # show temp 
     gammastep # change screen temperature
-
-
-    stm32cubemx
-    zotero
-
   ];
 }

@@ -1,15 +1,13 @@
-{ ... }:
+{ lib, ... }:
 {
 
-  time.timeZone = "Europe/Paris"; # Set your time zone.
+  time.timeZone = lib.mkForce null; # Timezone is handled somewhere else
   virtualisation.docker.enable = true; # Docker
   documentation.dev.enable = true; # Man pages
   security.polkit.enable = true; # Enable polkit
   environment.sessionVariables.NIXOS_OZONE_WL = "1"; # Hyprland fix zoom
 
   nix.settings.trusted-users = [ "root" "skoh" ];
-
-  # Better
   nix.settings.sandbox = true;
 
   # Optimize store at each build
@@ -34,11 +32,4 @@
   systemd.sleep.extraConfig = ''
     HibernateDelaySec=2700s
   '';
-
-  xdg = {
-    mime.enable = true;
-    mime.defaultApplications = {
-      "application/pdf" = [ "org.pwmt.zathura.desktop" ];
-    };
-  };
 }
