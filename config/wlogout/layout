@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "loginctl lock-session",
+    "action" : "$HOME/dev/scripts/lock.sh",
     "text" : "[L]ock",
     "keybind" : "l"
 }
