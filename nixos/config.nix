@@ -10,6 +10,7 @@
 
     # Hardware
     ./modules/hardware/laptop.nix # hardware config
+    ./modules/hardware/fingerprint.nix # fingerprint config
 
     # Conf
     ./modules/conf/battery.nix # Battery 

@@ -8,12 +8,10 @@
     discord
     vlc 
 
-    ### Work
-    libsForQt5.okular # pdf viewer (advanced)
-    qalculate-gtk # insane calculatrice
-    onlyoffice-bin # office suite
+    libsForQt5.okular
+    qalculate-gtk
+    onlyoffice-bin
 
-    ### Dependancies
     xdg-utils # For embedded file manager
   ];
 }
