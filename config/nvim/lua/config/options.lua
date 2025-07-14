@@ -1,5 +1,3 @@
--- Leaders
-
 -- Line number
 vim.opt.number = true -- Print the line number in front of each line
 vim.opt.relativenumber = true -- Show relative line number in front of each line
@@ -15,12 +13,12 @@ vim.opt.scrolloff = 8 -- Min number lines below / above cursor
 
 -- Set cursor shape
 vim.opt.guicursor = {
-	"n-v-c:block",
-	"i-ci-ve:block",
-	"r-cr:hor20",
-	"o:hor50",
-	"a:blinkwait700-blinkoff400-blinkon250",
-	"sm:block-blinkwait175-blinkoff150-blinkon175",
+    "n-v-c:block",
+    "i-ci-ve:block",
+    "r-cr:hor20",
+    "o:hor50",
+    "a:blinkwait700-blinkoff400-blinkon250",
+    "sm:block-blinkwait175-blinkoff150-blinkon175",
 }
 
 vim.opt.signcolumn = 'yes'

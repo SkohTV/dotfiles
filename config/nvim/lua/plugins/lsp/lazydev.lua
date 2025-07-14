@@ -1,10 +1,9 @@
 local config = function ()
-  require("lazydev").setup({
-    debug = false,
-    library = {
-      "nvim-cmp/lua/cmp/types",
-    },
-  })
+    ---@diagnostic disable-next-line: missing-fields
+    require("lazydev").setup({
+        debug = false,
+        library = { "nvim-cmp/lua/cmp/types" },
+    })
 end
 
 

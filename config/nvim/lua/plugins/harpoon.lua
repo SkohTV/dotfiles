@@ -1,5 +1,7 @@
 local config = function()
     local harpoon = require('harpoon')
+
+    ---@diagnostic disable-next-line: missing-fields
     harpoon.setup({})
     require('harpoon-tabline').setup({})
 
@@ -23,7 +25,7 @@ return {
     branch = "harpoon2",
     dependencies = {
         "nvim-lua/plenary.nvim",
-       "jasonpanosso/harpoon-tabline.nvim",
-   },
+     "jasonpanosso/harpoon-tabline.nvim",
+ },
     config = config
 }

@@ -1,10 +1,10 @@
 local config = function()
-  require("nvim-surround").setup({})
+    require("nvim-surround").setup({})
 end
 
 
 return {{
-  "kylechui/nvim-surround",
-  event = "VeryLazy",
-  config = config
+    "kylechui/nvim-surround",
+    event = "VeryLazy",
+    config = config
 }}
