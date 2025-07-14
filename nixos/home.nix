@@ -24,16 +24,17 @@ in {
     ".config/ags".source = fullPath "${dotfiles}/config/ags";
     ".config/alacritty".source = fullPath "${dotfiles}/config/alacritty";
     ".config/btop".source = fullPath "${dotfiles}/config/btop";
-    ".config/wired".source = fullPath "${dotfiles}/config/wired";
     ".config/hypr".source = fullPath "${dotfiles}/config/hypr";
     ".config/lazygit".source = fullPath "${dotfiles}/config/lazygit";
     ".config/nvim".source = fullPath "${dotfiles}/config/nvim";
+    ".config/obs-studio".source = fullPath "${dotfiles}/config/obs-studio";
     ".config/tofi".source = fullPath "${dotfiles}/config/tofi";
+    ".config/wired".source = fullPath "${dotfiles}/config/wired";
     ".config/wlogout".source = fullPath "${dotfiles}/config/wlogout";
     ".config/zellij".source = fullPath "${dotfiles}/config/zellij";
-    ".config/okularrc".source = fullPath "${dotfiles}/config/okularrc";
 
     ".config/starship.toml".source = fullPath "${dotfiles}/config/starship.toml";
+    ".config/okularrc".source = fullPath "${dotfiles}/config/okularrc";
 
     "dev/scripts".source = fullPath "${dotfiles}/scripts";
     ".config/wallpapers".source = fullPath "${dotfiles}/wallpapers";
