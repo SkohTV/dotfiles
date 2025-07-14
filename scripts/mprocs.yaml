@@ -14,8 +14,8 @@ procs:
     cwd: "/home/skoh/dev/scripts/"
     cmd: ["./weather.sh"]
 
-  dunst:
-    shell: "pkill dunst || dunst"
+  wired:
+    shell: "wired"
 
   hyprpaper:
     cmd: ["hyprpaper"]
