@@ -9,7 +9,3 @@ config/ags/types
 # Ignore wallpaper change
 wallpapers/main
 wallpapers/secondary
-wallpapers/lock
-
-# F*** this big file
-nixos/flakes/packed.sh.zip

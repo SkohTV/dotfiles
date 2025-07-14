@@ -1,19 +1,12 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    ### Tryhard
-    alacritty # terminal
-    obsidian # knowledge database
 
-    ### Content
-    obs-studio
+    alacritty
+    obsidian 
     parsec-bin
-
-    ### Web
-    brave # browser
-
-    ### Chill
-    discord # communication
-    vlc # video display
+    brave
+    discord
+    vlc 
 
     ### Work
     libsForQt5.okular # pdf viewer (advanced)

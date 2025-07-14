@@ -27,7 +27,6 @@ in {
     ".config/hypr".source = fullPath "${dotfiles}/config/hypr";
     ".config/lazygit".source = fullPath "${dotfiles}/config/lazygit";
     ".config/nvim".source = fullPath "${dotfiles}/config/nvim";
-    ".config/obs-studio".source = fullPath "${dotfiles}/config/obs-studio";
     ".config/tofi".source = fullPath "${dotfiles}/config/tofi";
     ".config/wired".source = fullPath "${dotfiles}/config/wired";
     ".config/wlogout".source = fullPath "${dotfiles}/config/wlogout";
