@@ -1,35 +1,20 @@
 { pkgs, ... }:
 {
 
-  ### SERVICES
-  services = {
-    flatpak.enable = true; # Flatpaks
-    upower.enable = true; # Power stuff
-    openssh.enable = true; # ssh
-    fwupd.enable = true; # framework update firmware
-    automatic-timezoned.enable = true; # auto detect timezone
-  };
-
-
-  ### TIMERS
   systemd = {
 
-    timers."daily-chores" = {
+
+    # Timer
+    timers."obsidian-daily-commit" = {
       wantedBy = [ "timers.target" ];
-      timerConfig = {
-        OnCalendar = "daily";
-        Persistent = true; 
+      timerConfig = { OnCalendar = "daily"; Persistent = true; };
     };
-  };
 
 
-    services."daily-chores" = {
+    # Service
+    services."obsidian-daily-commit" = {
       path = ["/run/current-system/sw"];
-
-      serviceConfig = {
-        Type = "oneshot";
-        User = "skoh";
-      };
+      serviceConfig = { Type = "oneshot"; User = "skoh"; };
 
       script = ''
 
@@ -52,6 +37,7 @@
 
       '';
     };
+
 
   };
 

@@ -12,9 +12,9 @@ in {
     userEmail = "qlpth+github@proton.me";
 
     extraConfig = {
-        init.defaultBranch = "main";
-        pull.rebase = true; # thinking about it
-        rerere.enabled = true;
+      init.defaultBranch = "main";
+      pull.rebase = true; # thinking about it
+      rerere.enabled = true;
     };
   };
 

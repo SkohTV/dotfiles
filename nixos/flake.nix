@@ -17,16 +17,17 @@
 
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        # inherit system;
         modules = [
           nixos-hardware.nixosModules.framework-13-7040-amd
-          ./config.nix
+          ./config/configuration.nix
         ];
       };
 
       homeConfigurations.skoh = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
-        modules = [ ./home.nix ];
+        modules = [
+          ./config/home.nix
+        ];
       };
 
     };
