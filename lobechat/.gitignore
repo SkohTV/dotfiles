@@ -1,0 +1,5 @@
+data/
+s3_data/
+init_data.json
+searxng-settings.yml
+.env
