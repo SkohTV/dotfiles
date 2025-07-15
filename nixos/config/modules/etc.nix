@@ -24,7 +24,7 @@
     custom-qwerty = {
       description = "English (intl., with AltGr dead keys)";
       languages = [ "eng" ];
-      symbolsFile = ../../xkb/symbols/custom-qwerty.xkb;
+      symbolsFile = ../../../xkb/symbols/custom-qwerty.xkb;
     };
   };
 
