@@ -2,7 +2,7 @@
 
 
 messages=$(git log --oneline --no-decorate)
-regex="^.{7} (treewide|beszel|config|homepage|icons|lobechat|nixos|scripts|wallpapers|xkb): .*$"
+regex="^.{7} (treewide|beszel|config|homepage|icons|lobechat|nixos|scripts|wallpapers|xkb)(\(.+\))?: .*$"
 
 
 while IFS= read -r line; do
