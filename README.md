@@ -1,10 +1,16 @@
-# My laptop configuration
+# Laptop config
 
-[`config`](./config/) -> dotfiles<br>
-[`homepage`](./homepage/) -> localhost homepage<br>
-[`icons`](./icons/) -> mouse cursor<br>
-[`lobechat`](./lobechat/) -> localhost AI frontend<br>
+## Config files
+[`config`](./config/) -> Dotfiles<br>
 [`nixos`](./nixos/) -> OS config<br>
-[`scripts`](./scripts/) -> bash scripts<br>
-[`wallpapers`](./wallpapers/) -> background wallpapers<br>
-[`xkb`](./xkb/) -> keyboard config
+[`scripts`](./scripts/) -> Bash scripts<br>
+
+## Localhost
+[`beszel`](./beszel/) -> VPS monitoring<br>
+[`homepage`](./homepage/) -> Personnal homepage<br>
+[`lobechat`](./lobechat/) -> AI frontend<br>
+
+## Misc
+[`icons`](./icons/) -> Mouse cursor<br>
+[`wallpapers`](./wallpapers/) -> Background wallpapers<br>
+[`xkb`](./xkb/) -> Keyboard config
