@@ -1,15 +1,25 @@
 #!/usr/bin/env bash
 
 
-messages=$(git log --oneline --no-decorate)
-regex="^.{7} (treewide|beszel|config|homepage|icons|lobechat|nixos|scripts|wallpapers|xkb)(\(.+\))?: .*$"
+regex="^(treewide|beszel|config|homepage|icons|lobechat|nixos|scripts|wallpapers|xkb)(\(.+\))?: .*$"
 
+
+# Check new commit msg
+commit_msg=$(<"$1")
+
+if [[ ! "$commit_msg" =~ $regex ]]; then
+    echo >&2 "Commit message doesn't match regex: \"$commit_msg\""
+    exit 1
+fi
+
+
+# Check full history
+messages=$(git log --oneline --no-decorate)
 
 while IFS= read -r line; do
-
-    if [[ ! "$line" =~ $regex ]]; then
-        echo "Commit message doesn't match regex"
+    if [[ ! "${line:8}" =~ $regex ]]; then
+        echo >&2 "Commit history doesn't match regex: \"$line\""
         exit 1
     fi
-
 done <<< "$messages"
+
