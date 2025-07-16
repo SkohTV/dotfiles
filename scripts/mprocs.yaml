@@ -1,7 +1,12 @@
 procs:
 
   $lobechat:
-    cwd: "/tmp/lobechat/"
+    cwd: "/home/skoh/dev/repo/dotfiles/lobechat/"
+    shell: "docker compose down && docker compose up"
+    stop: {send-keys: [<C-c>]}
+
+  $beszel:
+    cwd: "/home/skoh/dev/repo/dotfiles/beszel/"
     shell: "docker compose down && docker compose up"
     stop: {send-keys: [<C-c>]}
 

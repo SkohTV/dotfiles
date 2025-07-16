@@ -90,8 +90,10 @@ a {
   }
 }
 
+#ia { right: 20px; }
+#perfs { left: 20px; }
 
-#ia {
+#ia, #perfs {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,7 +101,6 @@ a {
 
   position: absolute;
   flex-flow: column;
-  right: 20px;
   top: 20px;
 
   a {
@@ -117,8 +118,23 @@ a {
       color: var(--a-hover-color);
     }
   }
+}
+
+#perfs {
+  a:nth-child(1) {
+    font-size: 2em;
+
+    width: 130px;
+    height: 50px;
+    border-radius: 10px;
+    p { padding-top: 6px; }
+
+    margin-bottom: 6px;
+  }
+}
   
 
+#ia {
   a:nth-child(1) {
     font-size: 4em;
 
@@ -131,10 +147,11 @@ a {
   }
 
   a:nth-child(2) {
-    border-radius: 10px;
+    border-radius: 7px;
     font-size: 1em;
     margin-top: 6px;
   }
+
 }
 
 
