@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+
+messages=$(git log --oneline --no-decorate)
+regex="^.{7} treewide: .*$"
+
+
+while IFS= read -r line; do
+
+    if [[ ! "$line" =~ $regex ]]; then
+        echo "Commit message doesn't match regex"
+        exit 1
+    fi
+
+done <<< "$messages"
