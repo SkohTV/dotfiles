@@ -12,6 +12,7 @@ bind 'set show-all-if-ambiguous on'
 export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 
 export EDITOR=nvim
+export NH_FLAKE=/home/skoh/dev/repo/dotfiles/nixos
 
 
 # Aliases: simple

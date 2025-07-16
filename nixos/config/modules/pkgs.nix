@@ -25,6 +25,7 @@ in {
 
   # Programs, not pkgs
   programs = {
+    nh.enable = true;
     ssh.startAgent = true;
     hyprland = { enable = true; xwayland.enable = true; };
   };
