@@ -22,6 +22,7 @@ local config = function ()
     map_leaderpp('python', s('', { t({'print("'}), i(1), t({'")'}) }))
     map_leaderpp('rust', s('', { t({'println!("'}), i(1), t({'");'}) }))
     map_leaderpp('javascript', s('', { t({'console.log("'}), i(1), t({'");'}) }))
+    map_leaderpp('typescript', s('', { t({'console.log("'}), i(1), t({'");'}) }))
     map_leaderpp('c', s('', { t({'printf("'}), i(1), t({'");'}) }))
 
 end
