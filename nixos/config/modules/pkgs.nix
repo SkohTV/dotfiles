@@ -138,8 +138,7 @@ in {
     xdg-desktop-portal-wlr
     xdg-desktop-portal-gtk
 
-    ### Ags
-    ags_1
+    ### Ags (bar)
     sassc # compile css 
     brightnessctl # change brightness
     cava # small bars for sound
