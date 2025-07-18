@@ -22,7 +22,6 @@ in {
     ".bashrc".source = fullPath "${dotfiles}/config/.bashrc";
 
     ".config/ags".source = fullPath "${dotfiles}/config/ags";
-    ".config/astal".source = fullPath "${dotfiles}/config/astal";
     ".config/alacritty".source = fullPath "${dotfiles}/config/alacritty";
     ".config/btop".source = fullPath "${dotfiles}/config/btop";
     ".config/hypr".source = fullPath "${dotfiles}/config/hypr";
