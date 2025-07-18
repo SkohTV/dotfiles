@@ -1,7 +1,7 @@
 import { createState } from "ags";
 import { exec } from "ags/process";
 import app from "ags/gtk4/app";
-import Hyprland from "gi://AstalHyprland"
+
 
 // https://github.com/Aylur/ags/blob/main/examples/gtk4/simple-bar/Bar.tsx#L94
     // For eventbox matbe

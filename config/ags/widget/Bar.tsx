@@ -8,6 +8,8 @@ import Memory from "./left/Memory"
 import Distro from "./left/Distro"
 import Cava from "./left/Cava"
 import Workspaces from "./center/Workspaces"
+import Battery from "./right/Battery"
+import Brightness from "./right/Brightness"
 
 
 
@@ -44,6 +46,11 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
                 <Workspaces />
             </box>
             <box $type="end">
+                <Battery />
+                <Separator />
+                <Brightness />
+                <Separator />
+                <Separator />
             </box>
         </centerbox>
     </window>

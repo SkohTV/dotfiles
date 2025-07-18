@@ -20,7 +20,9 @@
 
     astalPackages = with ags.packages.${system}; [
       io
+      battery
       hyprland
+      wireplumber
 
       astal4
     ];
