@@ -118,6 +118,7 @@ in {
     hypridle # sleep
     hyprlock # lock
     hyprcursor # cursor
+    hyprsunset # blue light
 
     ### Tools
     wlogout # gui logout menu
@@ -144,7 +145,6 @@ in {
     cava # small bars for sound
     sysstat # show cpu %
     lm_sensors # show temp 
-    gammastep # change screen temperature
 
 
     ###################

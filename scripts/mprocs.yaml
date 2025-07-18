@@ -28,6 +28,9 @@ procs:
   hypridle:
     cmd: ["hypridle"]
 
+  hyprsunset:
+    cmd: ["hyprsunset"]
+
   astal:
     cmd: ["ags"]
     autorestart: true
