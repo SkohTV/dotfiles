@@ -1,6 +1,7 @@
-import { createState } from "ags";
+import { createBinding, createState } from "ags";
 import { exec } from "ags/process";
 import app from "ags/gtk4/app";
+import AstalHyprland from "gi://AstalHyprland?version=0.1";
 
 
 // https://github.com/Aylur/ags/blob/main/examples/gtk4/simple-bar/Bar.tsx#L94
@@ -38,8 +39,10 @@ const toggle_screenshare = () => {
     exec(`hyprctl reload`)
   }
 
-  setLabelScreenshare(screenshare.get() ? '󱞠' : '')
+  setLabelScreenshare(pick_icon(screenshare.get()))
 }
+
+const pick_icon = (b: boolean) => b ? '󱞠' : ''
 
 
 
@@ -59,10 +62,12 @@ export default function Distro() {
             <button onClicked={rr}>
                 <label label='' css_name="wallpaper_label" />
             </button>
-            <button onClicked={toggle_screenshare}>
-                <label label={labelScreenshare} css_name="screenshare_label" />
-            </button>
         </box>
     </box>)
 
 }
+
+
+            // <button onClicked={toggle_screenshare}>
+            //     <label label={labelScreenshare} css_name="screenshare_label" />
+            // </button>

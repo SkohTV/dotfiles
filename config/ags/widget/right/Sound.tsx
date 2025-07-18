@@ -1,52 +1,41 @@
-import { createState } from "ags"
+import { createBinding, createComputed, createState } from "ags"
 import { exec } from "ags/process"
+import AstalWp from "gi://AstalWp"
+
+// @ts-ignore
+const wp: AstalWp.wp = AstalWp.get_default()
+const default_speaker = wp.audio.default_speaker;
 
 
-const [isMute, setIsMute] = createState(false)
-const [bright, setBright] = createState(Math.round(Number(exec('brightnessctl get')) / 255 * 100 ))
-
-
-// Fetch (+ reset if incorrect) nightmode
-switch (exec(`hyprctl hyprsunset temperature`)) {
-    case '4000': setIsMute(true); break;
-    case '6500': setIsMute(false); break;
-    default: setIsMute(false); exec(`hyprctl hyprsunset temperature 6500`)
-}
-
-
-// For slider change
-interface changeProps { value: number }
-const change = ({ value }: changeProps) => {
-    setBright(Math.round(value))
-    exec(`brightnessctl set ${bright.get()}%`)
+// Select icon from volume + muted
+const pick_icon = ([v, mt]: [number, boolean]) => {
+    return (mt ? '󰝟' : (v > 66) ? '󰕾' : (v > 33) ? '󰖀' : '󰕿')
 }
 
 
 // For button click
 const swap = () => {
-    setIsMute(!isMute.get())
-
-    if (isMute.get())
-        exec(`hyprctl hyprsunset temperature 4000`)
-    else
-        exec(`hyprctl hyprsunset temperature 6500`)
+    default_speaker.set_mute(!default_speaker.mute)
 }
 
 
-export default function Brightness() {
-    return (<box css_classes={isMute.as((v) => [v ? 'night' : 'light'])} >
+export default function Sound() {
+    const volume = createBinding(default_speaker, 'volume').as((x) => Math.round(x * 100))
+    const mute = createBinding(default_speaker, 'mute')
+
+    return (<box css_classes={mute.as((v) => [v ? 'mute' : 'sound'])} >
         <button onClicked={swap}>
             <box>
-                <label label={isMute.as((v) => v ? '' : '')} />
-                <label label={bright.as((x) => x.toString().padStart(2, '0'))} />
+                <label label={createComputed([volume, mute]).as(pick_icon)} />
+                <label label={volume.as((x) => x.toString().padStart(2, '0'))} />
             </box>
         </button>
         <slider
             widthRequest={80}
-            value={bright}
+            value={volume}
             min={0}
             max={99}
-            onChangeValue={change}
+            onChangeValue={({ value }) => default_speaker.set_volume(value / 100)}
         />
    </box>)
 }

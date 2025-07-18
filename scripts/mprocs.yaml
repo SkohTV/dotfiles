@@ -31,6 +31,6 @@ procs:
   hyprsunset:
     cmd: ["hyprsunset"]
 
-  astal:
-    cmd: ["ags"]
-    autorestart: true
+  ags:
+    cwd: "/home/skoh/.config/ags/"
+    cmd: ["nix", "develop", "--command", "ags" , "run", "."]

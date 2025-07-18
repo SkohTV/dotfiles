@@ -23,6 +23,7 @@
       battery
       hyprland
       wireplumber
+      network
 
       astal4
     ];

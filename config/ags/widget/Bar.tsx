@@ -1,7 +1,5 @@
 import app from "ags/gtk4/app"
-import { Astal, Gtk, Gdk } from "ags/gtk4"
-import { execAsync } from "ags/process"
-import { createPoll } from "ags/time"
+import { Astal, Gdk } from "ags/gtk4"
 import Cpu from "./left/Cpu"
 import Temperature from "./left/Temperature"
 import Memory from "./left/Memory"
@@ -10,6 +8,9 @@ import Cava from "./left/Cava"
 import Workspaces from "./center/Workspaces"
 import Battery from "./right/Battery"
 import Brightness from "./right/Brightness"
+import Sound from "./right/Sound"
+import Network from "./right/Network"
+import Datetime from "./right/Datetime"
 
 
 
@@ -18,7 +19,8 @@ function Separator() {
 }
 
 
-export default function Bar(gdkmonitor: Gdk.Monitor) {
+interface BarProps { gdkmonitor: Gdk.Monitor}
+export default function Bar({ gdkmonitor }: BarProps) {
 
   const { TOP, LEFT, RIGHT } = Astal.WindowAnchor
 
@@ -49,8 +51,11 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
                 <Battery />
                 <Separator />
                 <Brightness />
+                <Sound />
                 <Separator />
+                <Network />
                 <Separator />
+                <Datetime />
             </box>
         </centerbox>
     </window>

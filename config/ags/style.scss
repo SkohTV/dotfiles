@@ -36,9 +36,9 @@ window.Bar {
 
   .battery_label {color: hsl(105, 48%, 72%)}
   .light {color: hsl(40, 70%, 78%)}; .night {color: hsl(25, 98%, 50%)}
-/*   .sound {color: hsl(189, 59%, 73%)}; .mute {color: hsl(0, 0%, 67%)} */
-/*   .network_label {color: hsl(267, 83%, 80%)} */
-/*   .date_label {color: hsl(227, 27%, 72%)} */
+  .sound {color: hsl(189, 59%, 73%)}; .mute {color: hsl(0, 0%, 67%)}
+  network_label {color: hsl(267, 83%, 80%)}
+  date_label {color: hsl(227, 27%, 72%)}
 
   distro_label {padding: 0 4px}
   cpu_label, temperature_label, memory_label {padding: 0 4px}
@@ -46,9 +46,9 @@ window.Bar {
   cava_label {padding: 0 4px}
 
   .battery_label {padding-right: 4px}
-/*   .mute, .sound {padding-right: 4px} */
-/*   .network_label>label {padding-left: 4px} */
-/*   .date_label {padding: 0 4px} */
+  .mute, .sound {padding-right: 4px}
+  network_label {padding: 0 4px}
+  date_label {padding: 0 2px 0 4px}
 
   @keyframes blink {
     0% { opacity: 1; }
@@ -142,13 +142,14 @@ scale trough {
 
 .light, .night, .sound, .mute {&>label {min-width: 24px}}
 .light, .night {label {min-width: 20px}}
+.sound, .mute {label {min-width: 16px}}
 
 .light scale trough {border-color: hsl(40, 70%, 78%)}
 .light scale trough highlight {background-color: hsl(40, 70%, 78%)}
 .night scale trough {border-color: hsl(25, 98%, 50%)}
 .night scale trough highlight {background-color: hsl(25, 98%, 50%)}
 
-/* .sound scale trough {border-color: hsl(189, 59%, 73%)} */
-/* .sound scale trough highlight {background-color: hsl(189, 59%, 73%)} */
-/* .mute scale trough {border-color: hsl(0, 0%, 67%)} */
-/* .mute scale trough highlight {background-color: hsl(0, 0%, 67%)} */
+.sound scale trough {border-color: hsl(189, 59%, 73%)}
+.sound scale trough highlight {background-color: hsl(189, 59%, 73%)}
+.mute scale trough {border-color: hsl(0, 0%, 67%)}
+.mute scale trough highlight {background-color: hsl(0, 0%, 67%)}
