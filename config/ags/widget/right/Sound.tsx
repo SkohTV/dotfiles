@@ -31,7 +31,6 @@ export default function Sound() {
             </box>
         </button>
         <slider
-            widthRequest={80}
             value={volume}
             min={0}
             max={99}

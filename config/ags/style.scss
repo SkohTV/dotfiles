@@ -37,8 +37,16 @@ window.Bar {
   .battery_label {color: hsl(105, 48%, 72%)}
   .light {color: hsl(40, 70%, 78%)}; .night {color: hsl(25, 98%, 50%)}
   .sound {color: hsl(189, 59%, 73%)}; .mute {color: hsl(0, 0%, 67%)}
-  network_label {color: hsl(267, 83%, 80%)}
-  date_label {color: hsl(227, 27%, 72%)}
+
+  network_label {
+    color: hsl(267, 83%, 80%);
+    &:hover { text-shadow: hsl(267, 83%, 80%) 0 0 1px; }
+  }
+
+  date_label {
+    color: hsl(227, 27%, 72%);
+    &:hover { text-shadow: hsl(227, 27%, 72%) 0 0 1px; }
+  }
 
   distro_label {padding: 0 4px}
   cpu_label, temperature_label, memory_label {padding: 0 4px}
@@ -59,66 +67,69 @@ window.Bar {
 }
 
 
-/* window.date_popup > box { */
-/*   background-color: #282424; */
-/*   border-radius: 10px; */
-/*   border: 1px solid hsl(259, 87%, 79%); */
-/*   font-size: 11px; */
-/**/
-/*   & > box { */
-/*     background-color: #363232; */
-/*     border-radius: 10px; */
-/*     margin: 6px; */
-/*   } */
-/**/
-/*   .weather_box { */
-/*     margin-bottom: 3px; */
-/*     padding-right: 10px; */
-/**/
-/*     .icon { */
-/*       font-size: 72px; */
-/*       margin-left: 4px; */
-/*       margin-right: 8px; */
-/*     } */
-/**/
-/*     .temp { */
-/*       margin-top: 18px; */
-/*       font-size: 30px; */
-/*       font-weight: 700; */
-/*       color: #f38ba8; */
-/*     } */
-/**/
-/*     .txt { */
-/*       font-size: 11px; */
-/*       font-weight: bold; */
-/*       color: hsl(234, 82%, 85%); */
-/*     } */
-/*   } */
-/**/
-/**/
-/*   .cal_box { */
-/*     margin-top: 3px; */
-/**/
-/*     .days { */
-/*       margin: 7px 6px 0 3px; */
-/*       font-weight: 600; */
-/*       color: hsl(234, 82%, 85%); */
-/*     } */
-/**/
-/*     calendar { */
-/*       color: hsl(234, 82%, 85%); */
-/*       &.header {color: hsl(96, 44%, 80%)} */
-/*       &:indeterminate {color: hsl(230, 12%, 49%)} */
-/**/
-/*       &:selected { */
-/*         color: hsl(96, 44%, 68%); */
-/*         background-color: hsla(234, 82%, 85%, 0.3); */
-/*         border-radius: 3px; */
-/*       } */
-/*     } */
-/*   } */
-/* } */
-/**/
+date_popup {
+  background-color: #282424;
+  border-radius: 10px;
+  border: 1px solid hsl(259, 87%, 79%);
+  font-size: 11px;
+
+  weather_box, cal_box {
+    background-color: #363232;
+    border-radius: 10px;
+    margin: 6px;
+  }
+
+  weather_box {
+    margin-bottom: 3px;
+    padding-right: 10px;
+
+    icon {
+      font-size: 72px;
+      margin-left: 4px;
+      margin-right: 8px;
+      min-width: 80px;
+    }
+
+    temp {
+      margin-top: 18px;
+      font-size: 30px;
+      font-weight: 700;
+      color: #f38ba8;
+    }
+
+    txt {
+      font-size: 11px;
+      font-weight: bold;
+      color: hsl(234, 82%, 85%);
+    }
+  }
+
+
+  cal_box {
+    margin-top: 3px;
+
+    days {
+      margin: 7px 6px 0 3px;
+      font-weight: 600;
+      color: hsl(234, 82%, 85%);
+    }
+
+    calendar {
+      color: hsl(234, 82%, 85%);
+
+      header {color: hsl(96, 44%, 80%)}
+      .other-month {color: hsl(0, 5%, 55%)}
+
+
+      .today {
+        color: hsl(96, 44%, 68%);
+        background-color: hsla(234, 82%, 85%, 0.3);
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
 
 
 tooltip {
