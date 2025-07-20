@@ -14,6 +14,7 @@ window.Bar {
   notif_label, wallpaper_label, screenshare_label {
     color: hsl(60, 100%, 70%);
     font-size: 10px;
+    &:hover { text-shadow: hsl(60, 100%, 70%) 0 0 1px; }
   }
 
   cpu_label { color: hsl(39, 47%, 63%); }
