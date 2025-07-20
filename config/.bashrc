@@ -42,7 +42,7 @@ function nix() {
 
 # Load github ssh
 eval "$(ssh-agent -s)" > /dev/null
-ssh-add ~/.ssh/github 2> /dev/null
+ssh-add ~/.ssh/nixos 2> /dev/null
 
 # Promt & cd
 eval "$(starship init bash)"

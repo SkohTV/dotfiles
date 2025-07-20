@@ -24,7 +24,7 @@ in {
       nerd-fonts.jetbrains-mono
       nerd-fonts.monaspace
     ];
-  }
+  };
   
 
 
