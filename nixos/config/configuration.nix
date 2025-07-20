@@ -2,7 +2,6 @@
 
 {
 
-
   # Imports
   imports = [
 
@@ -29,4 +28,3 @@
   # Do not touch
   system.stateVersion = "24.11";
 }
-
