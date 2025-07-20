@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+
+    # If fprintd throws 'enroll-unknown-error'
+    # https://community.frame.work/t/solved-clear-fingerprint-reader-storage-fingerprint-reader-problems/22951/6
+
     systemd.services.fprintd = {
       wantedBy = [ "multi-user.target" ];
       serviceConfig.Type = "simple";
