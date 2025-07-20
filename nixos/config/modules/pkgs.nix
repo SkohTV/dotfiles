@@ -17,10 +17,15 @@ in {
 
 
   # Fonts, not in pkgs
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.monaspace
-  ];
+  fonts = {
+    fontconfig.enable = true;
+
+    packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.monaspace
+    ];
+  }
+  
 
 
   # Programs, not pkgs
