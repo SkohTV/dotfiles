@@ -58,9 +58,10 @@ function regenerate_all() {
 
 
 export default function Battery() {
-    return (<label
-        label={bat.as((x) => x.label)}
-        tooltip_text={bat.as((x) => x.tooltip_text)}
-        css_classes={bat.as((x) => x.class_names)}
-    />)
+  return (<menubutton>
+    <label label={bat.as((x) => x.label)} css_classes={bat.as((x) => x.class_names)} />
+    <popover>
+      <label label={bat.as((x) => x.tooltip_text)} css_name='battery_popup'/>
+    </popover>
+  </menubutton>)
 }

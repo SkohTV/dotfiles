@@ -35,7 +35,11 @@ window.Bar {
   w9  {color: hsl(0, 0%, 100%)}
   w10 {color: hsl(40, 70%, 78%)}
 
-  .battery_label {color: hsl(105, 48%, 72%)}
+  .battery_label {
+    color: hsl(105, 48%, 72%);
+    &:hover { text-shadow: hsl(105, 48%, 72%) 0 0 1px; }
+  }
+
   .light {color: hsl(40, 70%, 78%)}; .night {color: hsl(25, 98%, 50%)}
   .sound {color: hsl(189, 59%, 73%)}; .mute {color: hsl(0, 0%, 67%)}
 
@@ -133,12 +137,12 @@ date_popup {
 
 
 
-tooltip {
+battery_popup {
   font-family: "Monaspice Kr NF";
   border: 1px solid hsl(259, 87%, 79%);
   background-color: hsl(0, 0%, 20%);
   font-size: 11px;
-  padding: 2px;
+  padding: 4px;
 }
 
 scale {padding: 0 4px 0 0}

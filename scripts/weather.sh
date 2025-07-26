@@ -45,67 +45,67 @@ while true; do
 
     #Big long if statement of doom
     if [ "$weather_icon_code" == "50d"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${sky}"
       elif [ "$weather_icon_code" == "50n"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${sky}"
     elif [ "$weather_icon_code" == "01d"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${yellow}"
       elif [ "$weather_icon_code" == "01n"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${pink}"
       elif [ "$weather_icon_code" == "02d"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${blue}"
       elif [ "$weather_icon_code" == "02n"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${blue}"
       elif [ "$weather_icon_code" == "03d"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${blue}"
       elif [ "$weather_icon_code" == "03n"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${blue}"
       elif [ "$weather_icon_code" == "04d"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${blue}"
       elif [ "$weather_icon_code" == "04n"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${blue}"
       elif [ "$weather_icon_code" == "09d"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${mauve}"
       elif [ "$weather_icon_code" == "09n"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${mauve}"
       elif [ "$weather_icon_code" == "10d"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${mauve}"
       elif [ "$weather_icon_code" == "10n"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${mauve}"
       elif [ "$weather_icon_code" == "11d"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${maroon}"
       elif [ "$weather_icon_code" == "11n"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${maroon}"
       elif [ "$weather_icon_code" == "13d"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${white}"
       elif [ "$weather_icon_code" == "13n"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${white}"
       elif [ "$weather_icon_code" == "40d"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${sky}"
       elif [ "$weather_icon_code" == "40n"  ]; then
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${sky}"
       else 
-        weather_icon=""
+        weather_icon=" "
         weather_hex="${blue}"
       fi
         echo "$weather_icon" >  $tmp_weather_icon

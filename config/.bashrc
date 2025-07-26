@@ -6,10 +6,9 @@ shopt -s histappend
 
 bind '"\e[A": history-substring-search-backward'
 bind '"\e[B": history-substring-search-forward'
-
 bind 'set show-all-if-ambiguous on'
 
-export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+export PROMPT_COMMAND="zr; history -a; history -n; $PROMPT_COMMAND"
 
 export EDITOR=nvim
 export NH_FLAKE=/home/skoh/dev/repo/dotfiles/nixos
@@ -26,7 +25,6 @@ alias vim='nvim'
 alias c='clear'
 alias ssh='TERM=xterm-256color ssh'
 alias z='sh $HOME/dev/scripts/zellij-init.sh'
-alias zr='zellij action rename-tab $(basename "$(git rev-parse --show-toplevel 2>/dev/null || echo -)")'
 
 # Aliases: long
 alias copy='wl-copy'
@@ -38,6 +36,10 @@ alias nixgc='sudo nix-collect-garbage --delete-older-than 14d'
 # Aliases: functions
 function nix() {
   NIX_SHELL_NAME="$1" command nix "$@"
+}
+
+function zr() {
+  test -z "$ZELLIJ" || zellij action rename-tab "$(basename "$(git rev-parse --show-toplevel 2>/dev/null || echo -)")"
 }
 
 # Load github ssh
