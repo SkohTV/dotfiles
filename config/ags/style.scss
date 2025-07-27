@@ -14,7 +14,7 @@ window.Bar {
   notif_label, wallpaper_label, screenshare_label {
     color: hsl(60, 100%, 70%);
     font-size: 10px;
-    &:hover { text-shadow: hsl(60, 100%, 70%) 0 0 1px; }
+    &:hover { text-shadow: hsl(60, 100%, 70%) 0 0 2px; }
   }
 
   cpu_label { color: hsl(39, 47%, 63%); }
@@ -37,7 +37,7 @@ window.Bar {
 
   .battery_label {
     color: hsl(105, 48%, 72%);
-    &:hover { text-shadow: hsl(105, 48%, 72%) 0 0 1px; }
+    &:hover { text-shadow: hsl(105, 48%, 72%) 0 0 2px; }
   }
 
   .light {color: hsl(40, 70%, 78%)}; .night {color: hsl(25, 98%, 50%)}
@@ -45,12 +45,13 @@ window.Bar {
 
   network_label {
     color: hsl(267, 83%, 80%);
-    &:hover { text-shadow: hsl(267, 83%, 80%) 0 0 1px; }
+    &:hover { text-shadow: hsl(267, 83%, 80%) 0 0 2px; }
   }
 
   date_label {
     color: hsl(227, 27%, 72%);
-    &:hover { text-shadow: hsl(227, 27%, 72%) 0 0 1px; }
+    &:hover { text-shadow: hsl(227, 27%, 72%) 0 0 2px; }
+    &:focus { text-shadow: hsl(227, 27%, 72%) 0 0 2px; }
   }
 
   distro_label {padding: 0 4px}
