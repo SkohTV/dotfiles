@@ -1,4 +1,5 @@
-import { createBinding, createState, For, With } from "ags"
+import { createState, For } from "ags"
+import { execAsync } from "ags/process";
 import AstalHyprland from "gi://AstalHyprland"
 
 const hyprland = AstalHyprland.get_default()
@@ -31,7 +32,7 @@ function WorkspaceBt({ id, alive, displayed, focused }: WorkspaceBtProps){
   const icon = focused ? '󰪥 ' : displayed ? '󰺕 ' : alive ? ' ' : '⚬ ';
 
     return (
-        <button onClicked={() => hyprland.message_async(`dispatch workspace ${id}`)} >
+        <button onClicked={() => execAsync(`hyprctl dispatch workspace ${id}`)} >
             <label label={icon} css_name={`w${id}`} />
        </button>
     )
