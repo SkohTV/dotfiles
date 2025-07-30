@@ -20,7 +20,7 @@
 
         # Commit obsidian vault
         eval "$(ssh-agent -s)"
-        ssh-add ~/.ssh/github
+        ssh-add ~/.ssh/nixos
 
         ${pkgs.git}/bin/git -C /home/skoh/dev/repo/vault/ add .
         ${pkgs.git}/bin/git -C /home/skoh/dev/repo/vault/ diff-index --quiet HEAD ||\
