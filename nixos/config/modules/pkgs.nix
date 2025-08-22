@@ -177,8 +177,8 @@ in {
     shellcheck
     shfmt
 
-    R
-    intelephense
+    jdt-language-server
+    temurin-bin
 
 
     ####################

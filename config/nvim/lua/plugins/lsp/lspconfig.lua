@@ -44,13 +44,11 @@ local config = function()
 
         'nixd',              -- Nix
         'lua_ls',            -- Lua
-        'r_language_server', -- R
         'bashls',            -- Bash
+        'jdtls',             -- Java
 
         'cmake',             -- CMake
         'cssls',             -- css / scss
-
-        'intelephense',
     })
 
 end
