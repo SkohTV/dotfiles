@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+CITY="Chicoutimi"
+
+
 # shellcheck disable=SC1091
 source "$HOME"/dev/scripts/.weather.env
 
@@ -27,7 +30,7 @@ fi
 
 # Consants
 KEY="$WEATHER_API"
-ID="3029241"
+ID=$(jq ".[] | select(.name==\"$CITY\").id" "$HOME"/dev/scripts/weather-cities.json)
 UNIT="metric"
 LNG="en"
 
