@@ -33,6 +33,19 @@
     HibernateDelaySec=2700s
   '';
 
+
+  ###################
+  #----- USERS -----#
+  ###################
+
+  # ffmpeg capabilities group (for SRT)
+  security.wrappers.ffmpeg = {
+    owner = "root";
+    group = "root";
+    capabilities = "cap_sys_admin+ep";
+    source = "${pkgs.ffmpeg}/bin/ffmpeg";
+  };
+
   # User config
   users.users.skoh = {
     isNormalUser = true;

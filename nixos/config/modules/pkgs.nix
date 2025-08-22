@@ -86,6 +86,7 @@ in {
     networkmanager # wifi connection
     steam-run # for fhs required apps
     imagemagick # for image manipulation
+    ffmpeg # for video manipulation
 
     ### Advanced
     linuxPackages_latest.perf # for BPF
