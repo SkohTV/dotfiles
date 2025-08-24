@@ -40,11 +40,9 @@ export default function Network() {
     const wifi = createBinding(network, 'wifi') 
 
     return (
-        <button onClicked={() => network.wifi.set_enabled(!network.wifi.enabled)} >
-            <label
-                label={createComputed([mode, wifi]).as(pick_icon_label)}
-                css_name='network_label'
-                />
-        </button>
+        <label
+            label={createComputed([mode, wifi]).as(pick_icon_label)}
+            css_name='network_label'
+            />
     )
 }

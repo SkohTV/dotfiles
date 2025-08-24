@@ -43,10 +43,7 @@ window.Bar {
   .light {color: hsl(40, 70%, 78%)}; .night {color: hsl(25, 98%, 50%)}
   .sound {color: hsl(189, 59%, 73%)}; .mute {color: hsl(0, 0%, 67%)}
 
-  network_label {
-    color: hsl(267, 83%, 80%);
-    &:hover { text-shadow: hsl(267, 83%, 80%) 0 0 2px; }
-  }
+  network_label { color: hsl(267, 83%, 80%) }
 
   date_label {
     color: hsl(227, 27%, 72%);
