@@ -15,7 +15,11 @@ sphinx,
 cmocka,
 clang-tools,
 gbenchmark,
-libgit2
+libgit2,
+libelf,
+zlib,
+clang,
+xxd
 }:
 
 
@@ -40,5 +44,9 @@ stdenv.mkDerivation {
     clang-tools
     gbenchmark
     libgit2
+    libelf
+    zlib
+    clang
+    xxd
   ];
 }
