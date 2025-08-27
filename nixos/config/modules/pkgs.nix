@@ -4,6 +4,7 @@ let
   # astal = pkgs.callPackage ../../flakes/astal/package.nix {};
   # minizincide = pkgs.libsForQt5.callPackage ../../flakes/minizinc/ide.nix {};
   mojo = pkgs.callPackage ../../flakes/mojo/package.nix {};
+  vivify = pkgs.callPackage ../../flakes/vivify/package.nix {};
 
 
 in {
@@ -45,6 +46,7 @@ in {
     # astal
     # minizincide
     mojo
+    vivify
 
   ] ++ (with pkgs; [
 
