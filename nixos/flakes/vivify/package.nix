@@ -26,11 +26,7 @@ stdenv.mkDerivation rec {
     hash = "sha256-mOgfwetiLMTDquw3f3+U1iEhBbvf0OC5lkNJHdrRSK0=";
   };
 
-  postPatch = ''
-    cp ${./package.json} package.json
-  '';
-
-    installPhase = ''
+  installPhase = ''
     runHook preInstall
 
     yarn install
@@ -49,30 +45,41 @@ stdenv.mkDerivation rec {
     mkdir -p $out/bin
     install -Dm755 ./build/linux/viv $out/bin/viv
     install -Dm755 ./build/linux/vivify-server $out/bin/vivify-server
+
+    wrapProgram $out/bin/viv \
+      --prefix PATH : ${
+        lib.makeBinPath [
+          nodejs
+          file
+        ]
+      }
   '';
 
   nativeBuildInputs = [
     yarnConfigHook
     npmHooks.npmInstallHook
     zip
-    nodejs
-  ];
 
-  buildinputs = [
-    file
     nodejs
+    file
   ];
 
   # Stripping 'unneeded symbols' causes vivify-server executable to break
   # (segmentation fault)
   dontStrip = 1;
 
-  meta = {
-    description = "CLI to load dotenv files";
-    homepage = "https://github.com/entropitor/dotenv-cli";
-    changelog = "https://github.com/entropitor/dotenv-cli/releases/tag/v${version}";
-    license = lib.licenses.mit;
-    mainProgram = "dotenv";
-    maintainers = with lib.maintainers; [ skohtv ];
+  meta = with lib; {
+    description = "Live Markdown viewer";
+    longDescription = ''
+      Vivify brings your files to life in the browser!
+      Vivify is primarily made to render Markdown and Jupyter Notebooks, but will also
+      serve as a directory browser and let you view code files with syntax highlighting.
+    '';
+    homepage = "https://github.com/jannis-baum/Vivify";
+    changelog = "https://github.com/jannis-baum/Vivify/releases/tag/v${version}";
+    license = licenses.gpl3;
+    maintainers = with maintainers; [ skohtv ];
+    platforms = platforms.linux;
+    mainProgram = "viv";
   };
 }
