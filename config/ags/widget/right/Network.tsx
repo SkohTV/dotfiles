@@ -14,13 +14,14 @@ const wifi_icon = (s: number) => {
 
 
 // Select icon + text for label
-// AccessPoint[] is required for reload
-const pick_icon_label = ([mode, wifi, _]: [AstalNetwork.Primary, AstalNetwork.Wifi, AstalNetwork.AccessPoint[]]) => {
+const pick_icon_label = ([mode, wifi, ap]: [AstalNetwork.Primary, AstalNetwork.Wifi, AstalNetwork.AccessPoint]) => {
 
     switch (mode){
 
     case AstalNetwork.Primary.WIFI:
-        return `${wifi_icon(wifi.active_access_point.strength)}  ${wifi.active_access_point.ssid}`
+        return (ap === null) ?
+            '  loading' :
+            `${wifi_icon(ap.strength)}  ${ap.ssid}`
 
     case AstalNetwork.Primary.WIRED:
         return `󱘖  Wired`
@@ -42,7 +43,7 @@ export default function Network() {
         <With value={wifi}>
             {(ww) => 
             <label
-                label={createComputed([mode, wifi, createBinding(ww, 'accessPoints')]).as(pick_icon_label)}
+                label={createComputed([mode, wifi, createBinding(ww, 'active_access_point')]).as(pick_icon_label)}
                 css_name='network_label'
                 />
             }
