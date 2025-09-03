@@ -9,11 +9,11 @@ in {
   programs.git = {
     enable = true;
     userName = "SkohTV";
-    userEmail = "qlpth+github@proton.me";
+    userEmail = "contact@skoh.dev";
 
     extraConfig = {
       init.defaultBranch = "main";
-      pull.rebase = true; # thinking about it
+      pull.rebase = true;
       rerere.enabled = true;
     };
   };
