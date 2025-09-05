@@ -1,7 +1,6 @@
-import { createBinding, createState } from "ags";
+import { createState } from "ags";
 import { exec } from "ags/process";
 import app from "ags/gtk4/app";
-import AstalHyprland from "gi://AstalHyprland?version=0.1";
 
 
 // https://github.com/Aylur/ags/blob/main/examples/gtk4/simple-bar/Bar.tsx#L94
@@ -26,23 +25,23 @@ const rr = () => exec(`sh /home/skoh/dev/scripts/reroll_wp.sh`)
 
 
 // Screenshare button
-const [screenshare, setScreenshare] = createState(!(app.get_monitors().length > 1))
-const [labelScreenshare, setLabelScreenshare] = createState(screenshare.get() ? '󱞠' : '')
-
-const toggle_screenshare = () => {
-    setScreenshare(!screenshare.get())
-
-  if (screenshare.get()){
-    exec(`hyprctl keyword monitor 'DP-2,highres,auto,1,mirror,$primary_monitor'`)
-    exec(`hyprctl hyprpaper reload eDP-1,/home/skoh/.config/wallpapers/main`)
-  } else {
-    exec(`hyprctl reload`)
-  }
-
-  setLabelScreenshare(pick_icon(screenshare.get()))
-}
-
-const pick_icon = (b: boolean) => b ? '󱞠' : ''
+// const [screenshare, setScreenshare] = createState(!(app.get_monitors().length > 1))
+// const [labelScreenshare, setLabelScreenshare] = createState(screenshare.get() ? '󱞠' : '')
+//
+// const toggle_screenshare = () => {
+//     setScreenshare(!screenshare.get())
+//
+//   if (screenshare.get()){
+//     exec(`hyprctl keyword monitor 'DP-2,highres,auto,1,mirror,$primary_monitor'`)
+//     exec(`hyprctl hyprpaper reload eDP-1,/home/skoh/.config/wallpapers/main`)
+//   } else {
+//     exec(`hyprctl reload`)
+//   }
+//
+//   setLabelScreenshare(pick_icon(screenshare.get()))
+// }
+//
+// const pick_icon = (b: boolean) => b ? '󱞠' : ''
 
 
 
