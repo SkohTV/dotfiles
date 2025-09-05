@@ -24,7 +24,7 @@ const pick_icon_label = ([mode, wifi, ap]: [AstalNetwork.Primary, AstalNetwork.W
             `${wifi_icon(ap.strength)}  ${ap.ssid}`
 
     case AstalNetwork.Primary.WIRED:
-        return `󱘖  Wired`
+        return `󱘖  ${ap.ssid}`
 
     case AstalNetwork.Primary.UNKNOWN:
         return (wifi.enabled) ? `  No WiFi` : `󰤫  No WiFi`
