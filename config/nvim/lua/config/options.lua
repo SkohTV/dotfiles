@@ -4,7 +4,7 @@ vim.opt.relativenumber = true -- Show relative line number in front of each line
 
 -- Indenting
 vim.opt.expandtab = true -- Use space when pressed <Tab>
-vim.opt.shiftwidth = 4 -- Number of spaces to use for indent
+vim.opt.shiftwidth = 2 -- Number of spaces to use for indent
 vim.opt.wrap = false -- Long lines don't wrap
 
 -- Cursor behavior
