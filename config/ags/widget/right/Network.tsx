@@ -15,6 +15,7 @@ const wifi_icon = (s: number) => {
 
 // Select icon + text for label
 const pick_icon_label = ([mode, wifi, ap]: [AstalNetwork.Primary, AstalNetwork.Wifi, AstalNetwork.AccessPoint]) => {
+    console.log(mode, wifi, ap)
 
     switch (mode){
 
