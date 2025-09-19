@@ -129,6 +129,7 @@
     useDHCP = false;
     interfaces.wlp1s0.useDHCP = true;
     firewall.enable = false;
+    wireguard.enable = true;
   };
 
 
