@@ -22,7 +22,7 @@ clangStdenv.mkDerivation (finalAttrs: {
   pname = "bpfilter";
   version = "0.5.2";
 
-  src = ./bpfilter;
+  src = ./.;
 
   nativeBuildInputs = [
     bison
