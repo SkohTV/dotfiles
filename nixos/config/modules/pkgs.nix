@@ -182,6 +182,8 @@ in {
     jdt-language-server
     temurin-bin
 
+    protobuf
+
 
     ####################
     #----- NEOVIM -----#
