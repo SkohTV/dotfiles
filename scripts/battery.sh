@@ -1,4 +1,4 @@
-BATTERY=$(acpi -b | sed -r 's/Battery 0: (.*), (.*)%,.*/{"state": "\1", "value":\2}/g')
+BATTERY=$(acpi -b | sed -r 's/Battery 0: (.*), (.*)%/{"state": "\1", "value":\2}/g')
 STATUS=$(echo "$BATTERY" | jq -r '.state')
 CAPACITY=$(echo "$BATTERY" | jq -r '.value')
 
@@ -9,6 +9,7 @@ if [ "$STATUS" == "Charging" ]; then
   else
     ICON='󰂄'
   fi
+
 else
   if [ "$CAPACITY" -lt 5 ]; then
     ICON='󰂎'
