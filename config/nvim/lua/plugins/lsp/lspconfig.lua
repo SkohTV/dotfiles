@@ -14,7 +14,7 @@ end
 
 
 local config = function()
-    local lspconfig = vim.lsp.config
+    local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 
