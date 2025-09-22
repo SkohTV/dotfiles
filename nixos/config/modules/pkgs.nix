@@ -199,15 +199,15 @@ in {
 
     pyright
     rust-analyzer
+    nixd
     zls
 
-    clang-tools
     nodePackages_latest.typescript-language-server
-
-    nixd
     rPackages.languageserver
-
+    jdt-language-server
     cmake-language-server
+
+    clang-tools
     vscode-langservers-extracted
 
   ]);
