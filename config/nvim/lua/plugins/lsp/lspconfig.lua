@@ -1,4 +1,4 @@
-local function _on_attach(_, bufnr)
+local function on_attach(_, bufnr)
     local opts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set("n", "<leader>fd", "<cmd>Lspsaga finder<CR>", opts)                 -- go to definition
     vim.keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts)        -- peak definition
@@ -12,11 +12,27 @@ local function _on_attach(_, bufnr)
     vim.keymap.set("n", "<leader>fmt", "<cmd>lua vim.lsp.buf.format()<CR>", opts)      -- force formatting of file
 end
 
+local ls = {
+    'pyright',           -- Python
+    'rust_analyzer',     -- Rust
+    'zls',               -- Zig
+
+    'clangd',            -- C / C++
+    'ts_ls',             -- JS / TS
+    'mojo',              -- Mojo
+
+    'nixd',              -- Nix
+    'lua_ls',            -- Lua
+    'bashls',            -- Bash
+    'jdtls',             -- Java
+
+    'cmake',             -- CMake
+    'cssls',             -- css / scss
+}
+
 
 local config = function()
-    local lspconfig = require("lspconfig")
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
+    require("fidget").setup({})
 
     local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = "" }
     for type, icon in pairs(signs) do
@@ -24,33 +40,13 @@ local config = function()
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
+    local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
-    local on_attach = _on_attach
-    local add_ls = function(names)
-        for _, item in ipairs(names) do
-            lspconfig[item].setup({ capabilities = capabilities, on_attach = on_attach })
-        end
+    for _, item in ipairs(ls) do
+        vim.lsp.config(item, { capabilities = capabilities, on_attach = on_attach })
+        vim.lsp.enable(item)
     end
-
-    add_ls({
-        'pyright',           -- Python
-        'rust_analyzer',     -- Rust
-        'zls',               -- Zig
-
-        'clangd',            -- C / C++
-        'ts_ls',             -- JS / TS
-        'mojo',              -- Mojo
-
-        'nixd',              -- Nix
-        'lua_ls',            -- Lua
-        'bashls',            -- Bash
-        'jdtls',             -- Java
-
-        'cmake',             -- CMake
-        'cssls',             -- css / scss
-    })
-
 end
 
 
