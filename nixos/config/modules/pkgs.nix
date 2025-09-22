@@ -208,7 +208,7 @@ in {
     cmake-language-server
 
     clang-tools
-    vscode-langservers-extracted
+    vscode-langservers-extracted # for json, css & html
 
   ]);
 

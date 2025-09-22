@@ -27,7 +27,10 @@ local ls = {
     'jdtls',             -- Java
 
     'cmake',             -- CMake
-    'cssls',             -- css / scss
+
+    'cssls',             -- CSS / SCSS
+    'jsonls',            -- JSON
+    'html'               -- HTML
 }
 
 
