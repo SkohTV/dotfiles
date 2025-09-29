@@ -101,16 +101,24 @@
   #----- MULTIMEDIA -----#
   ########################
 
-  # Necessary
   security.rtkit.enable = true;
 
-  # Enable screensharing
+
   services.pipewire = {
+
     enable = true;
+    pulse.enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
-    pulse.enable = true;
-    # jack.enable = true;
+
+    # Stop the bluetooth switch profile problem
+    wireplumber.configPackages = [
+      (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/11-bluetooth-policy.conf" ''
+        wireplumber.settings = { bluetooth.autoswitch-to-headset-profile = false }
+        monitor.bluez.properties = { bluez5.roles = [ a2dp_sink a2dp_source ] }
+      '')
+    ];
+
   };
 
   # Enable bluetooth
