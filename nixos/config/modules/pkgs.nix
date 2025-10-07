@@ -176,11 +176,6 @@ in {
     nodejs
     bun
 
-    bash-language-server
-    shellcheck
-    shfmt
-
-    jdt-language-server
     temurin-bin
 
     protobuf
@@ -202,6 +197,10 @@ in {
     rust-analyzer
     nixd
     zls
+
+    bash-language-server
+    shellcheck
+    shfmt
 
     nodePackages_latest.typescript-language-server
     rPackages.languageserver
