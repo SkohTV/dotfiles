@@ -18,6 +18,7 @@ flake-utils.lib.eachDefaultSystem (system:
     let
         pkgs = nixpkgs.legacyPackages.${system};
         bpfilter = pkgs.callPackage ./default.nix { };
+        bpfilter2 = pkgs.callPackage ./default2.nix { };
 
     in {
         packages = {
@@ -26,7 +27,7 @@ flake-utils.lib.eachDefaultSystem (system:
         };
 
         devShells = {
-            default = pkgs.mkShell { inputsFrom = [ bpfilter ]; };
+            default = pkgs.mkShell { inputsFrom = [ bpfilter2 ]; };
         };
     }
 );

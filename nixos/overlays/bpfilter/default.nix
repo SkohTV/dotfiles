@@ -52,6 +52,7 @@ clangStdenv.mkDerivation (finalAttrs: {
     "-DNO_TESTS=1" # tries to clone nftables
     "-DNO_CHECKS=1"
     "-DNO_BENCHMARKS=1"
+    "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON" # CUSTOM AND HOMEMADE
   ];
 
   outputs = [
@@ -68,6 +69,8 @@ clangStdenv.mkDerivation (finalAttrs: {
 
     # workaround for https://github.com/NixOS/nixpkgs/issues/144170
     substituteInPlace $lib/lib/pkgconfig/bpfilter.pc --replace-fail \''${prefix}/ ""
+
+    cp compile_commands.json $out
   '';
 
   passthru.updateScript = nix-update-script { };

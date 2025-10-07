@@ -1,0 +1,52 @@
+{
+stdenv,
+lib,
+
+cmake,
+git,
+pkg-config,
+libbpf,
+libnl,
+bison,
+flex,
+doxygen,
+lcov,
+sphinx,
+cmocka,
+clang-tools,
+gbenchmark,
+libgit2,
+libelf,
+zlib,
+clang,
+xxd
+}:
+
+
+stdenv.mkDerivation {
+  pname = "bpfilter";
+  version = "1.0.0";
+
+  src = ./.;
+
+  nativeBuildInputs = [
+    cmake
+    git
+    pkg-config
+    libbpf
+    libnl
+    bison
+    flex
+    doxygen
+    lcov
+    sphinx
+    cmocka
+    clang-tools
+    gbenchmark
+    libgit2
+    libelf
+    zlib
+    clang
+    xxd
+  ];
+}
