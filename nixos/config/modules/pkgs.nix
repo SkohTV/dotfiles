@@ -83,6 +83,7 @@ in {
 
     ### Core
     wget # download file
+    file # file information
     bluez # bluetooth daemon
     bluetuith # bluetooth tui
     networkmanager # wifi connection
