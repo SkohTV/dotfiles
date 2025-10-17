@@ -17,20 +17,13 @@ const wifi_icon = (s: number) => {
 const pick_icon_label = ([mode, wifi, ap]: [AstalNetwork.Primary, AstalNetwork.Wifi, AstalNetwork.AccessPoint]) => {
     console.log(mode, wifi, ap)
 
-    switch (mode){
-
-    case AstalNetwork.Primary.WIFI:
-        return (ap === null) ?
-            '  loading' :
-            `${wifi_icon(ap.strength)}  ${ap.ssid}`
-
-    case AstalNetwork.Primary.WIRED:
-        return `󱘖  ${ap.ssid}`
-
-    case AstalNetwork.Primary.UNKNOWN:
-        return (wifi.enabled) ? `  No WiFi` : `󰤫  No WiFi`
-
-    }
+    try {
+      switch (mode) {
+      case AstalNetwork.Primary.WIFI: return `${wifi_icon(ap.strength)}  ${ap.ssid}`
+      case AstalNetwork.Primary.WIRED: return `󱘖  ${ap.ssid}`
+      case AstalNetwork.Primary.UNKNOWN: return (wifi.enabled) ? `  No WiFi` : `󰤫  No WiFi`
+      }
+    } catch { return '  loading' }
 }
 
 
