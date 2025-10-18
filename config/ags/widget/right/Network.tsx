@@ -1,4 +1,5 @@
 import { createBinding, createComputed, With } from 'ags'
+import { createPoll } from 'ags/time';
 import AstalNetwork from 'gi://AstalNetwork'
 
 
@@ -14,7 +15,7 @@ const wifi_icon = (s: number) => {
 
 
 // Select icon + text for label
-const pick_icon_label = ([mode, wifi, ap]: [AstalNetwork.Primary, AstalNetwork.Wifi, AstalNetwork.AccessPoint]) => {
+const pick_icon_label = ([mode, wifi, ap, _]: [AstalNetwork.Primary, AstalNetwork.Wifi, AstalNetwork.AccessPoint, number]) => {
     console.log(mode, wifi, ap)
 
     try {
@@ -32,12 +33,13 @@ export default function Network() {
 
     const mode = createBinding(network, 'primary')
     const wifi = createBinding(network, 'wifi') 
+    const loop = createPoll(0, 10000, (p) => p + 1)
 
     return (
         <With value={wifi}>
             {(ww) => 
             <label
-                label={createComputed([mode, wifi, createBinding(ww, 'active_access_point')]).as(pick_icon_label)}
+                label={createComputed([mode, wifi, createBinding(ww, 'active_access_point'), loop]).as(pick_icon_label)}
                 css_name='network_label'
                 />
             }
