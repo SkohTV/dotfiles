@@ -25,6 +25,7 @@ alias vim='nvim'
 alias c='clear'
 alias ssh='TERM=xterm-256color ssh'
 alias z='sh $HOME/dev/scripts/zellij-init.sh'
+alias py='python3'
 
 # Aliases: long
 alias copy='wl-copy'
