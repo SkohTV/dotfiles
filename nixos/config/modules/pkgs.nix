@@ -32,6 +32,7 @@ in {
   # Programs, not pkgs
   programs = {
     nh.enable = true;
+    obs-studio.enable = true;
     ssh.startAgent = true;
     hyprland = { enable = true; xwayland.enable = true; };
   };
