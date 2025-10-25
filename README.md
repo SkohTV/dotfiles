@@ -1,5 +1,7 @@
 # Laptop config
 
+<img src="./docs/screenshot.png" />
+
 ## Config files
 [`config`](./config/) -> Dotfiles<br>
 [`nixos`](./nixos/) -> OS config<br>
