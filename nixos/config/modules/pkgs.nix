@@ -5,6 +5,7 @@ let
   # minizincide = pkgs.libsForQt5.callPackage ../../flakes/minizinc/ide.nix {};
   mojo = pkgs.callPackage ../../flakes/mojo/package.nix {};
   # vivify = pkgs.callPackage ../../flakes/vivify/package.nix {};
+  # opencilk = pkgs.callPackage ../../flakes/opencilk/package.nix {};
 
 
 in {
@@ -48,6 +49,7 @@ in {
     # minizincide
     mojo
     # vivify
+    # opencilk
 
   ] ++ (with pkgs; [
 
