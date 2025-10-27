@@ -1,6 +1,5 @@
 import { createState } from "ags";
 import { exec } from "ags/process";
-import app from "ags/gtk4/app";
 
 
 // https://github.com/Aylur/ags/blob/main/examples/gtk4/simple-bar/Bar.tsx#L94
@@ -8,12 +7,13 @@ import app from "ags/gtk4/app";
 
 
 // Notif button
-const [notif, setNotif] = createState(false)
-const [labelNotif, setLabelNotif] = createState('')
+const start_state = (exec('dunstctl is-paused') === 'true')
+const [notif, setNotif] = createState(start_state)
+const [labelNotif, setLabelNotif] = createState(start_state ? '' : '')
 
 const toggle_dnd = () => {
     setNotif(!notif.get())
-    exec(`wired --dnd ${notif.get() ? 'on' : 'off'}`)
+    exec(`dunstctl set-paused ${notif.get() ? 'true' : 'false'}`)
     setLabelNotif(notif.get() ? '' : '')
 }
 

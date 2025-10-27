@@ -9,9 +9,6 @@ procs:
     cwd: "/home/skoh/dev/scripts/"
     cmd: ["./weather.sh"]
 
-  wired:
-    cmd: ["wired"]
-
   hyprpaper:
     cmd: ["hyprpaper"]
 

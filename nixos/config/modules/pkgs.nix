@@ -136,7 +136,7 @@ in {
     ### Tools
     wlogout # gui logout menu
     tofi # program launcher
-    wired # notification daemon
+    dunst # notification daemon
     imv # image viewer
     libnotify # send notifs
     acpi # get battery remaining
