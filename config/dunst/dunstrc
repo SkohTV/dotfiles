@@ -14,7 +14,7 @@ alignment = left
 sort = yes
 indicate_hidden = yes
 show_age_threshold = -1
-stack_duplicates = no
+stack_duplicates = yes
 
 # Size
 offset = (20, 20)
