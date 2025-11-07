@@ -211,6 +211,7 @@ in {
     jdt-language-server
     cmake-language-server
 
+    llvmPackages.openmp
     clang-tools
     vscode-langservers-extracted # for json, css & html
 
