@@ -2,8 +2,24 @@
 
 {
 
+  # disabledModules = [
+  #   "services/web-apps/code-server.nix"
+  # ];
+
+  # services.code-server = {
+  #   enable = true;
+  #   socket = "/run/code-server/socket";
+  #   socketMode = "770";
+  # };
+
+
   # Imports
   imports = [
+
+    # Dev, WIP
+    # ../flakes/code-server/service.nix
+
+  ] ++ [
 
     # Hardware
     ./modules/hardware/hardware-configuration.nix # hardware config
