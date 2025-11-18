@@ -2,28 +2,54 @@ local config = function ()
     local ls = require("luasnip")
     local s = ls.snippet
     local t = ls.text_node
-    local i = ls.insert_node
 
     require("luasnip.loaders.from_vscode").lazy_load()
 
-
-    local map_leaderpp = function(filetype, snippet)
-        vim.api.nvim_create_autocmd('FileType', {
-            pattern = filetype,
-            callback = function ()
-                vim.keymap.set("n", "<leader>pp", function()
-                    ls.snip_expand(snippet)
-                end)
-            end,
+    ls.add_snippets('nix', {
+      s('flk',{
+        t({
+          '{',
+          '',
+          'inputs = {',
+          '  nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";',
+          '};',
+          '',
+          '',
+          'outputs = {',
+          '  self,',
+          '  nixpkgs',
+          '}:',
+          '',
+          'let',
+          '  supportedSystems = [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin" ];',
+          '  forAllSystems = nixpkgs.lib.genAttrs supportedSystems;',
+          '  nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; });',
+          '',
+          'in {',
+          '',
+          '  # `nix build`',
+          '  packages = forAllSystems (system: {',
+          '    default = nixpkgsFor.${system}.stdenv.mkDerivation {',
+          '        # pname = "package-name";',
+          '        # src = ./.;',
+          '        # buildInputs = with nixpkgsFor.${system}; [ ];',
+          '    };',
+          '  });',
+          '',
+          '  # `nix develop`',
+          '  devShells = forAllSystems (system: {',
+          '    default = nixpkgsFor.${system}.mkShell {',
+          '      inputsFrom = [ self.packages.${system}.default ];',
+          '      # buildInputs = with nixpkgsFor.${system}; [ ];',
+          '    };',
+          '  });',
+          '',
+          '};',
+          '',
+          '}'
         })
-    end
-
-
-    map_leaderpp('python', s('', { t({'print("'}), i(1), t({'")'}) }))
-    map_leaderpp('rust', s('', { t({'println!("'}), i(1), t({'");'}) }))
-    map_leaderpp('javascript', s('', { t({'console.log("'}), i(1), t({'");'}) }))
-    map_leaderpp('typescript', s('', { t({'console.log("'}), i(1), t({'");'}) }))
-    map_leaderpp('c', s('', { t({'printf("'}), i(1), t({'");'}) }))
+      })
+    })
 
 end
 
