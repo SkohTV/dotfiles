@@ -1,5 +1,4 @@
-import { createBinding, createComputed, With } from 'ags'
-import { createPoll } from 'ags/time';
+import { createBinding, createComputed } from 'ags'
 import AstalNetwork from 'gi://AstalNetwork'
 
 
@@ -15,16 +14,20 @@ const wifi_icon = (s: number) => {
 
 
 // Select icon + text for label
-const pick_icon_label = ([mode, wifi, ap]: [AstalNetwork.Primary, AstalNetwork.Wifi, AstalNetwork.AccessPoint]) => {
-    console.log(mode, wifi, ap)
+const pick_icon_label = ([mode, wifi]: [AstalNetwork.Primary, AstalNetwork.Wifi]) => {
+    console.log(mode, wifi)
 
     try {
       switch (mode) {
-      case AstalNetwork.Primary.WIFI: return `${wifi_icon(ap.strength)}  ${ap.ssid}`
-      case AstalNetwork.Primary.WIRED: return `󱘖  ${ap.ssid}`
+      case AstalNetwork.Primary.WIFI: return `${wifi_icon(wifi.activeAccessPoint.strength)}  ${wifi.activeAccessPoint.ssid}`
+      case AstalNetwork.Primary.WIRED: return `󱘖  Wired`
       case AstalNetwork.Primary.UNKNOWN: return (wifi.enabled) ? `  No WiFi` : `󰤫  No WiFi`
       }
-    } catch { return '  loading' }
+    }
+
+    catch {
+      return '  loading'
+    }
 }
 
 
@@ -35,13 +38,9 @@ export default function Network() {
     const wifi = createBinding(network, 'wifi') 
 
     return (
-        <With value={wifi}>
-            {(ww) => 
-            <label
-                label={createComputed([mode, wifi, createBinding(ww, 'active_access_point')]).as(pick_icon_label)}
-                css_name='network_label'
-                />
-            }
-        </With>
+      <label
+        label={createComputed([mode, wifi]).as(pick_icon_label)}
+        css_name='network_label'
+      />
     )
 }
