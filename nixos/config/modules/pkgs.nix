@@ -65,9 +65,9 @@ in {
     discord
     vlc 
 
-    libsForQt5.okular
+    kdePackages.okular
     qalculate-gtk
-    onlyoffice-bin
+    onlyoffice-desktopeditors
 
     xdg-utils # For embedded file manager
 
@@ -95,8 +95,8 @@ in {
     ffmpeg # for video manipulation
 
     ### Advanced
-    linuxPackages_latest.perf # for BPF
-    starship # prompt
+    perf # for bpfilter
+    starship
     hyperfine
     fzf
     jq
