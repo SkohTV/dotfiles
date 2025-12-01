@@ -25,6 +25,7 @@ in {
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
       nerd-fonts.monaspace
+      noto-fonts-cjk-sans # Chinese / japanese for chrome
     ];
   };
   
