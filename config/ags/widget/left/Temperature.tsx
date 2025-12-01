@@ -4,7 +4,7 @@ function transform(val: string) {
   if (val.length == 0)
       return '';
 
-  const tmp = JSON.parse(val.toString())
+  const tmp = JSON.parse(val.replaceAll('NaN', '0'))
   const SENSOR = 'k10temp-pci-00c3';
 
   if (tmp[SENSOR] === undefined)
