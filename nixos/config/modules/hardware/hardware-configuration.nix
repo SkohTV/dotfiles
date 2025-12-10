@@ -13,6 +13,8 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  hardware.amdgpu.opencl.enable = true;
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/506b2192-832c-47f7-8b48-2deeb9e480f1";
       fsType = "ext4";

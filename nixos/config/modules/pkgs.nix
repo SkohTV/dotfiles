@@ -65,6 +65,7 @@ in {
     brave
     discord
     vlc 
+    zoom-us # Sadge af
 
     kdePackages.okular
     qalculate-gtk
