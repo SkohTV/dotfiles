@@ -21,7 +21,7 @@ local ls = {
     'ts_ls',             -- JS / TS
     'mojo',              -- Mojo
 
-    'nixd',              -- Nix
+    'nil_ls',            -- Nix
     'lua_ls',            -- Lua
     'bashls',            -- Bash
     'jdtls',             -- Java
