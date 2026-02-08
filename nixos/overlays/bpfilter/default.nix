@@ -16,6 +16,7 @@
   sphinx,
   tinyxxd,
   zlib,
+  glibc,
 }:
 
 clangStdenv.mkDerivation (finalAttrs: {
@@ -34,6 +35,7 @@ clangStdenv.mkDerivation (finalAttrs: {
     pkg-config
     sphinx
     tinyxxd
+    glibc
 
     # bpfilter's cmake files requires this, even if we specify the version
     # we're using without needing to detect the version during the build.

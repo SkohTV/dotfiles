@@ -27,7 +27,9 @@ flake-utils.lib.eachDefaultSystem (system:
         };
 
         devShells = {
-            default = pkgs.mkShell { inputsFrom = [ bpfilter2 ]; };
+            default = pkgs.mkShell {
+              inputsFrom = [ bpfilter2 ];
+            };
         };
     }
 );
