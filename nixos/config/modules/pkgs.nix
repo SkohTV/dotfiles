@@ -201,7 +201,7 @@ in {
 
     pyright
     rust-analyzer
-    nixd
+    nil
     zls
 
     bash-language-server
