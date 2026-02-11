@@ -66,6 +66,7 @@ in {
     discord
     vlc 
     zoom-us # Sadge af
+    teams-for-linux # Sadge af
 
     kdePackages.okular
     qalculate-gtk
