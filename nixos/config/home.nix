@@ -15,6 +15,7 @@ in {
       init.defaultBranch = "main";
       pull.rebase = true;
       rerere.enabled = true;
+      rebase.updateRefs = true;
     };
   };
 
