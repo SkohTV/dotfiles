@@ -65,6 +65,7 @@ in {
     brave
     discord
     vlc 
+    element-desktop
     zoom-us # Sadge af
     teams-for-linux # Sadge af
 
@@ -104,6 +105,7 @@ in {
     fzf
     jq
     gh
+    awscli2
 
     ### Improved
     eza # ls
