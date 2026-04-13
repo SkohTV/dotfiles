@@ -48,6 +48,7 @@ if [[ -z "$SSH_AUTH_SOCK" ]]; then
   eval "$(ssh-agent -s)" > /dev/null
 fi
 ssh-add ~/.ssh/nixos 2> /dev/null
+ssh-add ~/.ssh/aws.pem 2> /dev/null
 
 
 # Promt & cd
