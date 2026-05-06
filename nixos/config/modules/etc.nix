@@ -2,10 +2,14 @@
 {
 
   time.timeZone = lib.mkForce null; # Timezone is handled somewhere else
-  virtualisation.docker.enable = true; # Docker
   documentation.dev.enable = true; # Man pages
   security.polkit.enable = true; # Enable polkit
   environment.sessionVariables.NIXOS_OZONE_WL = "1"; # Hyprland fix zoom
+
+  virtualisation = {
+    docker.enable = true;
+    vmware.host.enable = true;
+  };
 
   nix.settings.trusted-users = [ "root" "skoh" ];
   nix.settings.sandbox = true;
