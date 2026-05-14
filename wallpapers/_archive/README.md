@@ -35,3 +35,4 @@
 \- `rain_world.jpg` ➜ https://twitter.com/fayren/status/1714733517786026371<br>
 \- `subnautica.png` ➜ https://wallpapercave.com/w/wp6658481<br>
 \- `tessa_cyn.png` ➜ https://x.com/skylarxzq49780/status/1781883343304614138<br>
+\- `rw_slugcat_tree.jpg` ➜ https://www.tumblr.com/tangerineannatto/814586358530195456/slugcat-tree<br>
