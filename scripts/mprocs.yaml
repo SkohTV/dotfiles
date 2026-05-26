@@ -5,6 +5,10 @@ procs:
     shell: "docker compose down && docker compose up"
     stop: {send-keys: [<C-c>]}
 
+  calendar:
+    cwd: "/home/skoh/dev/scripts/"
+    cmd: ["./calendar.py"]
+
   weather:
     cwd: "/home/skoh/dev/scripts/"
     cmd: ["./weather.sh"]
