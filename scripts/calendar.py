@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import json
+from math import ceil
 import os
 import re
 import time
@@ -13,6 +14,20 @@ from zoneinfo import ZoneInfo
 
 with open('.calendar.json.env') as f:
     CALENDARS = json.load(f)
+
+COLORS = {
+  "uncategorized": "hsl(21.36, 25.11%, 66.08%)",
+  "work": "hsl(165, 76.92%, 45.49%)",
+  "contentcreation": "hsl(302.16, 49.33%, 64.12%)",
+  "sleep": "hsl(118.8, 58.82%, 53.33%)",
+  "chill": "hsl(338.62, 82.08%, 78.43%)",
+  "perso": "hsl(240, 100%, 85.1%)",
+  "commute": "hsl(230.07, 64.06%, 62.55%)",
+  "uqac": "hsl(165, 70.1%, 58.04%)",
+}
+
+assert COLORS.keys() == CALENDARS.keys()
+
 
 FOLDER = "/tmp/proton-calendar"
 os.makedirs(FOLDER, exist_ok=True)
@@ -49,7 +64,7 @@ def format_delta(delta) -> str:
   '''Format a timedelta into a human readable string'''
   total_seconds = int(delta.total_seconds())
   hours, rem = divmod(total_seconds, 3600)
-  minutes = rem // 60
+  minutes = ceil(rem / 60) # Rounding up
 
   if hours > 0:
     return f"{hours}h {minutes}m"
@@ -121,11 +136,11 @@ def update_msg():
   with open(msg, "w") as f:
     f.write(json.dumps({
       'current': [
-        { 'calendar': e.calendar, 'name': e.name, 'for': format_delta(e.end - now)}
+        { 'calendar': e.calendar, 'name': e.name, 'for': format_delta(e.end - now), 'color': COLORS[e.calendar]}
         for e in current_events
-      ],
+      ] if current_events else [ None ],
       'future': [
-        { 'calendar': f.calendar, 'name': f.name, 'in': format_delta(f.start - now)}
+        { 'calendar': f.calendar, 'name': f.name, 'in': format_delta(f.start - now), 'color': COLORS[f.calendar]}
         for f in next_event
       ]
     }))
@@ -141,12 +156,20 @@ while True:
 
     if now.timestamp() - last_fetch >= REFETCH_DELAY:
         print("Fetching all calendars")
-        fetch_all_calendars()
+        try:
+            fetch_all_calendars()
+        except Exception as e:
+            print("Failed to fetch calendar")
+            print(e)
         last_fetch = now.timestamp()
 
     if now.timestamp() - last_update >= UPDATE_DELAY:
         print("Updating message")
-        update_msg()
+        try:
+            update_msg()
+        except Exception as e:
+            print("Failed to update message")
+            print(e)
         last_update = now.timestamp()
 
     time.sleep(5)

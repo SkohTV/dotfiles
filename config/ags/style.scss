@@ -23,6 +23,9 @@ window.Bar {
 
   cava_label { color: hsl(0, 78%, 68%) ; font-size: 8px }
 
+  pastevent, futureevent, noevent { font-size: 10px }
+  noevent { font-style: italic; color: hsl(0, 0%, 70%); }
+
   workspaces {font-size: 12px}
   w1  {color: hsl(40, 70%, 78%)}
   w2  {color: hsl(0, 0%, 100%)}

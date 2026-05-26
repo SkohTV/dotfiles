@@ -5,6 +5,7 @@ import Temperature from "./left/Temperature"
 import Memory from "./left/Memory"
 import Distro from "./left/Distro"
 import Cava from "./left/Cava"
+import Calendar from "./left/Calendar"
 import Workspaces from "./center/Workspaces"
 import Battery from "./right/Battery"
 import Brightness from "./right/Brightness"
@@ -43,6 +44,7 @@ export default function Bar({ gdkmonitor }: BarProps) {
                 <Memory />
                 <Separator />
                 <Cava />
+                <Calendar />
             </box>
             <box $type="center">
                 <Workspaces />
