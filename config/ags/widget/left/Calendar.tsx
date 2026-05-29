@@ -9,7 +9,6 @@ monitorFile('/tmp/proton-calendar/msg', (f, _) => setCal(rf(f)))
 
 interface FutureEventProps { e: any }
 function FutureEvent({ e }: FutureEventProps ){
-  console.log(e)
   return (<box>
     <label label={`${e.name} `} css_name='futureevent' css={`color: ${e.color}; font-weight: bold;`} />
     <label label={`in ${e.in}`} css_name='futureevent' css={`color: ${e.color};`} />
@@ -18,7 +17,6 @@ function FutureEvent({ e }: FutureEventProps ){
 
 interface PastEventProps { e: any }
 function PastEvent({ e }: PastEventProps ){
-  console.log(e)
   if (e === null)
     return (<label label="no event" css_name="noevent" />)
 
@@ -30,7 +28,6 @@ function PastEvent({ e }: PastEventProps ){
 }
 
 export default function Cava() {
-    console.log()
     return (<box>
       <label label="     " />
       <box>
