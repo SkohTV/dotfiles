@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 
 import json
-from math import ceil
 import os
 import re
 import time
 import urllib.request
+
+from math import ceil
 from dataclasses import dataclass
 from datetime import datetime
+from contextlib import contextmanager
 from zoneinfo import ZoneInfo
-
 
 
 with open('.calendar.json.env') as f:
@@ -32,9 +33,17 @@ assert COLORS.keys() == CALENDARS.keys()
 FOLDER = "/tmp/proton-calendar"
 os.makedirs(FOLDER, exist_ok=True)
 
-REFETCH_DELAY = 15*60 # 15 min (refetch, recreate list, sort list)
+FETCH_DELAY = 15*60 # 15 min (download, refetch, recreate list, sort list)
 UPDATE_DELAY = 15 # 15 sec (list should be sorted, so really fast)
 
+@contextmanager
+def catch(act):
+    print(f"Trying to {act}")
+    try:
+        yield
+    except Exception as e:
+        print(f"Failed to {act}")
+        print(e)
 
 @dataclass
 class Event:
@@ -71,45 +80,43 @@ def format_delta(delta) -> str:
   return f"{minutes}m"
 
 
-
-def fetch_events(cal_name, url, *, download):
-  '''Download and parse events from a calendar URL'''
-  tmp_file = os.path.join(FOLDER, f"{cal_name}.ics")
-
-  if download:
+def download_calendars():
+  '''Download all calendars to local files'''
+  for cal_name, url in CALENDARS.items():
     print(f"Downloading {cal_name}")
+    tmp_file = os.path.join(FOLDER, f"{cal_name}.ics")
     urllib.request.urlretrieve(url, tmp_file)
 
-  with open(tmp_file, "r") as f:
-    content = f.read()
 
-  for event in content.split("BEGIN:VEVENT")[1:]:
-    dtstart = re.search(r'DTSTART;TZID=([^:]+):(\d{8}T\d{6})', event)
-    dtend = re.search(r'DTEND;TZID=([^:]+):(\d{8}T\d{6})', event)
-    summary = re.search(r'SUMMARY:(.+)', event)
-
-    if dtstart and dtend and summary:
-      event_tz = ZoneInfo(dtstart.group(1))
-      start = parse_dt(dtstart.group(2), event_tz)
-      end = parse_dt(dtend.group(2),   event_tz)
-      start_local = start.astimezone(local_tz)
-      end_local = end.astimezone(local_tz)
-      name = summary.group(1).strip()
-
-      events.append(Event(name, cal_name, start_local, end_local))
-
-
-
-def fetch_all_calendars():
+def fetch_events():
+  '''Parse event from local files'''
   global events
   events.clear()
 
-  # Fetch all calendars
-  for cal_name, url in CALENDARS.items():
-    fetch_events(cal_name, url, download=True)
-  events.sort(key = lambda x: x.start)
+  for cal_name in CALENDARS.keys():
+    tmp_file = os.path.join(FOLDER, f"{cal_name}.ics")
 
+    with open(tmp_file, "r") as f:
+      content = f.read()
+
+    for event in content.split("BEGIN:VEVENT")[1:]:
+      dtstart = re.search(r'DTSTART;TZID=([^:]+):(\d{8}T\d{6})', event)
+      dtend = re.search(r'DTEND;TZID=([^:]+):(\d{8}T\d{6})', event)
+      summary = re.search(r'SUMMARY:(.+)', event)
+
+      if dtstart and dtend and summary:
+        event_tz = ZoneInfo(dtstart.group(1))
+        start = datetime.strptime(dtstart.group(2), "%Y%m%dT%H%M%S").replace(tzinfo=event_tz)
+        end = datetime.strptime(dtend.group(2), "%Y%m%dT%H%M%S").replace(tzinfo=event_tz)
+        start_local = start.astimezone(local_tz)
+        end_local = end.astimezone(local_tz)
+        name = summary.group(1).strip()
+
+        events.append(Event(name, cal_name, start_local, end_local))
+
+  events.sort(key = lambda x: x.start)
   events = [e for e in events if now <= e.end]
+
 
 
 
@@ -151,25 +158,19 @@ last_fetch = 0
 last_update = 0
 
 while True:
-    now = datetime.now(local_tz)
-    local_tz = datetime.now().astimezone().tzinfo
+  now = datetime.now(local_tz)
+  local_tz = datetime.now().astimezone().tzinfo
 
-    if now.timestamp() - last_fetch >= REFETCH_DELAY:
-        print("Fetching all calendars")
-        try:
-            fetch_all_calendars()
-        except Exception as e:
-            print("Failed to fetch calendar")
-            print(e)
-        last_fetch = now.timestamp()
+  if now.timestamp() - last_fetch >= FETCH_DELAY:
+    with catch("download all calendars"):
+      download_calendars()
+    with catch("fetch all events"):
+      fetch_events()
+    last_fetch = now.timestamp()
 
-    if now.timestamp() - last_update >= UPDATE_DELAY:
-        print("Updating message")
-        try:
-            update_msg()
-        except Exception as e:
-            print("Failed to update message")
-            print(e)
-        last_update = now.timestamp()
+  if now.timestamp() - last_update >= UPDATE_DELAY:
+    with catch("update message"):
+      update_msg()
+    last_update = now.timestamp()
 
-    time.sleep(5)
+  time.sleep(5)

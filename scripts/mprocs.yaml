@@ -7,7 +7,7 @@ procs:
 
   calendar:
     cwd: "/home/skoh/dev/scripts/"
-    cmd: ["./calendar.py"]
+    cmd: ["./cal.py"]
 
   weather:
     cwd: "/home/skoh/dev/scripts/"
