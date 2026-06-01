@@ -41,10 +41,9 @@
   };
 
   # Customize sleep
-  systemd.sleep.extraConfig = ''
-    HibernateDelaySec=2700s
-  '';
-
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "2700s"; # 45min
+  };
 
   ###################
   #----- USERS -----#

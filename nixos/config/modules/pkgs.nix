@@ -211,7 +211,7 @@ in {
     shellcheck
     shfmt
 
-    nodePackages_latest.typescript-language-server
+    typescript-language-server
     rPackages.languageserver
     jdt-language-server
     cmake-language-server
