@@ -12,36 +12,15 @@ const [notif, setNotif] = createState(start_state)
 const [labelNotif, setLabelNotif] = createState(start_state ? '' : '')
 
 const toggle_dnd = () => {
-    setNotif(!notif.get())
-    exec(`dunstctl set-paused ${notif.get() ? 'true' : 'false'}`)
-    setLabelNotif(notif.get() ? '' : '')
+    setNotif(!notif.peek())
+    exec(`dunstctl set-paused ${notif.peek() ? 'true' : 'false'}`)
+    setLabelNotif(notif.peek() ? '' : '')
 }
 
 
 
 // Wallpaper reroll button
 const rr = () => exec(`sh /home/skoh/dev/scripts/reroll_wp.sh`)
-
-
-
-// Screenshare button
-// const [screenshare, setScreenshare] = createState(!(app.get_monitors().length > 1))
-// const [labelScreenshare, setLabelScreenshare] = createState(screenshare.get() ? '󱞠' : '')
-//
-// const toggle_screenshare = () => {
-//     setScreenshare(!screenshare.get())
-//
-//   if (screenshare.get()){
-//     exec(`hyprctl keyword monitor 'DP-2,highres,auto,1,mirror,$primary_monitor'`)
-//     exec(`hyprctl hyprpaper reload eDP-1,/home/skoh/.config/wallpapers/main`)
-//   } else {
-//     exec(`hyprctl reload`)
-//   }
-//
-//   setLabelScreenshare(pick_icon(screenshare.get()))
-// }
-//
-// const pick_icon = (b: boolean) => b ? '󱞠' : ''
 
 
 
@@ -66,7 +45,3 @@ export default function Distro() {
 
 }
 
-
-            // <button onClicked={toggle_screenshare}>
-            //     <label label={labelScreenshare} css_name="screenshare_label" />
-            // </button>

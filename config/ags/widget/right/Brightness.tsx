@@ -3,7 +3,9 @@ import { exec } from "ags/process"
 
 
 const [isNight, setIsNight] = createState(false)
-const [bright, setBright] = createState(Math.round(Number(exec('brightnessctl get')) / 255 * 100 ))
+const [bright, setBright] = createState(Math.round(
+  Number(exec('brightnessctl get')) / Number(exec('brightnessctl max')) * 100
+))
 
 
 // Fetch (+ reset if incorrect) nightmode
@@ -18,15 +20,15 @@ switch (exec(`hyprctl hyprsunset temperature`)) {
 interface changeProps { value: number }
 const change = ({ value }: changeProps) => {
     setBright(Math.round(value))
-    exec(`brightnessctl set ${bright.get()}%`)
+    exec(`brightnessctl set ${bright.peek()}%`)
 }
 
 
 // For button click
 const swap = () => {
-    setIsNight(!isNight.get())
+    setIsNight(!isNight.peek())
 
-    if (isNight.get())
+    if (isNight.peek())
         exec(`hyprctl hyprsunset temperature 4000`)
     else
         exec(`hyprctl hyprsunset temperature 6500`)
