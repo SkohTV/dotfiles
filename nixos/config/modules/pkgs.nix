@@ -137,6 +137,7 @@ in {
     hyprlock # lock
     hyprcursor # cursor
     hyprsunset # blue light
+    hyprshutdown # shutdown/exit
 
     ### Tools
     wlogout # gui logout menu

@@ -6,7 +6,7 @@
 }
 {
     "label" : "exit",
-    "action" : "hyprctl dispatch exit",
+    "action" : "hyprshutdown",
     "text" : "[E]xit",
     "keybind" : "e"
 }
