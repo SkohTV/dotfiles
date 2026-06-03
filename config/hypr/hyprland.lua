@@ -161,7 +161,7 @@ hl.config({
 
 hl.bind(main_mod .. " + F", hl.dsp.window.float({ action = "on" }))
 hl.bind(main_mod .. " + T", hl.dsp.window.float({ action = "off" }))
-hl.bind(main_mod .. " + P", hl.dsp.window.pin({ action = "toggle" }))
+hl.bind(main_mod .. " + P", hl.dsp.window.pin({ action = "on" }))
 hl.bind(main_mod .. " + M", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 hl.bind(main_mod .. " + SHIFT + M", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 
