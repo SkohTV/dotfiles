@@ -7,8 +7,8 @@ local config = function()
 end
 
 
-return {
+return {{
     "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", },
     config = config,
-}
+    dependencies = { "nvim-lua/plenary.nvim", },
+}}

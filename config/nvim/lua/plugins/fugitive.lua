@@ -2,8 +2,8 @@ local config = function()
 end
 
 
-return {
+return {{
     "tpope/vim-fugitive",
     lazy = false,
     config = config,
-}
+}}

@@ -3,12 +3,9 @@ local config = function()
 end
 
 
-return {
+return {{
     "nvim-pack/nvim-spectre",
     event = "VeryLazy",
     config = config,
-
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-    }
-}
+    dependencies = { "nvim-lua/plenary.nvim", },
+}}

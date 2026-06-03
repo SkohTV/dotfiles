@@ -53,7 +53,7 @@ local config = function()
 end
 
 
-return {
+return {{
     "neovim/nvim-lspconfig",
     config = config,
     lazy = false,
@@ -62,4 +62,4 @@ return {
         "j-hui/fidget.nvim",
         "hrsh7th/cmp-nvim-lsp",
     }
-}
+}}

@@ -13,7 +13,7 @@ vim.keymap.set("n", "<leader>sh", ":split<CR>")
 vim.keymap.set("v", ">", ">gv")
 vim.keymap.set("v", "<", "<gv")
 
-vim.keymap.set("n", "<leader>fk", ":telescope keymaps<cr>")
+vim.keymap.set("n", "<leader>fk", ":Telescope keymaps<cr>")
 vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>")
 vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<leader>fa", ":Telescope <CR>")

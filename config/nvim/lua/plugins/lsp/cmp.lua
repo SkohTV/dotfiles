@@ -35,7 +35,6 @@ local config = function()
         }),
 
         -- Enable pictogram icons for lsp/autocompletion
-        ---@diagnostic disable-next-line: missing-fields
         formatting = {
             expandable_indicator = true,
             format = lspkind.cmp_format({
@@ -48,19 +47,20 @@ local config = function()
 end
 
 
-return {
+return {{
     "hrsh7th/nvim-cmp",
     event = { "BufReadPost", "BufNewFile" },
     config = config,
+
     dependencies = {
         "onsails/lspkind.nvim",
         "L3MON4D3/LuaSnip",
 
         "saadparwaiz1/cmp_luasnip", -- source = luasnip
         "hrsh7th/cmp-buffer", -- source = buffer
-        "hrsh7th/cmp-nvim-lsp",    -- source = lsp
-        "hrsh7th/cmp-path",    -- source = path
+        "hrsh7th/cmp-nvim-lsp", -- source = lsp
+        "hrsh7th/cmp-path", -- source = path
 
         "windwp/nvim-autopairs",
     }
-}
+}}
