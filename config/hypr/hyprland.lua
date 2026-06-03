@@ -177,7 +177,7 @@ hl.bind(main_mod .. " + SHIFT + L", hl.dsp.window.move({ direction = "r"}))
 hl.bind(main_mod .. " + SHIFT + K", hl.dsp.window.move({ direction = "u"}))
 hl.bind(main_mod .. " + SHIFT + J", hl.dsp.window.move({ direction = "d"}))
 
-hl.bind(main_mod .. " + SHIFT + C", hl.dsp.window.kill())
+hl.bind(main_mod .. " + SHIFT + C", hl.dsp.window.close())
 hl.bind(main_mod .. " + R", hl.dsp.exec_cmd("tofi-drun"))
 hl.bind(main_mod .. " + X", hl.dsp.exec_cmd("$HOME/dev/scripts/wlogout.sh"))
 hl.bind(main_mod .. " + S", hl.dsp.exec_cmd("$HOME/dev/scripts/screenshot.sh"))
