@@ -11,19 +11,19 @@ interface FutureEventProps { e: any }
 function FutureEvent({ e }: FutureEventProps ){
   return (<box>
     <label label={`${e.name} `} css_name='futureevent' css={`color: ${e.color}; font-weight: bold;`} />
-    <label label={`in ${e.in}`} css_name='futureevent' css={`color: ${e.color};`} />
+    <label label={`in ${e.in} `} css_name='futureevent' css={`color: ${e.color};`} />
   </box>)
 }
 
 interface PastEventProps { e: any }
 function PastEvent({ e }: PastEventProps ){
   if (e === null)
-    return (<label label="no event" css_name="noevent" />)
+    return (<label label="no event " css_name="noevent" />)
 
   // return (
   return (<box>
     <label label={`${e.name} `} css_name='pastevent' css={`color: ${e.color}; font-weight: bold;`} />
-    <label label={`for ${e.for}`} css_name='pastevent' css={`color: ${e.color};`} />
+    <label label={`for ${e.for} `} css_name='pastevent' css={`color: ${e.color};`} />
   </box>)
 }
 
@@ -35,7 +35,7 @@ export default function Cava() {
           {(v) => <PastEvent e={v} />}
         </For>
       </box>
-      <label label=" - " />
+      <label label="- " />
       <box>
         <For each={cal.as((x) => JSON.parse(x)["future"])}>
           {(v) => <FutureEvent e={v} />}
