@@ -7,6 +7,6 @@ new_wp=$(\
 
 unlink /home/skoh/.config/wallpapers/main
 ln -s "$new_wp" /home/skoh/.config/wallpapers/main 
-hyprctl hyprpaper reload eDP-1,/home/skoh/.config/wallpapers/main 
+hyprctl hyprpaper wallpaper eDP-1,/home/skoh/.config/wallpapers/main 
 
 echo "Refreshed wallpaper"
