@@ -1,0 +1,15 @@
+# Specifically for localhost simplicity
+services:
+
+  nginx:
+    image: nginx:alpine
+
+    ports:
+      - 3943:3943
+
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+
+      - ./img:/www/data/img:ro
+      - ./src:/www/data/src:ro
+      - ./index.html:/www/data/index.html:ro
