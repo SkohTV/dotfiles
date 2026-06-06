@@ -1,7 +1,12 @@
 procs:
 
   $homepage:
-    cwd: "/home/skoh/dev/repo/skoh-dev/homepage/"
+    cwd: "/home/skoh/dev/repo/dotfiles/homepage/"
+    shell: "docker compose down && docker compose up"
+    stop: {send-keys: [<C-c>]}
+
+  $odysseus:
+    cwd: "/home/skoh/dev/repo/odysseus/"
     shell: "docker compose down && docker compose up"
     stop: {send-keys: [<C-c>]}
 
