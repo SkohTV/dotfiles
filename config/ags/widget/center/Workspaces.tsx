@@ -1,5 +1,4 @@
 import { createState, For } from "ags"
-import { execAsync } from "ags/process";
 import AstalHyprland from "gi://AstalHyprland"
 
 const hyprland = AstalHyprland.get_default()
@@ -18,7 +17,7 @@ function regenerate_all(): Array<[number, boolean, boolean, boolean]> {
   const focused = hyprland.focused_workspace.id;
 
   function shorthand(x: number): [number, boolean, boolean, boolean] {
-      return [x, alive.includes(x), displayed.includes(x), x === focused]
+    return [x, alive.includes(x), displayed.includes(x), x === focused]
   }
 
   return [...Array(10).keys()].map((i) => shorthand(i+1))
@@ -32,9 +31,9 @@ function WorkspaceBt({ id, alive, displayed, focused }: WorkspaceBtProps){
   const icon = focused ? '󰪥 ' : displayed ? '󰺕 ' : alive ? ' ' : '⚬ ';
 
     return (
-        <button onClicked={() => execAsync(`hyprctl dispatch workspace ${id}`)} >
-            <label label={icon} css_name={`w${id}`} />
-       </button>
+      <button onClicked={() => hyprland.dispatch(`hl.dsp.focus({workspace = ${id}})`, '')}>
+        <label label={icon} css_name={`w${id}`} />
+     </button>
     )
 }
 
@@ -45,9 +44,9 @@ hyprland.connect('event', () => setWorkspaces(regenerate_all()))
 
 
 export default function Workspaces() {
-    return (<box css_name="workspaces">
-        <For each={workspaces}>
-            {(v) => <WorkspaceBt id={v[0]} alive={v[1]} displayed={v[2]} focused={v[3] } />}
-        </For>
-    </box>)
+  return (<box css_name="workspaces">
+    <For each={workspaces}>
+      {(v) => <WorkspaceBt id={v[0]} alive={v[1]} displayed={v[2]} focused={v[3] } />}
+    </For>
+  </box>)
 }

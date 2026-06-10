@@ -24,4 +24,4 @@ procs:
 
   ags:
     cwd: "/home/skoh/.config/ags/"
-    cmd: ["nix", "develop", "--command", "ags" , "run", "."]
+    cmd: ["nix", "run", "."]

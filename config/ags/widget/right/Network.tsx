@@ -14,14 +14,18 @@ const wifi_icon = (s: number) => {
 
 
 // Select icon + text for label
-const pick_icon_label = ([mode, wifi]: [AstalNetwork.Primary, AstalNetwork.Wifi]) => {
+const pick_icon_label = ([mode, wifi]: [AstalNetwork.Primary, AstalNetwork.Wifi|null]) => {
     console.log(mode, wifi)
+
+    if (wifi === null) {
+      return '  loading'
+    }
 
     try {
       switch (mode) {
-      case AstalNetwork.Primary.WIFI: return `${wifi_icon(wifi.activeAccessPoint.strength)}  ${wifi.activeAccessPoint.ssid}`
-      case AstalNetwork.Primary.WIRED: return `󱘖  Wired`
-      case AstalNetwork.Primary.UNKNOWN: return (wifi.enabled) ? `  No WiFi` : `󰤫  No WiFi`
+        case AstalNetwork.Primary.WIFI: return `${wifi_icon(wifi.activeAccessPoint.strength)}  ${wifi.activeAccessPoint.ssid}`
+        case AstalNetwork.Primary.WIRED: return `󱘖  Wired`
+        case AstalNetwork.Primary.UNKNOWN: return (wifi.enabled) ? `  No WiFi` : `󰤫  No WiFi`
       }
     }
 
