@@ -18,8 +18,9 @@
   --a-color: #bcc0cc;
   --a-hover: #d8a244;
   --a-hover-color: #4c4f69;
-  --button-color: #4c4f69;
-  --button-hover-color: #bcc0cc; 
+  --button-color: #4c4f6933;
+  --button-hover-color: #bcc0cc33; 
+  --button-border-color: #4c4f6999;
 }
 
 * {
@@ -90,69 +91,66 @@ a {
   }
 }
 
-#ia { right: 20px; }
-#perfs { left: 20px; }
+#ltop { left: 20px; }
 
-#ia, #perfs {
+#ltop {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px;
 
   position: absolute;
-  flex-flow: column;
+  flex-flow: row;
   top: 20px;
 
   a {
-    text-decoration: none;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    border-radius: 5px;
+    margin: 5px;
     background-color: var(--button-color);
-    color: var(--button-hover-color);
-
-    &:hover {
-      background-color: var(--button-hover-color);
-      color: var(--a-hover-color);
-    }
+    border: 2px solid var(--button-border-color);
+    &:hover { background-color: var(--button-hover-color) }
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+  img {
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* a { */
+  /*   text-decoration: none; */
+  /**/
+  /*   display: flex; */
+  /*   align-items: center; */
+  /*   justify-content: center; */
+  /**/
+  /*   background-color: var(--button-color); */
+  /*   color: var(--button-hover-color); */
+  /**/
+  /*   &:hover { */
+  /*     background-color: var(--button-hover-color); */
+  /*     color: var(--a-hover-color); */
+  /*   } */
+  /* } */
 }
 
-#perfs {
-  a:nth-child(1) {
-    font-size: 2em;
-
-    width: 130px;
-    height: 50px;
-    border-radius: 10px;
-    p { padding-top: 6px; }
-
-    margin-bottom: 6px;
-  }
-}
+/* #ltop { */
+/*   a { */
+/*     font-size: 2em; */
+/**/
+/*     width: 130px; */
+/*     height: 50px; */
+/*     border-radius: 10px; */
+/*     p { padding-top: 6px; } */
+/**/
+/*     margin-bottom: 6px; */
+/*   } */
+/* } */
   
-
-#ia {
-  a:nth-child(1) {
-    font-size: 4em;
-
-    width: 130px;
-    height: 100px;
-    border-radius: 20px;
-    p { padding-top: 6px; }
-
-    margin-bottom: 6px;
-  }
-
-  a:nth-child(2) {
-    border-radius: 7px;
-    font-size: 1em;
-    margin-top: 6px;
-  }
-
-}
 
 
 #links {
