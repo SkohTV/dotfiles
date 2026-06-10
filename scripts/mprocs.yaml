@@ -5,11 +5,6 @@ procs:
     shell: "docker compose down && docker compose up"
     stop: {send-keys: [<C-c>]}
 
-  $odysseus:
-    cwd: "/home/skoh/dev/repo/odysseus/"
-    shell: "docker compose down && docker compose up"
-    stop: {send-keys: [<C-c>]}
-
   calendar:
     cwd: "/home/skoh/dev/scripts/"
     cmd: ["./cal.py"]
