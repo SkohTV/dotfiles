@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
-import json
 import os
 import re
+import json
 import time
 import urllib.request
 
-from math import ceil
+from math import floor
 from dataclasses import dataclass
 from datetime import datetime
 from contextlib import contextmanager
@@ -73,7 +73,7 @@ def format_delta(delta) -> str:
   '''Format a timedelta into a human readable string'''
   total_seconds = int(delta.total_seconds())
   hours, rem = divmod(total_seconds, 3600)
-  minutes = ceil(rem / 60) # Rounding up
+  minutes = floor(rem / 60) # Rounding up
 
   if hours > 0:
     return f"{hours}h {minutes}m"
