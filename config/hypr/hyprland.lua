@@ -20,25 +20,20 @@ hl.monitor({
 }) -- TODO: add mirror ?
 
 
+-- Env variables
 hl.env("HYPRCURSOR_THEME", "catppuccin-frappe-red")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("WLR_NO_HARDWARE_CURSORS", "1")
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 
--- TODO
+-- Startup programs
 hl.on("hyprland.start", function ()
-  hl.exec_cmd("zellij delete-all-sessions --force -y")
-
   hl.exec_cmd("alacritty -e $SHELL -c '$HOME/dev/scripts/zellij-init.sh home; exec $SHELL'", { workspace = 1 })
   hl.exec_cmd("obsidian", { workspace = 4})
   hl.exec_cmd("alacritty -e $SHELL -c '$HOME/dev/scripts/zellij-init.sh nvim; exec $SHELL'", { workspace = 5 })
   hl.exec_cmd("alacritty -e $SHELL -c '$HOME/dev/scripts/zellij-init.sh main; exec $SHELL'", { workspace = 6 })
   hl.exec_cmd("brave", { workspace = 8 })
   hl.exec_cmd("discord", { workspace = 10 })
-end)
-
-hl.on("hyprland.shutdown", function ()
-  hl.exec_cmd("$HOME/dev/scripts/zellij-init.sh detach")
 end)
 
 -- Opacity
