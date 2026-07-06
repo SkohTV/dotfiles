@@ -6,7 +6,7 @@ import json
 import time
 import urllib.request
 
-from math import floor
+from math import ceil
 from dataclasses import dataclass
 from datetime import datetime
 from contextlib import contextmanager
@@ -20,11 +20,10 @@ COLORS = {
   "uncategorized": "hsl(21.36, 25.11%, 66.08%)",
   "work": "hsl(165, 76.92%, 45.49%)",
   "contentcreation": "hsl(302.16, 49.33%, 64.12%)",
-  "sleep": "hsl(118.8, 58.82%, 53.33%)",
   "chill": "hsl(338.62, 82.08%, 78.43%)",
   "perso": "hsl(240, 100%, 85.1%)",
   "commute": "hsl(230.07, 64.06%, 62.55%)",
-  "uqac": "hsl(165, 70.1%, 58.04%)",
+  "sleep": "hsl(118.8, 58.82%, 53.33%)",
 }
 
 assert COLORS.keys() == CALENDARS.keys()
@@ -71,9 +70,8 @@ def parse_dt(dt_str, tz):
 
 def format_delta(delta) -> str:
   '''Format a timedelta into a human readable string'''
-  total_seconds = int(delta.total_seconds())
-  hours, rem = divmod(total_seconds, 3600)
-  minutes = floor(rem / 60) # Rounding up
+  minutes = ceil(delta.total_seconds() / 60)
+  hours, minutes = divmod(minutes, 60)
 
   if hours > 0:
     return f"{hours}h {minutes}m"
