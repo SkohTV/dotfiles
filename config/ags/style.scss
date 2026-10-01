@@ -159,7 +159,7 @@ scale trough {
 
 .light, .night, .sound, .mute {&>label {min-width: 24px}}
 .light, .night {label {min-width: 20px}}
-.sound, .mute {label {min-width: 16px}}
+.sound, .mute {label {min-width: 20px}}
 
 .light scale trough {border-color: hsl(40, 70%, 78%)}
 .light scale trough highlight {background-color: hsl(40, 70%, 78%)}
