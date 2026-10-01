@@ -24,6 +24,7 @@ COLORS = {
   "perso": "hsl(240, 100%, 85.1%)",
   "commute": "hsl(230.07, 64.06%, 62.55%)",
   "sleep": "hsl(118.8, 58.82%, 53.33%)",
+  "ISEN": "hsl(165, 76.92%, 70.49%)",
 }
 
 assert COLORS.keys() == CALENDARS.keys()
@@ -98,17 +99,17 @@ def fetch_events():
       content = f.read()
 
     for event in content.split("BEGIN:VEVENT")[1:]:
-      dtstart = re.search(r'DTSTART;TZID=([^:]+):(\d{8}T\d{6})', event)
-      dtend = re.search(r'DTEND;TZID=([^:]+):(\d{8}T\d{6})', event)
+      dtstart = re.search(r'DTSTART(?:;TZID=([^:]+))?:(\d{8}T\d{6})', event)
+      dtend = re.search(r'DTEND(?:;TZID=([^:]+))?:(\d{8}T\d{6})', event)
       summary = re.search(r'SUMMARY:(.+)', event)
 
       if dtstart and dtend and summary:
-        event_tz = ZoneInfo(dtstart.group(1))
+        event_tz = ZoneInfo(dtstart.group(1) or 'Europe/Paris')
         start = datetime.strptime(dtstart.group(2), "%Y%m%dT%H%M%S").replace(tzinfo=event_tz)
         end = datetime.strptime(dtend.group(2), "%Y%m%dT%H%M%S").replace(tzinfo=event_tz)
         start_local = start.astimezone(local_tz)
         end_local = end.astimezone(local_tz)
-        name = summary.group(1).strip()
+        name = summary.group(1).strip().replace(r'\n', '')
 
         events.append(Event(name, cal_name, start_local, end_local))
 
