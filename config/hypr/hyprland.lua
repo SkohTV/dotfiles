@@ -55,6 +55,7 @@ hl.window_rule({ match = { class = "Matplotlib" }, float = true })
 hl.window_rule({ match = { class = "imv" }, float = true })
 hl.window_rule({ match = { class = "qalculate-gtk" }, float = true })
 hl.window_rule({ match = { class = "DesktopEditors" }, float = false })
+hl.window_rule({ match = { class = "obsidian", title = "Settings.*" }, float = true })
 
 -- File explorer
 hl.window_rule({ match = { title = "Open Docment" }, float = true })
@@ -132,10 +133,10 @@ hl.config({
 hl.config({
   misc = {
     force_default_wallpaper = 0,
-    focus_on_activate = false,
+    focus_on_activate = true,
     mouse_move_focuses_monitor = false,
     disable_splash_rendering = true,
-    allow_session_lock_restore = true
+    allow_session_lock_restore = true,
   }
 })
 
