@@ -15,6 +15,7 @@ in {
     # allowBroken = true;
     allowUnfree = true;
     permittedInsecurePackages = ["electron-25.9.0" "nix-2.16.2"];
+    android_sdk.accept_license = true; # TO DELETE ONE DAY 
   };
 
 
@@ -38,6 +39,7 @@ in {
     ssh.startAgent = true;
     hyprland = { enable = true; xwayland.enable = true; };
   };
+
 
 
 
@@ -68,6 +70,7 @@ in {
     element-desktop
     zoom-us # Sadge af
     teams-for-linux # Sadge af
+    android-studio-full # Sadge af
 
     kdePackages.okular
     qalculate-gtk
