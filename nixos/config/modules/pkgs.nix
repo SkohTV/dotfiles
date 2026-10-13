@@ -71,6 +71,8 @@ in {
     zoom-us # Sadge af
     teams-for-linux # Sadge af
     android-studio-full # Sadge af
+    jetbrains.idea-oss # Sadge af
+    angular-language-server
 
     kdePackages.okular
     qalculate-gtk
