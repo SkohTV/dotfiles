@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CITY="Chicoutimi"
+CITY="Arrondissement de Caen"
 
 
 # shellcheck disable=SC1091
