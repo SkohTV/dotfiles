@@ -30,7 +30,7 @@ local config = function ()
           '  # `nix build`',
           '  packages = forAllSystems (system: {',
           '    default = nixpkgsFor.${system}.stdenv.mkDerivation {',
-          '        # pname = "package-name";',
+          '        # name = "package-name";',
           '        # src = ./.;',
           '        # buildInputs = with nixpkgsFor.${system}; [ ];',
           '    };',
